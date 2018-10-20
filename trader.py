@@ -16,6 +16,9 @@ class Trader(object):
 		self.current_order = {}
 		self.order_count = 0
 
+	def __str__(self):
+		return self.account
+
 	def update_balance(self, amount):
 		if self.balance + amount < 0:
 			raise RuntimeError('Insufficient funds to withdraw')

@@ -1,5 +1,7 @@
 from trader import Trader
 from order_book import OrderBook
+from exchange import Exchange
+
 
 def test_book():
 	book = OrderBook('ETH', 'BTC')
@@ -13,13 +15,29 @@ def test_trader(book):
 	return jason
 
 
+def main():
+	exchange_ = Exchange('DEX', 'address', 1000, 'ETH', 'BTC')
+
+	# book = test_book()
+
+	jason = test_trader(exchange_)
+
+	exchange_.receive_message(jason.current_order)
+
+	exchange_.process_messages()
+
+	# book.describe()
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
-	book = test_book()
-	import pdb; pdb.set_trace()
-	jason = test_trader(book)
-
-	book.receive_message(jason.current_order)
-
-	book.process_messages()
-
-	book.describe()
+	main()

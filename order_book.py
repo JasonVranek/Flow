@@ -37,11 +37,9 @@ class OrderBook(object):
 				# Await response then delete from message_queue
 				# self.message_queue.pop(message_id)
 
-		pass
-
 	def cancel_order(self, order):
 		print('trying to cancel order')
-		message_id = order.order_id
+		message_id = order['order_id']
 		# Search book for order and delete it
 
 		# delete it from bid/ask also
