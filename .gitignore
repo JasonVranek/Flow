@@ -1,4 +1,6 @@
+.gitignore
 web3.py/
+env/
 kyle-lee-2017.pdf
 
 # Complied Source #
