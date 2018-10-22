@@ -19,7 +19,7 @@ class OrderBook(object):
 		self.asks = []
 
 	def receive_message(self, order):
-		print('received message')
+		# print('received message')
 		# Check the order for errors
 
 		# Add to message queue
@@ -27,29 +27,31 @@ class OrderBook(object):
 
 	def process_messages(self):
 		# Check for any new messages in the message_queue
-		try:
-			for message in self.message_queue:
-				print('processing message', message)
+		for msg in self.message_queue:
+			print('processing message', msg)
+			try:
 				order_type = msg['order_type']
 				if order_type == 'C':
-					self.cancel_order(message)
+					self.cancel_order(msg)
 					# Await response then delete from message_queue
-					# self.message_queue.pop(message_id)
+					self.message_queue.remove(msg)
 				elif order_type == 'buy' or order_type == 'sell': 
-					message_id = message['order_id']
-					self.add_order(message)
+					message_id = msg['order_id']
+					self.add_order(msg)
 					# Await response then delete from message_queue
-					# self.message_queue.pop(message_id)
+					self.message_queue.remove(msg)
 				else:
+					# Remove invalid messages from the queue
 					raise InvalidMessageType
+					self.message_queue.remove(msg)
 
-		except InvalidMessageType:
-			print('Invalid Message Type')
-			return 
+			except InvalidMessageType:
+				print('Invalid Message Type', msg)
 
+			print()
+			 
 	def add_order(self, order):
 		print('Adding order')
-		# Add the order to the book
 		try:
 			if order['order_type'] == 'buy':
 				self.num_bids += 1
@@ -59,40 +61,44 @@ class OrderBook(object):
 				self.asks.append(order)
 			else:
 				raise InvalidMessageType
-		except InvalidMessageType:
-			print("triggered exception")
-			return 
 
-		self.book.append(order)
+			# Add the order to the book
+			self.book.append(order)
+
+		except InvalidMessageType:
+			print("triggered InvalidMessageType")
+			 
 
 	def cancel_order(self, order):
 		print('trying to cancel order')
+		# The order_id from cancel will correspond to the current buy/sell in book
 		order_id = order['order_id']
 		try: 
 			# Search book for order and delete it
-			order_type = self.delete_from_book(order_id)
-
+			old_order_type = self.delete_from_book(order_id)
+			print(old_order_type)
 			# Search bid/ask list for order and delete it
-			if order_type == 'buy':
+			if old_order_type == 'buy':
 				self.delete_bid(order_id)
-			elif order_type == 'sell':
+			elif old_order_type == 'sell':
 				self.delete_ask(order_id)
+			elif old_order_type == NoEntryFound:
+				raise NoEntryFound
 			else:
 				raise InvalidMessageType
 
 		except InvalidMessageType:
 			print('Invalid Message Type')
-			return 
 
 		except NoEntryFound:
 			print('No order found to cancel')
-			return
 		
 	def delete_from_book(self, order_id):
 		for msg in self.book:
-			if msg['order_id'] == order['order_id']:
+			if msg['order_id'] == order_id:
 				order_type = msg['order_type']
 				self.book.remove(msg)
+				# Return the order_type so we can delete from bid/ask list
 				return order_type
 		return NoEntryFound
 
@@ -101,14 +107,16 @@ class OrderBook(object):
 			if msg['order_id'] == order['order_id']:
 				self.bids.remove(msg)
 				self.num_bids -= 1
-				return
+				return True
+		return NoEntryFound
 
 	def delete_ask(self, order_id):
 		for msg in self.asks:
 			if msg['order_id'] == order['order_id']:
 				self.asks.remove(msg)
 				self.num_asks -= 1
-				returm
+				return True
+		return NoEntryFound
 
 	def query_book(self):
 		return self.book
@@ -121,8 +129,15 @@ class OrderBook(object):
 
 	def describe(self):
 		print(self.base_currency, self.desired_currency, 
-			  self.book, self.bids, self.asks, self.num_bids,
+			  self.book, self.num_bids,
 			  self.num_asks)
+
+	def pretty_book(self):
+		print()
+		print('Order book (', self.base_currency, '->', self.desired_currency, ')')
+		print('Entries: ', len(self.book), ', Bids: ', self.num_bids, ', Asks: ', self.num_asks)
+		for order in self.book:
+			print(order)
 
 
 
