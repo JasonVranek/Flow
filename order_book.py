@@ -1,5 +1,7 @@
 from exceptions import InvalidMessageType, NoEntryFound
 
+from copy import deepcopy
+
 class OrderBook(object):
 	"""
 		A continuous order book for the flow market.
@@ -22,8 +24,11 @@ class OrderBook(object):
 		# print('received message')
 		# Check the order for errors
 
+
+		# Make a deepcopy of the order
+		copied_order = deepcopy(order)
 		# Add to message queue
-		self.message_queue.append(order)
+		self.message_queue.append(copied_order)
 
 	def process_messages(self):
 		# Check for any new messages in the message_queue
@@ -42,8 +47,8 @@ class OrderBook(object):
 					self.message_queue.remove(msg)
 				else:
 					# Remove invalid messages from the queue
-					raise InvalidMessageType
 					self.message_queue.remove(msg)
+					raise InvalidMessageType
 
 			except InvalidMessageType:
 				print('Invalid Message Type', msg)
@@ -76,7 +81,6 @@ class OrderBook(object):
 		try: 
 			# Search book for order and delete it
 			old_order_type = self.delete_from_book(order_id)
-			print(old_order_type)
 			# Search bid/ask list for order and delete it
 			if old_order_type == 'buy':
 				self.delete_bid(order_id)
@@ -99,22 +103,25 @@ class OrderBook(object):
 				order_type = msg['order_type']
 				self.book.remove(msg)
 				# Return the order_type so we can delete from bid/ask list
+				print('deleted from book: ', msg)
 				return order_type
 		return NoEntryFound
 
 	def delete_bid(self, order_id):
 		for msg in self.bids:
-			if msg['order_id'] == order['order_id']:
+			if msg['order_id'] == order_id:
 				self.bids.remove(msg)
 				self.num_bids -= 1
+				print('deleted bid: ', msg)
 				return True
 		return NoEntryFound
 
 	def delete_ask(self, order_id):
 		for msg in self.asks:
-			if msg['order_id'] == order['order_id']:
+			if msg['order_id'] == order_id:
 				self.asks.remove(msg)
 				self.num_asks -= 1
+				print('deleted ask: ', msg)
 				return True
 		return NoEntryFound
 
@@ -138,6 +145,7 @@ class OrderBook(object):
 		print('Entries: ', len(self.book), ', Bids: ', self.num_bids, ', Asks: ', self.num_asks)
 		for order in self.book:
 			print(order)
+		print()
 
 
 

@@ -22,6 +22,9 @@ class Exchange(OrderBook):
 	def add_book(self, book):
 		self.book = book
 
+	def get_order(self, order):
+		self.book.receive_message(order)
+
 	def calc_demand(self):
 		pass
 

@@ -3,7 +3,7 @@ from order_book import OrderBook
 from exchange import Exchange
 
 import random
-import time
+import asyncio
 
 def test_book():
 	book = OrderBook('ETH', 'BTC')
@@ -19,7 +19,7 @@ def test_trader(book):
 
 
 def setup_traders():
-	num_traders = 5
+	num_traders = 50
 	traders = []
 	order_type = ['buy', 'sell', 'C', 'poop']
 	for i in range(0, num_traders):
@@ -33,6 +33,16 @@ def setup_traders():
 		traders.append(trader)
 		print(trader.current_order)
 	return traders
+
+
+def main2():
+	loop = asyncio.get_event_loop()
+
+	try:
+		loop.run_forever()
+	finally:
+		loop.close()
+
 
 
 def main():
@@ -50,33 +60,26 @@ def main():
 
 	# Send an order to the exchange's order book
 	for trader in traders:
-		ex.book.receive_message(trader.current_order)
+		# ex.book.receive_message(trader.current_order)
+		ex.get_order(trader.current_order)
 
 	print('Received:', len(ex.book.message_queue), 'messages')
 
 	# Process any messages in the book's queue
-	ex.book.process_messages()
+	while len(ex.book.message_queue) > 0:
+		ex.book.process_messages()
 
 	ex.book.pretty_book()
 
-	print('TESTING CANCEL')
+	print('TESTING CANCEL ******************************')
 	for trader in traders:
 		trader.new_order('C', None, None, None, None)
-		ex.book.receive_message(trader.current_order)
-	ex.book.process_messages()
+		ex.get_order(trader.current_order)
+
+	while len(ex.book.message_queue) > 0:
+		ex.book.process_messages()
 
 	ex.book.pretty_book()
-
-
-
-	
-
-
-
-
-
-
-
 
 
 
