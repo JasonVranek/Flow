@@ -41,10 +41,10 @@ class Trader(object):
 			self.current_order['p_low'] = p_low
 			self.current_order['p_high'] = p_high
 			self.current_order['u_max'] = u_max
+			self.order_count += 1
 
 		self.current_order['order_type'] = order_type
 		self.current_order['order_id'] = self.account + ' ' + str(self.order_count)
-		self.order_count += 1
 
 		return self.current_order
 

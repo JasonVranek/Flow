@@ -10,14 +10,17 @@ class Exchange(OrderBook):
 
 	_batch_time = 5
 
-	def __init__(self, name, address, balance, base_currency, desired_currency):
-		OrderBook.__init__(self, base_currency, desired_currency)
+	def __init__(self, name, address, balance):
+		# OrderBook.__init__(self, base_currency, desired_currency)
+		self.book = object
 		self.name = name
 		self.address = address
 		self.balance = balance
 		self.supply = []
 		self.demand = []
 
+	def add_book(self, book):
+		self.book = book
 
 	def calc_demand(self):
 		pass

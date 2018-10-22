@@ -8,25 +8,33 @@ def test_book():
 	return book
 
 def test_trader(book):
-	jason = Trader('account_name', 100)
+	jason = Trader('jasons account', 100)
 	order = jason.new_order('buy', 101, 99, 500, 10000)
-	cancel_order = jason.new_order('C', None, None, None , None)
+	# cancel_order = jason.new_order('C', None, None, None , None)
 	jason.describe()
 	return jason
 
 
 def main():
-	exchange_ = Exchange('DEX', 'address', 1000, 'ETH', 'BTC')
+	# Create the exchange
+	ex = Exchange('DEX', 'address', 1000)
 
-	# book = test_book()
+	# Create the order book
+	book = test_book()
 
-	jason = test_trader(exchange_)
+	# Add the order book to the exchange
+	ex.add_book(book)
 
-	exchange_.receive_message(jason.current_order)
+	# Create a new trader
+	jason = test_trader(ex)
 
-	exchange_.process_messages()
+	# Send an order to the exchange's order book
+	ex.book.receive_message(jason.current_order)
 
-	# book.describe()
+	# Process any messages in the book's queue
+	ex.book.process_messages()
+
+	ex.book.describe()
 
 
 
