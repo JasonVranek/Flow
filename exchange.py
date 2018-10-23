@@ -9,6 +9,7 @@ class Exchange(OrderBook):
 	"""
 
 	_batch_time = 5
+	_min_tick_size = .01
 
 	def __init__(self, name, address, balance=0.0):
 		# OrderBook.__init__(self, base_currency, desired_currency)
@@ -26,6 +27,7 @@ class Exchange(OrderBook):
 		self.book.receive_message(order)
 
 	def calc_demand(self):
+
 		pass
 
 	def calc_supply(self):

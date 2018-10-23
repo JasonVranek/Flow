@@ -9,7 +9,7 @@ def test_book():
 	return book
 
 
-def test_trader(book):
+def test_trader():
 	jason = Trader('jasons account', 100)
 	order = jason.new_order('buy', 101, 99, 500, 10000)
 	# cancel_order = jason.new_order('C', None, None, None, None)
@@ -38,7 +38,6 @@ def setup_traders(num_traders):
 def main():
 	# Create the exchange
 	ex = Exchange('DEX', 'address', 1_000)
-	print(ex._get_balance())
 
 	# Create the order book
 	book = test_book()
@@ -71,8 +70,6 @@ def main():
 		ex.book.process_messages()
 
 	ex.book.pretty_book()
-
-
 
 
 

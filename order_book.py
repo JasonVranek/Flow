@@ -1,5 +1,4 @@
-from exceptions import InvalidMessageType, NoEntryFound
-
+from exceptions import InvalidMessageType, NoEntryFound, InvalidMessageParameter
 from copy import deepcopy
 
 class OrderBook(object):
@@ -23,7 +22,6 @@ class OrderBook(object):
 	def receive_message(self, order):
 		# print('received message')
 		# Check the order for errors
-
 
 		# Make a deepcopy of the order
 		copied_order = deepcopy(order)
@@ -59,20 +57,23 @@ class OrderBook(object):
 	def add_order(self, order):
 		#print('Adding order')
 		try:
+			if self.check_order_params(order) == InvalidMessageParameter:
+				raise InvalidMessageParameter
 			if order['order_type'] == 'buy':
 				self.num_bids += 1
+				self.book.append(order)
 				self.bids.append(order)
 			elif order['order_type'] == 'sell':
 				self.num_asks += 1
+				self.book.append(order)
 				self.asks.append(order)
 			else:
 				raise InvalidMessageType
 
-			# Add the order to the book
-			self.book.append(order)
-
 		except InvalidMessageType:
 			print("triggered InvalidMessageType")
+		except InvalidMessageParameter:
+			print('trigger InvalidMessageParameter')
 			 
 
 	def cancel_order(self, order):
@@ -127,6 +128,17 @@ class OrderBook(object):
 				#print('deleted ask: ', msg)
 				return True
 		return NoEntryFound
+
+	def check_order_params(self, order):
+		if not isinstance(order['q'], int):
+			return InvalidMessageParameter
+		elif not isinstance(order['p_low'], int):
+			return InvalidMessageParameter
+		elif not isinstance(order['p_high'], int):
+			return InvalidMessageParameter
+		elif not isinstance(order['u_max'], int):
+			return InvalidMessageParameter
+		return True
 
 	def query_book(self):
 		return self.book
