@@ -1,89 +1,80 @@
 from trader import Trader
 from order_book import OrderBook
 from exchange import Exchange
+from exceptions import InvalidMessageType, NoEntryFound
+import pytest
 
-import random
-import asyncio
+# run with pytest test.py
+@pytest.fixture
+def default_trader():
+	return Trader('account name')
 
-def test_book():
-	book = OrderBook('ETH', 'BTC')
-	return book
+@pytest.fixture
+def order_book():
+	return OrderBook('ETH', 'BTC')
 
+@pytest.fixture
+def empty_exchange():
+	return Exchange('DEX', 'address')
 
-def test_trader(book):
-	jason = Trader('jasons account', 100)
-	order = jason.new_order('buy', 101, 99, 500, 10000)
-	# cancel_order = jason.new_order('C', None, None, None, None)
-	jason.describe()
-	return jason
+@pytest.fixture
+def exchange(empty_exchange, order_book):
+	empty_exchange.book = order_book
+	return empty_exchange
 
+@pytest.fixture
+def bid():
+	return ['buy', 101, 99, 500, 10000]
 
-def setup_traders():
-	num_traders = 50
-	traders = []
-	order_type = ['buy', 'sell', 'C', 'poop']
-	for i in range(0, num_traders):
-		name = 'Trader' + str(i)
-		trader = Trader(name, random.randint(50, 300))
-		trader.new_order(random.choice(order_type), 		# 'buy', 'sell', 'c'
-							random.randint(100, 110), 	# p_high
-							random.randint(90, 100),  	# p_low
-							random.randint(0, 500), 		# u_max
-							random.randint(1000, 2000))	# q_max
-		traders.append(trader)
-		print(trader.current_order)
-	return traders
+@pytest.fixture
+def ask():
+	return ['sell', 100, 98, 400, 10000]
 
+@pytest.fixture
+def cancel():
+	return ['c', None, None, None, None]
 
-def main2():
-	loop = asyncio.get_event_loop()
+def test_default_trader_balance(default_trader):
+	assert default_trader.balance == 0
 
-	try:
-		loop.run_forever()
-	finally:
-		loop.close()
+def test_new_order(default_trader, bid):
+	order = default_trader.new_order(*bid)
+	assert order == {'p_high': 101, 'p_low': 99, 
+					'u_max': 500, 'q': 10000, 'order_type': 
+					'buy', 'order_id': f'{default_trader.account} 1'}
 
+def test_send_bid(default_trader, bid, exchange):
+	default_trader.new_order(*bid)
+	exchange.get_order(default_trader.current_order)
+	assert exchange.book.message_queue[0] == default_trader.current_order
 
+def test_send_ask(default_trader, ask, exchange):
+	default_trader.new_order(*ask)
+	exchange.get_order(default_trader.current_order)
+	assert exchange.book.message_queue[0] == default_trader.current_order
 
-def main():
-	# Create the exchange
-	ex = Exchange('DEX', 'address', 1000)
+def test_send_cancel(default_trader, cancel, exchange):
+	default_trader.new_order(*cancel)
+	exchange.get_order(default_trader.current_order)
+	assert exchange.book.message_queue[0] == default_trader.current_order
 
-	# Create the order book
-	book = test_book()
+def test_send_incorrect_order_type(default_trader, bid, exchange):
+	bid[0] = 'wrong'
+	default_trader.new_order(*bid)
+	exchange.get_order(default_trader.current_order)
+	assert exchange.book.message_queue[0] == default_trader.current_order
+	
 
-	# Add the order book to the exchange
-	ex.add_book(book)
+def test_process_bid():
+	pass
 
-	# Create a new trader
-	traders = setup_traders()
-
-	# Send an order to the exchange's order book
-	for trader in traders:
-		# ex.book.receive_message(trader.current_order)
-		ex.get_order(trader.current_order)
-
-	print('Received:', len(ex.book.message_queue), 'messages')
-
-	# Process any messages in the book's queue
-	while len(ex.book.message_queue) > 0:
-		ex.book.process_messages()
-
-	ex.book.pretty_book()
-
-	print('TESTING CANCEL ******************************')
-	for trader in traders:
-		trader.new_order('C', None, None, None, None)
-		ex.get_order(trader.current_order)
-
-	while len(ex.book.message_queue) > 0:
-		ex.book.process_messages()
-
-	ex.book.pretty_book()
+def test_process_ask():
+	pass
 
 
 
 
 
-if __name__ == '__main__':
-	main()
+
+
+

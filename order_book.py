@@ -141,8 +141,9 @@ class OrderBook(object):
 
 	def pretty_book(self):
 		print()
-		print('Order book (', self.base_currency, '->', self.desired_currency, ')')
-		print('Entries: ', len(self.book), ', Bids: ', self.num_bids, ', Asks: ', self.num_asks)
+		print(f'Order Book({self.base_currency} -> {self.desired_currency})')
+		print(f'Entries: {len(self.book)}, Bids: {self.num_bids}, Asks: {self.num_asks}')
+		# print('Entries: ', len(self.book), ', Bids: ', self.num_bids, ', Asks: ', self.num_asks)
 		for order in self.book:
 			print(order)
 		print()

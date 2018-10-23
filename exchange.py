@@ -10,7 +10,7 @@ class Exchange(OrderBook):
 
 	_batch_time = 5
 
-	def __init__(self, name, address, balance):
+	def __init__(self, name, address, balance=0.0):
 		# OrderBook.__init__(self, base_currency, desired_currency)
 		self.book = object
 		self.name = name
@@ -37,3 +37,6 @@ class Exchange(OrderBook):
 	def hold_batch(self):
 		# holds a batch and then recursively calls its self after batch_time
 		pass
+
+	def _get_balance(self):
+		return self.balance
