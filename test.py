@@ -2,7 +2,9 @@ from trader import Trader
 from order_book import OrderBook
 from exchange import Exchange
 from exceptions import InvalidMessageType, NoEntryFound
+
 import pytest
+import random
 
 # run with pytest test.py
 @pytest.fixture
@@ -32,7 +34,11 @@ def ask():
 
 @pytest.fixture
 def cancel():
-	return ['c', None, None, None, None]
+	return ['C', None, None, None, None]
+
+@pytest.fixture
+def invalid_message():
+	return ['invalid', 101, 99, 500, 10000]
 
 def test_default_trader_balance(default_trader):
 	assert default_trader.balance == 0
@@ -63,14 +69,66 @@ def test_send_incorrect_order_type(default_trader, bid, exchange):
 	default_trader.new_order(*bid)
 	exchange.get_order(default_trader.current_order)
 	assert exchange.book.message_queue[0] == default_trader.current_order
-	
 
-def test_process_bid():
-	pass
+def test_process_bid(default_trader, bid, exchange):
+	default_trader.new_order(*bid)
+	exchange.get_order(default_trader.current_order)
+	exchange.book.process_messages()
+	assert exchange.book.book[0] == default_trader.current_order
 
-def test_process_ask():
-	pass
+def test_process_ask(default_trader, ask, exchange):
+	default_trader.new_order(*ask)
+	exchange.get_order(default_trader.current_order)
+	exchange.book.process_messages()
+	assert exchange.book.book[0] == default_trader.current_order
 
+def test_process_cancel(default_trader, cancel, exchange):
+	default_trader.new_order(*cancel)
+	exchange.get_order(default_trader.current_order)
+	exchange.book.process_messages()
+	assert len(exchange.book.book) == 0
+
+def test_process_incorrect_order_type(default_trader, invalid_message, exchange):
+	default_trader.new_order(*invalid_message)
+	exchange.get_order(default_trader.current_order)
+	exchange.book.process_messages()
+	assert len(exchange.book.book) == 0
+
+@pytest.fixture
+def traders():
+	"""Creates 4 number_per_type traders of equal order type distribution  """
+	number_per_type = 10000
+	traders = []
+	orders = []
+	order_type = ['buy', 'sell', 'C', 'invalid']
+	for x in range(0, 4):
+		for y in range(0, number_per_type):
+			orders.append(order_type[x])
+			
+	for i in range(0, 4 * number_per_type):
+		name = f'Trader{i}'
+		trader = Trader(name, random.randint(50, 300))
+		
+		trader.new_order(orders[i], 		# 'buy', 'sell', 'c', 'invalid'
+							random.randint(100, 110), 	# p_high
+							random.randint(90, 100),  	# p_low
+							random.randint(0, 500), 		# u_max
+							random.randint(1000, 2000))	# q_max
+		traders.append(trader)
+	return traders
+
+
+
+def test_process_many_orders(traders, exchange):
+	for trader in traders:
+		exchange.get_order(trader.current_order)
+
+	while len(exchange.book.message_queue) > 0:
+		exchange.book.process_messages()
+	print(len(exchange.book.book), exchange.book.num_asks, exchange.book.num_bids)
+	assert (len(exchange.book.book) == 20000 \
+			and exchange.book.num_asks == 10000 \
+			and exchange.book.num_bids == 10000)
 
 
 

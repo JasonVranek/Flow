@@ -33,7 +33,7 @@ class OrderBook(object):
 	def process_messages(self):
 		# Check for any new messages in the message_queue
 		for msg in self.message_queue:
-			print('processing message', msg)
+			#print('processing message', msg)
 			try:
 				order_type = msg['order_type']
 				if order_type == 'C':
@@ -51,12 +51,13 @@ class OrderBook(object):
 					raise InvalidMessageType
 
 			except InvalidMessageType:
-				print('Invalid Message Type', msg)
+				pass
+				#print('Invalid Message Type', msg)
 
-			print()
+			#print()
 			 
 	def add_order(self, order):
-		print('Adding order')
+		#print('Adding order')
 		try:
 			if order['order_type'] == 'buy':
 				self.num_bids += 1
@@ -75,7 +76,7 @@ class OrderBook(object):
 			 
 
 	def cancel_order(self, order):
-		print('trying to cancel order')
+		#print('trying to cancel order')
 		# The order_id from cancel will correspond to the current buy/sell in book
 		order_id = order['order_id']
 		try: 
@@ -92,10 +93,12 @@ class OrderBook(object):
 				raise InvalidMessageType
 
 		except InvalidMessageType:
-			print('Invalid Message Type')
+			pass
+			#print('Invalid Message Type')
 
 		except NoEntryFound:
-			print('No order found to cancel')
+			pass
+			#print('No order found to cancel')
 		
 	def delete_from_book(self, order_id):
 		for msg in self.book:
@@ -103,7 +106,7 @@ class OrderBook(object):
 				order_type = msg['order_type']
 				self.book.remove(msg)
 				# Return the order_type so we can delete from bid/ask list
-				print('deleted from book: ', msg)
+				#print('deleted from book: ', msg)
 				return order_type
 		return NoEntryFound
 
@@ -112,7 +115,7 @@ class OrderBook(object):
 			if msg['order_id'] == order_id:
 				self.bids.remove(msg)
 				self.num_bids -= 1
-				print('deleted bid: ', msg)
+				#print('deleted bid: ', msg)
 				return True
 		return NoEntryFound
 
@@ -121,7 +124,7 @@ class OrderBook(object):
 			if msg['order_id'] == order_id:
 				self.asks.remove(msg)
 				self.num_asks -= 1
-				print('deleted ask: ', msg)
+				#print('deleted ask: ', msg)
 				return True
 		return NoEntryFound
 
