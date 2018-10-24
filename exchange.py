@@ -1,5 +1,7 @@
 from order_book import OrderBook
 
+import numpy as np
+
 class Exchange(OrderBook):
 	"""
 		A market for trading with continuous scaled limit orders.
@@ -26,12 +28,55 @@ class Exchange(OrderBook):
 	def get_order(self, order):
 		self.book.receive_message(order)
 
-	def calc_demand(self):
+	def _get_shape(self, p_low, p_high):
+		length =  (p_high - p_low) / Exchange._min_tick_size
+		return (length, length)
 
-		pass
+	def calc_demand(self, order):
+		p_low = order['p_low']; p_high = order['p_high']; u_max = order['u_max']
+		demand_vector = []
+		price_vector = []
+		# (will buy at u_max while p* < p_low)
+		# for x in range(0, int(p_low)):
+		demand_vector.append(u_max)
+		price_vector.append(p_low)
 
-	def calc_supply(self):
-		pass
+		# p_low<= p* <= p_high
+		for x in range(0, int((p_high - p_low) / Exchange._min_tick_size)):
+			# price is every min tick increment between p_low and p_high
+			price = p_low + x * Exchange._min_tick_size
+			price_vector.append(price)
+			demand_vector.append(((p_high - price) / (p_high - p_low)) * u_max)
+
+		# p* > p_high
+		# for x in range(order['p_high'], int(order['p_high']*1.50)):
+		demand_vector.append(0)
+		price_vector.append(p_high)
+
+		return np.column_stack((demand_vector, price_vector))
+
+	def calc_supply(self, order):
+		p_low = order['p_low']; p_high = order['p_high']; u_max = order['u_max']
+		supply_vector = []
+		price_vector = []
+		# (will buy at u_max while p* < p_low)
+		# for x in range(0, int(p_low)):
+		supply_vector.append(0)
+		price_vector.append(p_low)
+
+		# p_low<= p* <= p_high
+		for x in range(0, int((p_high - p_low) / Exchange._min_tick_size)):
+			# price is every min tick increment between p_low and p_high
+			price = p_low + x * Exchange._min_tick_size
+			price_vector.append(price)
+			supply_vector.append(u_max + ((price - p_high) / (p_high - p_low)) * u_max)
+
+		# p* > p_high
+		# for x in range(order['p_high'], int(order['p_high']*1.50)):
+		supply_vector.append(u_max)
+		price_vector.append(p_high)
+
+		return np.column_stack((supply_vector, price_vector))
 
 	def calc_crossing(self):
 		pass

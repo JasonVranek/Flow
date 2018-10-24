@@ -1,6 +1,9 @@
 asyncio==3.4.3
 atomicwrites==1.2.1
 attrs==18.2.0
+cycler==0.10.0
+kiwisolver==1.0.1
+matplotlib==3.0.0
 more-itertools==4.3.0
 numpy==1.15.2
 pandas==0.23.4
@@ -8,6 +11,7 @@ pluggy==0.8.0
 pudb==2018.1
 py==1.7.0
 Pygments==2.2.0
+pyparsing==2.2.2
 pytest==3.9.2
 python-dateutil==2.7.3
 pytz==2018.5

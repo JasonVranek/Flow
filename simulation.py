@@ -3,6 +3,8 @@ from order_book import OrderBook
 from exchange import Exchange
 
 import random
+from matplotlib import pyplot
+import numpy as np
 
 def test_book():
 	book = OrderBook('ETH', 'BTC')
@@ -70,6 +72,23 @@ def main():
 		ex.book.process_messages()
 
 	ex.book.pretty_book()
+
+
+	jason = test_trader()
+	ex.get_order(jason.current_order)
+	ex.book.process_messages()
+	ex.book.pretty_book()
+
+	demand_schedule = ex.calc_demand(jason.current_order)
+
+	supply_schedule = ex.calc_supply(jason.current_order)
+	# print('supply', supply_schedule[:,0])
+	# print('price', supply_schedule[:,1])
+
+	pyplot.scatter(supply_schedule[:,1], supply_schedule[:,0])
+	pyplot.scatter(demand_schedule[:,1], demand_schedule[:,0])
+
+	pyplot.show()
 
 
 
