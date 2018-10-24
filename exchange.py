@@ -151,12 +151,12 @@ class Exchange(OrderBook):
 
 				new_schedule = list(itertools.chain(prepend_array, schedule[1][:,0], append_array))
 				
-				price_array = np.arange(p_low, p_high, Exchange._min_tick_size)
-				# print(price_array, new_schedule)
-				# create arrays of len(prepend) and len(append) and fill them with umaxes and 0's
-
-				# then create the fully connected resized schedule
-				# prepend to_add number of sched_u_max to the schedules u_max
+				# Make sure the lengths are the correct length
+				if(len(new_schedule) > array_length):
+					price_array = np.arange(p_low, p_high + Exchange._min_tick_size, Exchange._min_tick_size)
+				else:
+					price_array = np.arange(p_low, p_high, Exchange._min_tick_size)
+				
 				print(len(new_schedule), len(price_array), array_length)
 				combined_schedule = np.column_stack((new_schedule, price_array))
 				print(combined_schedule)
@@ -166,6 +166,12 @@ class Exchange(OrderBook):
 				# 
 		else:
 			pass
+
+	def resize_demand():
+		pass
+
+	def resize_supply():
+		pass
 
 	def calc_crossing(self):
 		pass

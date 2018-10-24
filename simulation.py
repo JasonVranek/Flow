@@ -101,8 +101,8 @@ def main():
 	ex.resize_schedules(p_low, p_high, True)
 
 
-	for ss in ex.aggregate_supply:
-		pyplot.plot(ss[1][:,1], ss[1][:,0])
+	# for ss in ex.aggregate_supply:
+	# 	pyplot.plot(ss[1][:,1], ss[1][:,0])
 
 	for dd in ex.aggregate_demand:
 		pyplot.plot(dd[1][:,1], dd[1][:,0])
