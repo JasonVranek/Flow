@@ -21,15 +21,15 @@ def test_trader():
 
 def setup_traders(num_traders):
 	traders = []
-	order_type = ['buy', 'sell', 'C', 'poop']
-	# order_type = ['buy', 'sell']
+	# order_type = ['buy', 'sell', 'C', 'poop']
+	order_type = ['buy', 'sell']
 	for i in range(0, num_traders):
 		# name = 'Trader' + str(i)
 		name = f'Trader{i}'
 		trader = Trader(name, random.randint(50, 300))
 		trader.new_order(random.choice(order_type), 		# 'buy', 'sell', 'c'
-							random.randint(100, 110), 	# p_high
-							random.randint(90, 100),  	# p_low
+							random.randint(100, 120), 	# p_high
+							random.randint(80, 100),  	# p_low
 							random.randint(0, 500), 		# u_max
 							random.randint(1000, 2000))	# q_max
 		traders.append(trader)
@@ -48,7 +48,7 @@ def main():
 	ex.add_book(book)
 
 	# Create a new trader
-	traders = setup_traders(20)
+	traders = setup_traders(10)
 
 	# Send an order to the exchange's order book
 	for trader in traders:
@@ -97,18 +97,18 @@ def main():
 	# print('largest supply', ex.find_longest_schedule(False))
 	ex.book.pretty_book()
 
-	p_low, p_high = ex.get_price_range(True)
+	p_low, p_high = ex.get_price_range()
 	ex.resize_schedules(p_low, p_high, True)
 
-	p_low, p_high = ex.get_price_range(False)
+	# p_low, p_high = ex.get_price_range(False)
 	ex.resize_schedules(p_low, p_high, False)
 
 
 	for ss in ex.aggregate_supply:
-		pyplot.plot(ss[1][:,1], ss[1][:,0])
+		pyplot.plot(ss[1][:,1], ss[1][:,0], 'b')
 
-	# for dd in ex.aggregate_demand:
-	# 	pyplot.plot(dd[1][:,1], dd[1][:,0])
+	for dd in ex.aggregate_demand:
+		pyplot.plot(dd[1][:,1], dd[1][:,0], 'r')
 
 	pyplot.show()
 

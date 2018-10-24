@@ -113,20 +113,19 @@ class Exchange(OrderBook):
 		# search
 		return length, u_max
 
-	def get_price_range(self, is_demand=True):
+	def get_price_range(self):
 		p_low = 10000000; p_high = 0
-		if is_demand:
-			for schedule in self.aggregate_demand:
-				if schedule[1][0,1] < p_low:
-					p_low = schedule[1][0,1]
-				if schedule[1][-1,1] > p_high:
-					p_high = schedule[1][-1,1]
-		else:
-			for schedule in self.aggregate_supply:
-				if schedule[1][0,1] < p_low:
-					p_low = schedule[1][0,1]
-				if schedule[1][-1,1] > p_high:
-					p_high = schedule[1][-1,1]
+		for schedule in self.aggregate_demand:
+			if schedule[1][0,1] < p_low:
+				p_low = schedule[1][0,1]
+			if schedule[1][-1,1] > p_high:
+				p_high = schedule[1][-1,1]
+
+		for schedule in self.aggregate_supply:
+			if schedule[1][0,1] < p_low:
+				p_low = schedule[1][0,1]
+			if schedule[1][-1,1] > p_high:
+				p_high = schedule[1][-1,1]
 		return p_low, p_high
 
 	def resize_schedules(self, p_low, p_high, is_demand=True):
@@ -143,7 +142,6 @@ class Exchange(OrderBook):
 				sched_u_max = schedule[1][-1,0]
 				cur_p_low = schedule[1][0,1]
 				cur_p_high = schedule[1][-1,1]
-				print('here', sched_u_max, cur_p_high, cur_p_low)
 				schedule[1] = self.resize_supply(schedule, cur_p_low, 
 												cur_p_high, sched_u_max, 
 												p_low, p_high)
@@ -169,9 +167,7 @@ class Exchange(OrderBook):
 		else:
 			price_array = np.arange(p_low, p_high, Exchange._min_tick_size)
 		
-		print(len(new_schedule), len(price_array), array_length)
 		combined_schedule = np.column_stack((new_schedule, price_array))
-		print(combined_schedule)
 
 		return combined_schedule
 
@@ -189,7 +185,6 @@ class Exchange(OrderBook):
 			append_array.append(sched_u_max)
 
 		new_schedule = list(itertools.chain(prepend_array, schedule[1][:,0], append_array))
-		print(new_schedule, 'u_max', sched_u_max)
 		
 		# Make sure the lengths are the correct length
 		if(len(new_schedule) > array_length):
@@ -197,9 +192,7 @@ class Exchange(OrderBook):
 		else:
 			price_array = np.arange(p_low, p_high, Exchange._min_tick_size)
 		
-		print(len(new_schedule), len(price_array), array_length)
 		combined_schedule = np.column_stack((new_schedule, price_array))
-		print(combined_schedule)
 
 		return combined_schedule
 
