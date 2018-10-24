@@ -100,12 +100,15 @@ def main():
 	p_low, p_high = ex.get_price_range(True)
 	ex.resize_schedules(p_low, p_high, True)
 
+	p_low, p_high = ex.get_price_range(False)
+	ex.resize_schedules(p_low, p_high, False)
 
-	# for ss in ex.aggregate_supply:
-	# 	pyplot.plot(ss[1][:,1], ss[1][:,0])
 
-	for dd in ex.aggregate_demand:
-		pyplot.plot(dd[1][:,1], dd[1][:,0])
+	for ss in ex.aggregate_supply:
+		pyplot.plot(ss[1][:,1], ss[1][:,0])
+
+	# for dd in ex.aggregate_demand:
+	# 	pyplot.plot(dd[1][:,1], dd[1][:,0])
 
 	pyplot.show()
 
