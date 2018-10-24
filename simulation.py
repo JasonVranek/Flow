@@ -63,32 +63,50 @@ def main():
 
 	ex.book.pretty_book()
 
-	print('TESTING CANCEL ******************************')
-	for trader in traders:
-		trader.new_order('C', None, None, None, None)
-		ex.get_order(trader.current_order)
+	# print('TESTING CANCEL ******************************')
+	# for trader in traders:
+	# 	trader.new_order('C', None, None, None, None)
+	# 	ex.get_order(trader.current_order)
 
-	while len(ex.book.message_queue) > 0:
-		ex.book.process_messages()
+	# while len(ex.book.message_queue) > 0:
+	# 	ex.book.process_messages()
 
-	ex.book.pretty_book()
+	# ex.book.pretty_book()
 
 
-	jason = test_trader()
-	ex.get_order(jason.current_order)
-	ex.book.process_messages()
-	ex.book.pretty_book()
+	# jason = test_trader()
+	# ex.get_order(jason.current_order)
+	# ex.book.process_messages()
+	# ex.book.pretty_book()
 
-	demand_schedule = ex.calc_demand(jason.current_order)
+	ex.calc_aggregate_demand()
+	for x in range(0,1000000):
+		pass
+	ex.calc_aggregate_supply()
+	# print(ex.aggregate_supply)
+	# print(ex.aggregate_demand)
+	# demand_schedule = ex.calc_demand(jason.current_order)
 
-	supply_schedule = ex.calc_supply(jason.current_order)
+	# supply_schedule = ex.calc_supply(jason.current_order)
 	# print('supply', supply_schedule[:,0])
 	# print('price', supply_schedule[:,1])
 
-	pyplot.scatter(supply_schedule[:,1], supply_schedule[:,0])
-	pyplot.scatter(demand_schedule[:,1], demand_schedule[:,0])
+	length, u_max = ex.find_longest_schedule(True)
+	print('largest demand', length, u_max)
+	ex.resize_schedules(length, u_max, True)
+	# print('largest supply', ex.find_longest_schedule(False))
+	ex.book.pretty_book()
 
-	pyplot.show()
+	print(ex.get_price_range(True))
+	print(ex.get_price_range(False))
+
+	# for ss in ex.aggregate_supply:
+	# 	pyplot.plot(ss[1][:,1], ss[1][:,0])
+
+	# for dd in ex.aggregate_demand:
+	# 	pyplot.plot(dd[1][:,1], dd[1][:,0])
+
+	# pyplot.show()
 
 
 
