@@ -1,6 +1,8 @@
 from order_book import OrderBook
 
 import numpy as np
+import itertools
+import math
 
 class Exchange(OrderBook):
 	"""
@@ -36,19 +38,19 @@ class Exchange(OrderBook):
 		price_vector = []
 		# (will buy at u_max while p* < p_low)
 		# for x in range(0, int(p_low)):
-		demand_vector.append(u_max)
-		price_vector.append(p_low)
+		# demand_vector.append(u_max)
+		# price_vector.append(p_low)
 
 		# p_low<= p* <= p_high
-		for x in range(0, int((p_high - p_low) / Exchange._min_tick_size)):
+		for x in range(0, math.ceil((p_high - p_low) / Exchange._min_tick_size)):
 			# price is every min tick increment between p_low and p_high
 			price = p_low + x * Exchange._min_tick_size
 			price_vector.append(price)
 			demand_vector.append(((p_high - price) / (p_high - p_low)) * u_max)
 
 		# p* > p_high
-		demand_vector.append(0)
-		price_vector.append(p_high)
+		# demand_vector.append(0)
+		# price_vector.append(p_high)
 
 		demand_schedule = np.column_stack((demand_vector, price_vector))
 
@@ -66,7 +68,7 @@ class Exchange(OrderBook):
 		price_vector.append(p_low)
 
 		# p_low<= p* <= p_high
-		for x in range(0, int((p_high - p_low) / Exchange._min_tick_size)):
+		for x in range(0, math.ceil((p_high - p_low) / Exchange._min_tick_size)):
 			# price is every min tick increment between p_low and p_high
 			price = p_low + x * Exchange._min_tick_size
 			price_vector.append(price)
@@ -127,17 +129,39 @@ class Exchange(OrderBook):
 					p_high = schedule[1][-1,1]
 		return p_low, p_high
 
-	def resize_schedules(self, new_length, u_max, is_demand=True):
+	def resize_schedules(self, p_low, p_high, is_demand=True):
 		if is_demand:
 			for schedule in self.aggregate_demand:
 				sched_u_max = schedule[1][0,0]
-				p_low = schedule[1][0,1]
-				num_to_prepend = (u_max - sched_u_max) / Exchange._min_tick_size
-				prepend_array = np.arange(p_low - num_to_prepend 
-										* Exchange._min_tick_size, 
-										p_low, Exchange._min_tick_size)
-				# print(prepend_array, p_low)
+				cur_p_low = schedule[1][0,1]
+				cur_p_high = schedule[1][-1,1]
+				array_length = math.ceil((p_high - p_low) / Exchange._min_tick_size)
+				num_to_prepend = (cur_p_low - p_low) / Exchange._min_tick_size
+				num_to_append = (p_high - cur_p_high) / Exchange._min_tick_size
+				prepend_array = []
+				append_array = []
+
+				for x in range(0, math.floor(num_to_prepend)):
+					prepend_array.append(sched_u_max)
+					# schedule[1][0,0].insert(0, sched_u_max)
+
+				for x in range(0, math.floor(num_to_append)):
+					append_array.append(0)
+					# schedule[1][0,0].append(0)
+
+				new_schedule = list(itertools.chain(prepend_array, schedule[1][:,0], append_array))
+				
+				price_array = np.arange(p_low, p_high, Exchange._min_tick_size)
+				# print(price_array, new_schedule)
+				# create arrays of len(prepend) and len(append) and fill them with umaxes and 0's
+
+				# then create the fully connected resized schedule
 				# prepend to_add number of sched_u_max to the schedules u_max
+				print(len(new_schedule), len(price_array), array_length)
+				combined_schedule = np.column_stack((new_schedule, price_array))
+				print(combined_schedule)
+
+				schedule[1] = combined_schedule
 				
 				# 
 		else:
