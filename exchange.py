@@ -16,7 +16,6 @@ class Exchange(OrderBook):
 	_min_tick_size = .01
 
 	def __init__(self, name, address, balance=0.0):
-		# OrderBook.__init__(self, base_currency, desired_currency)
 		self.book = object
 		self.name = name
 		self.address = address
@@ -27,6 +26,8 @@ class Exchange(OrderBook):
 		self.aggregate_supply = []
 		self.clearing_price = 0
 		self.clearing_rate = 0
+		self.avg_aggregate_demand = 0
+		self.avg_aggregate_supply = 0
 
 	def add_book(self, book):
 		self.book = book
@@ -35,6 +36,10 @@ class Exchange(OrderBook):
 		self.book.receive_message(order)
 
 	def calc_demand(self, order):
+		'''Calculates the demand schedule for an entry in the order book.
+		An nx2 array is returned that contains the order's rate at each minimum
+		price increment.  This is appended to the list of all demand schedules 
+		and is indexed by the order's order_id'''
 		p_low = order['p_low']; p_high = order['p_high']; u_max = order['u_max']
 		demand_vector = []
 		price_vector = []
@@ -53,6 +58,10 @@ class Exchange(OrderBook):
 		return demand_schedule
 
 	def calc_supply(self, order):
+		'''Calculates the supply schedule for an entry in the order book.
+		An nx2 array is returned that contains the order's rate at each minimum
+		price increment.  This is appended to the list of all supply schedules
+		and is indexed by the order's order_id'''
 		p_low = order['p_low']; p_high = order['p_high']; u_max = order['u_max']
 		supply_vector = []
 		price_vector = []
@@ -99,29 +108,33 @@ class Exchange(OrderBook):
 		return length, u_max
 
 	def get_price_range(self):
+		'''Increments through every schedule to find the lowest p_low
+		and highest p_high. These are used to resize each schedule to these
+		extremes for graphing and calculating the crossing point.'''
 		p_low = 10000000; p_high = 0
 		for schedule in self.aggregate_demand:
-			try:
-				if schedule[1][0,1] < p_low:
-					p_low = schedule[1][0,1]
-				if schedule[1][-1,1] > p_high:
-					p_high = schedule[1][-1,1]
-			except Exception as e:
-				print('oops')
+			if len(schedule[1]) == 0:
+				print('Removing empty schedule: ', schedule)
+				self.aggregate_demand.remove(schedule)
 				continue
+			if schedule[1][0,1] < p_low:
+				p_low = schedule[1][0,1]
+			if schedule[1][-1,1] > p_high:
+				p_high = schedule[1][-1,1]
 
 		for schedule in self.aggregate_supply:
-			try:
-				if schedule[1][0,1] < p_low:
-					p_low = schedule[1][0,1]
-				if schedule[1][-1,1] > p_high:
-					p_high = schedule[1][-1,1]
-			except Exception as e:
-				print('oops')
+			if len(schedule[1]) == 0:
+				print('Removing empty schedule: ', schedule)
+				self.aggregate_supply.remove(schedule)
 				continue
+			if schedule[1][0,1] < p_low:
+				p_low = schedule[1][0,1]
+			if schedule[1][-1,1] > p_high:
+				p_high = schedule[1][-1,1]
 		return p_low, p_high
 
 	def resize_schedules(self, p_low, p_high, is_demand=True):
+		'''Resizes each schedule '''
 		if is_demand:
 			for schedule in self.aggregate_demand:
 				sched_u_max = schedule[1][0,0]
@@ -140,6 +153,9 @@ class Exchange(OrderBook):
 												p_low, p_high)
 
 	def resize_demand(self, schedule, cur_p_low, cur_p_high, sched_u_max, p_low, p_high):
+		'''This will resize a demand schedule to fit the p_low and p_high parameters.
+		The schedule's u_max will be prepended to the schdule and 0's will be appended
+		to the schedule until the length is correct. '''
 		array_length = math.ceil((p_high - p_low) / Exchange._min_tick_size)
 		num_to_prepend = (cur_p_low - p_low) / Exchange._min_tick_size
 		num_to_append = (p_high - cur_p_high) / Exchange._min_tick_size
@@ -165,6 +181,9 @@ class Exchange(OrderBook):
 		return combined_schedule
 
 	def resize_supply(self, schedule, cur_p_low, cur_p_high, sched_u_max, p_low, p_high):
+		'''This will resize a supply schedule to fit the p_low and p_high parameters.
+		0's will be prepended to the schdule and the schedule's u_max will be appended
+		to the schedule until the length is correct. '''
 		array_length = math.ceil((p_high - p_low) / Exchange._min_tick_size)
 		num_to_prepend = (cur_p_low - p_low) / Exchange._min_tick_size
 		num_to_append = (p_high - cur_p_high) / Exchange._min_tick_size
@@ -190,6 +209,7 @@ class Exchange(OrderBook):
 		return combined_schedule
 
 	def calc_aggregate_demand(self):
+		# Averages every schedule's rate at each price increment
 		price_array = self.aggregate_demand[0][1][:,1]
 		average_demand = np.empty(shape=(len(price_array)))
 		for schedule in self.aggregate_demand:
@@ -199,6 +219,7 @@ class Exchange(OrderBook):
 		return np.column_stack((average_demand, price_array))
 
 	def calc_aggregate_supply(self):
+		# Averages every schedule's rate at each price increment
 		price_array = self.aggregate_supply[0][1][:,1]
 		average_supply = np.empty(shape=(len(price_array)))
 		for schedule in self.aggregate_supply:
@@ -208,23 +229,28 @@ class Exchange(OrderBook):
 		return np.column_stack((average_supply, price_array))
 
 	def calc_crossing(self):
-		agg_demand = self.calc_aggregate_demand()
-		agg_supply = self.calc_aggregate_supply()
+		# Get average schedules
+		self.avg_aggregate_demand = self.calc_aggregate_demand()
+		self.avg_aggregate_supply = self.calc_aggregate_supply()
+		best_bid = 0
+		best_ask = 0
 
-		# Get all asks and bids combined in descending order
-		crossing_point = 0
-		for x in range(0, len(agg_demand[:,0])):
-			if agg_demand[x,0] <= agg_supply[x,0]:
-				self.clearing_price = (agg_supply[x,1] + agg_demand[x,1]) / 2
-				self.clearing_rate = (agg_supply[x,0] + agg_demand[x,0]) / 2
+		# Find the first index where demand <= supply
+		for x in range(0, len(self.avg_aggregate_demand[:,0])):
+			if self.avg_aggregate_demand[x,0] <= self.avg_aggregate_supply[x,0]:
+				# Set the clearing price to be the average of these two indices
+				self.clearing_price = (self.avg_aggregate_supply[x,1] + self.avg_aggregate_demand[x,1]) / 2
+				self.clearing_rate = (self.avg_aggregate_supply[x,0] + self.avg_aggregate_demand[x,0]) / 2
+				best_bid = self.avg_aggregate_demand[x,0]
+				best_ask = self.avg_aggregate_supply[x,0]
 				break
-		print(self.clearing_price, self.clearing_rate)
+		print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
+		print(f'best bid: {best_bid}, best ask:{best_ask}')
 
-		return agg_demand, agg_supply
+		return best_bid, best_ask
+
 
 	def hold_batch(self):
-		# holds a batch and then recursively calls its self after batch_time
-
 		# Aggregate the supply and demand for what is in the book
 		self.calc_each_supply()
 		self.calc_each_demand()
@@ -232,10 +258,12 @@ class Exchange(OrderBook):
 		# Find the min and max prices		
 		p_low, p_high = self.get_price_range()
 
+		# Resize all schedules to be same length for easier math
 		self.resize_schedules(p_low, p_high, True)
 		self.resize_schedules(p_low, p_high, False)
 		
-		return self.calc_crossing()
+		# Find the average aggregate schedules and then find p*
+		self.calc_crossing()
 
 	def _get_balance(self):
 		return self.balance

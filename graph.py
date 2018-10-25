@@ -21,20 +21,20 @@ class Graph():
 		pyplot.title('order books supply and demands')
 		pyplot.show()
 
-	def graph_average_aggregates(self, supply, demand):
+	def graph_average_aggregates(self):
 		self.fig = pyplot.figure(1)
 
 		# plot supply
-		pyplot.plot(supply[:,1], supply[:,0], 'b')
+		pyplot.plot(self.exchange.avg_aggregate_demand[:,1], self.exchange.avg_aggregate_supply[:,0], 'b')
 
 		# plot demand
-		pyplot.plot(demand[:,1], demand[:,0], 'r')
+		pyplot.plot(self.exchange.avg_aggregate_demand[:,1], self.exchange.avg_aggregate_demand[:,0], 'r')
 
 		cp = self.exchange.clearing_price
 		cu = self.exchange.clearing_rate
 
 		# graph the horizontal u line
-		x_0 = demand[0, 1]
+		x_0 = self.exchange.avg_aggregate_demand[0, 1]
 		price_x_array = np.arange(x_0, cp, 1)
 		price_y_array = []
 		for x in range(0, len(price_x_array)):
@@ -49,5 +49,8 @@ class Graph():
 		pyplot.plot(x_coords, y_coords, 'g.')
 
 		pyplot.title(f'avg of aggregates, p*={cp}, u*={cu}')
+		pyplot.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
+		pyplot.ylabel(f'(Quantity Traded (shares/batch)')
+
 		
 		self.fig.show()

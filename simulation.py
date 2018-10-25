@@ -53,8 +53,6 @@ def send_orders(num_orders, exchange):
 	while len(exchange.book.message_queue) > 0:
 		exchange.book.process_messages()
 
-	exchange.book.pretty_book()
-
 
 
 def main():
@@ -71,14 +69,13 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	send_orders(10, ex)
-	
-	new_demand, new_supply = ex.hold_batch()
+	send_orders(1000, ex)
 
-	# new_demand = ex.calc_aggregate_demand()
-	# new_supply = ex.calc_aggregate_supply()
+	ex.book.pretty_book()
 
-	graph.graph_average_aggregates(new_supply, new_demand)
+	ex.hold_batch()
+
+	graph.graph_average_aggregates()
 
 	graph.graph_all_aggregates()
 
