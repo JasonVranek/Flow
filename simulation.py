@@ -30,11 +30,11 @@ def setup_traders(num_traders):
 		# name = 'Trader' + str(i)
 		name = f'Trader{i}'
 		trader = Trader(name, random.randint(50, 300))
-		trader.new_order(random.choice(order_type), 		# 'buy', 'sell', 'c'
-							random.randint(100, 120), 	# p_high
-							random.randint(80, 100),  	# p_low
+		trader.new_order(random.choice(order_type), 		# 'buy', 'sell'
+							random.randint(100, 120), 		# p_high
+							random.randint(80, 100),  		# p_low
 							random.randint(0, 500), 		# u_max
-							random.randint(1000, 2000))	# q_max
+							random.randint(1000, 2000))		# q_max
 		traders.append(trader)
 		print(trader.current_order)
 	return traders
@@ -78,7 +78,7 @@ def main():
 	# new_demand = ex.calc_aggregate_demand()
 	# new_supply = ex.calc_aggregate_supply()
 
-	graph.graph_supply_demand(new_supply, new_demand)
+	graph.graph_average_aggregates(new_supply, new_demand)
 
 	graph.graph_all_aggregates()
 

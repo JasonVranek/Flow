@@ -25,6 +25,8 @@ class Exchange(OrderBook):
 		self.demand = []
 		self.aggregate_demand = []
 		self.aggregate_supply = []
+		self.clearing_price = 0
+		self.clearing_rate = 0
 
 	def add_book(self, book):
 		self.book = book
@@ -99,16 +101,24 @@ class Exchange(OrderBook):
 	def get_price_range(self):
 		p_low = 10000000; p_high = 0
 		for schedule in self.aggregate_demand:
-			if schedule[1][0,1] < p_low:
-				p_low = schedule[1][0,1]
-			if schedule[1][-1,1] > p_high:
-				p_high = schedule[1][-1,1]
+			try:
+				if schedule[1][0,1] < p_low:
+					p_low = schedule[1][0,1]
+				if schedule[1][-1,1] > p_high:
+					p_high = schedule[1][-1,1]
+			except Exception as e:
+				print('oops')
+				continue
 
 		for schedule in self.aggregate_supply:
-			if schedule[1][0,1] < p_low:
-				p_low = schedule[1][0,1]
-			if schedule[1][-1,1] > p_high:
-				p_high = schedule[1][-1,1]
+			try:
+				if schedule[1][0,1] < p_low:
+					p_low = schedule[1][0,1]
+				if schedule[1][-1,1] > p_high:
+					p_high = schedule[1][-1,1]
+			except Exception as e:
+				print('oops')
+				continue
 		return p_low, p_high
 
 	def resize_schedules(self, p_low, p_high, is_demand=True):
@@ -186,7 +196,6 @@ class Exchange(OrderBook):
 			average_demand = np.add(average_demand, schedule[1][:,0])
 		average_demand = np.divide(average_demand, len(self.aggregate_demand))
 		
-		print(price_array)
 		return np.column_stack((average_demand, price_array))
 
 	def calc_aggregate_supply(self):
@@ -196,14 +205,20 @@ class Exchange(OrderBook):
 			average_supply = np.add(average_supply, schedule[1][:,0])
 		average_supply = np.divide(average_supply, len(self.aggregate_supply))
 		
-		print(price_array)
 		return np.column_stack((average_supply, price_array))
 
 	def calc_crossing(self):
 		agg_demand = self.calc_aggregate_demand()
 		agg_supply = self.calc_aggregate_supply()
 
-
+		# Get all asks and bids combined in descending order
+		crossing_point = 0
+		for x in range(0, len(agg_demand[:,0])):
+			if agg_demand[x,0] <= agg_supply[x,0]:
+				self.clearing_price = (agg_supply[x,1] + agg_demand[x,1]) / 2
+				self.clearing_rate = (agg_supply[x,0] + agg_demand[x,0]) / 2
+				break
+		print(self.clearing_price, self.clearing_rate)
 
 		return agg_demand, agg_supply
 
