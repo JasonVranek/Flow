@@ -68,11 +68,11 @@ class Exchange(OrderBook):
 
 		return supply_schedule
 
-	def calc_aggregate_demand(self):
+	def calc_each_demand(self):
 		for order in self.book.bids:
 			self.calc_demand(order)
 
-	def calc_aggregate_supply(self):
+	def calc_each_supply(self):
 		for order in self.book.asks:
 			self.calc_supply(order)
 
@@ -179,15 +179,40 @@ class Exchange(OrderBook):
 
 		return combined_schedule
 
+	def calc_aggregate_demand(self):
+		price_array = self.aggregate_demand[0][1][:,1]
+		average_demand = np.empty(shape=(len(price_array)))
+		for schedule in self.aggregate_demand:
+			average_demand = np.add(average_demand, schedule[1][:,0])
+		average_demand = np.divide(average_demand, len(self.aggregate_demand))
+		
+		print(price_array)
+		return np.column_stack((average_demand, price_array))
+
+	def calc_aggregate_supply(self):
+		price_array = self.aggregate_supply[0][1][:,1]
+		average_supply = np.empty(shape=(len(price_array)))
+		for schedule in self.aggregate_supply:
+			average_supply = np.add(average_supply, schedule[1][:,0])
+		average_supply = np.divide(average_supply, len(self.aggregate_supply))
+		
+		print(price_array)
+		return np.column_stack((average_supply, price_array))
+
 	def calc_crossing(self):
-		pass
+		agg_demand = self.calc_aggregate_demand()
+		agg_supply = self.calc_aggregate_supply()
+
+
+
+		return agg_demand, agg_supply
 
 	def hold_batch(self):
 		# holds a batch and then recursively calls its self after batch_time
 
 		# Aggregate the supply and demand for what is in the book
-		self.calc_aggregate_supply()
-		self.calc_aggregate_demand()
+		self.calc_each_supply()
+		self.calc_each_demand()
 
 		# Find the min and max prices		
 		p_low, p_high = self.get_price_range()

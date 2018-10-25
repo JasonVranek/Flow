@@ -73,7 +73,12 @@ def main():
 
 	send_orders(10, ex)
 	
-	ex.hold_batch()
+	new_demand, new_supply = ex.hold_batch()
+
+	# new_demand = ex.calc_aggregate_demand()
+	# new_supply = ex.calc_aggregate_supply()
+
+	graph.graph_supply_demand(new_supply, new_demand)
 
 	graph.graph_all_aggregates()
 
