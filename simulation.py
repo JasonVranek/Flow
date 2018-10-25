@@ -1,10 +1,12 @@
 from trader import Trader
 from order_book import OrderBook
 from exchange import Exchange
+from graph import Graph
 
 import random
 from matplotlib import pyplot
 import numpy as np
+import time
 
 def test_book():
 	book = OrderBook('ETH', 'BTC')
@@ -23,6 +25,7 @@ def setup_traders(num_traders):
 	traders = []
 	# order_type = ['buy', 'sell', 'C', 'poop']
 	order_type = ['buy', 'sell']
+	print(f'Creating {num_traders} new traders and sending orders:')
 	for i in range(0, num_traders):
 		# name = 'Trader' + str(i)
 		name = f'Trader{i}'
@@ -36,6 +39,23 @@ def setup_traders(num_traders):
 		print(trader.current_order)
 	return traders
 
+def send_orders(num_orders, exchange):
+	# Create new trader trader
+	traders = setup_traders(num_orders)
+
+	# Send an order to the exchange's order book
+	for trader in traders:
+		exchange.get_order(trader.current_order)
+
+	print('Received:', len(exchange.book.message_queue), 'messages')
+
+	# Process any messages in the book's queue
+	while len(exchange.book.message_queue) > 0:
+		exchange.book.process_messages()
+
+	exchange.book.pretty_book()
+
+
 
 def main():
 	# Create the exchange
@@ -47,70 +67,17 @@ def main():
 	# Add the order book to the exchange
 	ex.add_book(book)
 
-	# Create a new trader
-	traders = setup_traders(10)
+	# Create the graph object
+	graph = Graph()
+	graph.exchange = ex
 
-	# Send an order to the exchange's order book
-	for trader in traders:
-		# ex.book.receive_message(trader.current_order)
-		ex.get_order(trader.current_order)
+	send_orders(10, ex)
+	
+	ex.hold_batch()
 
-	print('Received:', len(ex.book.message_queue), 'messages')
-
-	# Process any messages in the book's queue
-	while len(ex.book.message_queue) > 0:
-		ex.book.process_messages()
-
-	ex.book.pretty_book()
-
-	# print('TESTING CANCEL ******************************')
-	# for trader in traders:
-	# 	trader.new_order('C', None, None, None, None)
-	# 	ex.get_order(trader.current_order)
-
-	# while len(ex.book.message_queue) > 0:
-	# 	ex.book.process_messages()
-
-	# ex.book.pretty_book()
+	graph.graph_all_aggregates()
 
 
-	# jason = test_trader()
-	# ex.get_order(jason.current_order)
-	# ex.book.process_messages()
-	# ex.book.pretty_book()
-
-	ex.calc_aggregate_demand()
-	for x in range(0,1000000):
-		pass
-	ex.calc_aggregate_supply()
-	# print(ex.aggregate_supply)
-	# print(ex.aggregate_demand)
-	# demand_schedule = ex.calc_demand(jason.current_order)
-
-	# supply_schedule = ex.calc_supply(jason.current_order)
-	# print('supply', supply_schedule[:,0])
-	# print('price', supply_schedule[:,1])
-
-	# length, u_max = ex.find_longest_schedule(True)
-	# print('largest demand', length, u_max)
-	# ex.resize_schedules(length, u_max, True)
-	# print('largest supply', ex.find_longest_schedule(False))
-	ex.book.pretty_book()
-
-	p_low, p_high = ex.get_price_range()
-	ex.resize_schedules(p_low, p_high, True)
-
-	# p_low, p_high = ex.get_price_range(False)
-	ex.resize_schedules(p_low, p_high, False)
-
-
-	for ss in ex.aggregate_supply:
-		pyplot.plot(ss[1][:,1], ss[1][:,0], 'b')
-
-	for dd in ex.aggregate_demand:
-		pyplot.plot(dd[1][:,1], dd[1][:,0], 'r')
-
-	pyplot.show()
 
 
 

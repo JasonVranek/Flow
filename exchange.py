@@ -36,10 +36,6 @@ class Exchange(OrderBook):
 		p_low = order['p_low']; p_high = order['p_high']; u_max = order['u_max']
 		demand_vector = []
 		price_vector = []
-		# (will buy at u_max while p* < p_low)
-		# for x in range(0, int(p_low)):
-		# demand_vector.append(u_max)
-		# price_vector.append(p_low)
 
 		# p_low<= p* <= p_high
 		for x in range(0, math.ceil((p_high - p_low) / Exchange._min_tick_size)):
@@ -47,10 +43,6 @@ class Exchange(OrderBook):
 			price = p_low + x * Exchange._min_tick_size
 			price_vector.append(price)
 			demand_vector.append(((p_high - price) / (p_high - p_low)) * u_max)
-
-		# p* > p_high
-		# demand_vector.append(0)
-		# price_vector.append(p_high)
 
 		demand_schedule = np.column_stack((demand_vector, price_vector))
 
@@ -62,10 +54,6 @@ class Exchange(OrderBook):
 		p_low = order['p_low']; p_high = order['p_high']; u_max = order['u_max']
 		supply_vector = []
 		price_vector = []
-		# (will buy at u_max while p* < p_low)
-		# for x in range(0, int(p_low)):
-		supply_vector.append(0)
-		price_vector.append(p_low)
 
 		# p_low<= p* <= p_high
 		for x in range(0, math.ceil((p_high - p_low) / Exchange._min_tick_size)):
@@ -73,11 +61,6 @@ class Exchange(OrderBook):
 			price = p_low + x * Exchange._min_tick_size
 			price_vector.append(price)
 			supply_vector.append(u_max + ((price - p_high) / (p_high - p_low)) * u_max)
-
-		# p* > p_high
-		# for x in range(order['p_high'], int(order['p_high']*1.50)):
-		supply_vector.append(u_max)
-		price_vector.append(p_high)
 
 		supply_schedule = np.column_stack((supply_vector, price_vector))
 
@@ -201,7 +184,18 @@ class Exchange(OrderBook):
 
 	def hold_batch(self):
 		# holds a batch and then recursively calls its self after batch_time
-		pass
+
+		# Aggregate the supply and demand for what is in the book
+		self.calc_aggregate_supply()
+		self.calc_aggregate_demand()
+
+		# Find the min and max prices		
+		p_low, p_high = self.get_price_range()
+
+		self.resize_schedules(p_low, p_high, True)
+		self.resize_schedules(p_low, p_high, False)
+		
+		return self.calc_crossing()
 
 	def _get_balance(self):
 		return self.balance
