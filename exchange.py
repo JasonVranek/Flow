@@ -128,21 +128,19 @@ class Exchange(OrderBook):
 		to the schedule until the length is correct. '''
 		try:
 			# Create an empty matrix that is the size of the new max_price
-			new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
+			# new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
 
 			length_to_add = math.ceil((self.max_price + 1) / Exchange._min_tick_size) - len(self.aggregate_supply[:,0])
-			print('Adding: ', length_to_add, 'rows')
 
 			row_to_append = np.transpose(self.aggregate_supply[-1, :])
-			print('appending:', row_to_append)
 
-			for x in range(0, length_to_add):
-				self.aggregate_supply = np.append(self.aggregate_supply, row_to_append)
+			# Create length_to_add number duplicates of last row to append
+			rows = np.tile(row_to_append, [length_to_add, 1])
 
-			# Each schedule's u_max should be appended until the length is correct
+			# Append the rows and resize the matrix for new shape
+			self.aggregate_supply = np.append(self.aggregate_supply, rows)
+			self.aggregate_supply.resize([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
 
-			# Resize the aggregate supply to these new dimensions
-			self.aggregate_supply.resize(new_matrix.shape)
 		except AttributeError:
 			print('No need to resize since aggregate matrix is empty!')
 			return
@@ -158,7 +156,7 @@ class Exchange(OrderBook):
 			average_demand = np.add(average_demand, schedule)
 
 		# Divide by the number of schedules in the matrix
-		average_demand = np.divide(average_demand, len(self.aggregate_demand[0,:]))
+		# average_demand = np.divide(average_demand, len(self.aggregate_demand[0,:]))
 
 		return average_demand
 
@@ -170,7 +168,7 @@ class Exchange(OrderBook):
 			average_supply = np.add(average_supply, schedule)
 
 		# Divide by the number of schedules in the matrix
-		average_supply = np.divide(average_supply, len(self.aggregate_supply[0,:]))
+		# average_supply = np.divide(average_supply, len(self.aggregate_supply[0,:]))
 
 		return average_supply
 

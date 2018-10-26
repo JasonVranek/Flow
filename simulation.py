@@ -3,6 +3,8 @@ from order_book import OrderBook
 from exchange import Exchange
 from graph import Graph
 
+import sys
+
 import random
 from matplotlib import pyplot
 import numpy as np
@@ -55,6 +57,10 @@ def send_orders(num_orders, exchange):
 
 
 def main():
+	num_orders = 50
+	if len(sys.argv) > 1:
+		num_orders = int(sys.argv[1])
+	print(num_orders)
 	# Create the exchange
 	ex = Exchange('DEX', 'address', 1_000)
 
@@ -68,7 +74,7 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	send_orders(50, ex)
+	send_orders(num_orders, ex)
 
 	ex.book.pretty_book()
 
