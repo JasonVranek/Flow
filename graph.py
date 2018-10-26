@@ -39,20 +39,23 @@ class Graph():
 		cp = self.exchange.clearing_price
 		cu = self.exchange.clearing_rate
 
-		# # graph the horizontal u line
-		# x_0 = self.exchange.avg_aggregate_demand[0, 1]
-		# price_x_array = np.arange(x_0, cp, 1)
-		# price_y_array = []
-		# for x in range(0, len(price_x_array)):
-		# 	price_y_array.append(cu)
-		# pyplot.plot(price_x_array, price_y_array, 'g.')
+		# graph the horizontal u line
+		cu_array = []
+		for x in range(0, int(cp)):
+			cu_array.append(cu)
 
-		# # graph the vertical price line
-		# y_coords = np.arange(0, cu, cu / 15)
-		# x_coords = []
-		# for x in range(0, len(y_coords)):
-		# 	x_coords.append(cp)
-		# pyplot.plot(x_coords, y_coords, 'g.')
+		# graph the vertical p line
+		cp_array = []
+		for x in range(0, int(cu)):
+			cp_array.append(cp)
+
+		pyplot.plot(range(0, int(cp)), cu_array, 'g-')
+
+		pyplot.plot(cp_array, range(0, int(cu)), 'g-')
+		
+
+		# graph the vertical price line
+		
 
 		pyplot.title(f'avg of aggregates, p*={cp}, u*={cu}')
 		pyplot.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
