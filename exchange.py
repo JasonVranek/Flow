@@ -149,28 +149,14 @@ class Exchange(OrderBook):
 			return
 		
 	def calc_aggregate_demand(self):
-		# Averages every schedule's rate at each price increment
-		# Create an empty array the size of the prices
-		average_demand = np.zeros([len(self.aggregate_demand[:,0])])
-		for schedule in self.aggregate_demand.T:
-			average_demand = np.add(average_demand, schedule)
-
-		# Divide by the number of schedules in the matrix
-		# average_demand = np.divide(average_demand, len(self.aggregate_demand[0,:]))
-
-		return average_demand
+		# Sums every schedule's demand at each price increment
+		cum_demand = self.aggregate_demand.sum(axis=1)
+		return cum_demand
 
 	def calc_aggregate_supply(self):
-		# Averages every schedule's rate at each price increment
-		# Create an empty array the size of the prices
-		average_supply = np.zeros([len(self.aggregate_supply[:,0])])
-		for schedule in self.aggregate_supply.T:
-			average_supply = np.add(average_supply, schedule)
-
-		# Divide by the number of schedules in the matrix
-		# average_supply = np.divide(average_supply, len(self.aggregate_supply[0,:]))
-
-		return average_supply
+		# Sums every schedule's supply at each price increment
+		cum_supply = self.aggregate_supply.sum(axis=1)
+		return cum_supply
 
 	def calc_crossing(self):
 		# Get average schedules
