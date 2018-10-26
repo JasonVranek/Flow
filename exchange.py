@@ -14,21 +14,19 @@ class Exchange(OrderBook):
 	"""
 
 	_batch_time = 5
-	_min_tick_size = 1
+	_min_tick_size = .1
 
 	def __init__(self, name, address, balance=0.0):
 		self.book = object
 		self.name = name
 		self.address = address
 		self.balance = balance
-		self.supply = []
-		self.demand = []
 		self.aggregate_demand = None
 		self.aggregate_supply = None
 		self.clearing_price = 0
 		self.clearing_rate = 0
-		self.avg_aggregate_demand = 0
-		self.avg_aggregate_supply = 0
+		self.avg_aggregate_demand = []
+		self.avg_aggregate_supply = []
 		self.message_queue = []
 		self.max_price = 0
 		self.min_price = 10000000
@@ -100,64 +98,6 @@ class Exchange(OrderBook):
 		except Exception as e:
 			print('Failed to append supply schedule: ', supply_vector)
 
-	def calc_each_demand(self):
-		for order in self.book.bids:
-			self.calc_demand(order)
-
-	def calc_each_supply(self):
-		for order in self.book.asks:
-			self.calc_supply(order)
-
-	def find_longest_schedule(self, is_demand=True):
-		u_max = 0
-		length = 0	
-		if is_demand:
-			for schedule in self.aggregate_demand:
-				if schedule[1][0,0] > u_max:
-					u_max = schedule[1][0,0]
-				if len(schedule[1][:,0]) > length:
-					length = len(schedule[1][:,0])
-		else:
-			for schedule in self.aggregate_supply:
-				# The u_max is the last item in the array
-				if schedule[1][-1,0] > u_max:
-					u_max = schedule[1][-1,0]
-				if len(schedule[1][:,0]) > length:
-					length = len(schedule[1][:,0])
-
-		# search
-		return length, u_max
-
-	def get_price_range(self):
-		'''Increments through every schedule to find the lowest p_low
-		and highest p_high. These are used to resize each schedule to these
-		extremes for graphing and calculating the crossing point.'''
-		# p_low = 10000000; p_high = 0
-		for schedule in self.aggregate_demand:
-			if len(schedule[1]) == 0:
-				print('Removing empty schedule: ', schedule)
-				self.aggregate_demand.remove(schedule)
-				# Send message to queue to be recalculated
-				self.message_queue.append(schedule)
-				continue
-			if schedule[1][0,1] < self.p_low:
-				self.p_low = schedule[1][0,1]
-			if schedule[1][-1,1] > p_high:
-				self.p_high = schedule[1][-1,1]
-
-		for schedule in self.aggregate_supply:
-			if len(schedule[1]) == 0:
-				print('Removing empty schedule: ', schedule)
-				self.aggregate_supply.remove(schedule)
-				# Send message to queue to be recalculated
-				self.message_queue.append(schedule)
-				continue
-			if schedule[1][0,1] < self.p_low:
-				self.p_low = schedule[1][0,1]
-			if schedule[1][-1,1] > self.p_high:
-				self.p_high = schedule[1][-1,1]
-		return self.p_low, self.p_high
-
 	def resize_schedules(self):
 		'''Resizes each schedule '''
 		self.resize_demand()
@@ -172,50 +112,61 @@ class Exchange(OrderBook):
 		new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_bids])
 
 		# Resize the aggregate demand to these new dimensions
-		self.aggregate_demand.resize(new_matrix.shape)
+		try:
+			self.aggregate_demand.resize(new_matrix.shape)
+		except AttributeError:
+			print('No need to resize since aggregate matrix is empty!')
 
 
 	def resize_supply(self):
 		'''This will resize a supply schedule to fit the p_low and p_high parameters.
 		0's will be prepended to the schdule and the schedule's u_max will be appended
 		to the schedule until the length is correct. '''
+		try:
+			# Create an empty matrix that is the size of the new max_price
+			new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
 
-		# Create an empty matrix that is the size of the new max_price
-		new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
+			length_to_add = math.ceil((self.max_price + 1) / Exchange._min_tick_size) - len(self.aggregate_supply[:,0])
+			print('Adding: ', length_to_add, 'rows')
 
-		length_to_add = math.ceil((self.max_price + 1) / Exchange._min_tick_size) - len(self.aggregate_supply[:,0])
-		print('Adding: ', length_to_add, 'rows')
+			row_to_append = np.transpose(self.aggregate_supply[-1, :])
+			print('appending:', row_to_append)
 
-		row_to_append = np.transpose(self.aggregate_supply[-1, :])
-		print('appending:', row_to_append)
+			for x in range(0, length_to_add):
+				self.aggregate_supply = np.append(self.aggregate_supply, row_to_append)
 
-		for x in range(0, length_to_add):
-			self.aggregate_supply = np.append(self.aggregate_supply, row_to_append)
+			# Each schedule's u_max should be appended until the length is correct
 
-		# Each schedule's u_max should be appended until the length is correct
-
-		# Resize the aggregate supply to these new dimensions
-		self.aggregate_supply.resize(new_matrix.shape)
+			# Resize the aggregate supply to these new dimensions
+			self.aggregate_supply.resize(new_matrix.shape)
+		except AttributeError:
+			print('No need to resize since aggregate matrix is empty!')
+		except TypeError:
+			print('No need to resize since aggregate matrix is empty!')
 		
 	def calc_aggregate_demand(self):
 		# Averages every schedule's rate at each price increment
-		price_array = self.aggregate_demand[0][1][:,1]
-		average_demand = np.empty(shape=(len(price_array)))
-		for schedule in self.aggregate_demand:
-			average_demand = np.add(average_demand, schedule[1][:,0])
-		average_demand = np.divide(average_demand, len(self.aggregate_demand))
-		
-		return np.column_stack((average_demand, price_array))
+		# Create an empty array the size of the prices
+		average_demand = np.zeros([len(self.aggregate_demand[:,0])])
+		for schedule in self.aggregate_demand.T:
+			average_demand = np.add(average_demand, schedule)
+
+		# Divide by the number of schedules in the matrix
+		average_demand = np.divide(average_demand, len(self.aggregate_demand[0,:]))
+
+		return average_demand
 
 	def calc_aggregate_supply(self):
 		# Averages every schedule's rate at each price increment
-		price_array = self.aggregate_supply[0][1][:,1]
-		average_supply = np.empty(shape=(len(price_array)))
-		for schedule in self.aggregate_supply:
-			average_supply = np.add(average_supply, schedule[1][:,0])
-		average_supply = np.divide(average_supply, len(self.aggregate_supply))
-		
-		return np.column_stack((average_supply, price_array))
+		# Create an empty array the size of the prices
+		average_supply = np.zeros([len(self.aggregate_supply[:,0])])
+		for schedule in self.aggregate_supply.T:
+			average_supply = np.add(average_supply, schedule)
+
+		# Divide by the number of schedules in the matrix
+		average_supply = np.divide(average_supply, len(self.aggregate_supply[0,:]))
+
+		return average_supply
 
 	def calc_crossing(self):
 		# Get average schedules
@@ -225,13 +176,13 @@ class Exchange(OrderBook):
 		best_ask = 0
 
 		# Find the first index where demand <= supply
-		for x in range(0, len(self.avg_aggregate_demand[:,0])):
-			if self.avg_aggregate_demand[x,0] <= self.avg_aggregate_supply[x,0]:
+		for x in range(0, len(self.avg_aggregate_demand)):
+			if self.avg_aggregate_demand[x] <= self.avg_aggregate_supply[x]:
 				# Set the clearing price to be the average of these two indices
-				self.clearing_price = (self.avg_aggregate_supply[x,1] + self.avg_aggregate_demand[x,1]) / 2
-				self.clearing_rate = (self.avg_aggregate_supply[x,0] + self.avg_aggregate_demand[x,0]) / 2
-				best_bid = self.avg_aggregate_demand[x,0]
-				best_ask = self.avg_aggregate_supply[x,0]
+				self.clearing_price = x * Exchange._min_tick_size
+				self.clearing_rate = (self.avg_aggregate_supply[x] + self.avg_aggregate_demand[x]) / 2
+				best_bid = self.avg_aggregate_demand[x]
+				best_ask = self.avg_aggregate_supply[x]
 				break
 		print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
 		print(f'best bid: {best_bid}, best ask:{best_ask}')
@@ -240,24 +191,12 @@ class Exchange(OrderBook):
 
 
 	def hold_batch(self):
-		# Aggregate the supply and demand for what is in the book
-		# self.calc_each_supply()
-		# self.calc_each_demand()
+		# Aggregate the supply and demand for what is the book's new_message queue
 		while len(self.book.new_messages) > 0:
 			self.process_messages()
-
-		# Find the min and max prices		
-		p_low, p_high = self.get_price_range()
-
-		# Resize all schedules to be same length for easier math
-		self.resize_schedules(p_low, p_high, True)
-		self.resize_schedules(p_low, p_high, False)
 		
 		# Find the average aggregate schedules and then find p*
 		self.calc_crossing()
-
-	def get_new_messages(self):
-		pass
 
 	def process_messages(self):
 		'''FIFO Queue for the exchange to process NEW orders from exchange'''
@@ -269,6 +208,7 @@ class Exchange(OrderBook):
 					self.remove_schedule(message)
 					# Await response then delete from new_messages queue
 					self.book.new_messages.remove(message)
+					# self.check_price(message) # need to update if it was the best bid
 				elif order_type == 'buy':
 					self.check_price(message)
 					self.calc_demand(message)

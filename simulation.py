@@ -31,8 +31,8 @@ def setup_traders(num_traders):
 		name = f'Trader{i}'
 		trader = Trader(name, random.randint(50, 300))
 		trader.new_order(random.choice(order_type), 		# 'buy', 'sell'
-							random.randint(100.1, 120), 		# p_high
-							random.randint(80, 99.9),  		# p_low
+							random.randint(100, 120), 		# p_high
+							random.randint(80, 100),  		# p_low
 							random.randint(400, 500), 		# u_max
 							random.randint(1000, 2000))		# q_max
 		traders.append(trader)
@@ -69,11 +69,11 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	send_orders(5, ex)
+	send_orders(10, ex)
 
 	ex.book.pretty_book()
 
-	# ex.hold_batch()
+	ex.hold_batch()
 
 	# graph.graph_average_aggregates()
 
@@ -81,16 +81,9 @@ def main():
 
 	# print(ex.message_queue)
 
-	while len(ex.book.new_messages) > 0:
-		ex.process_messages()
+	# while len(ex.book.new_messages) > 0:
+	# 	ex.process_messages()
 
-	# for x in range(0,10000000):
-	# 	pass
-	# print(ex.aggregate_demand.shape, ex.aggregate_demand)
-	# print(ex.aggregate_supply.shape, ex.aggregate_supply)
-	# ex.max_price = 130
-	# ex.resize_demand()
-	# ex.resize_supply()
 	# print(ex.aggregate_demand, ex.aggregate_supply)
 
 
