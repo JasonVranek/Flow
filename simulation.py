@@ -75,16 +75,9 @@ def main():
 
 	ex.hold_batch()
 
-	# graph.graph_average_aggregates()
+	graph.graph_average_aggregates()
 
-	# graph.graph_all_aggregates()
-
-	# print(ex.message_queue)
-
-	# while len(ex.book.new_messages) > 0:
-	# 	ex.process_messages()
-
-	# print(ex.aggregate_demand, ex.aggregate_supply)
+	graph.graph_all_aggregates()
 
 
 
