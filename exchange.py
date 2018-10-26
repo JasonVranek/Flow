@@ -303,7 +303,7 @@ class Exchange(OrderBook):
 			print('Old p_high: ', self.max_price, 'new p_high: ', message['p_high'])
 			self.max_price = message['p_high'] 
 			print('Uh Oh, need to resize my aggregates!')
-			# self.resize_schedules()
+			self.resize_schedules()
 
 		
 
