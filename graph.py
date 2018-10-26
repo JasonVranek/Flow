@@ -39,25 +39,24 @@ class Graph():
 		cp = self.exchange.clearing_price
 		cu = self.exchange.clearing_rate
 
-		# graph the horizontal u line
+		# graph the horizontal rate line
 		cu_array = []
 		for x in range(0, int(cp)):
 			cu_array.append(cu)
+		pyplot.plot(range(0, int(cp)), cu_array, 'g-')
 
-		# graph the vertical p line
+		# graph the vertical price line
 		cp_array = []
 		for x in range(0, int(cu)):
 			cp_array.append(cp)
-
-		pyplot.plot(range(0, int(cp)), cu_array, 'g-')
-
 		pyplot.plot(cp_array, range(0, int(cu)), 'g-')
 		
-
-		# graph the vertical price line
+		pyplot.title(f'avg of aggregates')#, p*={cp}, u*={cu} \n \
+			#best_bid={self.exchange.best_bid}, best_ask={self.exchange.best_ask}')
 		
+		text_str = f'p*={cp},\nu*={cu},\nu_best_bid={self.exchange.best_bid},\nu_best_ask={self.exchange.best_ask}\n'
+		pyplot.text(0.05, 0.5, text_str)
 
-		pyplot.title(f'avg of aggregates, p*={cp}, u*={cu}')
 		pyplot.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
 		pyplot.ylabel(f'(Quantity Traded (shares/batch)')
 

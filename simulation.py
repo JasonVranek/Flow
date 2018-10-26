@@ -27,12 +27,11 @@ def setup_traders(num_traders):
 	order_type = ['buy', 'sell']
 	print(f'Creating {num_traders} new traders and sending orders:')
 	for i in range(0, num_traders):
-		# name = 'Trader' + str(i)
 		name = f'Trader{i}'
 		trader = Trader(name, random.randint(50, 300))
 		trader.new_order(random.choice(order_type), 		# 'buy', 'sell'
-							random.randint(100, 120), 		# p_high
-							random.randint(80, 100),  		# p_low
+							random.randint(101, 120), 		# p_high
+							random.randint(80, 99),  		# p_low
 							random.randint(400, 500), 		# u_max
 							random.randint(1000, 2000))		# q_max
 		traders.append(trader)
@@ -69,7 +68,7 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	send_orders(10, ex)
+	send_orders(50, ex)
 
 	ex.book.pretty_book()
 

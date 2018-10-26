@@ -14,7 +14,7 @@ class Exchange(OrderBook):
 	"""
 
 	_batch_time = 5
-	_min_tick_size = .1
+	_min_tick_size = .01
 
 	def __init__(self, name, address, balance=0.0):
 		self.book = object
@@ -53,7 +53,11 @@ class Exchange(OrderBook):
 			if price_tick < p_low:
 				demand_vector.append(u_max)
 			elif price_tick >= p_low and price_tick <= p_high:
-				demand_vector.append(((p_high - price_tick) / (p_high - p_low)) * u_max)
+				try:
+					demand_vector.append(((p_high - price_tick) / (p_high - p_low)) * u_max)
+				except ZeroDivisionError:
+					print(f'div by zero ERROR: p_high={p_high}, p_low={p_low}')
+					exit()
 			else:
 				demand_vector.append(0)
 
@@ -90,7 +94,7 @@ class Exchange(OrderBook):
 		# Add array of zeros to current aggregate_supply
 		try:
 			if self.aggregate_supply is None:
-				print('Creating initial agg_demand ndarray')
+				print('Creating initial agg_supply ndarray')
 				self.aggregate_supply = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
 			
 			# Increase aggregate supply schedule columns by 1
@@ -141,8 +145,10 @@ class Exchange(OrderBook):
 			self.aggregate_supply.resize(new_matrix.shape)
 		except AttributeError:
 			print('No need to resize since aggregate matrix is empty!')
+			return
 		except TypeError:
 			print('No need to resize since aggregate matrix is empty!')
+			return
 		
 	def calc_aggregate_demand(self):
 		# Averages every schedule's rate at each price increment
@@ -172,8 +178,8 @@ class Exchange(OrderBook):
 		# Get average schedules
 		self.avg_aggregate_demand = self.calc_aggregate_demand()
 		self.avg_aggregate_supply = self.calc_aggregate_supply()
-		best_bid = 0
-		best_ask = 0
+		self.best_bid = 0
+		self.best_ask = 0
 
 		# Find the first index where demand <= supply
 		for x in range(0, len(self.avg_aggregate_demand)):
@@ -181,13 +187,13 @@ class Exchange(OrderBook):
 				# Set the clearing price to be the average of these two indices
 				self.clearing_price = x * Exchange._min_tick_size
 				self.clearing_rate = (self.avg_aggregate_supply[x] + self.avg_aggregate_demand[x]) / 2
-				best_bid = self.avg_aggregate_demand[x]
-				best_ask = self.avg_aggregate_supply[x]
+				self.best_bid = self.avg_aggregate_demand[x]
+				self.best_ask = self.avg_aggregate_supply[x]
 				break
 		print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
-		print(f'best bid: {best_bid}, best ask:{best_ask}')
+		print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
 
-		return best_bid, best_ask
+		return self.best_bid, self.best_ask
 
 
 	def hold_batch(self):
@@ -201,7 +207,7 @@ class Exchange(OrderBook):
 	def process_messages(self):
 		'''FIFO Queue for the exchange to process NEW orders from exchange'''
 		for message in self.book.new_messages:
-			print('processing:', message)
+			# print('processing:', message)
 			try:
 				order_type = message['order_type']
 				if order_type == 'C':
@@ -237,7 +243,6 @@ class Exchange(OrderBook):
 		if message['p_low'] < self.min_price:
 			print('Old p_low: ', self.min_price, 'new p_low: ', message['p_low'])
 			self.min_price = message['p_low']
-			print('Uh Oh, need to resize my aggregates!')
 
 		if message['p_high'] > self.max_price:
 			print('Old p_high: ', self.max_price, 'new p_high: ', message['p_high'])
