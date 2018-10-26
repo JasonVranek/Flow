@@ -69,15 +69,15 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	send_orders(10000, ex)
+	send_orders(30, ex)
 
 	ex.book.pretty_book()
 
 	ex.hold_batch()
 
-	# graph.graph_average_aggregates()
+	graph.graph_average_aggregates()
 
-	# graph.graph_all_aggregates()
+	graph.graph_all_aggregates()
 
 	print(ex.message_queue)
 

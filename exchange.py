@@ -257,8 +257,10 @@ class Exchange(OrderBook):
 
 	def hold_batch(self):
 		# Aggregate the supply and demand for what is in the book
-		self.calc_each_supply()
-		self.calc_each_demand()
+		# self.calc_each_supply()
+		# self.calc_each_demand()
+		while len(self.book.new_messages) > 0:
+			self.process_messages()
 
 		# Find the min and max prices		
 		p_low, p_high = self.get_price_range()
@@ -274,8 +276,31 @@ class Exchange(OrderBook):
 		pass
 
 	def process_messages(self):
-		for message in self.message_queue:
-			if message
+		'''FIFO Queue for the exchange to process NEW orders from exchange'''
+		for message in self.book.new_messages:
+			try:
+				order_type = message['order_type']
+				if order_type == 'C':
+					self.remove_schedule(message)
+					# Await response then delete from new_messages queue
+					self.book.new_messages.remove(message)
+				elif order_type == 'buy':
+					self.calc_demand(message)
+					self.book.new_messages.remove(message)
+				elif order_type == 'sell': 
+					self.calc_supply(message)
+					# Await response then delete from message_queue
+					self.book.new_messages.remove(message)
+				else:
+					# Remove invalid messages from the queue
+					self.book.new_messages.remove(message)
+					raise InvalidMessageType
+
+			except InvalidMessageType:
+				print('Error, exchange trying to process invalid message:', message)
+				pass
+
+	def remove_schedule(self, message):
 		pass
 
 	def _get_balance(self):
