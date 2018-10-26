@@ -36,7 +36,7 @@ def setup_traders(num_traders):
 							random.randint(0, 500), 		# u_max
 							random.randint(1000, 2000))		# q_max
 		traders.append(trader)
-		print(trader.current_order)
+		# print(trader.current_order)
 	return traders
 
 def send_orders(num_orders, exchange):
@@ -69,16 +69,17 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	send_orders(1000, ex)
+	send_orders(10000, ex)
 
 	ex.book.pretty_book()
 
 	ex.hold_batch()
 
-	graph.graph_average_aggregates()
+	# graph.graph_average_aggregates()
 
-	graph.graph_all_aggregates()
+	# graph.graph_all_aggregates()
 
+	print(ex.message_queue)
 
 
 

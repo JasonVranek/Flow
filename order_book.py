@@ -18,6 +18,7 @@ class OrderBook(object):
 		self.message_queue = []
 		self.bids = []
 		self.asks = []
+		self.new_messages = []
 
 	def receive_message(self, order):
 		# print('received message')
@@ -63,10 +64,12 @@ class OrderBook(object):
 				self.num_bids += 1
 				self.book.append(order)
 				self.bids.append(order)
+				self.new_messages.append(order)
 			elif order['order_type'] == 'sell':
 				self.num_asks += 1
 				self.book.append(order)
 				self.asks.append(order)
+				self.new_messages.append(order)
 			else:
 				raise InvalidMessageType
 
@@ -83,6 +86,8 @@ class OrderBook(object):
 		try: 
 			# Search book for order and delete it
 			old_order_type = self.delete_from_book(order_id)
+			# Delete it from the new_messages queue if exchange hasnt processed
+			# self.find()
 			# Search bid/ask list for order and delete it
 			if old_order_type == 'buy':
 				self.delete_bid(order_id)

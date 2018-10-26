@@ -28,6 +28,7 @@ class Exchange(OrderBook):
 		self.clearing_rate = 0
 		self.avg_aggregate_demand = 0
 		self.avg_aggregate_supply = 0
+		self.message_queue = []
 
 	def add_book(self, book):
 		self.book = book
@@ -116,6 +117,8 @@ class Exchange(OrderBook):
 			if len(schedule[1]) == 0:
 				print('Removing empty schedule: ', schedule)
 				self.aggregate_demand.remove(schedule)
+				# Send message to queue to be recalculated
+				self.message_queue.append(schedule)
 				continue
 			if schedule[1][0,1] < p_low:
 				p_low = schedule[1][0,1]
@@ -126,6 +129,8 @@ class Exchange(OrderBook):
 			if len(schedule[1]) == 0:
 				print('Removing empty schedule: ', schedule)
 				self.aggregate_supply.remove(schedule)
+				# Send message to queue to be recalculated
+				self.message_queue.append(schedule)
 				continue
 			if schedule[1][0,1] < p_low:
 				p_low = schedule[1][0,1]
@@ -264,6 +269,14 @@ class Exchange(OrderBook):
 		
 		# Find the average aggregate schedules and then find p*
 		self.calc_crossing()
+
+	def get_new_messages(self):
+		pass
+
+	def process_messages(self):
+		for message in self.message_queue:
+			if message
+		pass
 
 	def _get_balance(self):
 		return self.balance
