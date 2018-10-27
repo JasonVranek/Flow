@@ -29,12 +29,12 @@ class Graph():
 		self.fig = pyplot.figure(1)
 
 		price_range = []
-		for x in range(0, len(self.exchange.avg_aggregate_supply)):
+		for x in range(0, len(self.exchange.total_aggregate_supply)):
 			price_range.append(x * self.exchange._min_tick_size)
 
-		pyplot.plot(price_range, self.exchange.avg_aggregate_supply, 'b')
+		pyplot.plot(price_range, self.exchange.total_aggregate_supply, 'b')
 
-		pyplot.plot(price_range, self.exchange.avg_aggregate_demand, 'r')
+		pyplot.plot(price_range, self.exchange.total_aggregate_demand, 'r')
 
 		cp = self.exchange.clearing_price
 		cu = self.exchange.clearing_rate

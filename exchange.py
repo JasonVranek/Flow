@@ -25,8 +25,8 @@ class Exchange(OrderBook):
 		self.aggregate_supply = None
 		self.clearing_price = 0
 		self.clearing_rate = 0
-		self.avg_aggregate_demand = []
-		self.avg_aggregate_supply = []
+		self.total_aggregate_demand = []
+		self.total_aggregate_supply = []
 		self.message_queue = []
 		self.max_price = 0
 		self.min_price = 10000000
@@ -160,20 +160,18 @@ class Exchange(OrderBook):
 
 	def calc_crossing(self):
 		# Get average schedules
-		self.avg_aggregate_demand = self.calc_aggregate_demand()
-		self.avg_aggregate_supply = self.calc_aggregate_supply()
+		self.total_aggregate_demand = self.calc_aggregate_demand()
+		self.total_aggregate_supply = self.calc_aggregate_supply()
 		self.best_bid = 0
 		self.best_ask = 0
 
-		# Find the first index where demand <= supply
-		for x in range(0, len(self.avg_aggregate_demand)):
-			if self.avg_aggregate_demand[x] <= self.avg_aggregate_supply[x]:
-				# Set the clearing price to be the average of these two indices
-				self.clearing_price = x * Exchange._min_tick_size
-				self.clearing_rate = (self.avg_aggregate_supply[x] + self.avg_aggregate_demand[x]) / 2
-				self.best_bid = self.avg_aggregate_demand[x]
-				self.best_ask = self.avg_aggregate_supply[x]
-				break
+		cross_indices = np.where(self.total_aggregate_demand[:-1] <= self.total_aggregate_supply[1:])
+		self.clearing_price = cross_indices[0][0] * Exchange._min_tick_size
+		self.clearing_rate = (self.total_aggregate_supply[cross_indices[0][0]] 
+								+ self.total_aggregate_demand[cross_indices[0][0]]) / 2
+		self.best_bid = self.total_aggregate_demand[cross_indices[0][0]]
+		self.best_ask = self.total_aggregate_supply[cross_indices[0][0]]
+
 		print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
 		print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
 
