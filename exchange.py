@@ -30,8 +30,10 @@ class Exchange(OrderBook):
 		self.message_queue = []
 		self.max_price = 0
 		self.min_price = 10000000
-		self.active_bids = 0
-		self.active_asks = 0
+		self.num_active_bids = 0
+		self.num_active_asks = 0
+		self.active_bids = []
+		self.active_asks = []
 
 	def add_book(self, book):
 		self.book = book
@@ -65,10 +67,12 @@ class Exchange(OrderBook):
 		try:
 			if self.aggregate_demand is None:
 				print('Creating initial agg_demand ndarray')
-				self.aggregate_demand = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_bids])
+				self.aggregate_demand = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_bids])
 			
 			# Increase aggregate demand schedule columns by 1
 			self.aggregate_demand = np.c_[self.aggregate_demand, demand_vector]
+			# Save the index of the order for future cancellation
+			self.active_bids.append(order['order_id'])
 		except Exception as e:
 			print('Failed to append demand schedule: ', demand_vector)
 
@@ -95,12 +99,26 @@ class Exchange(OrderBook):
 		try:
 			if self.aggregate_supply is None:
 				print('Creating initial agg_supply ndarray')
-				self.aggregate_supply = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
+				self.aggregate_supply = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_asks])
 			
 			# Increase aggregate supply schedule columns by 1
 			self.aggregate_supply = np.c_[self.aggregate_supply, supply_vector]
+			# Save the index of the order for future cancellation
+			self.active_asks.append(order['order_id'])
 		except Exception as e:
 			print('Failed to append supply schedule: ', supply_vector)
+
+	def remove_from_agg_demand(self, index):
+		temp_list = self.aggregate_demand.tolist()
+		for row in temp_list:
+			del row[index]
+		self.aggregate_demand = np.array(temp_list)
+
+	def remove_from_agg_supply(self, index):
+		temp_list = self.aggregate_supply.tolist()
+		for row in temp_list:
+			del row[index]
+		self.aggregate_supply = np.array(temp_list)
 
 	def resize_schedules(self):
 		'''Resizes each schedule '''
@@ -113,7 +131,7 @@ class Exchange(OrderBook):
 		to the schedule until the length is correct. '''
 		
 		# Create an empty matrix that is the size of the new max_price
-		new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_bids])
+		new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_bids])
 
 		# Resize the aggregate demand to these new dimensions
 		try:
@@ -128,7 +146,7 @@ class Exchange(OrderBook):
 		to the schedule until the length is correct. '''
 		try:
 			# Create an empty matrix that is the size of the new max_price
-			# new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
+			# new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_asks])
 
 			length_to_add = math.ceil((self.max_price + 1) / Exchange._min_tick_size) - len(self.aggregate_supply[:,0])
 
@@ -139,7 +157,7 @@ class Exchange(OrderBook):
 
 			# Append the rows and resize the matrix for new shape
 			self.aggregate_supply = np.append(self.aggregate_supply, rows)
-			self.aggregate_supply.resize([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.active_asks])
+			self.aggregate_supply.resize([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_asks])
 
 		except AttributeError:
 			print('No need to resize since aggregate matrix is empty!')
@@ -165,10 +183,12 @@ class Exchange(OrderBook):
 		self.best_bid = 0
 		self.best_ask = 0
 
+		# returns an array containing only elements where demand <= supply
 		cross_indices = np.where(self.total_aggregate_demand[:-1] <= self.total_aggregate_supply[1:])
+		# Crossing point will be the first occurence of this
 		self.clearing_price = cross_indices[0][0] * Exchange._min_tick_size
 		self.clearing_rate = (self.total_aggregate_supply[cross_indices[0][0]] 
-								+ self.total_aggregate_demand[cross_indices[0][0]]) / 2
+							+ self.total_aggregate_demand[cross_indices[0][0]]) / 2
 		self.best_bid = self.total_aggregate_demand[cross_indices[0][0]]
 		self.best_ask = self.total_aggregate_supply[cross_indices[0][0]]
 
@@ -194,18 +214,18 @@ class Exchange(OrderBook):
 				order_type = message['order_type']
 				if order_type == 'C':
 					self.remove_schedule(message)
-					# Await response then delete from new_messages queue
 					self.book.new_messages.remove(message)
-					# self.check_price(message) # need to update if it was the best bid
+					# Check if the cancelled order had the max_price
+					self.check_price(message) 
 				elif order_type == 'buy':
 					self.check_price(message)
 					self.calc_demand(message)
-					self.active_bids += 1
+					self.num_active_bids += 1
 					self.book.new_messages.remove(message)
 				elif order_type == 'sell': 
 					self.check_price(message)
 					self.calc_supply(message)
-					self.active_asks += 1
+					self.num_active_asks += 1
 					# Await response then delete from message_queue
 					self.book.new_messages.remove(message)
 				else:
@@ -218,8 +238,21 @@ class Exchange(OrderBook):
 				pass
 
 	def remove_schedule(self, message):
-		# self.active_bids -= 1
-		pass
+		order_id = message['order_id']
+		if message['old_type'] == 'buy':
+			index = self.active_bids.index(order_id)
+			print(f'Deleting {order_id} from element {index} in self.bids')
+			self.active_bids.pop(index)
+			self.num_active_bids -= 1
+			self.remove_from_agg_demand(index)
+		elif message['old_type'] == 'sell':
+			index = self.active_asks.index(order_id)
+			print(f'Deleting {order_id} from element {index} in self.asks')
+			self.active_asks.pop(index)
+			self.num_active_asks -= 1
+			self.remove_from_agg_supply(index)
+		else:
+			print(f'Could not find {order_id} in bids or asks')
 
 	def check_price(self, message):
 		if message['p_low'] < self.min_price:
@@ -230,9 +263,7 @@ class Exchange(OrderBook):
 			print('Old p_high: ', self.max_price, 'new p_high: ', message['p_high'])
 			self.max_price = message['p_high'] 
 			print('Uh Oh, need to resize my aggregates!')
-			self.resize_schedules()
-
-		
+			self.resize_schedules()		
 
 	def _get_balance(self):
 		return self.balance

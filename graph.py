@@ -13,9 +13,12 @@ class Graph():
 	def graph_all_aggregates(self):
 		pyplot.figure(2)
 		price_range = []
-		for x in range(0, len(self.exchange.aggregate_supply[:,0])):
-			price_range.append(x * self.exchange._min_tick_size)
-
+		try:
+			for x in range(0, len(self.exchange.aggregate_supply[:,0])):
+				price_range.append(x * self.exchange._min_tick_size)
+		except IndexError:
+			pass
+			
 		for schedule in self.exchange.aggregate_supply.T:
 			pyplot.plot(price_range, schedule, 'b')
 
@@ -29,8 +32,11 @@ class Graph():
 		self.fig = pyplot.figure(1)
 
 		price_range = []
-		for x in range(0, len(self.exchange.total_aggregate_supply)):
-			price_range.append(x * self.exchange._min_tick_size)
+		try:
+			for x in range(0, len(self.exchange.total_aggregate_supply)):
+				price_range.append(x * self.exchange._min_tick_size)
+		except IndexError:
+			pass
 
 		pyplot.plot(price_range, self.exchange.total_aggregate_supply, 'b')
 

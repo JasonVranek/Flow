@@ -36,9 +36,11 @@ class OrderBook(object):
 			try:
 				order_type = msg['order_type']
 				if order_type == 'C':
-					self.cancel_order(msg)
+					old_order_type = self.cancel_order(msg)
 					# Await response then delete from message_queue
 					self.message_queue.remove(msg)
+					msg['old_type'] = old_order_type
+					self.new_messages.append(msg)
 				elif order_type == 'buy' or order_type == 'sell': 
 					message_id = msg['order_id']
 					self.add_order(msg)
@@ -99,12 +101,12 @@ class OrderBook(object):
 				raise InvalidMessageType
 
 		except InvalidMessageType:
-			pass
-			#print('Invalid Message Type')
+			print('Invalid Message Type')
 
 		except NoEntryFound:
-			pass
-			#print('No order found to cancel')
+			print('No order found to cancel')
+
+		return old_order_type
 		
 	def delete_from_book(self, order_id):
 		for msg in self.book:

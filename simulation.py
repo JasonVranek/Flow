@@ -54,6 +54,16 @@ def send_orders(num_orders, exchange):
 	while len(exchange.book.message_queue) > 0:
 		exchange.book.process_messages()
 
+	return traders
+
+def send_cancels(traders, exchange):
+	for trader in traders:
+		trader.new_order('C', None, None, None, None)
+		exchange.get_order(trader.current_order)
+
+	# Process any messages in the book's queue
+	while len(exchange.book.message_queue) > 0:
+		exchange.book.process_messages()
 
 
 def main():
@@ -74,15 +84,30 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	send_orders(num_orders, ex)
+	traders = send_orders(num_orders, ex)
 
 	ex.book.pretty_book()
 
 	ex.hold_batch()
 
+	# graph.graph_average_aggregates()
+
+	# graph.graph_all_aggregates()
+
+	print(ex.active_bids, ex.active_asks)
+
+	send_cancels(traders, ex)
+
+	ex.hold_batch()
+
+	print(ex.active_bids, ex.active_asks)
+
 	graph.graph_average_aggregates()
 
 	graph.graph_all_aggregates()
+
+
+
 
 
 
