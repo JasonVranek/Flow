@@ -58,13 +58,87 @@ def send_orders(num_orders, exchange):
 
 def send_cancels(traders, exchange):
 	for trader in traders:
-		trader.new_order('C', None, None, None, None)
-		exchange.get_order(trader.current_order)
+		if random.randint(0, 1):
+		# if trader.current_order['order_type'] == 'sell':
+			# Test only cancelling bids
+			trader.new_order('C', None, None, None, None)
+			exchange.get_order(trader.current_order)
 
 	# Process any messages in the book's queue
 	while len(exchange.book.message_queue) > 0:
 		exchange.book.process_messages()
 
+def test_cancels(exchange, graph):
+	n = 4
+	bidders = []
+	askers = []
+	# Create the N traders with bids
+	for x in range(0, n):
+		bidders.append(Trader(f'bidder {x}'))
+		bidders[x].new_order('buy', 
+							(x + 1) * 100,	 # p_high
+							80,				 # p_low
+							1000,			 # u_max
+							2000)			 # q_max
+		exchange.get_order(bidders[x].current_order)
+
+	# Create the N traders with asks and send to exchange
+	for x in range(0, n):
+		askers.append(Trader(f'asker {x}'))
+		askers[x].new_order('sell', 
+							(x + 1) * 100,	 # p_high
+							80,				 # p_low
+							1000,			 # u_max
+							2000)			 # q_max
+		exchange.get_order(askers[x].current_order)
+
+	# Process any messages in the book's queue
+	while len(exchange.book.message_queue) > 0:
+		exchange.book.process_messages()
+
+	exchange.book.pretty_book()
+
+	# Hold the batch
+	exchange.hold_batch()
+
+	print(exchange.aggregate_demand, exchange.aggregate_supply)
+
+	# Graph the 
+	graph.graph_average_aggregates(1)
+
+	graph.graph_all_aggregates(2)
+
+	print(exchange.active_bids, exchange.active_asks)
+
+	# Send cancels for the odd orders
+	for x in range(0, n):
+		if x % 2 == 1:
+			bidders[x].new_order('C', None, None, None, None)
+			exchange.get_order(bidders[x].current_order)
+
+	# Create the N traders with asks and send to exchange
+	for x in range(0, n):
+		if x % 2 == 1:
+			askers[x].new_order('C', None, None, None, None)
+			exchange.get_order(askers[x].current_order)
+
+	# Process any messages in the book's queue
+	while len(exchange.book.message_queue) > 0:
+		exchange.book.process_messages()
+
+	exchange.book.pretty_book()
+
+	# Hold the batch
+	exchange.hold_batch()
+
+	print(exchange.aggregate_demand, exchange.aggregate_supply)
+
+	# Confirm that those were the ones deleted
+	graph.graph_average_aggregates(3)
+
+	graph.graph_all_aggregates(4)
+
+	graph.display()
 
 def main():
 	num_orders = 50
@@ -84,27 +158,32 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	traders = send_orders(num_orders, ex)
+	# traders = send_orders(num_orders, ex)
 
-	ex.book.pretty_book()
+	# ex.book.pretty_book()
 
-	ex.hold_batch()
+	# ex.hold_batch()
 
 	# graph.graph_average_aggregates()
 
 	# graph.graph_all_aggregates()
 
-	print(ex.active_bids, ex.active_asks)
+	# print(ex.active_bids, ex.active_asks)
 
-	send_cancels(traders, ex)
+	# send_cancels(traders, ex)
 
-	ex.hold_batch()
+	# ex.hold_batch()
 
-	print(ex.active_bids, ex.active_asks)
+	# print(ex.active_bids, ex.active_asks)
 
-	graph.graph_average_aggregates()
+	# graph_2 = Graph()
+	# graph_2.exchange = ex
 
-	graph.graph_all_aggregates()
+	# graph_2.graph_average_aggregates()
+
+	# graph_2.graph_all_aggregates()
+
+	test_cancels(ex, graph)
 
 
 

@@ -10,26 +10,31 @@ class Graph():
 	def set_exchange(self, exchange):
 		self.exchange = exchange
 
-	def graph_all_aggregates(self):
-		pyplot.figure(2)
+	def graph_all_aggregates(self, figure_num):
+		pyplot.figure(figure_num)
 		price_range = []
+
 		try:
 			for x in range(0, len(self.exchange.aggregate_supply[:,0])):
 				price_range.append(x * self.exchange._min_tick_size)
+			for schedule in self.exchange.aggregate_supply.T:
+				pyplot.plot(price_range, schedule, 'b')
 		except IndexError:
 			pass
-			
-		for schedule in self.exchange.aggregate_supply.T:
-			pyplot.plot(price_range, schedule, 'b')
 
-		for schedule in self.exchange.aggregate_demand.T:
-			pyplot.plot(price_range, schedule, 'r')
+		price_range = []
+		try:
+			for x in range(0, len(self.exchange.aggregate_demand[:,0])):
+				price_range.append(x * self.exchange._min_tick_size)
+			for schedule in self.exchange.aggregate_demand.T:
+				pyplot.plot(price_range, schedule, 'r')
+		except IndexError:
+			pass
 
 		pyplot.title('order books supply and demands')
-		pyplot.show()
 
-	def graph_average_aggregates(self):
-		self.fig = pyplot.figure(1)
+	def graph_average_aggregates(self, figure_num):
+		pyplot.figure(figure_num)
 
 		price_range = []
 		try:
@@ -66,5 +71,5 @@ class Graph():
 		pyplot.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
 		pyplot.ylabel(f'(Quantity Traded (shares/batch)')
 
-		
-		self.fig.show()
+	def display(self):
+		pyplot.show()

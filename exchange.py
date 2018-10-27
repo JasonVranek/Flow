@@ -168,34 +168,47 @@ class Exchange(OrderBook):
 		
 	def calc_aggregate_demand(self):
 		# Sums every schedule's demand at each price increment
-		cum_demand = self.aggregate_demand.sum(axis=1)
-		return cum_demand
+		try:
+			cum_demand = self.aggregate_demand.sum(axis=1)
+			return cum_demand
+		except AttributeError:
+			return None
 
 	def calc_aggregate_supply(self):
 		# Sums every schedule's supply at each price increment
-		cum_supply = self.aggregate_supply.sum(axis=1)
-		return cum_supply
+		try:
+			cum_supply = self.aggregate_supply.sum(axis=1)
+			return cum_supply
+		except AttributeError:
+			return None
 
 	def calc_crossing(self):
 		# Get average schedules
 		self.total_aggregate_demand = self.calc_aggregate_demand()
 		self.total_aggregate_supply = self.calc_aggregate_supply()
+		# if self.total_aggregate_supply is None or self.total_aggregate_demand is None:
+		# 	print('No crossing can be computed')
+		# 	return 
 		self.best_bid = 0
 		self.best_ask = 0
 
-		# returns an array containing only elements where demand <= supply
-		cross_indices = np.where(self.total_aggregate_demand[:-1] <= self.total_aggregate_supply[1:])
-		# Crossing point will be the first occurence of this
-		self.clearing_price = cross_indices[0][0] * Exchange._min_tick_size
-		self.clearing_rate = (self.total_aggregate_supply[cross_indices[0][0]] 
-							+ self.total_aggregate_demand[cross_indices[0][0]]) / 2
-		self.best_bid = self.total_aggregate_demand[cross_indices[0][0]]
-		self.best_ask = self.total_aggregate_supply[cross_indices[0][0]]
+		try:
+			# returns an array containing only elements where demand <= supply
+			cross_indices = np.where(self.total_aggregate_demand[:-1] <= self.total_aggregate_supply[1:])
+			# Crossing point will be the first occurence of this
+			self.clearing_price = cross_indices[0][0] * Exchange._min_tick_size
+			self.clearing_rate = (self.total_aggregate_supply[cross_indices[0][0]] 
+								+ self.total_aggregate_demand[cross_indices[0][0]]) / 2
+			self.best_bid = self.total_aggregate_demand[cross_indices[0][0]]
+			self.best_ask = self.total_aggregate_supply[cross_indices[0][0]]
 
-		print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
-		print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
+			print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
+			print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
 
-		return self.best_bid, self.best_ask
+			return self.best_bid, self.best_ask
+		except IndexError:
+			print('Can not compute crossing point')
+			return False
 
 
 	def hold_batch(self):
