@@ -140,6 +140,20 @@ def test_cancels(exchange, graph):
 
 	graph.display()
 
+def test_updates(traders, exchange):
+	for trader in traders:
+		trader.new_order(random.choice(['buy', 'sell']), 		# 'buy', 'sell'
+							random.randint(101, 120), 		# p_high
+							random.randint(80, 99),  		# p_low
+							random.randint(400, 500), 		# u_max
+							random.randint(1000, 2000))		# q_max
+		exchange.get_order(trader.current_order)
+
+	while len(exchange.book.message_queue) > 0:
+		exchange.book.process_messages()
+
+	exchange.book.pretty_book()
+
 def main():
 	num_orders = 50
 	if len(sys.argv) > 1:
@@ -158,32 +172,28 @@ def main():
 	graph = Graph()
 	graph.exchange = ex
 
-	# traders = send_orders(num_orders, ex)
+	traders = send_orders(num_orders, ex)
 
-	# ex.book.pretty_book()
+	ex.book.pretty_book()
 
-	# ex.hold_batch()
+	ex.hold_batch()
 
-	# graph.graph_average_aggregates()
+	graph.graph_average_aggregates(1)
+	graph.graph_all_aggregates(2)
 
-	# graph.graph_all_aggregates()
+	print(ex.active_asks, ex.active_bids)
 
-	# print(ex.active_bids, ex.active_asks)
+	test_updates(traders, ex)
 
-	# send_cancels(traders, ex)
+	ex.hold_batch()
 
-	# ex.hold_batch()
+	graph.graph_average_aggregates(3)
+	graph.graph_all_aggregates(4)
 
-	# print(ex.active_bids, ex.active_asks)
+	print(ex.active_asks, ex.active_bids)
 
-	# graph_2 = Graph()
-	# graph_2.exchange = ex
+	graph.display()	
 
-	# graph_2.graph_average_aggregates()
-
-	# graph_2.graph_all_aggregates()
-
-	test_cancels(ex, graph)
 
 
 

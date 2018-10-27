@@ -269,7 +269,7 @@ class Exchange(OrderBook):
 
 	def check_price(self, message):
 		if message['p_low'] < self.min_price:
-			print('Old p_low: ', self.min_price, 'new p_low: ', message['p_low'])
+			# print('Old p_low: ', self.min_price, 'new p_low: ', message['p_low'])
 			self.min_price = message['p_low']
 
 		if message['p_high'] > self.max_price:

@@ -37,14 +37,13 @@ class OrderBook(object):
 				order_type = msg['order_type']
 				if order_type == 'C':
 					old_order_type = self.cancel_order(msg)
-					# Await response then delete from message_queue
 					self.message_queue.remove(msg)
+					# Append 'buy' or 'sell' to indicate where to cancel from in exchange
 					msg['old_type'] = old_order_type
 					self.new_messages.append(msg)
 				elif order_type == 'buy' or order_type == 'sell': 
 					message_id = msg['order_id']
 					self.add_order(msg)
-					# Await response then delete from message_queue
 					self.message_queue.remove(msg)
 				else:
 					# Remove invalid messages from the queue
@@ -56,12 +55,42 @@ class OrderBook(object):
 				#print('Invalid Message Type', msg)
 
 			#print()
+
+	def is_update(self, order):
+		# Returns old order if the trader has an order already in the book
+		cur_trader = order['order_id'].split(' ')
+		for entry in self.book:
+			o_id = entry['order_id']
+			entry_data = o_id.split(' ')
+			if cur_trader[0] == entry_data[0]:
+				print(f'{cur_trader[0]} is trying to update from {entry} to {order}')
+				if cur_trader[1] < entry_data[1]:
+					print('Error, trying to sending old order_id!')
+					return False
+				# Return the old order so it can be easily cancelled
+				return entry
+		return False
+
+	def implicit_cancel_msg(self, order, old_order_type):
+		# Create a cancel message from the order
+		return {'order_type': 'C','order_id': order['order_id'], 
+				'old_type': old_order_type, 'p_low': order['p_low'],
+				'p_high': order['p_high'], 'u_max': order['u_max'],
+				'q': order['q']}
 			 
 	def add_order(self, order):
 		#print('Adding order')
 		try:
 			if self.check_order_params(order) == InvalidMessageParameter:
 				raise InvalidMessageParameter
+			old_order = self.is_update(order)
+			if old_order is not False:
+				print('old order', old_order)
+				# Cancel old message from book
+				old_order_type = self.cancel_order(old_order)
+				# Create and send implicit cancel message to exchange
+				cancel_msg = self.implicit_cancel_msg(old_order, old_order_type)
+				self.new_messages.append(cancel_msg)
 			if order['order_type'] == 'buy':
 				self.num_bids += 1
 				self.book.append(order)
@@ -89,7 +118,8 @@ class OrderBook(object):
 			# Search book for order and delete it
 			old_order_type = self.delete_from_book(order_id)
 			# Delete it from the new_messages queue if exchange hasnt processed
-			# self.find()
+			# TODOTODOTODOTODOTO
+
 			# Search bid/ask list for order and delete it
 			if old_order_type == 'buy':
 				self.delete_bid(order_id)
