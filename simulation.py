@@ -178,8 +178,10 @@ def main():
 
 	ex.hold_batch()
 
-	graph.graph_average_aggregates(1)
-	graph.graph_all_aggregates(2)
+	graph.graph_total_aggregates(1, 'r', 'b', 'g-')
+	graph.graph_all_aggregates(2, 'r', 'b')
+
+	# graph.display()	
 
 	print(ex.active_asks, ex.active_bids)
 
@@ -187,12 +189,23 @@ def main():
 
 	ex.hold_batch()
 
-	graph.graph_average_aggregates(3)
-	graph.graph_all_aggregates(4)
+	
+
+	# time.sleep(3)
+
+	graph.redraw(1)
+	graph.redraw(2)
+	graph.graph_total_aggregates(1, 'pink', 'cyan', 'g-')
+	graph.graph_all_aggregates(2, 'pink', 'cyan')
 
 	print(ex.active_asks, ex.active_bids)
 
+	# graph.display()	
+
 	graph.display()	
+
+
+
 
 
 
