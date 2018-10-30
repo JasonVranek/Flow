@@ -44,7 +44,7 @@ class Trader(object):
 			self.order_count += 1
 
 		self.current_order['order_type'] = order_type
-		self.current_order['order_id'] = self.account + ' ' + str(self.order_count)
+		self.current_order['order_id'] = f'{self.account}:{self.order_count}'
 
 		return self.current_order
 

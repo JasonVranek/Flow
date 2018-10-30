@@ -21,9 +21,6 @@ class OrderBook(object):
 		self.new_messages = []
 
 	def receive_message(self, order):
-		# print('received message')
-		# Check the order for errors
-
 		# Make a deepcopy of the order
 		copied_order = deepcopy(order)
 		# Add to message queue
@@ -54,14 +51,12 @@ class OrderBook(object):
 				pass
 				#print('Invalid Message Type', msg)
 
-			#print()
-
 	def is_update(self, order):
 		# Returns old order if the trader has an order already in the book
-		cur_trader = order['order_id'].split(' ')
+		cur_trader = order['order_id'].split(':')
 		for entry in self.book:
 			o_id = entry['order_id']
-			entry_data = o_id.split(' ')
+			entry_data = o_id.split(':')
 			if cur_trader[0] == entry_data[0]:
 				print(f'{cur_trader[0]} is trying to update from {entry} to {order}')
 				if cur_trader[1] < entry_data[1]:

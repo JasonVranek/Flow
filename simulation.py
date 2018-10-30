@@ -69,7 +69,7 @@ def send_cancels(traders, exchange):
 		exchange.book.process_messages()
 
 def test_cancels(exchange, graph):
-	n = 4
+	n = 10
 	bidders = []
 	askers = []
 	# Create the N traders with bids
@@ -104,9 +104,8 @@ def test_cancels(exchange, graph):
 	print(exchange.aggregate_demand, exchange.aggregate_supply)
 
 	# Graph the 
-	graph.graph_average_aggregates(1)
-
-	graph.graph_all_aggregates(2)
+	graph.graph_total_aggregates(1, 'r', 'b', 'g-')
+	graph.graph_all_aggregates(2, 'r', 'b')
 
 	print(exchange.active_bids, exchange.active_asks)
 
@@ -134,19 +133,23 @@ def test_cancels(exchange, graph):
 	print(exchange.aggregate_demand, exchange.aggregate_supply)
 
 	# Confirm that those were the ones deleted
-	graph.graph_average_aggregates(3)
-
-	graph.graph_all_aggregates(4)
+	graph.graph_total_aggregates(3, 'r', 'b', 'g-')
+	graph.graph_all_aggregates(4, 'r', 'b')
 
 	graph.display()
 
 def test_updates(traders, exchange):
 	for trader in traders:
-		trader.new_order(random.choice(['buy', 'sell']), 		# 'buy', 'sell'
-							random.randint(101, 120), 		# p_high
-							random.randint(80, 99),  		# p_low
-							random.randint(400, 500), 		# u_max
-							random.randint(1000, 2000))		# q_max
+		# trader.new_order(random.choice(['buy', 'sell']), 		# 'buy', 'sell'
+		# 					random.randint(101, 120), 		# p_high
+		# 					random.randint(80, 99),  		# p_low
+		# 					random.randint(400, 500), 		# u_max
+		# 					random.randint(1000, 2000))		# q_max
+		trader.new_order('sell', 		# 'buy', 'sell'
+							105, 		# p_high
+							70,  		# p_low
+							400, 		# u_max
+							1000)		# q_max
 		exchange.get_order(trader.current_order)
 
 	while len(exchange.book.message_queue) > 0:
@@ -158,7 +161,6 @@ def main():
 	num_orders = 50
 	if len(sys.argv) > 1:
 		num_orders = int(sys.argv[1])
-	print(num_orders)
 	# Create the exchange
 	ex = Exchange('DEX', 'address', 1_000)
 
@@ -171,6 +173,8 @@ def main():
 	# Create the graph object
 	graph = Graph()
 	graph.exchange = ex
+
+	# test_cancels(ex, graph)
 
 	traders = send_orders(num_orders, ex)
 
@@ -193,10 +197,10 @@ def main():
 
 	# time.sleep(3)
 
-	graph.redraw(1)
-	graph.redraw(2)
-	graph.graph_total_aggregates(1, 'pink', 'cyan', 'g-')
-	graph.graph_all_aggregates(2, 'pink', 'cyan')
+	# graph.redraw(1)
+	# graph.redraw(2)
+	graph.graph_total_aggregates(3, 'pink', 'cyan', 'g-')
+	graph.graph_all_aggregates(4, 'pink', 'cyan')
 
 	print(ex.active_asks, ex.active_bids)
 

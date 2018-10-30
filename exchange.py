@@ -183,12 +183,10 @@ class Exchange(OrderBook):
 			return None
 
 	def calc_crossing(self):
-		# Get average schedules
+		# Get aggregate schedules
 		self.total_aggregate_demand = self.calc_aggregate_demand()
 		self.total_aggregate_supply = self.calc_aggregate_supply()
-		# if self.total_aggregate_supply is None or self.total_aggregate_demand is None:
-		# 	print('No crossing can be computed')
-		# 	return 
+
 		self.best_bid = 0
 		self.best_ask = 0
 
@@ -254,13 +252,13 @@ class Exchange(OrderBook):
 		order_id = message['order_id']
 		if message['old_type'] == 'buy':
 			index = self.active_bids.index(order_id)
-			print(f'Deleting {order_id} from element {index} in self.bids')
+			print(f'Deleting {order_id} from index {index} in self.bids')
 			self.active_bids.pop(index)
 			self.num_active_bids -= 1
 			self.remove_from_agg_demand(index)
 		elif message['old_type'] == 'sell':
 			index = self.active_asks.index(order_id)
-			print(f'Deleting {order_id} from element {index} in self.asks')
+			print(f'Deleting {order_id} from index {index} in self.asks')
 			self.active_asks.pop(index)
 			self.num_active_asks -= 1
 			self.remove_from_agg_supply(index)
