@@ -10,6 +10,10 @@ from matplotlib import pyplot
 import numpy as np
 import time
 
+from profiler import prof
+
+
+
 def test_book():
 	book = OrderBook('ETH', 'BTC')
 	return book
@@ -200,7 +204,8 @@ def test_updates(num_orders):
 
 	graph.display()	
 
-def test_resize():
+# @prof
+def test_resize(g=True):
 	#Create the exchange
 	ex = Exchange('DEX', 'address', 1_000)
 
@@ -248,8 +253,9 @@ def test_resize():
 	ex.hold_batch()
 
 	# Graph the default schedules, p_high = 1000
-	graph.graph_all_aggregates(1, 'r', 'b')
-	graph.graph_total_aggregates(2, 'r', 'b', 'g-')
+	if g:
+		graph.graph_all_aggregates(1, 'r', 'b')
+		graph.graph_total_aggregates(2, 'r', 'b', 'g-')
 
 	# Create a new trader with a p_high double max_price
 	big_bidder = Trader('Big Bidder')
@@ -265,11 +271,13 @@ def test_resize():
 	# Hold the batch
 	ex.hold_batch()
 
-	graph.graph_all_aggregates(3, 'r', 'b')
-	graph.graph_total_aggregates(4, 'r', 'b', 'g-')
+	if g:
+		graph.graph_all_aggregates(3, 'r', 'b')
+		graph.graph_total_aggregates(4, 'r', 'b', 'g-')
 
 	# Cancel the order with a high p_high
-	big_bidder.new_order('C', None, None, None, None)
+	# big_bidder.new_order('C', None, None, None, None)
+	big_bidder.new_order('buy', 1500, 80, 1000, 2000)
 	ex.get_order(big_bidder.current_order)
 
 	# Process the new message
@@ -281,13 +289,12 @@ def test_resize():
 	# Hold the batch
 	ex.hold_batch()
 
-	graph.graph_all_aggregates(5, 'r', 'b')
-	graph.graph_total_aggregates(6, 'r', 'b', 'g-')
+	if g:
+		graph.graph_all_aggregates(5, 'r', 'b')
+		graph.graph_total_aggregates(6, 'r', 'b', 'g-')
+		graph.display()
 
-
-
-	graph.display()
-
+@prof
 def test_random(num_orders):
 	# Create the exchange
 	ex = Exchange('DEX', 'address', 1_000)
@@ -308,10 +315,10 @@ def test_random(num_orders):
 
 	ex.hold_batch()
 
-	graph.graph_total_aggregates(1, 'r', 'b', 'g-')
-	graph.graph_all_aggregates(2, 'r', 'b')
+	# graph.graph_total_aggregates(1, 'r', 'b', 'g-')
+	# graph.graph_all_aggregates(2, 'r', 'b')
 
-	graph.display()
+	# graph.display()
 
 
 def main():
@@ -319,10 +326,10 @@ def main():
 	if len(sys.argv) > 1:
 		num_orders = int(sys.argv[1])
 	
-	# test_random(num_orders)
-	test_updates(num_orders)
+	test_random(num_orders)
+	# test_updates(num_orders)
 	# test_cancels()
-	# test_resize()
+	# test_resize(g=False)
 
 
 
