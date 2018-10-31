@@ -148,18 +148,31 @@ class Exchange(OrderBook):
 		to the schedule until the length is correct. '''
 		try:
 			# Create an empty matrix that is the size of the new max_price
-			# new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_asks])
+			supply_length =  len(self.aggregate_supply[:,0])
+			new_size = math.ceil((self.max_price + 1) / Exchange._min_tick_size)
 
-			length_to_add = math.ceil((self.max_price + 1) / Exchange._min_tick_size) - len(self.aggregate_supply[:,0])
+			# Append to the aggregate_supply matrix to match new larger max_price
+			if supply_length < new_size:
+				length_to_add =  new_size - supply_length
 
-			row_to_append = np.transpose(self.aggregate_supply[-1, :])
+				row_to_append = np.transpose(self.aggregate_supply[-1, :])
 
-			# Create length_to_add number duplicates of last row to append
-			rows = np.tile(row_to_append, [length_to_add, 1])
+				# Create length_to_add number duplicates of last row to append
+				rows = np.tile(row_to_append, [length_to_add, 1])
 
-			# Append the rows and resize the matrix for new shape
-			self.aggregate_supply = np.append(self.aggregate_supply, rows)
-			self.aggregate_supply.resize([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_asks])
+				# Append the rows and resize the matrix for new shape
+				self.aggregate_supply = np.append(self.aggregate_supply, rows)
+				self.aggregate_supply.resize([new_size, self.num_active_asks])
+
+			# Shrink the aggregate_supply matrix to the new lower max_price
+			else:
+				new_matrix = np.zeros([new_size, self.num_active_asks])
+				try:
+					self.aggregate_supply.resize(new_matrix.shape, refcheck=False)
+				except AttributeError:
+					print('No need to resize since aggregate matrix is empty!')
+				except ValueError as e:
+					print('AHHHH VALUE ERROR!!', self.aggregate_supply.shape, new_matrix.shape, e)
 
 		except AttributeError:
 			print('No need to resize since aggregate matrix is empty!')
