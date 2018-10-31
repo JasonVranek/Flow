@@ -57,9 +57,11 @@ class OrderBook(object):
 		for entry in self.book:
 			o_id = entry['order_id']
 			entry_data = o_id.split(':')
+			# If the trader already has an order in the book
 			if cur_trader[0] == entry_data[0]:
 				print(f'{cur_trader[0]} is trying to update from {entry} to {order}')
 				if cur_trader[1] < entry_data[1]:
+					# Trader submitted an order with lower nonce
 					print('Error, trying to sending old order_id!')
 					return False
 				# Return the old order so it can be easily cancelled
@@ -76,16 +78,20 @@ class OrderBook(object):
 	def add_order(self, order):
 		#print('Adding order')
 		try:
+			# Check the order for correct parameters
 			if self.check_order_params(order) == InvalidMessageParameter:
 				raise InvalidMessageParameter
+
+			# Check if this message is updating a previous one
 			old_order = self.is_update(order)
 			if old_order is not False:
-				print('old order', old_order)
-				# Cancel old message from book
+				# Delete old message from book/bids/ask
 				old_order_type = self.cancel_order(old_order)
 				# Create and send implicit cancel message to exchange
 				cancel_msg = self.implicit_cancel_msg(old_order, old_order_type)
 				self.new_messages.append(cancel_msg)
+
+			# Proceed to process the new message
 			if order['order_type'] == 'buy':
 				self.num_bids += 1
 				self.book.append(order)

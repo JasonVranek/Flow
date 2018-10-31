@@ -74,7 +74,7 @@ class Exchange(OrderBook):
 			# Save the index of the order for future cancellation
 			self.active_bids.append(order['order_id'])
 		except Exception as e:
-			print('Failed to append demand schedule: ', demand_vector)
+			print('Failed to append demand schedule: ')#, demand_vector)
 
 			
 	def calc_supply(self, order):
@@ -106,7 +106,7 @@ class Exchange(OrderBook):
 			# Save the index of the order for future cancellation
 			self.active_asks.append(order['order_id'])
 		except Exception as e:
-			print('Failed to append supply schedule: ', supply_vector)
+			print('Failed to append supply schedule: ')#, supply_vector)
 
 	def remove_from_agg_demand(self, index):
 		temp_list = self.aggregate_demand.tolist()
@@ -135,9 +135,11 @@ class Exchange(OrderBook):
 
 		# Resize the aggregate demand to these new dimensions
 		try:
-			self.aggregate_demand.resize(new_matrix.shape)
+			self.aggregate_demand.resize(new_matrix.shape, refcheck=False)
 		except AttributeError:
 			print('No need to resize since aggregate matrix is empty!')
+		except ValueError as e:
+			print('AHHHH VALUE ERROR!!', self.aggregate_demand.shape, new_matrix.shape, e)
 
 
 	def resize_supply(self):
@@ -227,7 +229,7 @@ class Exchange(OrderBook):
 					self.remove_schedule(message)
 					self.book.new_messages.remove(message)
 					# Check if the cancelled order had the max_price
-					self.check_price(message) 
+					self.check_cancel_max_price(message) 
 				elif order_type == 'buy':
 					self.check_price(message)
 					self.calc_demand(message)
@@ -266,6 +268,9 @@ class Exchange(OrderBook):
 			print(f'Could not find {order_id} in bids or asks')
 
 	def check_price(self, message):
+		'''Checks incoming messages for p_high to see if
+		the rest of the schedules should be updated to match
+		the length of this new max_price '''
 		if message['p_low'] < self.min_price:
 			# print('Old p_low: ', self.min_price, 'new p_low: ', message['p_low'])
 			self.min_price = message['p_low']
@@ -276,5 +281,35 @@ class Exchange(OrderBook):
 			print('Uh Oh, need to resize my aggregates!')
 			self.resize_schedules()		
 
+	def find_new_max_price(self):
+		# Finds the max p_high in the order book
+		new_max = 0
+		for order in self.book.book:
+			if order['p_high'] > new_max:
+				new_max = order['p_high']
+		return new_max
+
+	def check_cancel_max_price(self, message):
+		'''Finds a new max_price and resizes if a 
+		cancel message causes the max_price to be lowered'''
+		if message['p_high'] == self.max_price:
+			print(f'Cancelling schedule with max_price: {self.max_price}')
+			self.max_price = self.find_new_max_price()
+			print(f'Resizing to new max_price: {self.max_price}')
+			self.resize_schedules()	
+		else:
+			return
+
 	def _get_balance(self):
 		return self.balance
+
+
+
+
+
+
+
+
+
+
+
