@@ -249,7 +249,7 @@ def test_resize():
 
 	# Graph the default schedules, p_high = 1000
 	graph.graph_all_aggregates(1, 'r', 'b')
-	# graph.graph_total_aggregates(2, 'r', 'b', 'g-')
+	graph.graph_total_aggregates(2, 'r', 'b', 'g-')
 
 	# Create a new trader with a p_high double max_price
 	big_bidder = Trader('Big Bidder')
@@ -266,7 +266,7 @@ def test_resize():
 	ex.hold_batch()
 
 	graph.graph_all_aggregates(3, 'r', 'b')
-	# graph.graph_total_aggregates(4, 'r', 'b', 'g-')
+	graph.graph_total_aggregates(4, 'r', 'b', 'g-')
 
 	# Cancel the order with a high p_high
 	big_bidder.new_order('C', None, None, None, None)
@@ -282,7 +282,7 @@ def test_resize():
 	ex.hold_batch()
 
 	graph.graph_all_aggregates(5, 'r', 'b')
-	# graph.graph_total_aggregates(6, 'r', 'b', 'g-')
+	graph.graph_total_aggregates(6, 'r', 'b', 'g-')
 
 
 
@@ -320,9 +320,9 @@ def main():
 		num_orders = int(sys.argv[1])
 	
 	# test_random(num_orders)
-	# test_updates(num_orders)
+	test_updates(num_orders)
 	# test_cancels()
-	test_resize()
+	# test_resize()
 
 
 

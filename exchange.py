@@ -131,15 +131,18 @@ class Exchange(OrderBook):
 		to the schedule until the length is correct. '''
 		
 		# Create an empty matrix that is the size of the new max_price
-		new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_bids])
+		# new_matrix = np.zeros([math.ceil((self.max_price + 1) / Exchange._min_tick_size), self.num_active_bids])
+		num_rows = math.ceil((self.max_price + 1) / Exchange._min_tick_size)
+
 
 		# Resize the aggregate demand to these new dimensions
 		try:
-			self.aggregate_demand.resize(new_matrix.shape, refcheck=False)
+			self.aggregate_demand.resize([num_rows, self.num_active_bids], refcheck=False)
 		except AttributeError:
 			print('No need to resize since aggregate matrix is empty!')
 		except ValueError as e:
-			print('AHHHH VALUE ERROR!!', self.aggregate_demand.shape, new_matrix.shape, e)
+			print('AHHHH VALUE ERROR!!', e)
+			pass
 
 
 	def resize_supply(self):
@@ -166,13 +169,7 @@ class Exchange(OrderBook):
 
 			# Shrink the aggregate_supply matrix to the new lower max_price
 			else:
-				new_matrix = np.zeros([new_size, self.num_active_asks])
-				try:
-					self.aggregate_supply.resize(new_matrix.shape, refcheck=False)
-				except AttributeError:
-					print('No need to resize since aggregate matrix is empty!')
-				except ValueError as e:
-					print('AHHHH VALUE ERROR!!', self.aggregate_supply.shape, new_matrix.shape, e)
+				self.aggregate_supply.resize([new_size, self.num_active_asks], refcheck=False)
 
 		except AttributeError:
 			print('No need to resize since aggregate matrix is empty!')
@@ -308,6 +305,9 @@ class Exchange(OrderBook):
 		if message['p_high'] == self.max_price:
 			print(f'Cancelling schedule with max_price: {self.max_price}')
 			self.max_price = self.find_new_max_price()
+			if self.max_price == message['p_high']:
+				print('Dont worry, there was another order priced the same')
+				return
 			print(f'Resizing to new max_price: {self.max_price}')
 			self.resize_schedules()	
 		else:
