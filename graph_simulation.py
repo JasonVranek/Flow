@@ -1,7 +1,7 @@
 from trader import Trader
-from order_book import OrderBook
-from exchange import Exchange
-from graph import Graph
+from order_book_graph import OrderBook
+from exchange_grapher import Exchange
+from old_graph import Graph
 
 import sys
 
@@ -294,7 +294,7 @@ def test_resize(g=True):
 		graph.graph_total_aggregates(6, 'r', 'b', 'g-')
 		graph.display()
 
-# @prof
+@prof
 def test_random(num_orders, g=True):
 	# Create the exchange
 	ex = Exchange('DEX', 'address', 1_000)
@@ -317,7 +317,7 @@ def test_random(num_orders, g=True):
 
 	if g:
 		graph.graph_total_aggregates(1, 'r', 'b', 'g-')
-		# graph.graph_all_aggregates(2, 'r', 'b')
+		graph.graph_all_aggregates(2, 'r', 'b')
 
 		graph.display()
 
