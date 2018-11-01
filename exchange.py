@@ -16,7 +16,7 @@ class Exchange(OrderBook):
 	"""
 
 	_batch_time = 5
-	_min_tick_size = .01
+	_min_tick_size = .0001
 
 	def __init__(self, name, address, balance=0.0):
 		self.book = object
@@ -47,8 +47,9 @@ class Exchange(OrderBook):
 	def calc_aggregates(self):
 		length = math.ceil((self.max_price + 1) / Exchange._min_tick_size)
 		agg_demand = [0] * length
-		agg_supply = [0] * length
+		agg_supply = [0] * length	
 
+		# for x in range(0, length):
 		for x in range(0, length):
 			p_i = x * Exchange._min_tick_size
 			for t in self.book.book:
@@ -71,7 +72,7 @@ class Exchange(OrderBook):
 
 		return agg_demand, agg_supply
 
-	def calc_crossing(self):
+	def verify_calc_crossing(self):
 		# Get aggregate schedules
 		self.total_aggregate_demand, self.total_aggregate_supply = self.calc_aggregates()
 
@@ -79,7 +80,7 @@ class Exchange(OrderBook):
 		self.best_ask = 0
 
 		try:
-			index = self.binary_search_cross(self.total_aggregate_demand, 
+			index = self.basic_binary_search_cross(self.total_aggregate_demand, 
 												self.total_aggregate_supply, 
 												len(self.total_aggregate_demand))
 			# # returns an array containing only elements where demand <= supply
@@ -97,7 +98,7 @@ class Exchange(OrderBook):
 			print('Can not compute crossing point')
 			return False
 
-	def binary_search_cross(self, dem, sup, n):
+	def basic_binary_search_cross(self, dem, sup, n):
 		L = 0
 		R = n
 		while L < R:
@@ -114,8 +115,70 @@ class Exchange(OrderBook):
 		# If there isn't an exact crossing, return leftmost index after cross
 		return L 
 
+	def calc_agg(self, p_i):
+		agg_demand = 0
+		agg_supply = 0
+		for t in self.book.book:
+			# Demand schedules add their u_max if p_i < p_low
+				if p_i < t['p_low'] and t['order_type'] == 'buy':
+					agg_demand += t['u_max']
 
-	# @prof
+				# Aggregate based on price index
+				if p_i >= t['p_low'] and p_i <= t['p_high']: 
+					if t['order_type'] == 'C':
+						print('cancel!')
+					if t['order_type'] == 'buy':
+						agg_demand += t['u_max'] * ((t['p_high'] - p_i) / (t['p_high'] - t['p_low']))
+					if t['order_type'] == 'sell':
+						agg_supply += t['u_max'] + ((p_i - t['p_high']) / (t['p_high'] - t['p_low'])) * t['u_max']
+
+				# Supply schedules add their u_max if p_i > p_high
+				if p_i > t['p_high'] and t['order_type'] == 'sell':
+					agg_supply += t['u_max']
+
+		return agg_demand, agg_supply
+
+	def calc_crossing(self):
+		try:
+			self.clearing_price = self.binary_search_cross()
+			self.best_bid, self.best_ask = self.calc_agg(self.clearing_price)
+			self.clearing_rate = (self.best_bid + self.best_ask) / 2
+
+			print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
+			print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
+
+		except Exception as e:
+			print('Error calculating crossing', e)
+
+	def binary_search_cross(self):
+		L = self.min_price 
+		R = self.max_price 
+		iterations = 0
+		max_iterations = math.ceil(math.log2((R - L) / Exchange._min_tick_size))
+		print(f'max_iterations: {max_iterations}, p_low: {L}, p_high: {R}')
+		while L < R:
+			# Finds a midpoint with the correct price tick precision
+			index = math.floor(((L + R) / 2) / Exchange._min_tick_size) * Exchange._min_tick_size
+			print(index)
+			dem, sup = self.calc_agg(index)
+			if dem > sup:
+				# We are left of the crossing
+				L = index + Exchange._min_tick_size 
+			elif dem < sup:
+				# We are right of the crossing
+				R = index
+			else:
+				print(f'Founds it at {L}!')
+				return L
+			iterations += 1
+			if iterations > max_iterations:
+				print('Uh oh did not find crossing within max_iterations!')
+				return L
+		# If there isn't an exact crossing, return leftmost index after cross
+		print(f'Found crossing after {iterations} iterations')
+		return L 
+
+	@prof
 	def hold_batch(self):
 		# Aggregate the supply and demand for what is the book's new_message queue
 		while len(self.book.new_messages) > 0:

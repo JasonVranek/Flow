@@ -324,10 +324,13 @@ def test_random(num_orders, g=True):
 
 def main():
 	num_orders = 50
-	if len(sys.argv) > 1:
+	g = True
+	if len(sys.argv) > 2:
 		num_orders = int(sys.argv[1])
+		if sys.argv[2] == 'f':
+			g = False
 	
-	test_random(num_orders, g=True)
+	test_random(num_orders, g)
 	# test_updates(num_orders)
 	# test_cancels()
 	# test_resize(g=False)
