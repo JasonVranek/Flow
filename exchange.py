@@ -16,7 +16,7 @@ class Exchange(OrderBook):
 	"""
 
 	_batch_time = 5
-	_min_tick_size = .0001
+	_min_tick_size = .01
 
 	def __init__(self, name, address, balance=0.0):
 		self.book = object
@@ -36,6 +36,7 @@ class Exchange(OrderBook):
 		self.num_active_asks = 0
 		self.active_bids = []
 		self.active_asks = []
+		self.batch_num = 0
 
 	def add_book(self, book):
 		self.book = book
@@ -158,6 +159,7 @@ class Exchange(OrderBook):
 		print(f'max_iterations: {max_iterations}, p_low: {L}, p_high: {R}')
 		while L < R:
 			# Finds a midpoint with the correct price tick precision
+			# index = self.nice_precision((L + R) / 2)
 			index = math.floor(((L + R) / 2) / Exchange._min_tick_size) * Exchange._min_tick_size
 			print(index)
 			dem, sup = self.calc_agg(index)
@@ -178,7 +180,7 @@ class Exchange(OrderBook):
 		print(f'Found crossing after {iterations} iterations')
 		return L 
 
-	@prof
+	# @prof
 	def hold_batch(self):
 		# Aggregate the supply and demand for what is the book's new_message queue
 		while len(self.book.new_messages) > 0:
@@ -186,6 +188,8 @@ class Exchange(OrderBook):
 		
 		# Find the average aggregate schedules and then find p*
 		self.calc_crossing()
+
+		self.batch_num += 1
 
 	def process_messages(self):
 		'''FIFO Queue for the exchange to process NEW orders from exchange'''
@@ -244,6 +248,9 @@ class Exchange(OrderBook):
 				return
 		else:
 			return
+
+	def nice_precision(self, num):
+		return math.floor(num / Exchange._min_tick_size) * Exchange._min_tick_size
 
 	def _get_balance(self):
 		return self.balance

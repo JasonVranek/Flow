@@ -6,7 +6,6 @@ from graph import Graph
 import sys
 
 import random
-from matplotlib import pyplot
 import numpy as np
 import time
 
@@ -316,24 +315,85 @@ def test_random(num_orders, g=True):
 	ex.hold_batch()
 
 	if g:
-		graph.graph_total_aggregates(1, 'r', 'b', 'g-')
-		# graph.graph_all_aggregates(2, 'r', 'b')
-
+		graph.test_graph(1)
 		graph.display()
+
+
+def repeating_random(num_orders, g=True):
+	ex = Exchange('DEX', 'address', 1_000)
+
+	# Create the order book
+	book = test_book()
+
+	# Add the order book to the exchange
+	ex.add_book(book)
+
+	# Create the graph object
+	graph = Graph()
+	graph.exchange = ex
+
+	traders = send_orders(num_orders, ex)
+
+
+	# ex.book.pretty_book()
+
+	ex.hold_batch()
+
+	if g:
+		graph.test_graph(1)
+		graph.display()
+
+	# Start timer
+	choices = ['buy', 'sell', 'C', 'poop']
+	text = ''
+	while True:
+		# Send random orders 
+		for trader in traders:
+			trader.new_order(random.choice(choices), 		# 'buy', 'sell'
+								random.randint(101, 120), 		# p_high
+								random.randint(80, 99),  		# p_low
+								random.randint(400, 500), 		# u_max
+								random.randint(1000, 2000))		# q_max
+			ex.get_order(trader.current_order)
+
+		while len(ex.book.message_queue) > 0:
+			ex.book.process_messages()
+
+		ex.hold_batch()
+
+		graph.pause(.1)
+		graph.close(1)
+
+		u_in = input('q to quit: ') 
+
+		if u_in == 'q':
+			print('Bye!')
+			graph.close(1)
+			print(graph.graph_as_html())
+			exit()
+		
+		if g:
+			graph.redraw(1)
+			graph.test_graph(1)
+			text = graph.display()
+
 
 
 def main():
 	num_orders = 50
 	g = True
-	if len(sys.argv) > 2:
+	if len(sys.argv) > 1:
 		num_orders = int(sys.argv[1])
+	
+	if len(sys.argv) > 2:	
 		if sys.argv[2] == 'f':
 			g = False
 	
-	test_random(num_orders, g)
+	# test_random(num_orders, g)
 	# test_updates(num_orders)
 	# test_cancels()
 	# test_resize(g=False)
+	repeating_random(num_orders, g)
 
 
 

@@ -1,5 +1,6 @@
-from matplotlib import pyplot
+import matplotlib.pyplot as plt, mpld3
 import numpy as np
+import math
 
 class Graph():
 
@@ -9,78 +10,57 @@ class Graph():
 	def set_exchange(self, exchange):
 		self.exchange = exchange
 
-	def graph_all_aggregates(self, figure_num, c_d, c_s):
-		pyplot.figure(figure_num)
-		price_range = []
+	def test_graph(self, figure_num):
+		plt.figure(figure_num)
 
-		try:
-			for x in range(0, len(self.exchange.aggregate_supply[:,0])):
-				price_range.append(x * self.exchange._min_tick_size)
-			for schedule in self.exchange.aggregate_supply.T:
-				pyplot.plot(price_range, schedule, c_s)
-		except IndexError:
-			pass
+		sup_array = []
+		dem_array = []
+		p_array = []
+		for x in range(math.floor(self.exchange.min_price - 10), math.floor(self.exchange.max_price + 10)):
+			dem, sup = self.exchange.calc_agg(x)
+			dem_array.append(dem)
+			sup_array.append(sup)
+			p_array.append(x)
 
-		price_range = []
-		try:
-			for x in range(0, len(self.exchange.aggregate_demand[:,0])):
-				price_range.append(x * self.exchange._min_tick_size)
-			for schedule in self.exchange.aggregate_demand.T:
-				pyplot.plot(price_range, schedule, c_d)
-		except IndexError:
-			pass
+		plt.plot(p_array, dem_array)
+		plt.plot(p_array, sup_array)
 
-		pyplot.title('order books supply and demands')
-		text_str = f'num_bids: {self.exchange.num_active_bids}\nnum_asks: {self.exchange.num_active_asks}\n'
-		pyplot.text(0.05, 0.5, text_str)
+		# plot horizontal clearing rate line
+		plt.plot([self.exchange.min_price - 10, self.exchange.clearing_price], [self.exchange.clearing_rate, self.exchange.clearing_rate], 'g')
 
-		pyplot.show(block=False)
-
-	def graph_total_aggregates(self, figure_num, c_d, c_s, c_c):
-		pyplot.figure(figure_num)
-
-		price_range = []
-		try:
-			for x in range(0, len(self.exchange.total_aggregate_supply)):
-				price_range.append(x * self.exchange._min_tick_size)
-		except IndexError:
-			pass
-
-		pyplot.plot(price_range, self.exchange.total_aggregate_supply, c_s)
-
-		pyplot.plot(price_range, self.exchange.total_aggregate_demand, c_d)
-
-		cp = self.exchange.clearing_price
-		cu = self.exchange.clearing_rate
-
-		# graph the horizontal rate line
-		cu_array = []
-		for x in range(0, int(cp)):
-			cu_array.append(cu)
-		pyplot.plot(range(0, int(cp)), cu_array, c_c)
-
-		# graph the vertical price line
-		cp_array = []
-		for x in range(0, int(cu)):
-			cp_array.append(cp)
-		pyplot.plot(cp_array, range(0, int(cu)), c_c)
+		# plot vertical clearing price line
+		plt.plot([self.exchange.clearing_price, self.exchange.clearing_price], [0, self.exchange.clearing_rate], 'g')
 		
-		pyplot.title(f'total of aggregates')#, p*={cp}, u*={cu} \n \
-			#best_bid={self.exchange.best_bid}, best_ask={self.exchange.best_ask}')
-		
-		text_str = f'p*={cp},\nu*={cu},\nu_best_bid={self.exchange.best_bid},\nu_best_ask={self.exchange.best_ask}\n'
-		pyplot.text(0.05, 0.5, text_str)
+		plt.title(f'Total of batch {self.exchange.batch_num}')
 
-		pyplot.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
-		pyplot.ylabel(f'(Quantity Traded (shares/batch)')
+		nice_cp = self.exchange.nice_precision(self.exchange.clearing_price)
+		nice_cr = self.exchange.nice_precision(self.exchange.clearing_rate)
+		nice_bb = self.exchange.nice_precision(self.exchange.best_bid)
+		nice_ba = self.exchange.nice_precision(self.exchange.best_ask)
 
-		pyplot.show(block=False)
+		text_str = f'p*={nice_cp},\nu*={nice_cr},\nu_best_bid={nice_bb},\nu_best_ask={nice_ba}\n'
+		plt.text(.9 * self.exchange.max_price, self.exchange.clearing_rate, text_str)
+
+		plt.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
+		plt.ylabel(f'(Quantity Traded (shares/batch)')
+
+		plt.show(block=False)
+
+	def pause(self, figure_num):
+		plt.pause(1)
 
 	def display(self):
-		pyplot.show()
+		plt.show()
+
+	def graph_as_html(self):
+		fig, ax = plt.subplots()
+		return mpld3.fig_to_html(fig)
 
 	def redraw(self, figure_num):
-		pyplot.figure(figure_num).clear()
+		plt.figure(figure_num).clear()
+
+	def close(self, figure_num):
+		plt.close(figure_num)
 
 
 
