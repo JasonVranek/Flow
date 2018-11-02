@@ -18,6 +18,12 @@ def hello():
 	safer = value = Markup('<strong>' + html + '</strong>')
 	return safer
 
+@app.route("/<num_orders>")
+def rand_graph(num_orders):
+	html = random_html_graph(num_orders)
+	safer = value = Markup('<strong>' + html + '</strong>')
+	return safer
+
 
 if __name__ == '__main__':
 	app.run(debug=True)
