@@ -315,7 +315,7 @@ def test_random(num_orders, g=True):
 	ex.hold_batch()
 
 	if g:
-		graph.test_graph(1)
+		graph.test_graph()
 		graph.display()
 
 
@@ -340,8 +340,8 @@ def repeating_random(num_orders, g=True):
 	ex.hold_batch()
 
 	if g:
-		graph.test_graph(1)
-		# graph.display()
+		graph.test_graph()
+		graph.display()
 
 	# Start timer
 	choices = ['buy', 'sell', 'C', 'poop']
@@ -361,20 +361,20 @@ def repeating_random(num_orders, g=True):
 
 		ex.hold_batch()
 
-		graph.pause(.1)
-		graph.close(1)
+		graph.pause()
+		graph.close()
 
 		u_in = input('q to quit: ') 
 
 		if u_in == 'q':
 			print('Bye!')
-			graph.close(1)
+			graph.close()
 			print(graph.graph_as_html())
 			exit()
 		
 		if g:
-			graph.redraw(1)
-			graph.test_graph(1)
+			graph.redraw()
+			graph.test_graph()
 			text = graph.display()
 
 def random_html_graph(num_orders):
@@ -397,9 +397,11 @@ def random_html_graph(num_orders):
 
 	ex.hold_batch()
 
-	graph.test_graph(1)
+	graph.test_graph()
 
-	return graph.graph_as_html()
+	html = graph.graph_as_html()
+
+	return html
 
 def main():
 	num_orders = 50
@@ -415,7 +417,9 @@ def main():
 	# test_updates(num_orders)
 	# test_cancels()
 	# test_resize(g=False)
-	repeating_random(num_orders, g)
+	# repeating_random(num_orders, g)
+	print(random_html_graph(num_orders))
+
 
 
 
