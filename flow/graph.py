@@ -43,7 +43,7 @@ class Graph():
 		nice_ba = self.exchange.nice_precision(self.exchange.best_ask)
 
 		text_str = f'p*={nice_cp},\nu*={nice_cr},\nu_best_bid={nice_bb},\nu_best_ask={nice_ba}\n'
-		self.fig.text(.9 * self.exchange.max_price, self.exchange.clearing_rate, text_str)
+		plt.text(.9 * self.exchange.max_price, self.exchange.clearing_rate, text_str)
 
 		plt.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
 		plt.ylabel(f'(Quantity Traded (shares/batch)')
@@ -54,8 +54,7 @@ class Graph():
 		plt.pause(1)
 
 	def display(self):
-		pass
-		# plt.show()
+		plt.show()
 
 	def graph_as_html(self):
 		return mpld3.fig_to_html(self.fig)

@@ -413,12 +413,12 @@ def main():
 		if sys.argv[2] == 'f':
 			g = False
 	
-	# test_random(num_orders, g)
+	test_random(num_orders, g)
 	# test_updates(num_orders)
 	# test_cancels()
 	# test_resize(g=False)
 	# repeating_random(num_orders, g)
-	print(random_html_graph(num_orders))
+	# print(random_html_graph(num_orders))
 
 
 
