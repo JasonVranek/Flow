@@ -14,7 +14,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	html = random_html_graph(50)
+	html = random_html_graph(1000)
+	safer = value = Markup('<strong>' + html + '</strong>')
+	return safer
+        #return 'hello world'
+
+@app.route("/<num_orders>")
+def rand_graph(num_orders):
+	html = random_html_graph(int(num_orders))
 	safer = value = Markup('<strong>' + html + '</strong>')
 	return safer
 
