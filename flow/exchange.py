@@ -4,6 +4,7 @@ from exceptions import InvalidMessageType
 import numpy as np
 import itertools
 import math
+from copy import deepcopy
 
 from profiler import prof
 
@@ -23,20 +24,15 @@ class Exchange(OrderBook):
 		self.name = name
 		self.address = address
 		self.balance = balance
-		self.aggregate_demand = None
-		self.aggregate_supply = None
 		self.clearing_price = 0
 		self.clearing_rate = 0
 		self.total_aggregate_demand = []
 		self.total_aggregate_supply = []
-		self.message_queue = []
-		self.max_price = 0
-		self.min_price = 10000000
-		self.num_active_bids = 0
-		self.num_active_asks = 0
-		self.active_bids = []
-		self.active_asks = []
 		self.batch_num = 0
+		self.bids = {}
+		self.asks = {}
+		self.min_price = 0
+		self.max_price = 0
 
 	def add_book(self, book):
 		self.book = book
@@ -44,79 +40,7 @@ class Exchange(OrderBook):
 	def get_order(self, order):
 		self.book.receive_message(order)
 
-	# @prof
-	def calc_aggregates(self):
-		length = math.ceil((self.max_price + 1) / Exchange._min_tick_size)
-		agg_demand = [0] * length
-		agg_supply = [0] * length	
-
-		# for x in range(0, length):
-		for x in range(0, length):
-			p_i = x * Exchange._min_tick_size
-			for t in self.book.book:
-				# Demand schedules add their u_max if p_i < p_low
-				if p_i < t['p_low'] and t['order_type'] == 'buy':
-					agg_demand[x] += t['u_max']
-
-				# Aggregate based on price index
-				if p_i >= t['p_low'] and p_i <= t['p_high']: 
-					if t['order_type'] == 'C':
-						print('cancel!')
-					if t['order_type'] == 'buy':
-						agg_demand[x] += t['u_max'] * ((t['p_high'] - p_i) / (t['p_high'] - t['p_low']))
-					if t['order_type'] == 'sell':
-						agg_supply[x] += t['u_max'] + ((p_i - t['p_high']) / (t['p_high'] - t['p_low'])) * t['u_max']
-
-				# Supply schedules add their u_max if p_i > p_high
-				if p_i > t['p_high'] and t['order_type'] == 'sell':
-					agg_supply[x] += t['u_max']
-
-		return agg_demand, agg_supply
-
-	def verify_calc_crossing(self):
-		# Get aggregate schedules
-		self.total_aggregate_demand, self.total_aggregate_supply = self.calc_aggregates()
-
-		self.best_bid = 0
-		self.best_ask = 0
-
-		try:
-			index = self.basic_binary_search_cross(self.total_aggregate_demand, 
-												self.total_aggregate_supply, 
-												len(self.total_aggregate_demand))
-			# # returns an array containing only elements where demand <= supply
-			self.clearing_price = index * Exchange._min_tick_size
-			self.clearing_rate = (self.total_aggregate_supply[index] 
-								+ self.total_aggregate_demand[index]) / 2
-			self.best_bid = self.total_aggregate_demand[index]
-			self.best_ask = self.total_aggregate_supply[index]
-
-			print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
-			print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
-
-			# return self.best_bid, self.best_ask
-		except IndexError:
-			print('Can not compute crossing point')
-			return False
-
-	def basic_binary_search_cross(self, dem, sup, n):
-		L = 0
-		R = n
-		while L < R:
-			index = math.floor((L + R) / 2)
-			if dem[index] > sup[index]:
-				# We are left of the crossing
-				L = index + 1 
-			elif dem[index] < sup[index]:
-				# We are right of the crossing
-				R = index
-			else:
-				print(f'Founds it at {L}!')
-				return L
-		# If there isn't an exact crossing, return leftmost index after cross
-		return L 
-
-	def calc_agg(self, p_i):
+	def calc_aggregate(self, p_i):
 		agg_demand = 0
 		agg_supply = 0
 		for t in self.book.book:
@@ -139,10 +63,39 @@ class Exchange(OrderBook):
 
 		return agg_demand, agg_supply
 
+	def calc_aggs(self, p_i):
+		return self.calc_agg_demand(p_i), self.calc_agg_supply(p_i)
+
+	def calc_agg_demand(self, p_i):
+		agg_demand = 0
+		for o_id, bid in self.bids.items():
+			# Demand schedules add their u_max if p_i < p_low
+			if p_i < bid['p_low']:
+				agg_demand += bid['u_max']
+
+			# The price index is within their [p_low, p_high]
+			elif p_i >= bid['p_low'] and p_i <= bid['p_high']: 
+				agg_demand += bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low']))
+
+		return agg_demand
+
+	def calc_agg_supply(self, p_i):
+		agg_supply = 0
+		for o_id, ask in self.asks.items():
+			# The price index is within their [p_low, p_high]
+			if p_i >= ask['p_low'] and p_i <= ask['p_high']:
+				agg_supply += ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max']
+
+			# Supply schedules add their u_max if pi > p_high
+			elif p_i > ask['p_high']:
+				agg_supply += ask['u_max']
+
+		return agg_supply
+
 	def calc_crossing(self):
 		try:
 			self.clearing_price = self.binary_search_cross()
-			self.best_bid, self.best_ask = self.calc_agg(self.clearing_price)
+			self.best_bid, self.best_ask = self.calc_aggs(self.clearing_price)
 			self.clearing_rate = (self.best_bid + self.best_ask) / 2
 
 			print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
@@ -162,7 +115,7 @@ class Exchange(OrderBook):
 			# index = self.nice_precision((L + R) / 2)
 			index = math.floor(((L + R) / 2) / Exchange._min_tick_size) * Exchange._min_tick_size
 			print(index)
-			dem, sup = self.calc_agg(index)
+			dem, sup = self.calc_aggs(index)
 			if dem > sup:
 				# We are left of the crossing
 				L = index + Exchange._min_tick_size 
@@ -182,72 +135,18 @@ class Exchange(OrderBook):
 
 	# @prof
 	def hold_batch(self):
-		# Aggregate the supply and demand for what is the book's new_message queue
-		while len(self.book.new_messages) > 0:
-			self.process_messages()
-		
+		# Create deep copy (snapshot) of book's bids and asks at this time
+		self.bids = deepcopy(self.book.bids)
+		self.asks = deepcopy(self.book.asks)
+
+		# Record the min and max prices from the books
+		self.min_price = self.book.min_price
+		self.max_price = self.book.max_price
+
 		# Find the average aggregate schedules and then find p*
 		self.calc_crossing()
 
 		self.batch_num += 1
-
-	def process_messages(self):
-		'''FIFO Queue for the exchange to process NEW orders from exchange'''
-		for message in self.book.new_messages:
-			# print('processing:', message)
-			try:
-				order_type = message['order_type']
-				if order_type == 'C':
-					self.book.new_messages.remove(message)
-					# Check if the cancelled order had the max_price
-					self.check_cancel_max_price(message) 
-				elif order_type == 'buy':
-					self.check_price(message)
-					self.num_active_bids += 1
-					self.book.new_messages.remove(message)
-				elif order_type == 'sell': 
-					self.check_price(message)
-					self.num_active_asks += 1
-					# Await response then delete from message_queue
-					self.book.new_messages.remove(message)
-				else:
-					# Remove invalid messages from the queue
-					self.book.new_messages.remove(message)
-					raise InvalidMessageType
-
-			except InvalidMessageType:
-				print('Error, exchange trying to process invalid message:', message)
-				pass
-
-	def check_price(self, message):
-		'''Checks incoming messages for p_high to see if
-		the length of our total aggregate will change '''
-		if message['p_low'] < self.min_price:
-			self.min_price = message['p_low']
-
-		if message['p_high'] > self.max_price:
-			# print('Old p_high: ', self.max_price, 'new p_high: ', message['p_high'])
-			self.max_price = message['p_high'] 
-
-	def find_new_max_price(self):
-		# Finds the max p_high in the order book
-		new_max = 0
-		for order in self.book.book:
-			if order['p_high'] > new_max:
-				new_max = order['p_high']
-		return new_max
-
-	def check_cancel_max_price(self, message):
-		'''Finds a new max_price if a cancel message 
-		causes the max_price to be lowered'''
-		if message['p_high'] == self.max_price:
-			# print(f'Cancelling schedule with max_price: {self.max_price}')
-			self.max_price = self.find_new_max_price()
-			if self.max_price == message['p_high']:
-				print('Dont worry, there was another order priced the same')
-				return
-		else:
-			return
 
 	def nice_precision(self, num):
 		return math.floor(num / Exchange._min_tick_size) * Exchange._min_tick_size

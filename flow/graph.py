@@ -21,7 +21,7 @@ class Graph():
 		dem_array = []
 		p_array = []
 		for x in range(math.floor(self.exchange.min_price - 10), math.floor(self.exchange.max_price + 10)):
-			dem, sup = self.exchange.calc_agg(x)
+			dem, sup = self.exchange.calc_aggs(x)
 			dem_array.append(dem)
 			sup_array.append(sup)
 			p_array.append(x)

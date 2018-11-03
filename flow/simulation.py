@@ -27,13 +27,12 @@ def test_trader():
 
 def setup_traders(num_traders):
 	traders = []
-	# order_type = ['buy', 'sell', 'C', 'poop']
-	order_type = ['buy', 'sell']
+	order_type = ['bid', 'ask']
 	print(f'Creating {num_traders} new traders and sending orders:')
 	for i in range(0, num_traders):
 		name = f'Trader{i}'
 		trader = Trader(name, random.randint(50, 300))
-		trader.new_order(random.choice(order_type), 		# 'buy', 'sell'
+		trader.enter_order(random.choice(order_type), 		# 'bid', 'ask'
 							random.randint(101, 120), 		# p_high
 							random.randint(80, 99),  		# p_low
 							random.randint(400, 500), 		# u_max
@@ -343,7 +342,7 @@ def repeating_random(num_orders, g=True):
 		graph.display()
 
 	# Start timer
-	choices = ['buy', 'sell', 'C', 'poop']
+	choices = ['bid', 'ask', 'c', 'poop']
 	text = ''
 	while True:
 		# Send random orders 

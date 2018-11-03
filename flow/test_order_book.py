@@ -1,6 +1,6 @@
 from trader import Trader
 from exceptions import InvalidMessageType, NoEntryFound, NoOrderToUpdate, NoOrderToCancel
-from order_book_backup import TestOrderBook
+from order_book import OrderBook
 
 import pytest
 import random
@@ -15,7 +15,7 @@ def default_trader():
 @pytest.fixture
 def order_book():
 	'''Returns an order book object'''
-	return TestOrderBook('ETH', 'BTC')
+	return OrderBook('ETH', 'BTC')
 
 @pytest.fixture
 def active_bidder(default_trader):

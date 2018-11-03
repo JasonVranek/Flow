@@ -1,7 +1,7 @@
 from exceptions import InvalidMessageType, NoEntryFound, InvalidMessageParameter
 from copy import deepcopy
 
-class TestOrderBook(object):
+class OrderBook(object):
 	"""
 		A continuous order book for the flow market.
 
@@ -12,13 +12,15 @@ class TestOrderBook(object):
 	def __init__(self, base_currency, desired_currency):
 		self.num_bids = 0
 		self.num_asks = 0
+		self.book = []
 		self.base_currency = desired_currency
 		self.desired_currency = base_currency
 		self.message_queue = []
-		self.bids = {}
-		self.asks = {}
+		self.bids = []
+		self.asks = []
+		self.new_messages = []
 		self.max_price = 0
-		self.min_price = 100000000
+		self.min_price = 100000
 
 	def receive_message(self, order):
 		# Make a deepcopy of the order
@@ -32,43 +34,16 @@ class TestOrderBook(object):
 			#print('processing message', msg)
 			try:
 				order_type = msg['order_type']
-				if order_type == 'c':
-					# Delete the message from book's queue
+				if order_type == 'C':
+					old_order_type = self.cancel_order(msg)
 					self.message_queue.remove(msg)
-					# Cancel the order and check if the min/max prices changed
-					old_p_low, old_p_high = self.cancel_order(msg)
-					if old_p_low >= 0 or old_p_high >= 0:
-						self.check_prices(old_p_low, old_p_high, 'c')
-					else:
-						print('Couldnt cancel order')
-
-				elif order_type == 'u':
-					# Delete the message from book's queue
-					self.message_queue.remove(msg)
-
-					# Check if this update changes min/max
-					self.check_prices(msg['p_low'], msg['p_high'], 'u')
-					print(f'in u: msg: {msg}')
-
-					# need to update the bid/ask in the respective book
-					old_p_low, old_p_high = self.update_order(msg)
-					if old_p_low >= 0 or old_p_high >= 0:
-						# If I updated from [80, 120] -> [90, 110], and self.min_price = 80,
-						# Then I would have to update self.min_price since my old price is 
-						# no longer valid. 
-						self.check_prices(old_p_low, old_p_high, 'c')
-					else:
-						print('Couldnt update order')
-
-				elif order_type == 'e':
-					# Delete the message from book's queue
-					self.message_queue.remove(msg)
-
-					# Check if this new message contains min/max price
-					self.check_prices(msg['p_low'], msg['p_high'], 'e')
-
-					# Add the message to the respective books
+					# Append 'buy' or 'sell' to indicate where to cancel from in exchange
+					msg['old_type'] = old_order_type
+					self.new_messages.append(msg)
+				elif order_type == 'buy' or order_type == 'sell': 
+					message_id = msg['order_id']
 					self.add_order(msg)
+					self.message_queue.remove(msg)
 				else:
 					# Remove invalid messages from the queue
 					self.message_queue.remove(msg)
@@ -78,116 +53,151 @@ class TestOrderBook(object):
 				pass
 				#print('Invalid Message Type', msg)
 
+	def is_update(self, order):
+		# Returns old order if the trader has an order already in the book
+		cur_trader = order['order_id'].split(':')
+		for entry in self.book:
+			o_id = entry['order_id']
+			entry_data = o_id.split(':')
+			# If the trader already has an order in the book
+			if cur_trader[0] == entry_data[0]:
+				print(f'{cur_trader[0]} is trying to update from {entry} to {order}')
+				if cur_trader[1] < entry_data[1]:
+					# Trader submitted an order with lower nonce
+					print('Error, trying to sending old order_id!')
+					return False
+				# Return the old order so it can be easily cancelled
+				return entry
+		return False
+
+	def implicit_cancel_msg(self, order, old_order_type):
+		# Create a cancel message from the order
+		return {'order_type': 'C','order_id': order['order_id'], 
+				'old_type': old_order_type, 'p_low': order['p_low'],
+				'p_high': order['p_high'], 'u_max': order['u_max'],
+				'q': order['q']}
+			 
 	def add_order(self, order):
-		print(f'Adding order, {order}')
+		#print('Adding order')
 		try:
+			# Check the order for correct parameters
+			if self.check_order_params(order) == InvalidMessageParameter:
+				raise InvalidMessageParameter
+
+			# Check if this message is updating a previous one
+			old_order = self.is_update(order)
+			if old_order is not False:
+				# Delete old message from book/bids/ask
+				old_order_type = self.cancel_order(old_order)
+				# Create and send implicit cancel message to exchange
+				cancel_msg = self.implicit_cancel_msg(old_order, old_order_type)
+				self.new_messages.append(cancel_msg)
+
 			# Proceed to process the new message
-			if order['trader_type'] == 'bid':
+			if order['order_type'] == 'buy':
 				self.num_bids += 1
-				# Add to dictionary
-				self.bids[order['order_id']] = order
-			elif order['trader_type'] == 'ask':
+				self.book.append(order)
+				self.bids.append(order)
+				self.new_messages.append(order)
+			elif order['order_type'] == 'sell':
 				self.num_asks += 1
-				# Add to dictionary
-				self.asks[order['order_id']] = order
+				self.book.append(order)
+				self.asks.append(order)
+				self.new_messages.append(order)
 			else:
 				raise InvalidMessageType
 
 		except InvalidMessageType:
 			print("triggered InvalidMessageType")
-		except Exception as e:
-			print(e)
+		except InvalidMessageParameter:
+			print('trigger InvalidMessageParameter')
 			 
 
 	def cancel_order(self, order):
-		# Search bid/ask list for order and delete it
-		if order['trader_type'] == 'bid':
-			return self.delete_bid(order['order_id'])
-		elif order['trader_type'] == 'ask':
-			return self.delete_ask(order['order_id'])
-
-	def update_order(self, order):
-		# Finds bid/ask in the respective book and update params
+		#print('trying to cancel order')
+		# The order_id from cancel will correspond to the current buy/sell in book
 		order_id = order['order_id']
-		if order['trader_type'] == 'bid':
-			if order_id in self.bids:
-				bid = self.bids[order_id] 
-				# Save old prices
-				old_p_low = bid['p_low']
-				old_p_high = bid['p_high']
+		try: 
+			# Search book for order and delete it
+			old_order_type = self.delete_from_book(order_id)
+			# Delete it from the new_messages queue if exchange hasnt processed
+			# TODOTODOTODOTODOTO
 
-				# Make updates:
-				self.bids[order_id] = order
+			# Search bid/ask list for order and delete it
+			if old_order_type == 'buy':
+				self.delete_bid(order_id)
+			elif old_order_type == 'sell':
+				self.delete_ask(order_id)
+			elif old_order_type == NoEntryFound:
+				raise NoEntryFound
+			else:
+				raise InvalidMessageType
 
-				# Return old prices for price check
-				return old_p_low, old_p_high
-		else:
-			if order_id in self.asks:
-				ask = self.asks[order_id]
-				# Save old prices
-				old_p_low = ask['p_low']
-				old_p_high = ask['p_high']
-				
-				# Make updates:
-				self.asks[order_id] = order
-				
-				# Return old prices for price check
-				return old_p_low, old_p_high
+		except InvalidMessageType:
+			print('Invalid Message Type')
 
-		# TODO let them update from bid <-> ask 
+		except NoEntryFound:
+			print('No order found to cancel')
 
-		print('UHOH COULDNT FIND AN ORDER TO UPDATE!', order)	
-		return -1, -1
+		return old_order_type
 		
+	def delete_from_book(self, order_id):
+		for msg in self.book:
+			if msg['order_id'] == order_id:
+				order_type = msg['order_type']
+				self.book.remove(msg)
+				# Return the order_type so we can delete from bid/ask list
+				#print('deleted from book: ', msg)
+				return order_type
+		return NoEntryFound
+
 	def delete_bid(self, order_id):
-		try:
-			bid = self.bids.pop(order_id)
-			self.num_bids -= 1
-			return bid['p_low'], bid['p_high']
-		except KeyError:
-			print('Bid not found to delete! ', order_id)
-			return -1, -1
+		for msg in self.bids:
+			if msg['order_id'] == order_id:
+				self.bids.remove(msg)
+				self.num_bids -= 1
+				#print('deleted bid: ', msg)
+				return True
+		return NoEntryFound
 
 	def delete_ask(self, order_id):
-		try:
-			ask = self.asks.pop(order_id)
-			self.num_asks -= 1
-			return ask['p_low'], ask['p_high']
-		except KeyError:
-			print('Ask not found to delete! ', order_id)
-			return -1, -1
+		for msg in self.asks:
+			if msg['order_id'] == order_id:
+				self.asks.remove(msg)
+				self.num_asks -= 1
+				#print('deleted ask: ', msg)
+				return True
+		return NoEntryFound
 
-	def check_prices(self, p_low, p_high, order_type):
-		if order_type == 'C':
-			if p_low == self.min_price or p_high == self.max_price:
-				print('Cancelled previous min_price/max_price')
-				self.min_price, self.max_price = self.find_new_prices()
+	def check_prices(self, p_low, p_high, is_update):
+		if is_update:
+			if p_low == self.min_price:
+				print('Updating min_price')
+			elif p_high == self.max_price:
+				print('Updating max_price')
 
 		else:
 			if p_low < self.min_price:
 				self.min_price = p_low
-				print('New min_price ', p_low)
-			if p_high > self.max_price:
+				print('New min_price')
+			elif p_high > self.max_price:
 				self.max_price = p_high
-				print('New max_price ', p_high)
+				print('New max_price')
+		
 
-	def find_new_prices():
-		new_max = 0
-		new_min = 100000000
-		# look at dictionary values
-		for o_id, order in self.bids.items():
-			if order['p_high'] > new_max:
-				new_max = order['p_high']
-			if order['p_low'] < new_min:
-				new_min = order['p_low']
+	def check_order_params(self, order):
+		if not isinstance(order['q'], int):
+			return InvalidMessageParameter
+		elif not isinstance(order['p_low'], int):
+			return InvalidMessageParameter
+		elif not isinstance(order['p_high'], int):
+			return InvalidMessageParameter
+		elif not isinstance(order['u_max'], int):
+			return InvalidMessageParameter
+		return True
 
-		for o_id, order in self.asks.items():
-			if order['p_high'] > new_max:
-				new_max = order['p_high']
-			if order['p_low'] < new_min:
-				new_min = order['p_low']
-
-		return new_min, new_max
+	def query_book(self):
+		return self.book
 
 	def query_bids(self):
 		return self.bids
