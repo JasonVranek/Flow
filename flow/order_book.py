@@ -19,6 +19,8 @@ class OrderBook(object):
 		self.bids = []
 		self.asks = []
 		self.new_messages = []
+		self.max_price = 0
+		self.min_price = 100000
 
 	def receive_message(self, order):
 		# Make a deepcopy of the order
@@ -166,6 +168,22 @@ class OrderBook(object):
 				#print('deleted ask: ', msg)
 				return True
 		return NoEntryFound
+
+	def check_prices(self, p_low, p_high, is_update):
+		if is_update:
+			if p_low == self.min_price:
+				print('Updating min_price')
+			elif p_high == self.max_price:
+				print('Updating max_price')
+
+		else:
+			if p_low < self.min_price:
+				self.min_price = p_low
+				print('New min_price')
+			elif p_high > self.max_price:
+				self.max_price = p_high
+				print('New max_price')
+		
 
 	def check_order_params(self, order):
 		if not isinstance(order['q'], int):

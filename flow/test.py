@@ -3,6 +3,8 @@ from order_book import OrderBook
 from exchange import Exchange
 from exceptions import InvalidMessageType, NoEntryFound
 
+from order_book_backup import TestOrderBook
+
 import pytest
 import random
 

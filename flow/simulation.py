@@ -12,7 +12,6 @@ import time
 from profiler import prof
 
 
-
 def test_book():
 	book = OrderBook('ETH', 'BTC')
 	return book

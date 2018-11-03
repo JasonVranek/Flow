@@ -1,3 +1,5 @@
+from exceptions import NoOrderToUpdate, NoOrderToCancel
+
 class Trader(object):
 	"""
 		A market maker/taker participating in the Flow market.
@@ -47,6 +49,47 @@ class Trader(object):
 		self.current_order['order_id'] = f'{self.account}:{self.order_count}'
 
 		return self.current_order
+
+	def enter_order(self, trader_type, p_high, p_low, u_max, q_max):
+		new_order = {}
+		new_order['order_type'] = 'e'
+		new_order['trader_type'] = trader_type
+		new_order['p_low'] = p_low
+		new_order['p_high'] = p_high
+		new_order['u_max'] = u_max
+		new_order['q_max'] = q_max
+		new_order['funds'] = self.balance
+		new_order['order_id'] = self.account
+		self.current_order = new_order
+
+	def cancel_order(self):
+		new_order = {}
+		new_order['order_type'] = 'c'
+		new_order['trader_type'] =  self.current_order.get('trader_type', None)
+		if new_order['trader_type'] == None:
+			print('Error, no order to cancel!')
+			return NoOrderToCancel
+		new_order['p_low'] = self.current_order.get('p_low')
+		new_order['p_high'] = self.current_order.get('p_high')
+		new_order['u_max'] = self.current_order.get('u_max')
+		new_order['q_max'] = self.current_order.get('q_max')
+		new_order['order_id'] = self.account
+		self.current_order = new_order
+
+	def update_order(self, p_high, p_low, u_max, q_max):
+		new_order = {}
+		new_order['order_type'] = 'u'
+		new_order['trader_type'] =  self.current_order.get('trader_type', None)
+		if new_order['trader_type'] == None:
+			print('Error, no order to update!')
+			return NoOrderToUpdate
+		new_order['p_low'] = p_low
+		new_order['p_high'] = p_high
+		new_order['u_max'] = u_max
+		new_order['q_max'] = q_max
+		new_order['funds'] = self.balance
+		new_order['order_id'] = self.account
+		self.current_order = new_order
 
 	def describe(self):
 		print(self.get_account(), self.get_balance(), 
