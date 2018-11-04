@@ -1,5 +1,6 @@
 from exceptions import InvalidMessageType, NoEntryFound, InvalidMessageParameter
 from copy import deepcopy
+from queue import Queue
 
 class OrderBook(object):
 	"""
@@ -14,27 +15,29 @@ class OrderBook(object):
 		self.num_asks = 0
 		self.base_currency = desired_currency
 		self.desired_currency = base_currency
-		self.message_queue = []
+		# self.message_queue = []
 		self.bids = {}
 		self.asks = {}
 		self.max_price = 0
 		self.min_price = 100000000
+		self.message_queue = Queue()
 
 	def receive_message(self, order):
 		# Make a deepcopy of the order
 		copied_order = deepcopy(order)
 		# Add to message queue
-		self.message_queue.append(copied_order)
+		# self.message_queue.append(copied_order)
+		self.message_queue.put(copied_order)
 
 	def process_messages(self):
-		# Check for any new messages in the message_queue
-		for msg in self.message_queue:
+		while not self.message_queue.empty():
+			# Pop msg from message queue
+			msg = self.message_queue.get()
 			#print('processing message', msg)
 			try:
 				order_type = msg['order_type']
 				if order_type == 'c':
 					# Delete the message from book's queue
-					self.message_queue.remove(msg)
 					# Cancel the order and check if the min/max prices changed
 					old_p_low, old_p_high = self.cancel_order(msg)
 					if old_p_low >= 0 or old_p_high >= 0:
@@ -43,9 +46,6 @@ class OrderBook(object):
 						print('Couldnt cancel order')
 
 				elif order_type == 'u':
-					# Delete the message from book's queue
-					self.message_queue.remove(msg)
-
 					# Check if this update changes min/max
 					self.check_prices(msg['p_low'], msg['p_high'], 'u')
 					print(f'in u: msg: {msg}')
@@ -61,9 +61,6 @@ class OrderBook(object):
 						print('Couldnt update order')
 
 				elif order_type == 'e':
-					# Delete the message from book's queue
-					self.message_queue.remove(msg)
-
 					# Check if this new message contains min/max price
 					self.check_prices(msg['p_low'], msg['p_high'], 'e')
 
@@ -71,7 +68,7 @@ class OrderBook(object):
 					self.add_order(msg)
 				else:
 					# Remove invalid messages from the queue
-					self.message_queue.remove(msg)
+					# self.message_queue.remove(msg)
 					raise InvalidMessageType
 
 			except InvalidMessageType:
@@ -79,7 +76,6 @@ class OrderBook(object):
 				#print('Invalid Message Type', msg)
 
 	def add_order(self, order):
-		print(f'Adding order, {order}')
 		try:
 			# Proceed to process the new message
 			if order['trader_type'] == 'bid':

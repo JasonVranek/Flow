@@ -40,29 +40,6 @@ class Exchange(OrderBook):
 	def get_order(self, order):
 		self.book.receive_message(order)
 
-	def calc_aggregate(self, p_i):
-		agg_demand = 0
-		agg_supply = 0
-		for t in self.book.book:
-			# Demand schedules add their u_max if p_i < p_low
-				if p_i < t['p_low'] and t['order_type'] == 'buy':
-					agg_demand += t['u_max']
-
-				# Aggregate based on price index
-				if p_i >= t['p_low'] and p_i <= t['p_high']: 
-					if t['order_type'] == 'C':
-						print('cancel!')
-					if t['order_type'] == 'buy':
-						agg_demand += t['u_max'] * ((t['p_high'] - p_i) / (t['p_high'] - t['p_low']))
-					if t['order_type'] == 'sell':
-						agg_supply += t['u_max'] + ((p_i - t['p_high']) / (t['p_high'] - t['p_low'])) * t['u_max']
-
-				# Supply schedules add their u_max if p_i > p_high
-				if p_i > t['p_high'] and t['order_type'] == 'sell':
-					agg_supply += t['u_max']
-
-		return agg_demand, agg_supply
-
 	def calc_aggs(self, p_i):
 		return self.calc_agg_demand(p_i), self.calc_agg_supply(p_i)
 
