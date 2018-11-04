@@ -84,8 +84,8 @@ class Simulation(object):
 		balance = random.randint(0, 10000)
 		trader = Trader(name, balance)
 		trader.enter_order(random.choice(['bid', 'ask']), 	# 'bid', 'ask'
-							random.randint(101, 120), 		# p_high
-							random.randint(80, 99),  		# p_low
+							random.randint(101, 200), 		# p_high
+							random.randint(10, 100),  		# p_low
 							random.randint(400, 500), 		# u_max
 							random.randint(1000, 2000))		# q_max
 		self.traders.append(trader)
@@ -129,9 +129,9 @@ def single_random_graph(num_orders, g=True):
 	# Submit all of the orders into the book
 	sim.submit_all_orders()
 
-	sim.exchange.book.process_messages()
+	sim.exchange.book.temp_process_messages()
 	
-	sim.run_batch(g)
+	html = sim.run_batch(True)
 
 	# if g:
 	# 	html = sim.make_graph()
@@ -153,13 +153,14 @@ def run_simulation(num_orders, g):
 
 	sim.submit_all_orders()
 
+	# The graphing must happen on the main thread
 	while(True):
 		# Send random new traders
 		html = sim.run_batch(g)
 
 		time.sleep(Exchange._batch_time)
 
-		sim.graph.close()
+		# sim.graph.close()
 		sim.graph.redraw()
 
 
@@ -174,9 +175,9 @@ def main():
 		if sys.argv[2] == 'f':
 			g = False
 
-	# print(single_random_graph(num_orders, g))
+	print(single_random_graph(num_orders, g))
 
-	run_simulation(num_orders, g)
+	# run_simulation(num_orders, g)
 
 
 
