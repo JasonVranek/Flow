@@ -11,7 +11,7 @@ class Graph():
 	def set_exchange(self, exchange):
 		self.exchange = exchange
 
-	def test_graph(self):
+	def graph_aggregates(self):
 		self.fig = plt.figure()
 		plt.ioff()
 		ax = self.fig.add_subplot(111)

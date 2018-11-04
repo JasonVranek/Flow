@@ -16,7 +16,7 @@ class Exchange(OrderBook):
 
 	"""
 
-	_batch_time = 5
+	_batch_time = 2
 	_min_tick_size = .01
 
 	def __init__(self, name, address, balance=0.0):
@@ -33,6 +33,8 @@ class Exchange(OrderBook):
 		self.asks = {}
 		self.min_price = 0
 		self.max_price = 0
+		self.best_bid = 0
+		self.best_ask = 0
 
 	def add_book(self, book):
 		self.book = book
@@ -75,8 +77,11 @@ class Exchange(OrderBook):
 			self.best_bid, self.best_ask = self.calc_aggs(self.clearing_price)
 			self.clearing_rate = (self.best_bid + self.best_ask) / 2
 
+			print()
+			print(f'Results of batch {self.batch_num}')
 			print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
 			print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
+			print()
 
 		except Exception as e:
 			print('Error calculating crossing', e)
@@ -91,7 +96,7 @@ class Exchange(OrderBook):
 			# Finds a midpoint with the correct price tick precision
 			# index = self.nice_precision((L + R) / 2)
 			index = math.floor(((L + R) / 2) / Exchange._min_tick_size) * Exchange._min_tick_size
-			print(index)
+			# print(index)
 			dem, sup = self.calc_aggs(index)
 			if dem > sup:
 				# We are left of the crossing
