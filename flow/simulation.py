@@ -8,104 +8,86 @@ import sys
 import random
 import numpy as np
 import time
+import string
 
 from profiler import prof
 
+class Simulation(object):
+	def __init__(self, name, addr, balance, base_cur, desired_cur):
+		self.name = name
+		self.exchange = Exchange(name, addr, balance)
+		self.book = OrderBook(base_cur, desired_cur)
+		self.exchange.book = self.book	
+		self.graph = Graph()
+		self.graph.exchange = self.exchange	
+		self.traders = []
 
-def test_book():
-	book = OrderBook('ETH', 'BTC')
-	return book
+	def start(self):
+		pass
+		# Always process messages
 
+		# Always receive new messages
 
-def test_trader():
-	jason = Trader('jasons account', 100)
-	order = jason.new_order('buy', 101, 99, 500, 10000)
-	# cancel_order = jason.new_order('C', None, None, None, None)
-	jason.describe()
-	return jason
+		# Hold a batch auction every batch_time
 
-
-def setup_traders(num_traders):
-	traders = []
-	order_type = ['bid', 'ask']
-	print(f'Creating {num_traders} new traders and sending orders:')
-	for i in range(0, num_traders):
-		name = f'Trader{i}'
-		trader = Trader(name, random.randint(50, 300))
-		trader.enter_order(random.choice(order_type), 		# 'bid', 'ask'
+	def setup_rand_trader(self):
+		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+		balance = random.randint(0, 10000)
+		trader = Trader(name, balance)
+		trader.enter_order(random.choice(['bid', 'ask']), 	# 'bid', 'ask'
 							random.randint(101, 120), 		# p_high
 							random.randint(80, 99),  		# p_low
 							random.randint(400, 500), 		# u_max
 							random.randint(1000, 2000))		# q_max
-		traders.append(trader)
-		# print(trader.current_order)
-	return traders
+		self.traders.append(trader)
+		return trader
 
-def send_orders(num_orders, exchange):
-	# Create new trader trader
-	traders = setup_traders(num_orders)
+	def setup_trader(self, name, balance, order):
+		trader = Trader(name, balance)
+		trader.enter_order(*order)
+		self.traders.append(trader)
+		return trader
 
-	# Send an order to the exchange's order book
-	for trader in traders:
-		exchange.get_order(trader.current_order)
+	def cancel_trader(self, trader):
+		trader.cancel_order()
+		self.exchange.get_order(trader.current_order)
 
-	print('Received:', exchange.book.message_queue.qsize, 'messages')
+	def update_trader(self, trader, update):
+		trader.update_order(*update)
 
-	# Process any messages in the book's queue
-	exchange.book.process_messages()
+	def setup_rand_traders(self, n):
+		traders = []
+		for x in range(0, n):
+			traders.append(self.setup_rand_trader())
 
-	return traders
+		return traders
 
+	def submit_traders_orders(self, traders):
+		for trader in traders:
+			self.exchange.get_order(trader.current_order)
 
-@prof
-def test_random(num_orders, g=True):
-	# Create the exchange
-	ex = Exchange('DEX', 'address', 1_000)
+	def submit_all_orders(self):
+		for trader in self.traders:
+			self.exchange.get_order(trader.current_order)
 
-	# Create the order book
-	book = test_book()
+def single_random_graph(num_orders, g=True):
+	# Setup the simulation
+	sim = Simulation('DEX', '0xADDR', 1000, 'ETH', 'DAI')
 
-	# Add the order book to the exchange
-	ex.add_book(book)
+	# Create num_orders number of random traders 
+	sim.setup_rand_traders(num_orders)
 
-	# Create the graph object
-	graph = Graph()
-	graph.exchange = ex
+	# Submit all of the orders into the book
+	sim.submit_all_orders()
 
-	traders = send_orders(num_orders, ex)
-
-	# ex.book.pretty_book()
-
-	ex.hold_batch()
+	sim.exchange.book.process_messages()
+	
+	sim.exchange.hold_batch()
 
 	if g:
-		graph.test_graph()
-		graph.display()
-
-
-def random_html_graph(num_orders):
-	ex = Exchange('DEX', 'address', 1_000)
-
-	# Create the order book
-	book = test_book()
-
-	# Add the order book to the exchange
-	ex.add_book(book)
-
-	# Create the graph object
-	graph = Graph()
-	graph.exchange = ex
-
-	traders = send_orders(num_orders, ex)
-
-
-	# ex.book.pretty_book()
-
-	ex.hold_batch()
-
-	graph.test_graph()
-
-	html = graph.graph_as_html()
+		sim.graph.test_graph()
+		sim.graph.display()
+		html = sim.graph.graph_as_html()
 
 	return html
 
@@ -118,13 +100,8 @@ def main():
 	if len(sys.argv) > 2:	
 		if sys.argv[2] == 'f':
 			g = False
-	
-	test_random(num_orders, g)
-	# test_updates(num_orders)
-	# test_cancels()
-	# test_resize(g=False)
-	# repeating_random(num_orders, g)
-	# print(random_html_graph(num_orders))
+
+	print(single_random_graph(num_orders, g))
 
 
 
