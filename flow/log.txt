@@ -1,61 +1,5819 @@
-Creating 50 new traders and sending orders:
-Received: 50 messages
-max_iterations: 12, p_low: 80, p_high: 119
-99.5
-109.25
-104.38
-101.94
-100.72
-100.11
-99.81
-99.66
-99.58
-99.54
-99.56
-99.55
-Found crossing after 12 iterations
-p*:99.56, u*:5773.692276742502
-best bid: 5770.973110843125, best ask:5776.411442641878
+Starting simulation @2018-11-05 11:17:09.938946
 
+Order Book(DAI -> ETH)
+Number of bids: 0, Number of Asks: 0
+Bids
 
-<style>
+Asks
 
-</style>
+Cancelling 6 orders!
+Tried to cancel but not enough traders in book
+Sending 7 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 83, 'p_high': 193, 'u_max': 416, 'q_max': 1456, 'funds': 2017.7671567548161, 'order_id': 'HRUCR328HX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 96, 'p_high': 148, 'u_max': 445, 'q_max': 1461, 'funds': 7974.925951285166, 'order_id': 'SL7LLITD8D'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 31, 'p_high': 129, 'u_max': 494, 'q_max': 1362, 'funds': 7924.254203921468, 'order_id': '6KTL0MOLK8'}
+New min_price  83
+New max_price  193
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 52, 'p_high': 124, 'u_max': 438, 'q_max': 1687, 'funds': 9031.179298269148, 'order_id': '0TVYIJRMXU'}
+New min_price  31
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 146, 'u_max': 414, 'q_max': 1310, 'funds': 7367.919030269655, 'order_id': 'ZCZATY8YFH'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 95, 'p_high': 179, 'u_max': 457, 'q_max': 1256, 'funds': 1286.8644786022032, 'order_id': 'ECORPCTHWX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 32, 'p_high': 140, 'u_max': 475, 'q_max': 1299, 'funds': 4068.0887928796283, 'order_id': '2D1WU7W1SV'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:10.158810
+2018-11-05 11:17:10.158810
 
-<div id="fig_el7640547027530648541302153"></div>
-<script>
-function mpld3_load_lib(url, callback){
-  var s = document.createElement('script');
-  s.src = url;
-  s.async = true;
-  s.onreadystatechange = s.onload = callback;
-  s.onerror = function(){console.warn("failed to load library " + url);};
-  document.getElementsByTagName("head")[0].appendChild(s);
-}
+Order Book(DAI -> ETH)
+Number of bids: 2, Number of Asks: 5
+Bids
+HRUCR328HX
+ZCZATY8YFH
 
-if(typeof(mpld3) !== "undefined" && mpld3._mpld3IsLoaded){
-   // already loaded: just create the figure
-   !function(mpld3){
-       
-       mpld3.draw_figure("fig_el7640547027530648541302153", {"width": 640.0, "height": 480.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [67.1, 130.9], "ylim": [-585.35, 12292.35], "xdomain": [67.1, 130.9], "ydomain": [-585.35, 12292.35], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 9, "tickvalues": null, "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": false}, "visible": true}, {"position": "left", "nticks": 9, "tickvalues": null, "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": false}, "visible": true}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el764054702753904", "lines": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757632840", "color": "#1F77B4", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data01", "xindex": 0, "yindex": 2, "coordinates": "data", "id": "el764054757633232", "color": "#FF7F0E", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data02", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757634072", "color": "#007F00", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data03", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757634912", "color": "#007F00", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}], "paths": [], "markers": [], "texts": [{"text": "p*=99.56,\nu*=5773.6900000000005,\nu_best_bid=5770.97,\nu_best_ask=5776.41\n", "position": [107.10000000000001, 5773.692276742502], "coordinates": "data", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749312856"}, {"text": "(Price BTC/ETH)", "position": [0.5, -0.07921476671476674], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054702756312"}, {"text": "(Quantity Traded (shares/batch)", "position": [-0.11925963261648748, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749189584"}, {"text": "Total of batch 1", "position": [0.5, 1.0225468975468974], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -0.0, "fontsize": 12.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749312352"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[70.0, 10793.0, 0.0], [71.0, 10793.0, 0.0], [72.0, 10793.0, 0.0], [73.0, 10793.0, 0.0], [74.0, 10793.0, 0.0], [75.0, 10793.0, 0.0], [76.0, 10793.0, 0.0], [77.0, 10793.0, 0.0], [78.0, 10793.0, 0.0], [79.0, 10793.0, 0.0], [80.0, 10793.0, 0.0], [81.0, 10767.457117595048, 0.0], [82.0, 10741.914235190097, 14.888888888888914], [83.0, 10698.204686118479, 48.417777777777815], [84.0, 10641.967359269083, 109.39111111111112], [85.0, 10585.730032419688, 186.62370370370377], [86.0, 10493.592705570292, 294.397962962963], [87.0, 10382.169664435183, 418.89636015325664], [88.0, 10233.665141818588, 591.6576144864075], [89.0, 10062.107987623052, 764.4188688195586], [90.0, 9831.00188237856, 976.9526099251963], [91.0, 9599.895777134072, 1286.9983350137798], [92.0, 9350.549671889581, 1626.177393435697], [93.0, 9010.759122200647, 2002.0184888946503], [94.0, 8633.718572511712, 2377.8595843536045], [95.0, 8231.993812296463, 2875.172484323836], [96.0, 7798.422898235059, 3442.294908103592], [97.0, 7337.101984173653, 4055.5173318833486], [98.0, 6794.114403445583, 4721.989755663104], [99.0, 6138.25460049529, 5388.462179442859], [100.0, 5482.394797544996, 6081.228720869674], [101.0, 4826.534994594704, 6773.99526229649], [102.0, 4216.119636088856, 7348.031644993146], [103.0, 3687.9350468137764, 7922.0680276898], [104.0, 3241.4171242053635, 8496.104410386457], [105.0, 2794.8992015969507, 9035.497935940257], [106.0, 2385.6312789885383, 9521.641461494057], [107.0, 1994.5300230467926, 9892.801653714518], [108.0, 1667.3671129697084, 10210.65517926832], [109.0, 1372.0503567387777, 10488.175371488784], [110.0, 1111.2508418871578, 10708.921127619024], [111.0, 850.4513270355374, 10907.190693273076], [112.0, 611.9699940020993, 11089.200999667864], [113.0, 434.73866096866095, 11236.42463939599], [114.0, 312.19153846153847, 11362.069331755689], [115.0, 205.12589743589746, 11487.714024115394], [116.0, 113.96025641025642, 11596.63457854406], [117.0, 68.7568376068376, 11642.00638569604], [118.0, 23.5534188034188, 11674.50319284802], [119.0, 0.0, 11707.0], [120.0, 0.0, 11707.0], [121.0, 0.0, 11707.0], [122.0, 0.0, 11707.0], [123.0, 0.0, 11707.0], [124.0, 0.0, 11707.0], [125.0, 0.0, 11707.0], [126.0, 0.0, 11707.0], [127.0, 0.0, 11707.0], [128.0, 0.0, 11707.0]], "data02": [[70.0, 5773.692276742502], [99.56, 5773.692276742502]], "data03": [[99.56, 0.0], [99.56, 5773.692276742502]]}, "id": "el764054702753064", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
-   }(mpld3);
-}else if(typeof define === "function" && define.amd){
-   // require.js is available: use it to load d3/mpld3
-   require.config({paths: {d3: "https://mpld3.github.io/js/d3.v3.min"}});
-   require(["d3"], function(d3){
-      window.d3 = d3;
-      mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.3.js", function(){
-         
-         mpld3.draw_figure("fig_el7640547027530648541302153", {"width": 640.0, "height": 480.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [67.1, 130.9], "ylim": [-585.35, 12292.35], "xdomain": [67.1, 130.9], "ydomain": [-585.35, 12292.35], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 9, "tickvalues": null, "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": false}, "visible": true}, {"position": "left", "nticks": 9, "tickvalues": null, "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": false}, "visible": true}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el764054702753904", "lines": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757632840", "color": "#1F77B4", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data01", "xindex": 0, "yindex": 2, "coordinates": "data", "id": "el764054757633232", "color": "#FF7F0E", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data02", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757634072", "color": "#007F00", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data03", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757634912", "color": "#007F00", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}], "paths": [], "markers": [], "texts": [{"text": "p*=99.56,\nu*=5773.6900000000005,\nu_best_bid=5770.97,\nu_best_ask=5776.41\n", "position": [107.10000000000001, 5773.692276742502], "coordinates": "data", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749312856"}, {"text": "(Price BTC/ETH)", "position": [0.5, -0.07921476671476674], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054702756312"}, {"text": "(Quantity Traded (shares/batch)", "position": [-0.11925963261648748, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749189584"}, {"text": "Total of batch 1", "position": [0.5, 1.0225468975468974], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -0.0, "fontsize": 12.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749312352"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[70.0, 10793.0, 0.0], [71.0, 10793.0, 0.0], [72.0, 10793.0, 0.0], [73.0, 10793.0, 0.0], [74.0, 10793.0, 0.0], [75.0, 10793.0, 0.0], [76.0, 10793.0, 0.0], [77.0, 10793.0, 0.0], [78.0, 10793.0, 0.0], [79.0, 10793.0, 0.0], [80.0, 10793.0, 0.0], [81.0, 10767.457117595048, 0.0], [82.0, 10741.914235190097, 14.888888888888914], [83.0, 10698.204686118479, 48.417777777777815], [84.0, 10641.967359269083, 109.39111111111112], [85.0, 10585.730032419688, 186.62370370370377], [86.0, 10493.592705570292, 294.397962962963], [87.0, 10382.169664435183, 418.89636015325664], [88.0, 10233.665141818588, 591.6576144864075], [89.0, 10062.107987623052, 764.4188688195586], [90.0, 9831.00188237856, 976.9526099251963], [91.0, 9599.895777134072, 1286.9983350137798], [92.0, 9350.549671889581, 1626.177393435697], [93.0, 9010.759122200647, 2002.0184888946503], [94.0, 8633.718572511712, 2377.8595843536045], [95.0, 8231.993812296463, 2875.172484323836], [96.0, 7798.422898235059, 3442.294908103592], [97.0, 7337.101984173653, 4055.5173318833486], [98.0, 6794.114403445583, 4721.989755663104], [99.0, 6138.25460049529, 5388.462179442859], [100.0, 5482.394797544996, 6081.228720869674], [101.0, 4826.534994594704, 6773.99526229649], [102.0, 4216.119636088856, 7348.031644993146], [103.0, 3687.9350468137764, 7922.0680276898], [104.0, 3241.4171242053635, 8496.104410386457], [105.0, 2794.8992015969507, 9035.497935940257], [106.0, 2385.6312789885383, 9521.641461494057], [107.0, 1994.5300230467926, 9892.801653714518], [108.0, 1667.3671129697084, 10210.65517926832], [109.0, 1372.0503567387777, 10488.175371488784], [110.0, 1111.2508418871578, 10708.921127619024], [111.0, 850.4513270355374, 10907.190693273076], [112.0, 611.9699940020993, 11089.200999667864], [113.0, 434.73866096866095, 11236.42463939599], [114.0, 312.19153846153847, 11362.069331755689], [115.0, 205.12589743589746, 11487.714024115394], [116.0, 113.96025641025642, 11596.63457854406], [117.0, 68.7568376068376, 11642.00638569604], [118.0, 23.5534188034188, 11674.50319284802], [119.0, 0.0, 11707.0], [120.0, 0.0, 11707.0], [121.0, 0.0, 11707.0], [122.0, 0.0, 11707.0], [123.0, 0.0, 11707.0], [124.0, 0.0, 11707.0], [125.0, 0.0, 11707.0], [126.0, 0.0, 11707.0], [127.0, 0.0, 11707.0], [128.0, 0.0, 11707.0]], "data02": [[70.0, 5773.692276742502], [99.56, 5773.692276742502]], "data03": [[99.56, 0.0], [99.56, 5773.692276742502]]}, "id": "el764054702753064", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
-      });
-    });
-}else{
-    // require.js not available: dynamically load d3 & mpld3
-    mpld3_load_lib("https://mpld3.github.io/js/d3.v3.min.js", function(){
-         mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.3.js", function(){
-                 
-                 mpld3.draw_figure("fig_el7640547027530648541302153", {"width": 640.0, "height": 480.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [67.1, 130.9], "ylim": [-585.35, 12292.35], "xdomain": [67.1, 130.9], "ydomain": [-585.35, 12292.35], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 9, "tickvalues": null, "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": false}, "visible": true}, {"position": "left", "nticks": 9, "tickvalues": null, "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": false}, "visible": true}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el764054702753904", "lines": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757632840", "color": "#1F77B4", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data01", "xindex": 0, "yindex": 2, "coordinates": "data", "id": "el764054757633232", "color": "#FF7F0E", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data02", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757634072", "color": "#007F00", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}, {"data": "data03", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el764054757634912", "color": "#007F00", "linewidth": 1.5, "dasharray": "none", "alpha": 1, "zorder": 2, "drawstyle": "default"}], "paths": [], "markers": [], "texts": [{"text": "p*=99.56,\nu*=5773.6900000000005,\nu_best_bid=5770.97,\nu_best_ask=5776.41\n", "position": [107.10000000000001, 5773.692276742502], "coordinates": "data", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749312856"}, {"text": "(Price BTC/ETH)", "position": [0.5, -0.07921476671476674], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054702756312"}, {"text": "(Quantity Traded (shares/batch)", "position": [-0.11925963261648748, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749189584"}, {"text": "Total of batch 1", "position": [0.5, 1.0225468975468974], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -0.0, "fontsize": 12.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el764054749312352"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[70.0, 10793.0, 0.0], [71.0, 10793.0, 0.0], [72.0, 10793.0, 0.0], [73.0, 10793.0, 0.0], [74.0, 10793.0, 0.0], [75.0, 10793.0, 0.0], [76.0, 10793.0, 0.0], [77.0, 10793.0, 0.0], [78.0, 10793.0, 0.0], [79.0, 10793.0, 0.0], [80.0, 10793.0, 0.0], [81.0, 10767.457117595048, 0.0], [82.0, 10741.914235190097, 14.888888888888914], [83.0, 10698.204686118479, 48.417777777777815], [84.0, 10641.967359269083, 109.39111111111112], [85.0, 10585.730032419688, 186.62370370370377], [86.0, 10493.592705570292, 294.397962962963], [87.0, 10382.169664435183, 418.89636015325664], [88.0, 10233.665141818588, 591.6576144864075], [89.0, 10062.107987623052, 764.4188688195586], [90.0, 9831.00188237856, 976.9526099251963], [91.0, 9599.895777134072, 1286.9983350137798], [92.0, 9350.549671889581, 1626.177393435697], [93.0, 9010.759122200647, 2002.0184888946503], [94.0, 8633.718572511712, 2377.8595843536045], [95.0, 8231.993812296463, 2875.172484323836], [96.0, 7798.422898235059, 3442.294908103592], [97.0, 7337.101984173653, 4055.5173318833486], [98.0, 6794.114403445583, 4721.989755663104], [99.0, 6138.25460049529, 5388.462179442859], [100.0, 5482.394797544996, 6081.228720869674], [101.0, 4826.534994594704, 6773.99526229649], [102.0, 4216.119636088856, 7348.031644993146], [103.0, 3687.9350468137764, 7922.0680276898], [104.0, 3241.4171242053635, 8496.104410386457], [105.0, 2794.8992015969507, 9035.497935940257], [106.0, 2385.6312789885383, 9521.641461494057], [107.0, 1994.5300230467926, 9892.801653714518], [108.0, 1667.3671129697084, 10210.65517926832], [109.0, 1372.0503567387777, 10488.175371488784], [110.0, 1111.2508418871578, 10708.921127619024], [111.0, 850.4513270355374, 10907.190693273076], [112.0, 611.9699940020993, 11089.200999667864], [113.0, 434.73866096866095, 11236.42463939599], [114.0, 312.19153846153847, 11362.069331755689], [115.0, 205.12589743589746, 11487.714024115394], [116.0, 113.96025641025642, 11596.63457854406], [117.0, 68.7568376068376, 11642.00638569604], [118.0, 23.5534188034188, 11674.50319284802], [119.0, 0.0, 11707.0], [120.0, 0.0, 11707.0], [121.0, 0.0, 11707.0], [122.0, 0.0, 11707.0], [123.0, 0.0, 11707.0], [124.0, 0.0, 11707.0], [125.0, 0.0, 11707.0], [126.0, 0.0, 11707.0], [127.0, 0.0, 11707.0], [128.0, 0.0, 11707.0]], "data02": [[70.0, 5773.692276742502], [99.56, 5773.692276742502]], "data03": [[99.56, 0.0], [99.56, 5773.692276742502]]}, "id": "el764054702753064", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
-            })
-         });
-}
-</script>
+Asks
+SL7LLITD8D
+6KTL0MOLK8
+0TVYIJRMXU
+ECORPCTHWX
+2D1WU7W1SV
+
+max_iterations: 14, p_low: 31, p_high: 193
+
+Results of batch 0
+p*:83.08000000000001, u*:676.2196881192881
+best bid: 676.1862545454544, best ask:676.2531216931218
+
+Cancelling 7 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 95, 'p_high': 179, 'u_max': 457, 'q_max': 1256, 'order_id': 'ECORPCTHWX'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 32, 'p_high': 140, 'u_max': 475, 'q_max': 1299, 'order_id': '2D1WU7W1SV'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 96, 'p_high': 148, 'u_max': 445, 'q_max': 1461, 'order_id': 'SL7LLITD8D'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 46, 'p_high': 146, 'u_max': 414, 'q_max': 1310, 'order_id': 'ZCZATY8YFH'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 83, 'p_high': 193, 'u_max': 416, 'q_max': 1456, 'order_id': 'HRUCR328HX'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 52, 'p_high': 124, 'u_max': 438, 'q_max': 1687, 'order_id': '0TVYIJRMXU'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 31, 'p_high': 129, 'u_max': 494, 'q_max': 1362, 'order_id': '6KTL0MOLK8'}
+Sending 15 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 64, 'p_high': 125, 'u_max': 404, 'q_max': 1767, 'funds': 6440.440108126575, 'order_id': 'M88QXJXN63'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 45, 'p_high': 122, 'u_max': 435, 'q_max': 1995, 'funds': 3836.525286986271, 'order_id': 'PJMNYPHGZ8'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 42, 'p_high': 102, 'u_max': 435, 'q_max': 1736, 'funds': 6541.46819107253, 'order_id': 'VXUSWFVA8W'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 77, 'p_high': 167, 'u_max': 428, 'q_max': 1636, 'funds': 6997.222435013963, 'order_id': 'JV9YZ5BCFD'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 86, 'p_high': 199, 'u_max': 422, 'q_max': 1316, 'funds': 1012.5995825482959, 'order_id': '8PF7PNCHZY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 30, 'p_high': 186, 'u_max': 448, 'q_max': 1588, 'funds': 1769.368676209918, 'order_id': 'KXWZLO5FXV'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 81, 'p_high': 127, 'u_max': 467, 'q_max': 1648, 'funds': 8028.912923026883, 'order_id': '83T7MPP6S9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 138, 'u_max': 489, 'q_max': 1505, 'funds': 6878.83729396692, 'order_id': 'YALYSQCQ73'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 95, 'p_high': 148, 'u_max': 470, 'q_max': 1564, 'funds': 8158.269427408826, 'order_id': '7MQB11DI3F'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 38, 'p_high': 121, 'u_max': 426, 'q_max': 1987, 'funds': 798.4708094528792, 'order_id': 'O5DFN5QEIT'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 21, 'p_high': 181, 'u_max': 496, 'q_max': 1242, 'funds': 4178.723768655107, 'order_id': '5ZTK9SEXYB'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 34, 'p_high': 142, 'u_max': 460, 'q_max': 1259, 'funds': 3583.469506774145, 'order_id': 'BGFGORLCPQ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 52, 'p_high': 102, 'u_max': 489, 'q_max': 1925, 'funds': 9168.709319731943, 'order_id': 'TPBRGD5KP2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 45, 'p_high': 148, 'u_max': 432, 'q_max': 1996, 'funds': 4556.580613187198, 'order_id': 'D4S65XAD8U'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 96, 'p_high': 189, 'u_max': 455, 'q_max': 1698, 'funds': 9015.005489905889, 'order_id': 'PX1MWOAFWW'}
+New max_price  199
+New min_price  30
+New min_price  21
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:11.210299
+2018-11-05 11:17:11.210299
+
+Order Book(DAI -> ETH)
+Number of bids: 8, Number of Asks: 7
+Bids
+PJMNYPHGZ8
+VXUSWFVA8W
+KXWZLO5FXV
+83T7MPP6S9
+YALYSQCQ73
+O5DFN5QEIT
+TPBRGD5KP2
+PX1MWOAFWW
+
+Asks
+M88QXJXN63
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+5ZTK9SEXYB
+BGFGORLCPQ
+D4S65XAD8U
+
+max_iterations: 15, p_low: 21, p_high: 199
+
+Results of batch 1
+p*:102.54, u*:1291.1070188072229
+best bid: 1290.839178470864, best ask:1291.3748591435817
+
+Cancelling 1 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 138, 'u_max': 489, 'q_max': 1505, 'order_id': 'YALYSQCQ73'}
+Sending 11 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 42, 'p_high': 109, 'u_max': 451, 'q_max': 1166, 'funds': 1158.4247830626005, 'order_id': 'P28XTM2IEV'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 56, 'p_high': 176, 'u_max': 415, 'q_max': 1606, 'funds': 5844.6494099823885, 'order_id': 'YIFHRCBX8V'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 89, 'p_high': 189, 'u_max': 405, 'q_max': 1227, 'funds': 5326.950769335503, 'order_id': 'A6YBWAVZ12'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 19, 'p_high': 107, 'u_max': 444, 'q_max': 1510, 'funds': 8679.873723484503, 'order_id': 'ZDH1GT9YF0'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 88, 'p_high': 164, 'u_max': 437, 'q_max': 1585, 'funds': 3380.2899508664686, 'order_id': 'XKTUBBR3J3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 25, 'p_high': 109, 'u_max': 488, 'q_max': 1654, 'funds': 8215.738449210527, 'order_id': 'GFI3L8OHZ9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 19, 'p_high': 190, 'u_max': 471, 'q_max': 1885, 'funds': 2899.2960113337863, 'order_id': 'XCO4XH5JZ4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 96, 'p_high': 128, 'u_max': 434, 'q_max': 1310, 'funds': 9501.169280871954, 'order_id': 'QQNRJCX443'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 81, 'p_high': 169, 'u_max': 441, 'q_max': 1016, 'funds': 2991.1787249263666, 'order_id': 'YDG8B9EI4Z'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 10, 'p_high': 176, 'u_max': 447, 'q_max': 1000, 'funds': 7087.368431133686, 'order_id': 'Z5P6N8VC4A'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 36, 'p_high': 183, 'u_max': 415, 'q_max': 1425, 'funds': 4899.947660022998, 'order_id': 'F2YVD8JUQQ'}
+New min_price  19
+New min_price  10
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:12.165473
+2018-11-05 11:17:12.165473
+
+Order Book(DAI -> ETH)
+Number of bids: 14, Number of Asks: 11
+Bids
+PJMNYPHGZ8
+VXUSWFVA8W
+KXWZLO5FXV
+83T7MPP6S9
+O5DFN5QEIT
+TPBRGD5KP2
+PX1MWOAFWW
+A6YBWAVZ12
+ZDH1GT9YF0
+GFI3L8OHZ9
+XCO4XH5JZ4
+QQNRJCX443
+Z5P6N8VC4A
+F2YVD8JUQQ
+
+Asks
+M88QXJXN63
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+5ZTK9SEXYB
+BGFGORLCPQ
+D4S65XAD8U
+P28XTM2IEV
+YIFHRCBX8V
+XKTUBBR3J3
+YDG8B9EI4Z
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 2
+p*:106.53, u*:2276.360564578489
+best bid: 2275.953321958465, best ask:2276.7678071985133
+
+Cancelling 3 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 42, 'p_high': 102, 'u_max': 435, 'q_max': 1736, 'order_id': 'VXUSWFVA8W'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 10, 'p_high': 176, 'u_max': 447, 'q_max': 1000, 'order_id': 'Z5P6N8VC4A'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 81, 'p_high': 169, 'u_max': 441, 'q_max': 1016, 'order_id': 'YDG8B9EI4Z'}
+Sending 7 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 27, 'p_high': 182, 'u_max': 462, 'q_max': 1619, 'funds': 9453.11911828526, 'order_id': '2U9D0K66LD'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 82, 'p_high': 148, 'u_max': 421, 'q_max': 1319, 'funds': 2612.9326602700453, 'order_id': '5G4Q1FEO0T'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 57, 'p_high': 160, 'u_max': 440, 'q_max': 1070, 'funds': 9273.677467123633, 'order_id': 'MWOP8UU3SC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 90, 'p_high': 102, 'u_max': 444, 'q_max': 1146, 'funds': 8040.98201482557, 'order_id': 'SUKYM5CBIT'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 40, 'p_high': 187, 'u_max': 436, 'q_max': 1586, 'funds': 640.5172787552948, 'order_id': 'E6DXHMAP3W'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 93, 'p_high': 162, 'u_max': 482, 'q_max': 1902, 'funds': 96.22737632218437, 'order_id': 'I2NXSZ44VB'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 58, 'p_high': 139, 'u_max': 468, 'q_max': 1350, 'funds': 7442.472895479038, 'order_id': '0UJU92Z11Z'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:13.164835
+2018-11-05 11:17:13.164835
+
+Order Book(DAI -> ETH)
+Number of bids: 16, Number of Asks: 13
+Bids
+PJMNYPHGZ8
+KXWZLO5FXV
+83T7MPP6S9
+O5DFN5QEIT
+TPBRGD5KP2
+PX1MWOAFWW
+A6YBWAVZ12
+ZDH1GT9YF0
+GFI3L8OHZ9
+XCO4XH5JZ4
+QQNRJCX443
+F2YVD8JUQQ
+2U9D0K66LD
+5G4Q1FEO0T
+MWOP8UU3SC
+I2NXSZ44VB
+
+Asks
+M88QXJXN63
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+5ZTK9SEXYB
+BGFGORLCPQ
+D4S65XAD8U
+P28XTM2IEV
+YIFHRCBX8V
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+0UJU92Z11Z
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 3
+p*:107.41000000000001, u*:3123.2597556456058
+best bid: 3122.977506637955, best ask:3123.5420046532568
+
+Cancelling 5 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 57, 'p_high': 160, 'u_max': 440, 'q_max': 1070, 'order_id': 'MWOP8UU3SC'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 64, 'p_high': 125, 'u_max': 404, 'q_max': 1767, 'order_id': 'M88QXJXN63'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 96, 'p_high': 189, 'u_max': 455, 'q_max': 1698, 'order_id': 'PX1MWOAFWW'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 58, 'p_high': 139, 'u_max': 468, 'q_max': 1350, 'order_id': '0UJU92Z11Z'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 30, 'p_high': 186, 'u_max': 448, 'q_max': 1588, 'order_id': 'KXWZLO5FXV'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 21, 'p_high': 111, 'u_max': 431, 'q_max': 1873, 'funds': 2452.06687157379, 'order_id': 'JDMDJGHPJ3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 63, 'p_high': 154, 'u_max': 428, 'q_max': 1130, 'funds': 4306.867089400554, 'order_id': 'T5SRH0ZQCT'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 27, 'p_high': 145, 'u_max': 461, 'q_max': 1482, 'funds': 708.7863485431833, 'order_id': 'OZQD3DZ3W1'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 83, 'p_high': 124, 'u_max': 454, 'q_max': 1041, 'funds': 8368.951943374946, 'order_id': 'PGFWXP3YF6'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 75, 'p_high': 196, 'u_max': 427, 'q_max': 1307, 'funds': 2448.6543010282126, 'order_id': '4SAVWAX5N5'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 52, 'p_high': 163, 'u_max': 413, 'q_max': 1957, 'funds': 8387.312102010352, 'order_id': 'ECGJI20KGO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 15, 'p_high': 186, 'u_max': 401, 'q_max': 1829, 'funds': 154.36553497459093, 'order_id': '50ZCX2XN00'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 60, 'p_high': 120, 'u_max': 459, 'q_max': 1291, 'funds': 6793.172826805769, 'order_id': 'V1GVDRWV61'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:14.165465
+2018-11-05 11:17:14.165465
+
+Order Book(DAI -> ETH)
+Number of bids: 18, Number of Asks: 14
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+O5DFN5QEIT
+TPBRGD5KP2
+A6YBWAVZ12
+ZDH1GT9YF0
+GFI3L8OHZ9
+XCO4XH5JZ4
+QQNRJCX443
+F2YVD8JUQQ
+2U9D0K66LD
+5G4Q1FEO0T
+I2NXSZ44VB
+JDMDJGHPJ3
+T5SRH0ZQCT
+PGFWXP3YF6
+4SAVWAX5N5
+50ZCX2XN00
+
+Asks
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+5ZTK9SEXYB
+BGFGORLCPQ
+D4S65XAD8U
+P28XTM2IEV
+YIFHRCBX8V
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+OZQD3DZ3W1
+ECGJI20KGO
+V1GVDRWV61
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 4
+p*:105.89, u*:3337.2896146668263
+best bid: 3336.927510052133, best ask:3337.65171928152
+
+Cancelling 4 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 96, 'p_high': 128, 'u_max': 434, 'q_max': 1310, 'order_id': 'QQNRJCX443'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 52, 'p_high': 163, 'u_max': 413, 'q_max': 1957, 'order_id': 'ECGJI20KGO'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 75, 'p_high': 196, 'u_max': 427, 'q_max': 1307, 'order_id': '4SAVWAX5N5'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 34, 'p_high': 142, 'u_max': 460, 'q_max': 1259, 'order_id': 'BGFGORLCPQ'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 44, 'p_high': 178, 'u_max': 483, 'q_max': 1069, 'funds': 7491.497971503597, 'order_id': 'N5TL7K5TD8'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 72, 'p_high': 102, 'u_max': 470, 'q_max': 1775, 'funds': 4980.022355082609, 'order_id': 'D6QKHG2UJ3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 85, 'p_high': 159, 'u_max': 495, 'q_max': 1869, 'funds': 3419.4881062153236, 'order_id': 'N5B70ZRJCM'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 96, 'p_high': 171, 'u_max': 436, 'q_max': 1248, 'funds': 8696.958790216844, 'order_id': 'TMUHJJ9PT5'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 62, 'p_high': 111, 'u_max': 415, 'q_max': 1786, 'funds': 1686.7139652657625, 'order_id': 'L609WKJGII'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 19, 'p_high': 129, 'u_max': 488, 'q_max': 1135, 'funds': 1059.3387329908933, 'order_id': 'XL1BU89DSP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 92, 'p_high': 181, 'u_max': 490, 'q_max': 1312, 'funds': 3318.6113651602545, 'order_id': 'EDDFBNYGWH'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 140, 'u_max': 429, 'q_max': 1528, 'funds': 8933.454245611427, 'order_id': 'HJDCXF3AHF'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:15.166007
+2018-11-05 11:17:15.166007
+
+Order Book(DAI -> ETH)
+Number of bids: 19, Number of Asks: 17
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+O5DFN5QEIT
+TPBRGD5KP2
+A6YBWAVZ12
+ZDH1GT9YF0
+GFI3L8OHZ9
+XCO4XH5JZ4
+F2YVD8JUQQ
+2U9D0K66LD
+5G4Q1FEO0T
+I2NXSZ44VB
+JDMDJGHPJ3
+T5SRH0ZQCT
+PGFWXP3YF6
+50ZCX2XN00
+N5TL7K5TD8
+D6QKHG2UJ3
+HJDCXF3AHF
+
+Asks
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+5ZTK9SEXYB
+D4S65XAD8U
+P28XTM2IEV
+YIFHRCBX8V
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+OZQD3DZ3W1
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+L609WKJGII
+XL1BU89DSP
+EDDFBNYGWH
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 5
+p*:102.02000000000001, u*:3528.6248985156262
+best bid: 3528.3350434353565, best ask:3528.9147535958964
+
+Cancelling 4 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 72, 'p_high': 102, 'u_max': 470, 'q_max': 1775, 'order_id': 'D6QKHG2UJ3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 27, 'p_high': 145, 'u_max': 461, 'q_max': 1482, 'order_id': 'OZQD3DZ3W1'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 45, 'p_high': 148, 'u_max': 432, 'q_max': 1996, 'order_id': 'D4S65XAD8U'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 21, 'p_high': 181, 'u_max': 496, 'q_max': 1242, 'order_id': '5ZTK9SEXYB'}
+Sending 14 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 69, 'p_high': 172, 'u_max': 497, 'q_max': 1055, 'funds': 6720.280224105914, 'order_id': 'ZE0620XCKZ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 84, 'p_high': 158, 'u_max': 428, 'q_max': 1899, 'funds': 2897.327000608343, 'order_id': 'FQWA6J9U0L'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 98, 'p_high': 199, 'u_max': 416, 'q_max': 1995, 'funds': 3901.0172862897152, 'order_id': '1T2NH6721T'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 27, 'p_high': 143, 'u_max': 403, 'q_max': 1460, 'funds': 3193.119226931178, 'order_id': 'YNT42HKI6S'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 59, 'p_high': 176, 'u_max': 459, 'q_max': 1584, 'funds': 9644.985776287427, 'order_id': 'I7I75JL9GB'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 188, 'u_max': 464, 'q_max': 1671, 'funds': 4427.5320881339085, 'order_id': 'MGLTFI9YLZ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 11, 'p_high': 176, 'u_max': 444, 'q_max': 1164, 'funds': 5326.093482589566, 'order_id': '2UYXUSKB9K'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 66, 'p_high': 132, 'u_max': 481, 'q_max': 1963, 'funds': 7777.476954962318, 'order_id': '1CH06DLPVF'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 76, 'p_high': 167, 'u_max': 499, 'q_max': 1776, 'funds': 2817.531657078779, 'order_id': 'J56KBFSFJE'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 13, 'p_high': 158, 'u_max': 495, 'q_max': 1448, 'funds': 778.8997501985596, 'order_id': 'D5QI1J5QJW'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 27, 'p_high': 194, 'u_max': 421, 'q_max': 1531, 'funds': 4423.758841519998, 'order_id': 'P7S09BZB5X'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 136, 'u_max': 419, 'q_max': 1871, 'funds': 7385.742857521228, 'order_id': 'QLVPCG8U1W'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 84, 'p_high': 139, 'u_max': 429, 'q_max': 1361, 'funds': 2979.642974041965, 'order_id': 'AUC9LD851V'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 72, 'p_high': 198, 'u_max': 403, 'q_max': 1389, 'funds': 6762.874061985387, 'order_id': '87ORTNS97D'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:16.165172
+2018-11-05 11:17:16.165172
+
+Order Book(DAI -> ETH)
+Number of bids: 23, Number of Asks: 23
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+O5DFN5QEIT
+TPBRGD5KP2
+A6YBWAVZ12
+ZDH1GT9YF0
+GFI3L8OHZ9
+XCO4XH5JZ4
+F2YVD8JUQQ
+2U9D0K66LD
+5G4Q1FEO0T
+I2NXSZ44VB
+JDMDJGHPJ3
+T5SRH0ZQCT
+PGFWXP3YF6
+50ZCX2XN00
+N5TL7K5TD8
+HJDCXF3AHF
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+
+Asks
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+P28XTM2IEV
+YIFHRCBX8V
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+L609WKJGII
+XL1BU89DSP
+EDDFBNYGWH
+ZE0620XCKZ
+I7I75JL9GB
+2UYXUSKB9K
+1CH06DLPVF
+J56KBFSFJE
+D5QI1J5QJW
+P7S09BZB5X
+AUC9LD851V
+87ORTNS97D
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 6
+p*:103.27000000000001, u*:4597.943944964193
+best bid: 4597.601612160462, best ask:4598.286277767925
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 66, 'p_high': 132, 'u_max': 481, 'q_max': 1963, 'order_id': '1CH06DLPVF'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 38, 'p_high': 121, 'u_max': 426, 'q_max': 1987, 'order_id': 'O5DFN5QEIT'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 89, 'p_high': 189, 'u_max': 405, 'q_max': 1227, 'order_id': 'A6YBWAVZ12'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 93, 'p_high': 162, 'u_max': 482, 'q_max': 1902, 'order_id': 'I2NXSZ44VB'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 44, 'p_high': 178, 'u_max': 483, 'q_max': 1069, 'order_id': 'N5TL7K5TD8'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 62, 'p_high': 111, 'u_max': 415, 'q_max': 1786, 'order_id': 'L609WKJGII'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 83, 'p_high': 116, 'u_max': 467, 'q_max': 1062, 'funds': 7756.472119468209, 'order_id': 'WC49M4CTIO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 49, 'p_high': 124, 'u_max': 445, 'q_max': 1095, 'funds': 9236.388343197365, 'order_id': '5T2ASMQT0O'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 10, 'p_high': 101, 'u_max': 465, 'q_max': 1461, 'funds': 3013.3314802682553, 'order_id': 'K5252WKQG2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 25, 'p_high': 177, 'u_max': 487, 'q_max': 1249, 'funds': 9097.907196122735, 'order_id': 'EMLRRN68TU'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 90, 'p_high': 190, 'u_max': 414, 'q_max': 1285, 'funds': 689.0095159968856, 'order_id': '5V4QAES7OO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 82, 'p_high': 157, 'u_max': 462, 'q_max': 1528, 'funds': 144.50999399707732, 'order_id': 'GU3619EDSV'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 88, 'p_high': 127, 'u_max': 446, 'q_max': 1778, 'funds': 6725.550476118962, 'order_id': 'QLIEF5JF0S'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 102, 'u_max': 414, 'q_max': 1025, 'funds': 7954.239048030174, 'order_id': '9L0PRJ8E8B'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:17.166058
+2018-11-05 11:17:17.166058
+
+Order Book(DAI -> ETH)
+Number of bids: 23, Number of Asks: 25
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+TPBRGD5KP2
+ZDH1GT9YF0
+GFI3L8OHZ9
+XCO4XH5JZ4
+F2YVD8JUQQ
+2U9D0K66LD
+5G4Q1FEO0T
+JDMDJGHPJ3
+T5SRH0ZQCT
+PGFWXP3YF6
+50ZCX2XN00
+HJDCXF3AHF
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+5T2ASMQT0O
+5V4QAES7OO
+QLIEF5JF0S
+9L0PRJ8E8B
+
+Asks
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+P28XTM2IEV
+YIFHRCBX8V
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+EDDFBNYGWH
+ZE0620XCKZ
+I7I75JL9GB
+2UYXUSKB9K
+J56KBFSFJE
+D5QI1J5QJW
+P7S09BZB5X
+AUC9LD851V
+87ORTNS97D
+WC49M4CTIO
+K5252WKQG2
+EMLRRN68TU
+GU3619EDSV
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 7
+p*:100.03, u*:4631.3614231483525
+best bid: 4630.670348458769, best ask:4632.052497837936
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 83, 'p_high': 116, 'u_max': 467, 'q_max': 1062, 'order_id': 'WC49M4CTIO'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 82, 'p_high': 148, 'u_max': 421, 'q_max': 1319, 'order_id': '5G4Q1FEO0T'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 11, 'p_high': 176, 'u_max': 444, 'q_max': 1164, 'order_id': '2UYXUSKB9K'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 56, 'p_high': 176, 'u_max': 415, 'q_max': 1606, 'order_id': 'YIFHRCBX8V'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 67, 'p_high': 140, 'u_max': 429, 'q_max': 1528, 'order_id': 'HJDCXF3AHF'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 19, 'p_high': 107, 'u_max': 444, 'q_max': 1510, 'order_id': 'ZDH1GT9YF0'}
+Sending 7 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 118, 'u_max': 416, 'q_max': 1493, 'funds': 6539.922685449524, 'order_id': 'O7PHFCLMY3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 20, 'p_high': 184, 'u_max': 452, 'q_max': 1897, 'funds': 5363.592563652622, 'order_id': '7H9C4KJTP1'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 20, 'p_high': 174, 'u_max': 422, 'q_max': 1123, 'funds': 492.9569201399997, 'order_id': 'J2645Z7OGS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 20, 'p_high': 106, 'u_max': 407, 'q_max': 1334, 'funds': 9522.857189974015, 'order_id': 'WT1C37JNBC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 76, 'p_high': 146, 'u_max': 411, 'q_max': 1021, 'funds': 6183.718165723112, 'order_id': 'ENFM57C8FI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 188, 'u_max': 472, 'q_max': 1033, 'funds': 1564.9360913259547, 'order_id': 'RV4S63X7ZX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 73, 'p_high': 178, 'u_max': 438, 'q_max': 1922, 'funds': 4807.744300409406, 'order_id': 'F22RGM4ASV'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:18.165207
+2018-11-05 11:17:18.165207
+
+Order Book(DAI -> ETH)
+Number of bids: 26, Number of Asks: 23
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+TPBRGD5KP2
+GFI3L8OHZ9
+XCO4XH5JZ4
+F2YVD8JUQQ
+2U9D0K66LD
+JDMDJGHPJ3
+T5SRH0ZQCT
+PGFWXP3YF6
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+5T2ASMQT0O
+5V4QAES7OO
+QLIEF5JF0S
+9L0PRJ8E8B
+O7PHFCLMY3
+J2645Z7OGS
+WT1C37JNBC
+ENFM57C8FI
+RV4S63X7ZX
+F22RGM4ASV
+
+Asks
+JV9YZ5BCFD
+8PF7PNCHZY
+7MQB11DI3F
+P28XTM2IEV
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+EDDFBNYGWH
+ZE0620XCKZ
+I7I75JL9GB
+J56KBFSFJE
+D5QI1J5QJW
+P7S09BZB5X
+AUC9LD851V
+87ORTNS97D
+K5252WKQG2
+EMLRRN68TU
+GU3619EDSV
+7H9C4KJTP1
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 8
+p*:104.09, u*:4728.5618627668855
+best bid: 4728.385921766686, best ask:4728.737803767085
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 27, 'p_high': 194, 'u_max': 421, 'q_max': 1531, 'order_id': 'P7S09BZB5X'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 13, 'p_high': 158, 'u_max': 495, 'q_max': 1448, 'order_id': 'D5QI1J5QJW'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 77, 'p_high': 167, 'u_max': 428, 'q_max': 1636, 'order_id': 'JV9YZ5BCFD'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 20, 'p_high': 174, 'u_max': 422, 'q_max': 1123, 'order_id': 'J2645Z7OGS'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 69, 'p_high': 172, 'u_max': 497, 'q_max': 1055, 'order_id': 'ZE0620XCKZ'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 42, 'p_high': 109, 'u_max': 451, 'q_max': 1166, 'order_id': 'P28XTM2IEV'}
+Sending 7 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 71, 'p_high': 131, 'u_max': 461, 'q_max': 1004, 'funds': 9044.881551916034, 'order_id': 'B6WJ8RH3UI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 73, 'p_high': 136, 'u_max': 479, 'q_max': 1824, 'funds': 8892.19286592207, 'order_id': 'MI7DHYLEBA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 73, 'p_high': 117, 'u_max': 466, 'q_max': 1925, 'funds': 9194.666764813755, 'order_id': 'PLHZHNFUJ6'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 64, 'p_high': 131, 'u_max': 460, 'q_max': 1389, 'funds': 6719.968087008511, 'order_id': 'EB6WYQQJAS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 73, 'p_high': 153, 'u_max': 469, 'q_max': 1905, 'funds': 6994.931182445139, 'order_id': 'XDYDALJHRI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 26, 'p_high': 198, 'u_max': 469, 'q_max': 1755, 'funds': 6836.570875581552, 'order_id': 'R1KTO1SYT6'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 36, 'p_high': 109, 'u_max': 412, 'q_max': 1167, 'funds': 1585.4872489250827, 'order_id': 'ERNVY6OJNR'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:19.165391
+2018-11-05 11:17:19.165391
+
+Order Book(DAI -> ETH)
+Number of bids: 28, Number of Asks: 22
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+TPBRGD5KP2
+GFI3L8OHZ9
+XCO4XH5JZ4
+F2YVD8JUQQ
+2U9D0K66LD
+JDMDJGHPJ3
+T5SRH0ZQCT
+PGFWXP3YF6
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+5T2ASMQT0O
+5V4QAES7OO
+QLIEF5JF0S
+9L0PRJ8E8B
+O7PHFCLMY3
+WT1C37JNBC
+ENFM57C8FI
+RV4S63X7ZX
+F22RGM4ASV
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+
+Asks
+8PF7PNCHZY
+7MQB11DI3F
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+EDDFBNYGWH
+I7I75JL9GB
+J56KBFSFJE
+AUC9LD851V
+87ORTNS97D
+K5252WKQG2
+EMLRRN68TU
+GU3619EDSV
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+XDYDALJHRI
+ERNVY6OJNR
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 9
+p*:106.35000000000001, u*:4933.290796779152
+best bid: 4933.015677535042, best ask:4933.565916023261
+
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:20.159735
+2018-11-05 11:17:20.159735
+
+Order Book(DAI -> ETH)
+Number of bids: 28, Number of Asks: 22
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+TPBRGD5KP2
+GFI3L8OHZ9
+XCO4XH5JZ4
+F2YVD8JUQQ
+2U9D0K66LD
+JDMDJGHPJ3
+T5SRH0ZQCT
+PGFWXP3YF6
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+5T2ASMQT0O
+5V4QAES7OO
+QLIEF5JF0S
+9L0PRJ8E8B
+O7PHFCLMY3
+WT1C37JNBC
+ENFM57C8FI
+RV4S63X7ZX
+F22RGM4ASV
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+
+Asks
+8PF7PNCHZY
+7MQB11DI3F
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+EDDFBNYGWH
+I7I75JL9GB
+J56KBFSFJE
+AUC9LD851V
+87ORTNS97D
+K5252WKQG2
+EMLRRN68TU
+GU3619EDSV
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+XDYDALJHRI
+ERNVY6OJNR
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 10
+p*:106.35000000000001, u*:4933.290796779152
+best bid: 4933.015677535042, best ask:4933.565916023261
+
+Cancelling 2 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 83, 'p_high': 124, 'u_max': 454, 'q_max': 1041, 'order_id': 'PGFWXP3YF6'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 19, 'p_high': 190, 'u_max': 471, 'q_max': 1885, 'order_id': 'XCO4XH5JZ4'}
+Sending 10 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 12, 'p_high': 144, 'u_max': 459, 'q_max': 1899, 'funds': 1330.155302494742, 'order_id': '0HKQ3NOOE1'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 140, 'u_max': 413, 'q_max': 1982, 'funds': 5831.170836459215, 'order_id': 'ZREI8FGP70'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 18, 'p_high': 189, 'u_max': 448, 'q_max': 1597, 'funds': 8343.62443072205, 'order_id': 'PEWTDMLJ2L'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 43, 'p_high': 129, 'u_max': 484, 'q_max': 1473, 'funds': 1897.5936870049893, 'order_id': 'QM983KW4IN'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 43, 'p_high': 181, 'u_max': 497, 'q_max': 1120, 'funds': 5995.145680405261, 'order_id': 'OLACI18V6O'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 58, 'p_high': 194, 'u_max': 424, 'q_max': 1572, 'funds': 6923.1536908932, 'order_id': '48YTWAXOAA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 28, 'p_high': 110, 'u_max': 420, 'q_max': 1366, 'funds': 8297.452296276591, 'order_id': '27TGOTD20T'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 110, 'u_max': 459, 'q_max': 1284, 'funds': 9183.603713521108, 'order_id': '30ELE1ABHA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 80, 'p_high': 177, 'u_max': 458, 'q_max': 1682, 'funds': 547.941321835651, 'order_id': 'P0RBVNG2SX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 27, 'p_high': 194, 'u_max': 431, 'q_max': 1830, 'funds': 9405.577415155525, 'order_id': '2FK1BOF2ZB'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:21.165352
+2018-11-05 11:17:21.165352
+
+Order Book(DAI -> ETH)
+Number of bids: 32, Number of Asks: 26
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+TPBRGD5KP2
+GFI3L8OHZ9
+F2YVD8JUQQ
+2U9D0K66LD
+JDMDJGHPJ3
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+5T2ASMQT0O
+5V4QAES7OO
+QLIEF5JF0S
+9L0PRJ8E8B
+O7PHFCLMY3
+WT1C37JNBC
+ENFM57C8FI
+RV4S63X7ZX
+F22RGM4ASV
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+ZREI8FGP70
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+30ELE1ABHA
+
+Asks
+8PF7PNCHZY
+7MQB11DI3F
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+EDDFBNYGWH
+I7I75JL9GB
+J56KBFSFJE
+AUC9LD851V
+87ORTNS97D
+K5252WKQG2
+EMLRRN68TU
+GU3619EDSV
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+XDYDALJHRI
+ERNVY6OJNR
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+2FK1BOF2ZB
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 11
+p*:104.92, u*:5806.801501394089
+best bid: 5805.63427070706, best ask:5807.96873208112
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 82, 'p_high': 157, 'u_max': 462, 'q_max': 1528, 'order_id': 'GU3619EDSV'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 27, 'p_high': 194, 'u_max': 431, 'q_max': 1830, 'order_id': '2FK1BOF2ZB'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 73, 'p_high': 178, 'u_max': 438, 'q_max': 1922, 'order_id': 'F22RGM4ASV'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 73, 'p_high': 153, 'u_max': 469, 'q_max': 1905, 'order_id': 'XDYDALJHRI'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 76, 'p_high': 167, 'u_max': 499, 'q_max': 1776, 'order_id': 'J56KBFSFJE'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 52, 'p_high': 102, 'u_max': 489, 'q_max': 1925, 'order_id': 'TPBRGD5KP2'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 55, 'p_high': 120, 'u_max': 450, 'q_max': 1497, 'funds': 3753.3167071834837, 'order_id': '0TRZLGBK13'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 89, 'p_high': 183, 'u_max': 484, 'q_max': 1576, 'funds': 5961.4837632015415, 'order_id': 'BPB5PLK9ME'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 72, 'p_high': 194, 'u_max': 423, 'q_max': 1913, 'funds': 173.12985256428547, 'order_id': 'LGHU3HQAB9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 72, 'p_high': 134, 'u_max': 420, 'q_max': 1494, 'funds': 8675.326315544376, 'order_id': 'ZFQ1F2CUV9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 195, 'u_max': 487, 'q_max': 1677, 'funds': 906.6293512021972, 'order_id': 'FXPXQDEJNW'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 32, 'p_high': 102, 'u_max': 493, 'q_max': 1391, 'funds': 4701.617084415816, 'order_id': 'WD1IHZCS0D'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 17, 'p_high': 151, 'u_max': 468, 'q_max': 1464, 'funds': 3616.264938644437, 'order_id': 'OB1ROI8ZR4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 49, 'p_high': 196, 'u_max': 486, 'q_max': 1772, 'funds': 5541.92922835943, 'order_id': 'Q58NJLRP8R'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:22.165348
+2018-11-05 11:17:22.165348
+
+Order Book(DAI -> ETH)
+Number of bids: 36, Number of Asks: 24
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+F2YVD8JUQQ
+2U9D0K66LD
+JDMDJGHPJ3
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+5T2ASMQT0O
+5V4QAES7OO
+QLIEF5JF0S
+9L0PRJ8E8B
+O7PHFCLMY3
+WT1C37JNBC
+ENFM57C8FI
+RV4S63X7ZX
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+ZREI8FGP70
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+30ELE1ABHA
+0TRZLGBK13
+BPB5PLK9ME
+ZFQ1F2CUV9
+FXPXQDEJNW
+WD1IHZCS0D
+OB1ROI8ZR4
+
+Asks
+8PF7PNCHZY
+7MQB11DI3F
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+EDDFBNYGWH
+I7I75JL9GB
+AUC9LD851V
+87ORTNS97D
+K5252WKQG2
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+ERNVY6OJNR
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+Q58NJLRP8R
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 12
+p*:109.09, u*:5899.4385893329145
+best bid: 5898.808289650893, best ask:5900.068889014937
+
+Cancelling 5 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 56, 'p_high': 102, 'u_max': 414, 'q_max': 1025, 'order_id': '9L0PRJ8E8B'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 49, 'p_high': 196, 'u_max': 486, 'q_max': 1772, 'order_id': 'Q58NJLRP8R'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 92, 'p_high': 181, 'u_max': 490, 'q_max': 1312, 'order_id': 'EDDFBNYGWH'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 76, 'p_high': 146, 'u_max': 411, 'q_max': 1021, 'order_id': 'ENFM57C8FI'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 56, 'p_high': 140, 'u_max': 413, 'q_max': 1982, 'order_id': 'ZREI8FGP70'}
+Sending 12 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 187, 'u_max': 458, 'q_max': 1976, 'funds': 5031.306082156597, 'order_id': 'XXYL9A3J4K'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 13, 'p_high': 103, 'u_max': 452, 'q_max': 1453, 'funds': 3951.385060407301, 'order_id': 'EPT2JH328U'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 76, 'p_high': 177, 'u_max': 467, 'q_max': 1683, 'funds': 4315.868295794516, 'order_id': 'XHN97NMKWF'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 85, 'p_high': 134, 'u_max': 461, 'q_max': 1064, 'funds': 7099.753686795795, 'order_id': 'WUSJR1VFDJ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 63, 'p_high': 133, 'u_max': 446, 'q_max': 1349, 'funds': 7561.246334494936, 'order_id': 'XVK7F6JPTS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 75, 'p_high': 164, 'u_max': 433, 'q_max': 1365, 'funds': 7917.8976005970435, 'order_id': 'DLROTUV5IM'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 34, 'p_high': 197, 'u_max': 487, 'q_max': 1339, 'funds': 9367.714930389975, 'order_id': 'I7YZ2CZLD7'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 78, 'p_high': 108, 'u_max': 411, 'q_max': 1617, 'funds': 2143.025382499902, 'order_id': 'KTWAG282B0'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 62, 'p_high': 177, 'u_max': 462, 'q_max': 1946, 'funds': 8106.072822364109, 'order_id': 'UOMIP4CWJY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 25, 'p_high': 103, 'u_max': 438, 'q_max': 1954, 'funds': 7384.733815686331, 'order_id': 'M190AQV6C3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 72, 'p_high': 138, 'u_max': 402, 'q_max': 1865, 'funds': 287.1938893271575, 'order_id': 'YLUV78ZE7F'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 47, 'p_high': 182, 'u_max': 472, 'q_max': 1729, 'funds': 8314.049247110059, 'order_id': 'HEU1NO6QQK'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:23.165369
+2018-11-05 11:17:23.165369
+
+Order Book(DAI -> ETH)
+Number of bids: 38, Number of Asks: 29
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+F2YVD8JUQQ
+2U9D0K66LD
+JDMDJGHPJ3
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+QLVPCG8U1W
+5T2ASMQT0O
+5V4QAES7OO
+QLIEF5JF0S
+O7PHFCLMY3
+WT1C37JNBC
+RV4S63X7ZX
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+30ELE1ABHA
+0TRZLGBK13
+BPB5PLK9ME
+ZFQ1F2CUV9
+FXPXQDEJNW
+WD1IHZCS0D
+OB1ROI8ZR4
+XXYL9A3J4K
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+YLUV78ZE7F
+
+Asks
+8PF7PNCHZY
+7MQB11DI3F
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+I7I75JL9GB
+AUC9LD851V
+87ORTNS97D
+K5252WKQG2
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+ERNVY6OJNR
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+EPT2JH328U
+WUSJR1VFDJ
+XVK7F6JPTS
+DLROTUV5IM
+I7YZ2CZLD7
+KTWAG282B0
+HEU1NO6QQK
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 13
+p*:105.63000000000001, u*:7102.933085697931
+best bid: 7102.89439309699, best ask:7102.971778298873
+
+Cancelling 8 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 17, 'p_high': 151, 'u_max': 468, 'q_max': 1464, 'order_id': 'OB1ROI8ZR4'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 11, 'p_high': 136, 'u_max': 419, 'q_max': 1871, 'order_id': 'QLVPCG8U1W'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 90, 'p_high': 190, 'u_max': 414, 'q_max': 1285, 'order_id': '5V4QAES7OO'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 21, 'p_high': 111, 'u_max': 431, 'q_max': 1873, 'order_id': 'JDMDJGHPJ3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 72, 'p_high': 198, 'u_max': 403, 'q_max': 1389, 'order_id': '87ORTNS97D'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 55, 'p_high': 120, 'u_max': 450, 'q_max': 1497, 'order_id': '0TRZLGBK13'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 95, 'p_high': 148, 'u_max': 470, 'q_max': 1564, 'order_id': '7MQB11DI3F'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 10, 'p_high': 101, 'u_max': 465, 'q_max': 1461, 'order_id': 'K5252WKQG2'}
+Sending 11 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 69, 'p_high': 159, 'u_max': 465, 'q_max': 1281, 'funds': 5688.71450642564, 'order_id': 'VGUGVR8SLC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 50, 'p_high': 157, 'u_max': 431, 'q_max': 1332, 'funds': 4184.644363187274, 'order_id': 'M3IN5MGE72'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 66, 'p_high': 117, 'u_max': 478, 'q_max': 1985, 'funds': 5974.040620621603, 'order_id': '8O1YUH3W4P'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 49, 'p_high': 142, 'u_max': 483, 'q_max': 1596, 'funds': 699.9866871049832, 'order_id': 'REINBPY77C'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 15, 'p_high': 134, 'u_max': 452, 'q_max': 1058, 'funds': 7150.868972830624, 'order_id': '3Q8ZGTDSAO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 97, 'p_high': 196, 'u_max': 400, 'q_max': 1624, 'funds': 9128.071380548077, 'order_id': 'S6B4ODSK6X'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 91, 'p_high': 140, 'u_max': 445, 'q_max': 1705, 'funds': 7818.069219130382, 'order_id': 'FBH3LPCSTI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 87, 'p_high': 192, 'u_max': 473, 'q_max': 1802, 'funds': 5300.725133009232, 'order_id': '4LGHGD773X'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 93, 'p_high': 176, 'u_max': 485, 'q_max': 1704, 'funds': 5498.358855276272, 'order_id': 'W806KKU6O3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 94, 'p_high': 101, 'u_max': 488, 'q_max': 1182, 'funds': 1392.4689633885, 'order_id': '0GNL1BTK2W'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 93, 'p_high': 167, 'u_max': 424, 'q_max': 1655, 'funds': 275.58172424821834, 'order_id': '3K64J3M9W5'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:24.165533
+2018-11-05 11:17:24.165533
+
+Order Book(DAI -> ETH)
+Number of bids: 39, Number of Asks: 31
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+F2YVD8JUQQ
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+O7PHFCLMY3
+WT1C37JNBC
+RV4S63X7ZX
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+30ELE1ABHA
+BPB5PLK9ME
+ZFQ1F2CUV9
+FXPXQDEJNW
+WD1IHZCS0D
+XXYL9A3J4K
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+YLUV78ZE7F
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+4LGHGD773X
+0GNL1BTK2W
+3K64J3M9W5
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+SUKYM5CBIT
+E6DXHMAP3W
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+I7I75JL9GB
+AUC9LD851V
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+ERNVY6OJNR
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+EPT2JH328U
+WUSJR1VFDJ
+XVK7F6JPTS
+DLROTUV5IM
+I7YZ2CZLD7
+KTWAG282B0
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+W806KKU6O3
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 14
+p*:106.66000000000001, u*:7517.110471998357
+best bid: 7516.957835810651, best ask:7517.263108186063
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 40, 'p_high': 187, 'u_max': 436, 'q_max': 1586, 'order_id': 'E6DXHMAP3W'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 72, 'p_high': 138, 'u_max': 402, 'q_max': 1865, 'order_id': 'YLUV78ZE7F'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 93, 'p_high': 176, 'u_max': 485, 'q_max': 1704, 'order_id': 'W806KKU6O3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 20, 'p_high': 106, 'u_max': 407, 'q_max': 1334, 'order_id': 'WT1C37JNBC'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 13, 'p_high': 103, 'u_max': 452, 'q_max': 1453, 'order_id': 'EPT2JH328U'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 78, 'p_high': 108, 'u_max': 411, 'q_max': 1617, 'order_id': 'KTWAG282B0'}
+Sending 11 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 96, 'p_high': 130, 'u_max': 483, 'q_max': 1861, 'funds': 5606.835678696628, 'order_id': '5000LWP29O'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 101, 'u_max': 470, 'q_max': 1079, 'funds': 2779.691181754048, 'order_id': 'NQFMFO5F3V'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 34, 'p_high': 182, 'u_max': 431, 'q_max': 1582, 'funds': 9305.879864542787, 'order_id': 'FO00GI3HRS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 53, 'p_high': 150, 'u_max': 469, 'q_max': 1052, 'funds': 5501.511598878616, 'order_id': '7A5YRFYEPU'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 88, 'p_high': 164, 'u_max': 475, 'q_max': 1231, 'funds': 463.3240476880485, 'order_id': 'C36UNZ8IW4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 62, 'p_high': 168, 'u_max': 414, 'q_max': 1829, 'funds': 1606.0628958704403, 'order_id': 'Y08V7AESSX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 34, 'p_high': 108, 'u_max': 498, 'q_max': 1094, 'funds': 8227.167597518652, 'order_id': 'YZVSQ68JQC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 49, 'p_high': 171, 'u_max': 458, 'q_max': 1732, 'funds': 3155.7735161248347, 'order_id': 'VDVX4VKK7A'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 45, 'p_high': 166, 'u_max': 488, 'q_max': 1380, 'funds': 4625.149379698539, 'order_id': 'N4VMD3XSR3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 181, 'u_max': 450, 'q_max': 1897, 'funds': 8845.161630789236, 'order_id': 'F5X0AD0N0T'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 25, 'p_high': 192, 'u_max': 490, 'q_max': 1043, 'funds': 9022.68267179416, 'order_id': 'SHQ8AHUSE8'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:25.165325
+2018-11-05 11:17:25.165325
+
+Order Book(DAI -> ETH)
+Number of bids: 43, Number of Asks: 32
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+F2YVD8JUQQ
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+1T2NH6721T
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+O7PHFCLMY3
+RV4S63X7ZX
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+30ELE1ABHA
+BPB5PLK9ME
+ZFQ1F2CUV9
+FXPXQDEJNW
+WD1IHZCS0D
+XXYL9A3J4K
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+4LGHGD773X
+0GNL1BTK2W
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+C36UNZ8IW4
+VDVX4VKK7A
+F5X0AD0N0T
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+SUKYM5CBIT
+V1GVDRWV61
+N5B70ZRJCM
+TMUHJJ9PT5
+XL1BU89DSP
+I7I75JL9GB
+AUC9LD851V
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+ERNVY6OJNR
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+WUSJR1VFDJ
+XVK7F6JPTS
+DLROTUV5IM
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+SHQ8AHUSE8
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 15
+p*:109.18, u*:8222.755316160263
+best bid: 8222.615333143634, best ask:8222.895299176891
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 72, 'p_high': 134, 'u_max': 420, 'q_max': 1494, 'order_id': 'ZFQ1F2CUV9'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 85, 'p_high': 159, 'u_max': 495, 'q_max': 1869, 'order_id': 'N5B70ZRJCM'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 98, 'p_high': 199, 'u_max': 416, 'q_max': 1995, 'order_id': '1T2NH6721T'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 19, 'p_high': 129, 'u_max': 488, 'q_max': 1135, 'order_id': 'XL1BU89DSP'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 88, 'p_high': 164, 'u_max': 475, 'q_max': 1231, 'order_id': 'C36UNZ8IW4'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 90, 'p_high': 102, 'u_max': 444, 'q_max': 1146, 'order_id': 'SUKYM5CBIT'}
+Sending 12 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 26, 'p_high': 155, 'u_max': 421, 'q_max': 1122, 'funds': 951.0597099233453, 'order_id': 'CHU08HCEBP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 76, 'p_high': 137, 'u_max': 471, 'q_max': 1425, 'funds': 6243.266372960382, 'order_id': 'XOU16V2KSK'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 20, 'p_high': 174, 'u_max': 436, 'q_max': 1409, 'funds': 104.9684937277473, 'order_id': '99U740L72J'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 155, 'u_max': 466, 'q_max': 1585, 'funds': 9765.55505406956, 'order_id': '721UKP9NTI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 92, 'p_high': 172, 'u_max': 457, 'q_max': 1741, 'funds': 9871.794927189696, 'order_id': 'IUP2LX991F'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 23, 'p_high': 131, 'u_max': 436, 'q_max': 1653, 'funds': 1534.8466165794628, 'order_id': '6D5JDREY57'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 33, 'p_high': 119, 'u_max': 431, 'q_max': 1820, 'funds': 9888.843645799732, 'order_id': '1WEU920CRU'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 30, 'p_high': 109, 'u_max': 470, 'q_max': 1263, 'funds': 2019.6415123006084, 'order_id': 'VZ7DNCOWR9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 98, 'p_high': 131, 'u_max': 467, 'q_max': 1718, 'funds': 4507.848598682218, 'order_id': 'QVPL61AW5N'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 21, 'p_high': 118, 'u_max': 422, 'q_max': 1940, 'funds': 1357.8183315022418, 'order_id': 'H4RD042A56'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 195, 'u_max': 453, 'q_max': 1587, 'funds': 4083.1077245895585, 'order_id': '3VWYF429IH'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 14, 'p_high': 180, 'u_max': 474, 'q_max': 1286, 'funds': 7419.088008533281, 'order_id': 'FF0H47H2T9'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:26.165478
+2018-11-05 11:17:26.165478
+
+Order Book(DAI -> ETH)
+Number of bids: 48, Number of Asks: 33
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+F2YVD8JUQQ
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+O7PHFCLMY3
+RV4S63X7ZX
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+30ELE1ABHA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XXYL9A3J4K
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+4LGHGD773X
+0GNL1BTK2W
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+AUC9LD851V
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+ERNVY6OJNR
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+WUSJR1VFDJ
+XVK7F6JPTS
+DLROTUV5IM
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+SHQ8AHUSE8
+CHU08HCEBP
+6D5JDREY57
+VZ7DNCOWR9
+H4RD042A56
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 16
+p*:110.37, u*:8874.143223399486
+best bid: 8873.207044575032, best ask:8875.079402223937
+
+Cancelling 3 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 94, 'p_high': 101, 'u_max': 488, 'q_max': 1182, 'order_id': '0GNL1BTK2W'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 56, 'p_high': 110, 'u_max': 459, 'q_max': 1284, 'order_id': '30ELE1ABHA'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 12, 'p_high': 187, 'u_max': 458, 'q_max': 1976, 'order_id': 'XXYL9A3J4K'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 42, 'p_high': 186, 'u_max': 448, 'q_max': 1804, 'funds': 6918.841240054201, 'order_id': '6BD5ZJE415'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 18, 'p_high': 169, 'u_max': 423, 'q_max': 1935, 'funds': 4010.253715965718, 'order_id': 'RBKZ3RJUUP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 188, 'u_max': 403, 'q_max': 1058, 'funds': 7838.843805933141, 'order_id': 'ZQGQHRFNQ7'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 91, 'p_high': 141, 'u_max': 453, 'q_max': 1589, 'funds': 6992.081754853233, 'order_id': 'BZ6KWHMVR8'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 85, 'p_high': 185, 'u_max': 489, 'q_max': 1599, 'funds': 9008.180392992623, 'order_id': 'P9KYA583LS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 54, 'p_high': 163, 'u_max': 405, 'q_max': 1339, 'funds': 8133.305078975565, 'order_id': '0M151S27N9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 52, 'p_high': 119, 'u_max': 413, 'q_max': 1181, 'funds': 8777.017680499715, 'order_id': '1QQQVO8FO8'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 55, 'p_high': 126, 'u_max': 407, 'q_max': 1683, 'funds': 3610.362006694072, 'order_id': 'WUWT1JO0H9'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:27.165314
+2018-11-05 11:17:27.165314
+
+Order Book(DAI -> ETH)
+Number of bids: 50, Number of Asks: 36
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+F2YVD8JUQQ
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+O7PHFCLMY3
+RV4S63X7ZX
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+4LGHGD773X
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+0M151S27N9
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+AUC9LD851V
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+ERNVY6OJNR
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+WUSJR1VFDJ
+XVK7F6JPTS
+DLROTUV5IM
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+SHQ8AHUSE8
+CHU08HCEBP
+6D5JDREY57
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 17
+p*:110.59, u*:9801.425510265388
+best bid: 9801.132933090896, best ask:9801.718087439882
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 36, 'p_high': 183, 'u_max': 415, 'q_max': 1425, 'order_id': 'F2YVD8JUQQ'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 85, 'p_high': 134, 'u_max': 461, 'q_max': 1064, 'order_id': 'WUSJR1VFDJ'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 23, 'p_high': 131, 'u_max': 436, 'q_max': 1653, 'order_id': '6D5JDREY57'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 54, 'p_high': 163, 'u_max': 405, 'q_max': 1339, 'order_id': '0M151S27N9'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 36, 'p_high': 109, 'u_max': 412, 'q_max': 1167, 'order_id': 'ERNVY6OJNR'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 25, 'p_high': 192, 'u_max': 490, 'q_max': 1043, 'order_id': 'SHQ8AHUSE8'}
+Sending 9 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 68, 'p_high': 133, 'u_max': 429, 'q_max': 1606, 'funds': 8633.896119295867, 'order_id': 'R3SA9SLBJW'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 24, 'p_high': 149, 'u_max': 407, 'q_max': 1222, 'funds': 3874.7305421751753, 'order_id': 'MMTRM2AMPV'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 44, 'p_high': 191, 'u_max': 442, 'q_max': 1133, 'funds': 2473.9122724461695, 'order_id': 'S0BE29H5EU'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 48, 'p_high': 130, 'u_max': 410, 'q_max': 1315, 'funds': 5165.924473254073, 'order_id': 'OODARBIDTO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 89, 'p_high': 160, 'u_max': 472, 'q_max': 1136, 'funds': 8966.701898491305, 'order_id': '8O43QUUPLX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 44, 'p_high': 147, 'u_max': 464, 'q_max': 1073, 'funds': 2425.028487298182, 'order_id': 'HDKPGKQTO9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 53, 'p_high': 128, 'u_max': 429, 'q_max': 1392, 'funds': 2553.5572149087316, 'order_id': '3YUVIUXWM2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 25, 'p_high': 162, 'u_max': 418, 'q_max': 1904, 'funds': 3301.987380049973, 'order_id': 'HDPN9BWHVV'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 91, 'p_high': 175, 'u_max': 461, 'q_max': 1950, 'funds': 216.76691504866176, 'order_id': 'CI22D7RVJ5'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:28.165383
+2018-11-05 11:17:28.165383
+
+Order Book(DAI -> ETH)
+Number of bids: 50, Number of Asks: 39
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+O7PHFCLMY3
+RV4S63X7ZX
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+4LGHGD773X
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+OODARBIDTO
+HDPN9BWHVV
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+AUC9LD851V
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+XVK7F6JPTS
+DLROTUV5IM
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+S0BE29H5EU
+8O43QUUPLX
+HDKPGKQTO9
+3YUVIUXWM2
+CI22D7RVJ5
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 18
+p*:109.34, u*:9951.401730290494
+best bid: 9950.497431461143, best ask:9952.306029119847
+
+Cancelling 3 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 11, 'p_high': 188, 'u_max': 472, 'q_max': 1033, 'order_id': 'RV4S63X7ZX'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 84, 'p_high': 139, 'u_max': 429, 'q_max': 1361, 'order_id': 'AUC9LD851V'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 63, 'p_high': 133, 'u_max': 446, 'q_max': 1349, 'order_id': 'XVK7F6JPTS'}
+Sending 10 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 25, 'p_high': 196, 'u_max': 436, 'q_max': 1185, 'funds': 3599.7825606930624, 'order_id': '8JYEQOVGKG'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 57, 'p_high': 123, 'u_max': 489, 'q_max': 1285, 'funds': 520.7475560794039, 'order_id': 'HM3A8IKCJH'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 15, 'p_high': 181, 'u_max': 445, 'q_max': 1604, 'funds': 6160.1644680741965, 'order_id': 'JNW6KU86Q9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 18, 'p_high': 181, 'u_max': 418, 'q_max': 1311, 'funds': 6905.788517062332, 'order_id': 'UVVY22N7TR'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 70, 'p_high': 165, 'u_max': 479, 'q_max': 1000, 'funds': 717.6026279634507, 'order_id': '26GEAJZOL4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 42, 'p_high': 111, 'u_max': 427, 'q_max': 1643, 'funds': 8.884119627852183, 'order_id': 'FK732J31H9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 80, 'p_high': 167, 'u_max': 485, 'q_max': 1640, 'funds': 8408.994710534378, 'order_id': '43GSRML879'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 89, 'p_high': 168, 'u_max': 408, 'q_max': 1901, 'funds': 3641.22280916628, 'order_id': 'XF5KWTMF9Q'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 45, 'p_high': 189, 'u_max': 457, 'q_max': 1703, 'funds': 8720.335571412843, 'order_id': 'ZHHYVN2OG3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 57, 'p_high': 109, 'u_max': 414, 'q_max': 1470, 'funds': 8715.081825990632, 'order_id': 'WYX6ATGA4I'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:29.165520
+2018-11-05 11:17:29.165520
+
+Order Book(DAI -> ETH)
+Number of bids: 56, Number of Asks: 40
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+O7PHFCLMY3
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+4LGHGD773X
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+OODARBIDTO
+HDPN9BWHVV
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+UVVY22N7TR
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+EMLRRN68TU
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+DLROTUV5IM
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+S0BE29H5EU
+8O43QUUPLX
+HDKPGKQTO9
+3YUVIUXWM2
+CI22D7RVJ5
+43GSRML879
+XF5KWTMF9Q
+WYX6ATGA4I
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 19
+p*:111.23, u*:10488.78736081089
+best bid: 10487.542570584503, best ask:10490.032151037276
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 87, 'p_high': 192, 'u_max': 473, 'q_max': 1802, 'order_id': '4LGHGD773X'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 18, 'p_high': 181, 'u_max': 418, 'q_max': 1311, 'order_id': 'UVVY22N7TR'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 48, 'p_high': 130, 'u_max': 410, 'q_max': 1315, 'order_id': 'OODARBIDTO'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 67, 'p_high': 118, 'u_max': 416, 'q_max': 1493, 'order_id': 'O7PHFCLMY3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 89, 'p_high': 168, 'u_max': 408, 'q_max': 1901, 'order_id': 'XF5KWTMF9Q'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 25, 'p_high': 177, 'u_max': 487, 'q_max': 1249, 'order_id': 'EMLRRN68TU'}
+Sending 11 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 69, 'p_high': 154, 'u_max': 421, 'q_max': 1065, 'funds': 6203.161069863411, 'order_id': 'M7X49TKKYI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 39, 'p_high': 193, 'u_max': 495, 'q_max': 1430, 'funds': 7017.232571071787, 'order_id': 'ZWSTMN4OE9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 64, 'p_high': 176, 'u_max': 484, 'q_max': 1042, 'funds': 9347.762389674586, 'order_id': 'J0NO7N11CG'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 86, 'p_high': 103, 'u_max': 432, 'q_max': 1470, 'funds': 9546.20331905941, 'order_id': '8PDV6H66US'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 42, 'p_high': 199, 'u_max': 439, 'q_max': 1429, 'funds': 6509.544772036941, 'order_id': 'PIK1REJKSE'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 38, 'p_high': 141, 'u_max': 449, 'q_max': 1603, 'funds': 9633.089804871212, 'order_id': 'RW0XQKV43L'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 35, 'p_high': 152, 'u_max': 446, 'q_max': 1240, 'funds': 4145.595304129698, 'order_id': 'KSFZE25QZQ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 82, 'p_high': 127, 'u_max': 481, 'q_max': 1831, 'funds': 5903.960221223501, 'order_id': 'QP1KF3EMT4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 117, 'u_max': 409, 'q_max': 1482, 'funds': 2919.349036136555, 'order_id': 'H0XUBIRZ56'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 148, 'u_max': 412, 'q_max': 1169, 'funds': 2848.954677322695, 'order_id': 'JZPE7GXINF'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 74, 'p_high': 190, 'u_max': 477, 'q_max': 1856, 'funds': 2271.6843170073075, 'order_id': 'NUX53S8FA7'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:30.165425
+2018-11-05 11:17:30.165425
+
+Order Book(DAI -> ETH)
+Number of bids: 59, Number of Asks: 42
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+PEWTDMLJ2L
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+HDPN9BWHVV
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+QP1KF3EMT4
+H0XUBIRZ56
+JZPE7GXINF
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+DLROTUV5IM
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+S0BE29H5EU
+8O43QUUPLX
+HDKPGKQTO9
+3YUVIUXWM2
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+M7X49TKKYI
+ZWSTMN4OE9
+8PDV6H66US
+NUX53S8FA7
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 20
+p*:110.82000000000001, u*:11048.49865670905
+best bid: 11047.993457119217, best ask:11049.003856298881
+
+Cancelling 2 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 18, 'p_high': 189, 'u_max': 448, 'q_max': 1597, 'order_id': 'PEWTDMLJ2L'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 75, 'p_high': 164, 'u_max': 433, 'q_max': 1365, 'order_id': 'DLROTUV5IM'}
+Sending 11 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 125, 'u_max': 420, 'q_max': 1243, 'funds': 4356.438579410813, 'order_id': '83M10HSJXS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 37, 'p_high': 121, 'u_max': 448, 'q_max': 1893, 'funds': 414.76236490764376, 'order_id': '3AKDU0PHSV'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 35, 'p_high': 107, 'u_max': 496, 'q_max': 1025, 'funds': 6571.234717541625, 'order_id': 'D8LJEN3LC5'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 44, 'p_high': 147, 'u_max': 481, 'q_max': 1916, 'funds': 344.2990880058472, 'order_id': '7VAVUP2MGC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 34, 'p_high': 180, 'u_max': 406, 'q_max': 1285, 'funds': 3474.6799320421005, 'order_id': '6BZZUYXKUG'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 76, 'p_high': 115, 'u_max': 478, 'q_max': 1863, 'funds': 2135.9536498398124, 'order_id': 'XV8YN0Q683'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 23, 'p_high': 103, 'u_max': 471, 'q_max': 1816, 'funds': 4650.0604389738455, 'order_id': '8HO8EVVP1T'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 158, 'u_max': 426, 'q_max': 1890, 'funds': 8101.461193123497, 'order_id': 'ENOV4WY6BN'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 62, 'p_high': 154, 'u_max': 484, 'q_max': 1089, 'funds': 2557.30296686104, 'order_id': 'KWXGZCRVB3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 19, 'p_high': 183, 'u_max': 469, 'q_max': 1309, 'funds': 7920.279369348103, 'order_id': '582HYVNY2L'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 64, 'p_high': 136, 'u_max': 415, 'q_max': 1926, 'funds': 1324.5135890278682, 'order_id': 'R864UMS1HO'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:31.165460
+2018-11-05 11:17:31.165460
+
+Order Book(DAI -> ETH)
+Number of bids: 68, Number of Asks: 42
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+HDPN9BWHVV
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+QP1KF3EMT4
+H0XUBIRZ56
+JZPE7GXINF
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+7VAVUP2MGC
+6BZZUYXKUG
+XV8YN0Q683
+ENOV4WY6BN
+KWXGZCRVB3
+582HYVNY2L
+R864UMS1HO
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+S0BE29H5EU
+8O43QUUPLX
+HDKPGKQTO9
+3YUVIUXWM2
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+M7X49TKKYI
+ZWSTMN4OE9
+8PDV6H66US
+NUX53S8FA7
+8HO8EVVP1T
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 21
+p*:112.47000000000001, u*:11643.59439254224
+best bid: 11642.153381433838, best ask:11645.035403650641
+
+Cancelling 3 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 25, 'p_high': 162, 'u_max': 418, 'q_max': 1904, 'order_id': 'HDPN9BWHVV'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 82, 'p_high': 127, 'u_max': 481, 'q_max': 1831, 'order_id': 'QP1KF3EMT4'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 67, 'p_high': 158, 'u_max': 426, 'q_max': 1890, 'order_id': 'ENOV4WY6BN'}
+Sending 5 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 24, 'p_high': 134, 'u_max': 405, 'q_max': 1641, 'funds': 5653.791821594837, 'order_id': 'RCTF2R1ZG4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 14, 'p_high': 113, 'u_max': 404, 'q_max': 1247, 'funds': 1203.9422108302922, 'order_id': 'FW5S4VW4O2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 27, 'p_high': 168, 'u_max': 419, 'q_max': 1722, 'funds': 3980.026696921066, 'order_id': 'F7JUT0RJER'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 59, 'p_high': 138, 'u_max': 429, 'q_max': 1975, 'funds': 7512.807343947236, 'order_id': 'PYZOF9MLTY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 43, 'p_high': 140, 'u_max': 475, 'q_max': 1442, 'funds': 4472.750938673701, 'order_id': 'X6YBC4818R'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:32.166510
+2018-11-05 11:17:32.166510
+
+Order Book(DAI -> ETH)
+Number of bids: 67, Number of Asks: 45
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+FO00GI3HRS
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+H0XUBIRZ56
+JZPE7GXINF
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+7VAVUP2MGC
+6BZZUYXKUG
+XV8YN0Q683
+KWXGZCRVB3
+582HYVNY2L
+R864UMS1HO
+FW5S4VW4O2
+PYZOF9MLTY
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+S0BE29H5EU
+8O43QUUPLX
+HDKPGKQTO9
+3YUVIUXWM2
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+M7X49TKKYI
+ZWSTMN4OE9
+8PDV6H66US
+NUX53S8FA7
+8HO8EVVP1T
+RCTF2R1ZG4
+F7JUT0RJER
+X6YBC4818R
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 22
+p*:109.88000000000001, u*:12063.29086918505
+best bid: 12061.985735460848, best ask:12064.59600290925
+
+Cancelling 4 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 27, 'p_high': 168, 'u_max': 419, 'q_max': 1722, 'order_id': 'F7JUT0RJER'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 69, 'p_high': 154, 'u_max': 421, 'q_max': 1065, 'order_id': 'M7X49TKKYI'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 34, 'p_high': 182, 'u_max': 431, 'q_max': 1582, 'order_id': 'FO00GI3HRS'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 44, 'p_high': 191, 'u_max': 442, 'q_max': 1133, 'order_id': 'S0BE29H5EU'}
+Sending 14 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 40, 'p_high': 197, 'u_max': 417, 'q_max': 1187, 'funds': 87.63887858415309, 'order_id': 'P6BWBJ6BRP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 44, 'p_high': 169, 'u_max': 485, 'q_max': 1513, 'funds': 1485.411712418384, 'order_id': 'T37GIFH6TP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 38, 'p_high': 151, 'u_max': 439, 'q_max': 1455, 'funds': 4584.744138331077, 'order_id': '2I1HFWINCZ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 57, 'p_high': 161, 'u_max': 449, 'q_max': 1438, 'funds': 8351.19262080288, 'order_id': 'ZY6R6DJE6D'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 90, 'p_high': 151, 'u_max': 441, 'q_max': 1679, 'funds': 5261.559018493383, 'order_id': 'KA8PATUEJO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 74, 'p_high': 135, 'u_max': 404, 'q_max': 1613, 'funds': 8720.050457241214, 'order_id': 'XLL6YF942W'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 143, 'u_max': 498, 'q_max': 1262, 'funds': 8050.313872974768, 'order_id': 'V09MUE6RM8'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 75, 'p_high': 153, 'u_max': 408, 'q_max': 1140, 'funds': 7640.4640793754215, 'order_id': '8VINAZ31WG'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 26, 'p_high': 150, 'u_max': 454, 'q_max': 1682, 'funds': 9931.220101492141, 'order_id': 'SMB22FPU4R'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 138, 'u_max': 492, 'q_max': 1289, 'funds': 3551.2606967563343, 'order_id': 'PE78CPXNV0'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 20, 'p_high': 141, 'u_max': 439, 'q_max': 1223, 'funds': 8036.156346097646, 'order_id': '3HNCP5P2C2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 19, 'p_high': 139, 'u_max': 401, 'q_max': 1057, 'funds': 2387.483327598566, 'order_id': '6ISBN3OUCT'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 61, 'p_high': 192, 'u_max': 483, 'q_max': 1793, 'funds': 8987.67257818058, 'order_id': 'XUI63WFVMQ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 82, 'p_high': 185, 'u_max': 488, 'q_max': 1329, 'funds': 3878.9921229672595, 'order_id': '3EEON2047Q'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:33.166546
+2018-11-05 11:17:33.166546
+
+Order Book(DAI -> ETH)
+Number of bids: 73, Number of Asks: 49
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+H0XUBIRZ56
+JZPE7GXINF
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+7VAVUP2MGC
+6BZZUYXKUG
+XV8YN0Q683
+KWXGZCRVB3
+582HYVNY2L
+R864UMS1HO
+FW5S4VW4O2
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+XUI63WFVMQ
+3EEON2047Q
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+HDKPGKQTO9
+3YUVIUXWM2
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+ZWSTMN4OE9
+8PDV6H66US
+NUX53S8FA7
+8HO8EVVP1T
+RCTF2R1ZG4
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 23
+p*:110.22000000000001, u*:13342.572588084757
+best bid: 13340.82609999842, best ask:13344.319076171096
+
+Cancelling 3 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 61, 'p_high': 192, 'u_max': 483, 'q_max': 1793, 'order_id': 'XUI63WFVMQ'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 44, 'p_high': 147, 'u_max': 481, 'q_max': 1916, 'order_id': '7VAVUP2MGC'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 24, 'p_high': 134, 'u_max': 405, 'q_max': 1641, 'order_id': 'RCTF2R1ZG4'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 97, 'p_high': 176, 'u_max': 404, 'q_max': 1628, 'funds': 8132.035481600286, 'order_id': 'VI31CMBSYO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 93, 'p_high': 128, 'u_max': 409, 'q_max': 1310, 'funds': 5754.682140101912, 'order_id': '53VUB0WOC1'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 77, 'p_high': 199, 'u_max': 412, 'q_max': 1443, 'funds': 337.3065124774122, 'order_id': 'BG1JUD38MH'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 64, 'p_high': 124, 'u_max': 422, 'q_max': 1255, 'funds': 5686.94835667194, 'order_id': 'ZGE6W5KO8G'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 95, 'p_high': 185, 'u_max': 482, 'q_max': 1479, 'funds': 1495.0228586818503, 'order_id': 'NS3PMJQV6B'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 82, 'p_high': 161, 'u_max': 410, 'q_max': 1824, 'funds': 8266.597252885467, 'order_id': 'XMLLIICT2R'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 10, 'p_high': 187, 'u_max': 412, 'q_max': 1865, 'funds': 3117.3726490894305, 'order_id': 'OT6FJI90LL'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 83, 'p_high': 129, 'u_max': 408, 'q_max': 1088, 'funds': 6463.496938301862, 'order_id': 'RNWDCLKZBH'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:34.166054
+2018-11-05 11:17:34.166054
+
+Order Book(DAI -> ETH)
+Number of bids: 75, Number of Asks: 52
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M190AQV6C3
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+H0XUBIRZ56
+JZPE7GXINF
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+6BZZUYXKUG
+XV8YN0Q683
+KWXGZCRVB3
+582HYVNY2L
+R864UMS1HO
+FW5S4VW4O2
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+3EEON2047Q
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+RNWDCLKZBH
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+1QQQVO8FO8
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+HDKPGKQTO9
+3YUVIUXWM2
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+ZWSTMN4OE9
+8PDV6H66US
+NUX53S8FA7
+8HO8EVVP1T
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+ZGE6W5KO8G
+NS3PMJQV6B
+OT6FJI90LL
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 24
+p*:110.35000000000001, u*:13761.43809274603
+best bid: 13758.571265212113, best ask:13764.304920279947
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 53, 'p_high': 128, 'u_max': 429, 'q_max': 1392, 'order_id': '3YUVIUXWM2'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 148, 'u_max': 412, 'q_max': 1169, 'order_id': 'JZPE7GXINF'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 64, 'p_high': 124, 'u_max': 422, 'q_max': 1255, 'order_id': 'ZGE6W5KO8G'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 25, 'p_high': 103, 'u_max': 438, 'q_max': 1954, 'order_id': 'M190AQV6C3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 52, 'p_high': 119, 'u_max': 413, 'q_max': 1181, 'order_id': '1QQQVO8FO8'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 19, 'p_high': 183, 'u_max': 469, 'q_max': 1309, 'order_id': '582HYVNY2L'}
+Sending 6 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 47, 'p_high': 182, 'u_max': 408, 'q_max': 1605, 'funds': 8328.53312049942, 'order_id': 'FEC45JPCWB'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 42, 'p_high': 141, 'u_max': 434, 'q_max': 1255, 'funds': 5014.733712202801, 'order_id': '2LV1OJ6780'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 87, 'p_high': 198, 'u_max': 469, 'q_max': 1151, 'funds': 2867.2102349417373, 'order_id': 'HBHAH7NNXB'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 50, 'p_high': 105, 'u_max': 430, 'q_max': 1322, 'funds': 6426.897158580014, 'order_id': 'GZ7G27JGNI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 24, 'p_high': 198, 'u_max': 436, 'q_max': 1042, 'funds': 1800.3634332673223, 'order_id': 'H3IKZ07AG5'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 68, 'p_high': 120, 'u_max': 458, 'q_max': 1995, 'funds': 8989.698979165403, 'order_id': 'T2JZTWP7XB'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:35.166425
+2018-11-05 11:17:35.166425
+
+Order Book(DAI -> ETH)
+Number of bids: 78, Number of Asks: 49
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+MGLTFI9YLZ
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+99U740L72J
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+6BZZUYXKUG
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+FW5S4VW4O2
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+3EEON2047Q
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+RNWDCLKZBH
+FEC45JPCWB
+2LV1OJ6780
+HBHAH7NNXB
+GZ7G27JGNI
+H3IKZ07AG5
+T2JZTWP7XB
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+7H9C4KJTP1
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+REINBPY77C
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+HDKPGKQTO9
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+ZWSTMN4OE9
+8PDV6H66US
+NUX53S8FA7
+8HO8EVVP1T
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+OT6FJI90LL
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 25
+p*:113.25000000000001, u*:13362.42812448406
+best bid: 13360.936449895975, best ask:13363.919799072148
+
+Cancelling 8 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 20, 'p_high': 174, 'u_max': 436, 'q_max': 1409, 'order_id': '99U740L72J'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 74, 'p_high': 190, 'u_max': 477, 'q_max': 1856, 'order_id': 'NUX53S8FA7'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 49, 'p_high': 142, 'u_max': 483, 'q_max': 1596, 'order_id': 'REINBPY77C'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 24, 'p_high': 198, 'u_max': 436, 'q_max': 1042, 'order_id': 'H3IKZ07AG5'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 20, 'p_high': 184, 'u_max': 452, 'q_max': 1897, 'order_id': '7H9C4KJTP1'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 12, 'p_high': 188, 'u_max': 464, 'q_max': 1671, 'order_id': 'MGLTFI9YLZ'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 34, 'p_high': 180, 'u_max': 406, 'q_max': 1285, 'order_id': '6BZZUYXKUG'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 42, 'p_high': 141, 'u_max': 434, 'q_max': 1255, 'order_id': '2LV1OJ6780'}
+Sending 11 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 41, 'p_high': 192, 'u_max': 434, 'q_max': 1721, 'funds': 5418.270333377552, 'order_id': 'CRRGRFNC8V'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 15, 'p_high': 145, 'u_max': 456, 'q_max': 1533, 'funds': 6947.971888919208, 'order_id': 'RBQJ062CIC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 41, 'p_high': 196, 'u_max': 437, 'q_max': 1343, 'funds': 7926.2965848666045, 'order_id': 'N9PIMYZDIL'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 32, 'p_high': 146, 'u_max': 421, 'q_max': 1975, 'funds': 9402.44986977177, 'order_id': '55JHB76M9C'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 28, 'p_high': 186, 'u_max': 471, 'q_max': 1445, 'funds': 510.6624328587517, 'order_id': 'B2886QZYJJ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 41, 'p_high': 180, 'u_max': 416, 'q_max': 1394, 'funds': 4562.435762611838, 'order_id': '5F6JUK7O3P'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 83, 'p_high': 145, 'u_max': 459, 'q_max': 1583, 'funds': 5582.429896378204, 'order_id': 'F1FBRB8S3X'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 29, 'p_high': 153, 'u_max': 424, 'q_max': 1454, 'funds': 4909.822094096478, 'order_id': 'RZK1VBQ1T1'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 23, 'p_high': 114, 'u_max': 468, 'q_max': 1133, 'funds': 6779.177163119298, 'order_id': 'JLN4MK0CH7'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 97, 'p_high': 118, 'u_max': 441, 'q_max': 1476, 'funds': 5929.0178110693805, 'order_id': 'LL1NUNJ7CO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 93, 'p_high': 194, 'u_max': 462, 'q_max': 1321, 'funds': 9237.484666356444, 'order_id': '5K7OZ6U87Z'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:36.166628
+2018-11-05 11:17:36.166628
+
+Order Book(DAI -> ETH)
+Number of bids: 79, Number of Asks: 51
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+YNT42HKI6S
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+VGUGVR8SLC
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+FW5S4VW4O2
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+3EEON2047Q
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+RNWDCLKZBH
+FEC45JPCWB
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+B2886QZYJJ
+5F6JUK7O3P
+JLN4MK0CH7
+5K7OZ6U87Z
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+HDKPGKQTO9
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+ZWSTMN4OE9
+8PDV6H66US
+8HO8EVVP1T
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+OT6FJI90LL
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+RZK1VBQ1T1
+LL1NUNJ7CO
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 26
+p*:112.66000000000001, u*:13830.051148903482
+best bid: 13827.595611224358, best ask:13832.506686582605
+
+Cancelling 5 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 28, 'p_high': 186, 'u_max': 471, 'q_max': 1445, 'order_id': 'B2886QZYJJ'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 27, 'p_high': 143, 'u_max': 403, 'q_max': 1460, 'order_id': 'YNT42HKI6S'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 69, 'p_high': 159, 'u_max': 465, 'q_max': 1281, 'order_id': 'VGUGVR8SLC'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 47, 'p_high': 182, 'u_max': 408, 'q_max': 1605, 'order_id': 'FEC45JPCWB'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 29, 'p_high': 153, 'u_max': 424, 'q_max': 1454, 'order_id': 'RZK1VBQ1T1'}
+Sending 10 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 40, 'p_high': 144, 'u_max': 442, 'q_max': 1952, 'funds': 607.4685405549562, 'order_id': 'PAKGH7IVM3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 43, 'p_high': 183, 'u_max': 483, 'q_max': 1190, 'funds': 4155.709545292214, 'order_id': '8604JKCX35'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 46, 'p_high': 121, 'u_max': 446, 'q_max': 1708, 'funds': 5349.824305226023, 'order_id': 'HHK83N7L0R'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 83, 'p_high': 157, 'u_max': 485, 'q_max': 1141, 'funds': 1137.1823756463905, 'order_id': '4QF2FFDXWK'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 167, 'u_max': 403, 'q_max': 1016, 'funds': 7686.464930441752, 'order_id': 'AG0ZFPPZ30'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 38, 'p_high': 192, 'u_max': 478, 'q_max': 1126, 'funds': 9142.81842356567, 'order_id': '3CO943JBXX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 27, 'p_high': 170, 'u_max': 433, 'q_max': 1752, 'funds': 2940.2603380758574, 'order_id': 'JKWE05Y6U4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 83, 'p_high': 152, 'u_max': 456, 'q_max': 1171, 'funds': 1367.3399493456784, 'order_id': 'V6FI70KEUM'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 26, 'p_high': 127, 'u_max': 478, 'q_max': 1334, 'funds': 8569.782500269595, 'order_id': 'A0KMKJEINR'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 33, 'p_high': 195, 'u_max': 468, 'q_max': 1605, 'funds': 7105.411531939454, 'order_id': 'M8J8C3H2GX'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:37.166657
+2018-11-05 11:17:37.166657
+
+Order Book(DAI -> ETH)
+Number of bids: 80, Number of Asks: 55
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+FW5S4VW4O2
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+3EEON2047Q
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+RNWDCLKZBH
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+5F6JUK7O3P
+JLN4MK0CH7
+5K7OZ6U87Z
+PAKGH7IVM3
+AG0ZFPPZ30
+3CO943JBXX
+JKWE05Y6U4
+A0KMKJEINR
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+HEU1NO6QQK
+8O1YUH3W4P
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+HDKPGKQTO9
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+ZWSTMN4OE9
+8PDV6H66US
+8HO8EVVP1T
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+OT6FJI90LL
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 27
+p*:111.18, u*:14418.870295033637
+best bid: 14418.608276658373, best ask:14419.132313408903
+
+Cancelling 2 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 93, 'p_high': 194, 'u_max': 462, 'q_max': 1321, 'order_id': '5K7OZ6U87Z'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 47, 'p_high': 182, 'u_max': 472, 'q_max': 1729, 'order_id': 'HEU1NO6QQK'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 54, 'p_high': 102, 'u_max': 426, 'q_max': 1383, 'funds': 9634.115935409418, 'order_id': 'YM422ZXR3P'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 163, 'u_max': 453, 'q_max': 1625, 'funds': 8460.635215876799, 'order_id': '7UMOIZP4G7'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 16, 'p_high': 163, 'u_max': 488, 'q_max': 1277, 'funds': 9314.673740338987, 'order_id': 'D9N95XFIGZ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 58, 'p_high': 108, 'u_max': 425, 'q_max': 1379, 'funds': 9596.23748790655, 'order_id': 'XDWEU6TTYL'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 24, 'p_high': 159, 'u_max': 409, 'q_max': 1079, 'funds': 3908.2507477455706, 'order_id': 'S7AKEL0P22'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 25, 'p_high': 120, 'u_max': 475, 'q_max': 1327, 'funds': 2656.121444673246, 'order_id': 'XTD5IDFLWY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 21, 'p_high': 111, 'u_max': 434, 'q_max': 1069, 'funds': 9295.803201436976, 'order_id': '2DZV1322NT'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 81, 'p_high': 166, 'u_max': 466, 'q_max': 1809, 'funds': 5588.6075164434005, 'order_id': '8HXB8I3VSF'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:38.166701
+2018-11-05 11:17:38.166701
+
+Order Book(DAI -> ETH)
+Number of bids: 83, Number of Asks: 58
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+RW0XQKV43L
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+FW5S4VW4O2
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+3EEON2047Q
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+RNWDCLKZBH
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+5F6JUK7O3P
+JLN4MK0CH7
+PAKGH7IVM3
+AG0ZFPPZ30
+3CO943JBXX
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+7UMOIZP4G7
+2DZV1322NT
+8HXB8I3VSF
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+I7YZ2CZLD7
+8O1YUH3W4P
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+HDKPGKQTO9
+CI22D7RVJ5
+43GSRML879
+WYX6ATGA4I
+ZWSTMN4OE9
+8PDV6H66US
+8HO8EVVP1T
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+OT6FJI90LL
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+D9N95XFIGZ
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 28
+p*:109.47000000000001, u*:15169.49863429955
+best bid: 15168.750455324714, best ask:15170.246813274385
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 14, 'p_high': 113, 'u_max': 404, 'q_max': 1247, 'order_id': 'FW5S4VW4O2'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 38, 'p_high': 141, 'u_max': 449, 'q_max': 1603, 'order_id': 'RW0XQKV43L'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 34, 'p_high': 197, 'u_max': 487, 'q_max': 1339, 'order_id': 'I7YZ2CZLD7'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 82, 'p_high': 185, 'u_max': 488, 'q_max': 1329, 'order_id': '3EEON2047Q'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 83, 'p_high': 129, 'u_max': 408, 'q_max': 1088, 'order_id': 'RNWDCLKZBH'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 57, 'p_high': 109, 'u_max': 414, 'q_max': 1470, 'order_id': 'WYX6ATGA4I'}
+Sending 14 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 17, 'p_high': 169, 'u_max': 472, 'q_max': 1624, 'funds': 1802.418139008891, 'order_id': 'XYR2I82Q6O'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 71, 'p_high': 120, 'u_max': 440, 'q_max': 1811, 'funds': 3556.366243057063, 'order_id': '6A5Q16ENK6'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 59, 'p_high': 145, 'u_max': 434, 'q_max': 1158, 'funds': 1260.530571567403, 'order_id': '8WY53Q4SSA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 18, 'p_high': 190, 'u_max': 443, 'q_max': 1585, 'funds': 2272.2313444658116, 'order_id': '5J22KZ51N2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 69, 'p_high': 163, 'u_max': 453, 'q_max': 1633, 'funds': 2851.7578584016555, 'order_id': '1W0PX3VPKT'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 57, 'p_high': 129, 'u_max': 410, 'q_max': 1252, 'funds': 2605.9288754128183, 'order_id': 'S6BULT8JXE'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 52, 'p_high': 112, 'u_max': 400, 'q_max': 1702, 'funds': 929.6181863564079, 'order_id': 'WDIG9NJT6R'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 48, 'p_high': 180, 'u_max': 404, 'q_max': 1819, 'funds': 8576.16768915523, 'order_id': 'MY274E0JGP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 82, 'p_high': 195, 'u_max': 484, 'q_max': 1415, 'funds': 719.4393618024353, 'order_id': 'WDAPETFLF7'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 65, 'p_high': 114, 'u_max': 456, 'q_max': 1096, 'funds': 5531.050547133241, 'order_id': 'HYZQ1GNT25'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 48, 'p_high': 195, 'u_max': 463, 'q_max': 1318, 'funds': 8157.212247011339, 'order_id': 'SZN6HWI5J4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 79, 'p_high': 125, 'u_max': 480, 'q_max': 1577, 'funds': 6225.707596514305, 'order_id': 'EHRWS0BORR'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 22, 'p_high': 134, 'u_max': 448, 'q_max': 1027, 'funds': 591.1971060496013, 'order_id': 'NH11FYLIL0'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 32, 'p_high': 138, 'u_max': 402, 'q_max': 1029, 'funds': 3017.7508188924594, 'order_id': '83HJNHM39F'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:39.165738
+2018-11-05 11:17:39.165738
+
+Order Book(DAI -> ETH)
+Number of bids: 83, Number of Asks: 66
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+WD1IHZCS0D
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+26GEAJZOL4
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+5F6JUK7O3P
+JLN4MK0CH7
+PAKGH7IVM3
+AG0ZFPPZ30
+3CO943JBXX
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+7UMOIZP4G7
+2DZV1322NT
+8HXB8I3VSF
+8WY53Q4SSA
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+8O1YUH3W4P
+S6B4ODSK6X
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+HDKPGKQTO9
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+8HO8EVVP1T
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+OT6FJI90LL
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+D9N95XFIGZ
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+XYR2I82Q6O
+6A5Q16ENK6
+5J22KZ51N2
+WDIG9NJT6R
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 29
+p*:106.52000000000001, u*:16308.836339735812
+best bid: 16307.2133688992, best ask:16310.459310572422
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 44, 'p_high': 147, 'u_max': 464, 'q_max': 1073, 'order_id': 'HDKPGKQTO9'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 97, 'p_high': 196, 'u_max': 400, 'q_max': 1624, 'order_id': 'S6B4ODSK6X'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 40, 'p_high': 144, 'u_max': 442, 'q_max': 1952, 'order_id': 'PAKGH7IVM3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 10, 'p_high': 187, 'u_max': 412, 'q_max': 1865, 'order_id': 'OT6FJI90LL'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 70, 'p_high': 165, 'u_max': 479, 'q_max': 1000, 'order_id': '26GEAJZOL4'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 32, 'p_high': 102, 'u_max': 493, 'q_max': 1391, 'order_id': 'WD1IHZCS0D'}
+Sending 9 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 71, 'p_high': 130, 'u_max': 410, 'q_max': 1286, 'funds': 7262.615758872874, 'order_id': 'JO5L7WXLHW'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 66, 'p_high': 128, 'u_max': 488, 'q_max': 1107, 'funds': 3709.47578810739, 'order_id': 'JCKB5YK3RW'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 11, 'p_high': 114, 'u_max': 423, 'q_max': 1822, 'funds': 8047.0918298113265, 'order_id': 'ZJUHLT66T3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 18, 'p_high': 120, 'u_max': 446, 'q_max': 1933, 'funds': 3276.798740666679, 'order_id': '75EVGM346O'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 61, 'p_high': 124, 'u_max': 497, 'q_max': 1522, 'funds': 5916.899661121589, 'order_id': 'CE6IA6UWI3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 42, 'p_high': 154, 'u_max': 487, 'q_max': 1422, 'funds': 4052.949362684981, 'order_id': 'RERF8K4DBZ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 140, 'u_max': 432, 'q_max': 1483, 'funds': 5769.645784644188, 'order_id': '4FI8CXQD7P'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 96, 'p_high': 193, 'u_max': 400, 'q_max': 1812, 'funds': 3421.586678055011, 'order_id': 'ZZF1UF7R0Y'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 27, 'p_high': 110, 'u_max': 439, 'q_max': 1174, 'funds': 5574.43408401569, 'order_id': 'Q2Q74WDJM5'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:40.166755
+2018-11-05 11:17:40.166755
+
+Order Book(DAI -> ETH)
+Number of bids: 84, Number of Asks: 68
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+R1KTO1SYT6
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+5F6JUK7O3P
+JLN4MK0CH7
+AG0ZFPPZ30
+3CO943JBXX
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+7UMOIZP4G7
+2DZV1322NT
+8HXB8I3VSF
+8WY53Q4SSA
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+CE6IA6UWI3
+RERF8K4DBZ
+4FI8CXQD7P
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+8HO8EVVP1T
+X6YBC4818R
+T37GIFH6TP
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+D9N95XFIGZ
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+XYR2I82Q6O
+6A5Q16ENK6
+5J22KZ51N2
+WDIG9NJT6R
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+JO5L7WXLHW
+JCKB5YK3RW
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 30
+p*:105.53, u*:16825.197701633828
+best bid: 16822.889829250104, best ask:16827.505574017552
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 41, 'p_high': 180, 'u_max': 416, 'q_max': 1394, 'order_id': '5F6JUK7O3P'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 26, 'p_high': 198, 'u_max': 469, 'q_max': 1755, 'order_id': 'R1KTO1SYT6'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 17, 'p_high': 169, 'u_max': 472, 'q_max': 1624, 'order_id': 'XYR2I82Q6O'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 44, 'p_high': 169, 'u_max': 485, 'q_max': 1513, 'order_id': 'T37GIFH6TP'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 59, 'p_high': 145, 'u_max': 434, 'q_max': 1158, 'order_id': '8WY53Q4SSA'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 16, 'p_high': 163, 'u_max': 488, 'q_max': 1277, 'order_id': 'D9N95XFIGZ'}
+Sending 7 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 29, 'p_high': 130, 'u_max': 474, 'q_max': 1449, 'funds': 9723.524691814624, 'order_id': 'M8KWIKVQI3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 80, 'p_high': 192, 'u_max': 477, 'q_max': 1758, 'funds': 7141.741622592188, 'order_id': '2J3QM1ZB7H'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 83, 'p_high': 150, 'u_max': 430, 'q_max': 1161, 'funds': 9847.532488517196, 'order_id': '6I4N4QNUGT'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 65, 'p_high': 178, 'u_max': 464, 'q_max': 1044, 'funds': 8003.723211157075, 'order_id': 'WLXC34ZUWR'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 18, 'p_high': 139, 'u_max': 499, 'q_max': 1481, 'funds': 2408.681826195416, 'order_id': 'XDJ5489QXH'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 30, 'p_high': 192, 'u_max': 473, 'q_max': 1904, 'funds': 5027.226575415532, 'order_id': 'ACFXFH0D3H'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 54, 'p_high': 157, 'u_max': 475, 'q_max': 1995, 'funds': 7782.082665738519, 'order_id': '4IPDF6WKJ2'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:41.166643
+2018-11-05 11:17:41.166643
+
+Order Book(DAI -> ETH)
+Number of bids: 85, Number of Asks: 68
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+QLIEF5JF0S
+B6WJ8RH3UI
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+3CO943JBXX
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+7UMOIZP4G7
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+CE6IA6UWI3
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+ACFXFH0D3H
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+LGHU3HQAB9
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+CHU08HCEBP
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+8HO8EVVP1T
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+WDIG9NJT6R
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+JO5L7WXLHW
+JCKB5YK3RW
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+2J3QM1ZB7H
+XDJ5489QXH
+4IPDF6WKJ2
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 31
+p*:106.01, u*:16897.637880217873
+best bid: 16895.35801676915, best ask:16899.917743666596
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 88, 'p_high': 127, 'u_max': 446, 'q_max': 1778, 'order_id': 'QLIEF5JF0S'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 71, 'p_high': 131, 'u_max': 461, 'q_max': 1004, 'order_id': 'B6WJ8RH3UI'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 72, 'p_high': 194, 'u_max': 423, 'q_max': 1913, 'order_id': 'LGHU3HQAB9'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 30, 'p_high': 192, 'u_max': 473, 'q_max': 1904, 'order_id': 'ACFXFH0D3H'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 23, 'p_high': 103, 'u_max': 471, 'q_max': 1816, 'order_id': '8HO8EVVP1T'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 26, 'p_high': 155, 'u_max': 421, 'q_max': 1122, 'order_id': 'CHU08HCEBP'}
+Sending 15 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 15, 'p_high': 101, 'u_max': 407, 'q_max': 1861, 'funds': 1347.997134482325, 'order_id': 'G5QAENOA38'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 16, 'p_high': 115, 'u_max': 432, 'q_max': 1833, 'funds': 7101.960694194043, 'order_id': 'T2R6S6SPYK'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 56, 'p_high': 103, 'u_max': 437, 'q_max': 1294, 'funds': 1957.4943118629528, 'order_id': '06XJ68ZAGZ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 69, 'p_high': 148, 'u_max': 418, 'q_max': 1357, 'funds': 4523.274625191925, 'order_id': 'KPVTQ9NDCN'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 24, 'p_high': 175, 'u_max': 469, 'q_max': 1298, 'funds': 7545.895954012171, 'order_id': 'HXV8DQU95A'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 13, 'p_high': 109, 'u_max': 486, 'q_max': 1373, 'funds': 3646.899850468419, 'order_id': 'NZRLDGTW2Y'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 106, 'u_max': 475, 'q_max': 1623, 'funds': 3361.1056092049007, 'order_id': 'Z7ZOYXFWEZ'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 77, 'p_high': 121, 'u_max': 411, 'q_max': 1078, 'funds': 3482.466237845464, 'order_id': 'OR8P2L2RYU'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 26, 'p_high': 154, 'u_max': 446, 'q_max': 1055, 'funds': 5248.824586214568, 'order_id': 'NDV6VLGCEI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 50, 'p_high': 109, 'u_max': 477, 'q_max': 1330, 'funds': 6831.850107994174, 'order_id': '18F1Q6M44T'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 59, 'p_high': 115, 'u_max': 440, 'q_max': 1837, 'funds': 6868.119909439969, 'order_id': 'PFZDPKGN6W'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 14, 'p_high': 167, 'u_max': 439, 'q_max': 1795, 'funds': 7203.985770664638, 'order_id': 'LLUF48A2E4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 57, 'p_high': 153, 'u_max': 436, 'q_max': 1543, 'funds': 3636.138226677138, 'order_id': 'M21TUQUZ69'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 74, 'p_high': 168, 'u_max': 426, 'q_max': 1924, 'funds': 3707.6265309610358, 'order_id': 'FMCEM4BURS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 31, 'p_high': 190, 'u_max': 425, 'q_max': 1040, 'funds': 2301.730210875419, 'order_id': 'NY1F1SA5DQ'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:42.166821
+2018-11-05 11:17:42.166821
+
+Order Book(DAI -> ETH)
+Number of bids: 90, Number of Asks: 72
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+GFI3L8OHZ9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+BPB5PLK9ME
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+XOU16V2KSK
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+3CO943JBXX
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+7UMOIZP4G7
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+CE6IA6UWI3
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+G5QAENOA38
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+
+Asks
+8PF7PNCHZY
+XKTUBBR3J3
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+8O43QUUPLX
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+WDIG9NJT6R
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+JO5L7WXLHW
+JCKB5YK3RW
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+2J3QM1ZB7H
+XDJ5489QXH
+4IPDF6WKJ2
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 32
+p*:104.65, u*:17825.430202907075
+best bid: 17821.81416708498, best ask:17829.046238729174
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 88, 'p_high': 164, 'u_max': 437, 'q_max': 1585, 'order_id': 'XKTUBBR3J3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 89, 'p_high': 183, 'u_max': 484, 'q_max': 1576, 'order_id': 'BPB5PLK9ME'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 89, 'p_high': 160, 'u_max': 472, 'q_max': 1136, 'order_id': '8O43QUUPLX'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 25, 'p_high': 109, 'u_max': 488, 'q_max': 1654, 'order_id': 'GFI3L8OHZ9'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 76, 'p_high': 137, 'u_max': 471, 'q_max': 1425, 'order_id': 'XOU16V2KSK'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 12, 'p_high': 163, 'u_max': 453, 'q_max': 1625, 'order_id': '7UMOIZP4G7'}
+Sending 10 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 75, 'p_high': 193, 'u_max': 415, 'q_max': 1938, 'funds': 481.1844840983703, 'order_id': '43R4SL140K'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 80, 'p_high': 136, 'u_max': 449, 'q_max': 1591, 'funds': 4176.748472855476, 'order_id': 'CULCA5O2YA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 180, 'u_max': 499, 'q_max': 1390, 'funds': 9535.414250016232, 'order_id': 'QB20YKE6B9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 35, 'p_high': 123, 'u_max': 452, 'q_max': 1827, 'funds': 807.4453557033956, 'order_id': '0EL6A4WDU2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 10, 'p_high': 125, 'u_max': 422, 'q_max': 1052, 'funds': 9170.5946905628, 'order_id': 'Q0JWZS837O'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 40, 'p_high': 177, 'u_max': 441, 'q_max': 1969, 'funds': 9421.182595491477, 'order_id': '1AMQB2CFIA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 28, 'p_high': 148, 'u_max': 473, 'q_max': 1005, 'funds': 648.0646833773574, 'order_id': '5H734WL42Z'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 109, 'u_max': 465, 'q_max': 1804, 'funds': 3809.9285882259305, 'order_id': '6U2N9IQPNR'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 64, 'p_high': 164, 'u_max': 486, 'q_max': 1087, 'funds': 6282.281263231347, 'order_id': 'F5UDA64PQE'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 84, 'p_high': 195, 'u_max': 488, 'q_max': 1650, 'funds': 392.186592148458, 'order_id': 'V03CRI1660'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:43.166075
+2018-11-05 11:17:43.166075
+
+Order Book(DAI -> ETH)
+Number of bids: 88, Number of Asks: 78
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+H0XUBIRZ56
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+V09MUE6RM8
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+3CO943JBXX
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+CE6IA6UWI3
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+G5QAENOA38
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+QB20YKE6B9
+6U2N9IQPNR
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+VZ7DNCOWR9
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+WDIG9NJT6R
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+JO5L7WXLHW
+JCKB5YK3RW
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+2J3QM1ZB7H
+XDJ5489QXH
+4IPDF6WKJ2
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+CULCA5O2YA
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 33
+p*:102.19000000000001, u*:18376.06704688612
+best bid: 18371.997899167778, best ask:18380.136194604464
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 38, 'p_high': 192, 'u_max': 478, 'q_max': 1126, 'order_id': '3CO943JBXX'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 61, 'p_high': 124, 'u_max': 497, 'q_max': 1522, 'order_id': 'CE6IA6UWI3'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 46, 'p_high': 180, 'u_max': 499, 'q_max': 1390, 'order_id': 'QB20YKE6B9'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 143, 'u_max': 498, 'q_max': 1262, 'order_id': 'V09MUE6RM8'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 12, 'p_high': 117, 'u_max': 409, 'q_max': 1482, 'order_id': 'H0XUBIRZ56'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 30, 'p_high': 109, 'u_max': 470, 'q_max': 1263, 'order_id': 'VZ7DNCOWR9'}
+Sending 22 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 44, 'p_high': 142, 'u_max': 456, 'q_max': 1088, 'funds': 2572.1784330536757, 'order_id': '1LH9RTD7BI'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 98, 'p_high': 191, 'u_max': 494, 'q_max': 1820, 'funds': 6198.254260785032, 'order_id': '0TPVDUPI0F'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 68, 'p_high': 175, 'u_max': 460, 'q_max': 1759, 'funds': 5533.552511076821, 'order_id': 'EHF2RNTOJ3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 104, 'u_max': 447, 'q_max': 1033, 'funds': 676.3574962875917, 'order_id': '282PJVTKCC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 44, 'p_high': 142, 'u_max': 432, 'q_max': 1845, 'funds': 9846.342701140917, 'order_id': '1DFOKRJYY5'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 58, 'p_high': 175, 'u_max': 466, 'q_max': 1900, 'funds': 3211.0579759372026, 'order_id': '2HCI9RMLLN'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 87, 'p_high': 115, 'u_max': 412, 'q_max': 1583, 'funds': 105.58266012716811, 'order_id': '6OK75LA2PY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 52, 'p_high': 114, 'u_max': 447, 'q_max': 1318, 'funds': 3160.0170111627813, 'order_id': 'SMYR3IHAXG'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 32, 'p_high': 173, 'u_max': 407, 'q_max': 1565, 'funds': 9828.541242654408, 'order_id': 'ENM5IQ00P3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 47, 'p_high': 190, 'u_max': 473, 'q_max': 1338, 'funds': 6998.109367106069, 'order_id': 'F5LH6D8QB4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 35, 'p_high': 179, 'u_max': 422, 'q_max': 1096, 'funds': 4577.430519234297, 'order_id': 'KCYIE9I7PO'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 95, 'p_high': 151, 'u_max': 487, 'q_max': 1674, 'funds': 2493.922476336682, 'order_id': '1J30C7C5IF'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 43, 'p_high': 113, 'u_max': 483, 'q_max': 1294, 'funds': 7842.997575992874, 'order_id': 'AM0WJFIGIB'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 84, 'p_high': 111, 'u_max': 484, 'q_max': 1230, 'funds': 2308.4039745741293, 'order_id': 'Q8GJTF9IYY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 64, 'p_high': 166, 'u_max': 428, 'q_max': 1425, 'funds': 4460.605103064296, 'order_id': 'N6W4JED3E5'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 16, 'p_high': 122, 'u_max': 407, 'q_max': 1114, 'funds': 9486.381223368118, 'order_id': 'DA323AS022'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 48, 'p_high': 157, 'u_max': 470, 'q_max': 1379, 'funds': 1514.3451978309042, 'order_id': 'KV495VRTAM'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 59, 'p_high': 141, 'u_max': 438, 'q_max': 1453, 'funds': 3054.609030098031, 'order_id': 'DA6UMWINYK'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 86, 'p_high': 126, 'u_max': 411, 'q_max': 1993, 'funds': 2586.569990883052, 'order_id': 'HVOIC0BV58'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 47, 'p_high': 107, 'u_max': 490, 'q_max': 1164, 'funds': 8198.643710163316, 'order_id': 'WKEDH4Q2QB'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 133, 'u_max': 430, 'q_max': 1418, 'funds': 9175.222443975314, 'order_id': 'O8OYWS3T5P'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 94, 'p_high': 170, 'u_max': 444, 'q_max': 1965, 'funds': 3774.0993723390447, 'order_id': 'XG20KFWDVA'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:44.166868
+2018-11-05 11:17:44.166868
+
+Order Book(DAI -> ETH)
+Number of bids: 93, Number of Asks: 89
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+VDVX4VKK7A
+F5X0AD0N0T
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+G5QAENOA38
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+0TPVDUPI0F
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+HVOIC0BV58
+O8OYWS3T5P
+XG20KFWDVA
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+YZVSQ68JQC
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+WDIG9NJT6R
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+JO5L7WXLHW
+JCKB5YK3RW
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+2J3QM1ZB7H
+XDJ5489QXH
+4IPDF6WKJ2
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+CULCA5O2YA
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+1DFOKRJYY5
+2HCI9RMLLN
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+1J30C7C5IF
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 34
+p*:100.91000000000001, u*:20342.491492963163
+best bid: 20337.619377435356, best ask:20347.363608490967
+
+Cancelling 8 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 52, 'p_high': 112, 'u_max': 400, 'q_max': 1702, 'order_id': 'WDIG9NJT6R'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 54, 'p_high': 157, 'u_max': 475, 'q_max': 1995, 'order_id': '4IPDF6WKJ2'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 44, 'p_high': 142, 'u_max': 432, 'q_max': 1845, 'order_id': '1DFOKRJYY5'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 49, 'p_high': 171, 'u_max': 458, 'q_max': 1732, 'order_id': 'VDVX4VKK7A'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 86, 'p_high': 126, 'u_max': 411, 'q_max': 1993, 'order_id': 'HVOIC0BV58'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 34, 'p_high': 108, 'u_max': 498, 'q_max': 1094, 'order_id': 'YZVSQ68JQC'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 71, 'p_high': 130, 'u_max': 410, 'q_max': 1286, 'order_id': 'JO5L7WXLHW'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 66, 'p_high': 128, 'u_max': 488, 'q_max': 1107, 'order_id': 'JCKB5YK3RW'}
+Sending 6 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 49, 'p_high': 158, 'u_max': 417, 'q_max': 1497, 'funds': 3776.315330943557, 'order_id': '0WPXALOFY7'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 92, 'p_high': 129, 'u_max': 458, 'q_max': 1151, 'funds': 1699.8550438461523, 'order_id': 'EW1EJCBW6V'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 54, 'p_high': 157, 'u_max': 466, 'q_max': 1817, 'funds': 6771.669863925801, 'order_id': 'TQ7U0ZCNP5'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 66, 'p_high': 141, 'u_max': 448, 'q_max': 1583, 'funds': 4332.560285729786, 'order_id': 'XO9K1FAXWA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 69, 'p_high': 134, 'u_max': 448, 'q_max': 1399, 'funds': 3207.939676067991, 'order_id': 'XFLCJ8ZBLF'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 82, 'p_high': 107, 'u_max': 455, 'q_max': 1836, 'funds': 662.1737616837175, 'order_id': '9GVJMUNZ1G'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:45.166940
+2018-11-05 11:17:45.166940
+
+Order Book(DAI -> ETH)
+Number of bids: 93, Number of Asks: 87
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+F5X0AD0N0T
+721UKP9NTI
+IUP2LX991F
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+3AKDU0PHSV
+D8LJEN3LC5
+XV8YN0Q683
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+G5QAENOA38
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+0TPVDUPI0F
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+O8OYWS3T5P
+XG20KFWDVA
+0WPXALOFY7
+XFLCJ8ZBLF
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+LL1NUNJ7CO
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+2J3QM1ZB7H
+XDJ5489QXH
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+CULCA5O2YA
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+2HCI9RMLLN
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+1J30C7C5IF
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+EW1EJCBW6V
+TQ7U0ZCNP5
+XO9K1FAXWA
+9GVJMUNZ1G
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 35
+p*:101.67, u*:19901.523485045145
+best bid: 19898.995222862355, best ask:19904.05174722794
+
+Cancelling 9 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 95, 'p_high': 151, 'u_max': 487, 'q_max': 1674, 'order_id': '1J30C7C5IF'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 133, 'u_max': 430, 'q_max': 1418, 'order_id': 'O8OYWS3T5P'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 92, 'p_high': 172, 'u_max': 457, 'q_max': 1741, 'order_id': 'IUP2LX991F'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 76, 'p_high': 115, 'u_max': 478, 'q_max': 1863, 'order_id': 'XV8YN0Q683'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 37, 'p_high': 121, 'u_max': 448, 'q_max': 1893, 'order_id': '3AKDU0PHSV'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 58, 'p_high': 175, 'u_max': 466, 'q_max': 1900, 'order_id': '2HCI9RMLLN'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 80, 'p_high': 192, 'u_max': 477, 'q_max': 1758, 'order_id': '2J3QM1ZB7H'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 97, 'p_high': 118, 'u_max': 441, 'q_max': 1476, 'order_id': 'LL1NUNJ7CO'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 82, 'p_high': 107, 'u_max': 455, 'q_max': 1836, 'order_id': '9GVJMUNZ1G'}
+Sending 9 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 58, 'p_high': 137, 'u_max': 417, 'q_max': 1416, 'funds': 4646.743582604883, 'order_id': 'W2MWVMF1T6'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 13, 'p_high': 119, 'u_max': 464, 'q_max': 1321, 'funds': 4829.0929156811335, 'order_id': 'OZY5FPQHK9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 54, 'p_high': 199, 'u_max': 409, 'q_max': 1384, 'funds': 3501.264090363595, 'order_id': '7Z2VWE4Q33'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 97, 'p_high': 133, 'u_max': 475, 'q_max': 1067, 'funds': 7300.937414894647, 'order_id': 'MQPWVI7G2W'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 87, 'p_high': 141, 'u_max': 478, 'q_max': 1215, 'funds': 9789.300737049469, 'order_id': 'WBH9BMXNAL'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 74, 'p_high': 199, 'u_max': 467, 'q_max': 1638, 'funds': 5361.584778244448, 'order_id': 'FLCLD9HJMC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 51, 'p_high': 141, 'u_max': 414, 'q_max': 1057, 'funds': 680.4264434974616, 'order_id': 'KSW3IAREH8'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 191, 'u_max': 487, 'q_max': 1308, 'funds': 3216.2627056643955, 'order_id': '2NLD1XQEXL'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 41, 'p_high': 142, 'u_max': 439, 'q_max': 1320, 'funds': 7913.487507696275, 'order_id': 'N2LEZ9646X'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:46.166924
+2018-11-05 11:17:46.166924
+
+Order Book(DAI -> ETH)
+Number of bids: 96, Number of Asks: 84
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3Q8ZGTDSAO
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+F5X0AD0N0T
+721UKP9NTI
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+D8LJEN3LC5
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+G5QAENOA38
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+0TPVDUPI0F
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+XG20KFWDVA
+0WPXALOFY7
+XFLCJ8ZBLF
+OZY5FPQHK9
+7Z2VWE4Q33
+MQPWVI7G2W
+WBH9BMXNAL
+KSW3IAREH8
+2NLD1XQEXL
+N2LEZ9646X
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+P0RBVNG2SX
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+F1FBRB8S3X
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+XDJ5489QXH
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+CULCA5O2YA
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+EW1EJCBW6V
+TQ7U0ZCNP5
+XO9K1FAXWA
+W2MWVMF1T6
+FLCLD9HJMC
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 36
+p*:103.17, u*:20182.501000504824
+best bid: 20179.370008593338, best ask:20185.63199241631
+
+Cancelling 5 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 83, 'p_high': 145, 'u_max': 459, 'q_max': 1583, 'order_id': 'F1FBRB8S3X'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 80, 'p_high': 136, 'u_max': 449, 'q_max': 1591, 'order_id': 'CULCA5O2YA'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 15, 'p_high': 134, 'u_max': 452, 'q_max': 1058, 'order_id': '3Q8ZGTDSAO'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 15, 'p_high': 101, 'u_max': 407, 'q_max': 1861, 'order_id': 'G5QAENOA38'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 80, 'p_high': 177, 'u_max': 458, 'q_max': 1682, 'order_id': 'P0RBVNG2SX'}
+Sending 10 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 87, 'p_high': 155, 'u_max': 467, 'q_max': 1032, 'funds': 7336.424806759835, 'order_id': 'GXOLWDYV72'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 71, 'p_high': 103, 'u_max': 486, 'q_max': 1469, 'funds': 1735.6481758619236, 'order_id': 'YN9WVLVB40'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 14, 'p_high': 178, 'u_max': 466, 'q_max': 1070, 'funds': 9415.147363678798, 'order_id': 'LAGKY2Y3TN'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 74, 'p_high': 139, 'u_max': 407, 'q_max': 1217, 'funds': 1448.4610134030106, 'order_id': 'AY4BBMVWV9'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 28, 'p_high': 120, 'u_max': 481, 'q_max': 1702, 'funds': 8283.672332181282, 'order_id': 'D1W7T88EJW'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 72, 'p_high': 102, 'u_max': 402, 'q_max': 1360, 'funds': 2655.7236320712063, 'order_id': '4834Z1SQBU'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 70, 'p_high': 139, 'u_max': 464, 'q_max': 1081, 'funds': 2367.5306511555095, 'order_id': 'DAG92KHU5N'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 92, 'p_high': 168, 'u_max': 458, 'q_max': 1066, 'funds': 3355.061056806089, 'order_id': 'U3LP9SV6EL'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 93, 'p_high': 198, 'u_max': 453, 'q_max': 1817, 'funds': 1441.7862286925797, 'order_id': 'HDQ1EP6EXC'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 42, 'p_high': 163, 'u_max': 456, 'q_max': 1945, 'funds': 7125.342007135106, 'order_id': 'D2OYTH38BL'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:47.166423
+2018-11-05 11:17:47.166423
+
+Order Book(DAI -> ETH)
+Number of bids: 99, Number of Asks: 86
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+F5X0AD0N0T
+721UKP9NTI
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+D8LJEN3LC5
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+ZY6R6DJE6D
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+0TPVDUPI0F
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+XG20KFWDVA
+0WPXALOFY7
+XFLCJ8ZBLF
+OZY5FPQHK9
+7Z2VWE4Q33
+MQPWVI7G2W
+WBH9BMXNAL
+KSW3IAREH8
+2NLD1XQEXL
+N2LEZ9646X
+YN9WVLVB40
+LAGKY2Y3TN
+4834Z1SQBU
+HDQ1EP6EXC
+D2OYTH38BL
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+MMTRM2AMPV
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+XDJ5489QXH
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+EW1EJCBW6V
+TQ7U0ZCNP5
+XO9K1FAXWA
+W2MWVMF1T6
+FLCLD9HJMC
+GXOLWDYV72
+AY4BBMVWV9
+D1W7T88EJW
+DAG92KHU5N
+U3LP9SV6EL
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 37
+p*:103.38000000000001, u*:20811.295104587298
+best bid: 20806.62006199809, best ask:20815.970147176504
+
+Cancelling 3 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 28, 'p_high': 120, 'u_max': 481, 'q_max': 1702, 'order_id': 'D1W7T88EJW'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 24, 'p_high': 149, 'u_max': 407, 'q_max': 1222, 'order_id': 'MMTRM2AMPV'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 57, 'p_high': 161, 'u_max': 449, 'q_max': 1438, 'order_id': 'ZY6R6DJE6D'}
+Sending 12 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 84, 'p_high': 197, 'u_max': 440, 'q_max': 1984, 'funds': 4974.813102458528, 'order_id': 'CIUCYUL7IA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 20, 'p_high': 113, 'u_max': 472, 'q_max': 1018, 'funds': 5339.330488922862, 'order_id': 'FTDXVDBUYN'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 65, 'p_high': 132, 'u_max': 485, 'q_max': 1801, 'funds': 6123.690356081615, 'order_id': 'ERSBT75SB2'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 42, 'p_high': 131, 'u_max': 485, 'q_max': 1969, 'funds': 9597.314721861756, 'order_id': 'S59OSTPSAA'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 12, 'p_high': 185, 'u_max': 481, 'q_max': 1889, 'funds': 1229.403618039492, 'order_id': '7BFH4LH43F'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 80, 'p_high': 189, 'u_max': 443, 'q_max': 1205, 'funds': 8788.192439255668, 'order_id': 'PNFJL890HU'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 85, 'p_high': 165, 'u_max': 452, 'q_max': 1097, 'funds': 9046.440920548288, 'order_id': 'DE5SMPMOQY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 33, 'p_high': 179, 'u_max': 492, 'q_max': 1085, 'funds': 4534.994763427108, 'order_id': '0BTV0RA716'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 20, 'p_high': 148, 'u_max': 471, 'q_max': 1457, 'funds': 6349.9706244299205, 'order_id': '19UE7WCOBW'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 79, 'p_high': 130, 'u_max': 451, 'q_max': 1315, 'funds': 4285.841018394324, 'order_id': 'GJAH6KWL8M'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 19, 'p_high': 155, 'u_max': 484, 'q_max': 1815, 'funds': 3714.7010841788365, 'order_id': 'T9LO3R9ZHK'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 60, 'p_high': 128, 'u_max': 444, 'q_max': 1305, 'funds': 1999.279037616104, 'order_id': 'D3MEALD1US'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:48.166973
+2018-11-05 11:17:48.166973
+
+Order Book(DAI -> ETH)
+Number of bids: 104, Number of Asks: 90
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+2U9D0K66LD
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+F5X0AD0N0T
+721UKP9NTI
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+D8LJEN3LC5
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+0TPVDUPI0F
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+XG20KFWDVA
+0WPXALOFY7
+XFLCJ8ZBLF
+OZY5FPQHK9
+7Z2VWE4Q33
+MQPWVI7G2W
+WBH9BMXNAL
+KSW3IAREH8
+2NLD1XQEXL
+N2LEZ9646X
+YN9WVLVB40
+LAGKY2Y3TN
+4834Z1SQBU
+HDQ1EP6EXC
+D2OYTH38BL
+FTDXVDBUYN
+7BFH4LH43F
+DE5SMPMOQY
+0BTV0RA716
+19UE7WCOBW
+T9LO3R9ZHK
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+MY274E0JGP
+WDAPETFLF7
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+XDJ5489QXH
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+EW1EJCBW6V
+TQ7U0ZCNP5
+XO9K1FAXWA
+W2MWVMF1T6
+FLCLD9HJMC
+GXOLWDYV72
+AY4BBMVWV9
+DAG92KHU5N
+U3LP9SV6EL
+CIUCYUL7IA
+ERSBT75SB2
+S59OSTPSAA
+PNFJL890HU
+GJAH6KWL8M
+D3MEALD1US
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 38
+p*:103.72000000000001, u*:21611.93882634579
+best bid: 21611.20143293368, best ask:21612.6762197579
+
+Cancelling 4 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 27, 'p_high': 182, 'u_max': 462, 'q_max': 1619, 'order_id': '2U9D0K66LD'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 82, 'p_high': 195, 'u_max': 484, 'q_max': 1415, 'order_id': 'WDAPETFLF7'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 20, 'p_high': 148, 'u_max': 471, 'q_max': 1457, 'order_id': '19UE7WCOBW'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 79, 'p_high': 130, 'u_max': 451, 'q_max': 1315, 'order_id': 'GJAH6KWL8M'}
+Sending 8 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 34, 'p_high': 132, 'u_max': 414, 'q_max': 1521, 'funds': 397.1161997486816, 'order_id': '7FBII7V5P3'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 35, 'p_high': 184, 'u_max': 411, 'q_max': 1493, 'funds': 3535.021952092304, 'order_id': '0Z5K3ECBXK'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 82, 'p_high': 105, 'u_max': 452, 'q_max': 1843, 'funds': 1074.4522444130655, 'order_id': 'ZD1JJOBJQS'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 54, 'p_high': 146, 'u_max': 403, 'q_max': 1377, 'funds': 3317.629380604492, 'order_id': 'AB9U3SCW15'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 122, 'u_max': 449, 'q_max': 1408, 'funds': 1326.5309349333543, 'order_id': 'C6O97013OM'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 49, 'p_high': 177, 'u_max': 406, 'q_max': 1890, 'funds': 3816.3911211452983, 'order_id': '93H7QJXZ1H'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 96, 'p_high': 142, 'u_max': 435, 'q_max': 1730, 'funds': 4750.297918100058, 'order_id': '73A0LQ75G7'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 31, 'p_high': 141, 'u_max': 470, 'q_max': 1378, 'funds': 5233.8937832034935, 'order_id': 'ZDUGU8F2A1'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:49.167053
+2018-11-05 11:17:49.167053
+
+Order Book(DAI -> ETH)
+Number of bids: 105, Number of Asks: 93
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+F5X0AD0N0T
+721UKP9NTI
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+RBKZ3RJUUP
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+D8LJEN3LC5
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+0TPVDUPI0F
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+XG20KFWDVA
+0WPXALOFY7
+XFLCJ8ZBLF
+OZY5FPQHK9
+7Z2VWE4Q33
+MQPWVI7G2W
+WBH9BMXNAL
+KSW3IAREH8
+2NLD1XQEXL
+N2LEZ9646X
+YN9WVLVB40
+LAGKY2Y3TN
+4834Z1SQBU
+HDQ1EP6EXC
+D2OYTH38BL
+FTDXVDBUYN
+7BFH4LH43F
+DE5SMPMOQY
+0BTV0RA716
+T9LO3R9ZHK
+ZD1JJOBJQS
+AB9U3SCW15
+C6O97013OM
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+MY274E0JGP
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+XDJ5489QXH
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+EW1EJCBW6V
+TQ7U0ZCNP5
+XO9K1FAXWA
+W2MWVMF1T6
+FLCLD9HJMC
+GXOLWDYV72
+AY4BBMVWV9
+DAG92KHU5N
+U3LP9SV6EL
+CIUCYUL7IA
+ERSBT75SB2
+S59OSTPSAA
+PNFJL890HU
+D3MEALD1US
+7FBII7V5P3
+0Z5K3ECBXK
+93H7QJXZ1H
+73A0LQ75G7
+ZDUGU8F2A1
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 39
+p*:102.91000000000001, u*:21930.997704340232
+best bid: 21930.789896970084, best ask:21931.205511710377
+
+Cancelling 1 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 18, 'p_high': 169, 'u_max': 423, 'q_max': 1935, 'order_id': 'RBKZ3RJUUP'}
+Sending 6 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 60, 'p_high': 157, 'u_max': 453, 'q_max': 1378, 'funds': 2736.4827854567607, 'order_id': 'VKG7F6PBFK'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 11, 'p_high': 126, 'u_max': 430, 'q_max': 1892, 'funds': 427.3122107228944, 'order_id': '3NUELJ2TNP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 73, 'p_high': 132, 'u_max': 459, 'q_max': 1948, 'funds': 5931.627892602388, 'order_id': 'CQPRSXMLAX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 56, 'p_high': 104, 'u_max': 448, 'q_max': 1731, 'funds': 2879.2705431852796, 'order_id': 'OM3G0EB8E0'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 88, 'p_high': 126, 'u_max': 464, 'q_max': 1170, 'funds': 8961.742073666868, 'order_id': '98QFFJPO7U'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 27, 'p_high': 164, 'u_max': 426, 'q_max': 1364, 'funds': 1295.8392576706024, 'order_id': 'VFCDC2XI7W'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:50.166943
+2018-11-05 11:17:50.166943
+
+Order Book(DAI -> ETH)
+Number of bids: 105, Number of Asks: 98
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+MI7DHYLEBA
+QM983KW4IN
+OLACI18V6O
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+F5X0AD0N0T
+721UKP9NTI
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+D8LJEN3LC5
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+0TPVDUPI0F
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+XG20KFWDVA
+0WPXALOFY7
+XFLCJ8ZBLF
+OZY5FPQHK9
+7Z2VWE4Q33
+MQPWVI7G2W
+WBH9BMXNAL
+KSW3IAREH8
+2NLD1XQEXL
+N2LEZ9646X
+YN9WVLVB40
+LAGKY2Y3TN
+4834Z1SQBU
+HDQ1EP6EXC
+D2OYTH38BL
+FTDXVDBUYN
+7BFH4LH43F
+DE5SMPMOQY
+0BTV0RA716
+T9LO3R9ZHK
+ZD1JJOBJQS
+AB9U3SCW15
+C6O97013OM
+98QFFJPO7U
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+MY274E0JGP
+HYZQ1GNT25
+SZN6HWI5J4
+EHRWS0BORR
+83HJNHM39F
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+XDJ5489QXH
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+F5UDA64PQE
+V03CRI1660
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+EW1EJCBW6V
+TQ7U0ZCNP5
+XO9K1FAXWA
+W2MWVMF1T6
+FLCLD9HJMC
+GXOLWDYV72
+AY4BBMVWV9
+DAG92KHU5N
+U3LP9SV6EL
+CIUCYUL7IA
+ERSBT75SB2
+S59OSTPSAA
+PNFJL890HU
+D3MEALD1US
+7FBII7V5P3
+0Z5K3ECBXK
+93H7QJXZ1H
+73A0LQ75G7
+ZDUGU8F2A1
+VKG7F6PBFK
+3NUELJ2TNP
+CQPRSXMLAX
+OM3G0EB8E0
+VFCDC2XI7W
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 40
+p*:101.71000000000001, u*:22701.056842776834
+best bid: 22700.871007014135, best ask:22701.242678539533
+
+Cancelling 6 orders!
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 98, 'p_high': 191, 'u_max': 494, 'q_max': 1820, 'order_id': '0TPVDUPI0F'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 48, 'p_high': 195, 'u_max': 463, 'q_max': 1318, 'order_id': 'SZN6HWI5J4'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 73, 'p_high': 136, 'u_max': 479, 'q_max': 1824, 'order_id': 'MI7DHYLEBA'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 64, 'p_high': 164, 'u_max': 486, 'q_max': 1087, 'order_id': 'F5UDA64PQE'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 27, 'p_high': 164, 'u_max': 426, 'q_max': 1364, 'order_id': 'VFCDC2XI7W'}
+Sending CANCEL for: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 43, 'p_high': 181, 'u_max': 497, 'q_max': 1120, 'order_id': 'OLACI18V6O'}
+Sending 11 new orders!
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 41, 'p_high': 192, 'u_max': 427, 'q_max': 1070, 'funds': 6815.225119269924, 'order_id': '231RGSM6S4'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 72, 'p_high': 157, 'u_max': 412, 'q_max': 1730, 'funds': 7098.6118978607, 'order_id': 'JSRXF31E9S'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 94, 'p_high': 182, 'u_max': 413, 'q_max': 1642, 'funds': 6761.128846420288, 'order_id': 'D0WK847X53'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 73, 'p_high': 104, 'u_max': 442, 'q_max': 1490, 'funds': 1755.2364996347246, 'order_id': 'P5UIBZF6QY'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 46, 'p_high': 145, 'u_max': 406, 'q_max': 1886, 'funds': 3127.578913590341, 'order_id': 'S24QQGNX0M'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 96, 'p_high': 171, 'u_max': 473, 'q_max': 1085, 'funds': 8459.870543741485, 'order_id': 'MTRBBW8D3Y'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 89, 'p_high': 191, 'u_max': 460, 'q_max': 1369, 'funds': 3115.7068222656712, 'order_id': 'EEZ2APMFWP'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 35, 'p_high': 149, 'u_max': 470, 'q_max': 1294, 'funds': 1851.592904048729, 'order_id': '76L0XTMO3Z'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 34, 'p_high': 132, 'u_max': 422, 'q_max': 1393, 'funds': 412.85248799410533, 'order_id': 'B6LJMWBGWX'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 70, 'p_high': 150, 'u_max': 497, 'q_max': 1471, 'funds': 1747.5228982056058, 'order_id': 'W4AYBV20AN'}
+ENTER ORDER: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 12, 'p_high': 179, 'u_max': 488, 'q_max': 1716, 'funds': 454.71083022409545, 'order_id': 'CLLILTFE7L'}
+Holding Batch: self.exchange.batch_num @ 2018-11-05 11:17:51.166846
+2018-11-05 11:17:51.166846
+
+Order Book(DAI -> ETH)
+Number of bids: 106, Number of Asks: 102
+Bids
+PJMNYPHGZ8
+83T7MPP6S9
+T5SRH0ZQCT
+50ZCX2XN00
+FQWA6J9U0L
+5T2ASMQT0O
+QM983KW4IN
+48YTWAXOAA
+FXPXQDEJNW
+XHN97NMKWF
+UOMIP4CWJY
+M3IN5MGE72
+3K64J3M9W5
+5000LWP29O
+NQFMFO5F3V
+F5X0AD0N0T
+721UKP9NTI
+1WEU920CRU
+QVPL61AW5N
+3VWYF429IH
+FF0H47H2T9
+ZQGQHRFNQ7
+BZ6KWHMVR8
+P9KYA583LS
+8JYEQOVGKG
+HM3A8IKCJH
+JNW6KU86Q9
+FK732J31H9
+ZHHYVN2OG3
+J0NO7N11CG
+PIK1REJKSE
+KSFZE25QZQ
+83M10HSJXS
+D8LJEN3LC5
+KWXGZCRVB3
+R864UMS1HO
+PYZOF9MLTY
+P6BWBJ6BRP
+8VINAZ31WG
+PE78CPXNV0
+53VUB0WOC1
+BG1JUD38MH
+XMLLIICT2R
+HBHAH7NNXB
+GZ7G27JGNI
+T2JZTWP7XB
+RBQJ062CIC
+N9PIMYZDIL
+JLN4MK0CH7
+AG0ZFPPZ30
+JKWE05Y6U4
+A0KMKJEINR
+YM422ZXR3P
+2DZV1322NT
+8HXB8I3VSF
+1W0PX3VPKT
+S6BULT8JXE
+NH11FYLIL0
+75EVGM346O
+RERF8K4DBZ
+4FI8CXQD7P
+M8KWIKVQI3
+6I4N4QNUGT
+WLXC34ZUWR
+T2R6S6SPYK
+KPVTQ9NDCN
+HXV8DQU95A
+Z7ZOYXFWEZ
+18F1Q6M44T
+FMCEM4BURS
+NY1F1SA5DQ
+6U2N9IQPNR
+1LH9RTD7BI
+EHF2RNTOJ3
+282PJVTKCC
+N6W4JED3E5
+DA323AS022
+KV495VRTAM
+XG20KFWDVA
+0WPXALOFY7
+XFLCJ8ZBLF
+OZY5FPQHK9
+7Z2VWE4Q33
+MQPWVI7G2W
+WBH9BMXNAL
+KSW3IAREH8
+2NLD1XQEXL
+N2LEZ9646X
+YN9WVLVB40
+LAGKY2Y3TN
+4834Z1SQBU
+HDQ1EP6EXC
+D2OYTH38BL
+FTDXVDBUYN
+7BFH4LH43F
+DE5SMPMOQY
+0BTV0RA716
+T9LO3R9ZHK
+ZD1JJOBJQS
+AB9U3SCW15
+C6O97013OM
+98QFFJPO7U
+D0WK847X53
+P5UIBZF6QY
+EEZ2APMFWP
+76L0XTMO3Z
+
+Asks
+8PF7PNCHZY
+V1GVDRWV61
+TMUHJJ9PT5
+I7I75JL9GB
+PLHZHNFUJ6
+EB6WYQQJAS
+0HKQ3NOOE1
+27TGOTD20T
+8O1YUH3W4P
+FBH3LPCSTI
+7A5YRFYEPU
+Y08V7AESSX
+N4VMD3XSR3
+H4RD042A56
+6BD5ZJE415
+WUWT1JO0H9
+R3SA9SLBJW
+CI22D7RVJ5
+43GSRML879
+ZWSTMN4OE9
+8PDV6H66US
+X6YBC4818R
+2I1HFWINCZ
+KA8PATUEJO
+XLL6YF942W
+SMB22FPU4R
+3HNCP5P2C2
+6ISBN3OUCT
+VI31CMBSYO
+NS3PMJQV6B
+CRRGRFNC8V
+55JHB76M9C
+8604JKCX35
+HHK83N7L0R
+4QF2FFDXWK
+V6FI70KEUM
+M8J8C3H2GX
+XDWEU6TTYL
+S7AKEL0P22
+XTD5IDFLWY
+6A5Q16ENK6
+5J22KZ51N2
+MY274E0JGP
+HYZQ1GNT25
+EHRWS0BORR
+83HJNHM39F
+ZJUHLT66T3
+ZZF1UF7R0Y
+Q2Q74WDJM5
+XDJ5489QXH
+06XJ68ZAGZ
+NZRLDGTW2Y
+OR8P2L2RYU
+NDV6VLGCEI
+PFZDPKGN6W
+LLUF48A2E4
+M21TUQUZ69
+43R4SL140K
+0EL6A4WDU2
+Q0JWZS837O
+1AMQB2CFIA
+5H734WL42Z
+V03CRI1660
+6OK75LA2PY
+SMYR3IHAXG
+ENM5IQ00P3
+F5LH6D8QB4
+KCYIE9I7PO
+AM0WJFIGIB
+Q8GJTF9IYY
+DA6UMWINYK
+WKEDH4Q2QB
+EW1EJCBW6V
+TQ7U0ZCNP5
+XO9K1FAXWA
+W2MWVMF1T6
+FLCLD9HJMC
+GXOLWDYV72
+AY4BBMVWV9
+DAG92KHU5N
+U3LP9SV6EL
+CIUCYUL7IA
+ERSBT75SB2
+S59OSTPSAA
+PNFJL890HU
+D3MEALD1US
+7FBII7V5P3
+0Z5K3ECBXK
+93H7QJXZ1H
+73A0LQ75G7
+ZDUGU8F2A1
+VKG7F6PBFK
+3NUELJ2TNP
+CQPRSXMLAX
+OM3G0EB8E0
+231RGSM6S4
+JSRXF31E9S
+S24QQGNX0M
+MTRBBW8D3Y
+B6LJMWBGWX
+W4AYBV20AN
+CLLILTFE7L
+
+max_iterations: 15, p_low: 10, p_high: 199
+
+Results of batch 41
+p*:101.07000000000001, u*:23067.865421807997
+best bid: 23064.396980014768, best ask:23071.333863601223
+

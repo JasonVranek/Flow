@@ -15,7 +15,6 @@ class OrderBook(object):
 		self.num_asks = 0
 		self.base_currency = desired_currency
 		self.desired_currency = base_currency
-		# self.message_queue = []
 		self.bids = {}
 		self.asks = {}
 		self.max_price = 0
@@ -26,7 +25,6 @@ class OrderBook(object):
 		# Make a deepcopy of the order
 		copied_order = deepcopy(order)
 		# Add to message queue
-		# self.message_queue.append(copied_order)
 		self.message_queue.put(copied_order)
 
 	def process_messages(self):
@@ -43,7 +41,7 @@ class OrderBook(object):
 					if old_p_low >= 0 or old_p_high >= 0:
 						self.check_prices(old_p_low, old_p_high, 'c')
 					else:
-						print('Couldnt cancel order')
+						print('Couldnt cancel order', msg)
 
 				elif order_type == 'u':
 					# Check if this update changes min/max
@@ -142,6 +140,8 @@ class OrderBook(object):
 			return bid['p_low'], bid['p_high']
 		except KeyError:
 			print('Bid not found to delete! ', order_id)
+			self.pretty_book()
+			# exit(1)
 			return -1, -1
 
 	def delete_ask(self, order_id):
@@ -151,6 +151,8 @@ class OrderBook(object):
 			return ask['p_low'], ask['p_high']
 		except KeyError:
 			print('Ask not found to delete! ', order_id)
+			self.pretty_book()
+			# exit(1)
 			return -1, -1
 
 	def check_prices(self, p_low, p_high, order_type):
@@ -199,10 +201,15 @@ class OrderBook(object):
 	def pretty_book(self):
 		print()
 		print(f'Order Book({self.base_currency} -> {self.desired_currency})')
-		print(f'Entries: {len(self.book)}, Bids: {self.num_bids}, Asks: {self.num_asks}')
-		# print('Entries: ', len(self.book), ', Bids: ', self.num_bids, ', Asks: ', self.num_asks)
-		for order in self.book:
-			print(order)
+		print(f'Number of bids: {self.num_bids}, Number of Asks: {self.num_asks}')
+		print('Bids')
+		for order_id in self.bids:
+			print(order_id)
+		print()
+
+		print('Asks')
+		for order_id in self.asks:
+			print(order_id)
 		print()
 
 

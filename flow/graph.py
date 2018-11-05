@@ -9,12 +9,8 @@ class Graph():
 
 	def __init__(self, exchange):
 		self.exchange = exchange
-		# self.fig, self.ax = plt.subplots()
-		# self.ln, = plt.plot([], [], 'ro', animated=True)
 		self.fig = plt.figure()
 		self.ax = self.fig.add_subplot(111)
-		# self.ax.grid(color='white', linestyle='solid')
-		# self.line, = plt.plot([],[])
 
 	def add_titles(self):
 		plt.title(f'Total of batch {self.exchange.batch_num}')
@@ -56,14 +52,9 @@ class Graph():
 
 		text_str = 'p*=%.2f\nu*=%.2f\ndem=%.2f\nsup=%.2f\nnum_bids=%d\nnum_ask=%d'%(nice_cp, nice_cr, nice_bb, nice_ba, num_bids, num_asks)
 
-		# plt.text(.9 * max_price, cr, text_str)
-		# plt.gcf().text(max_price + 20, cr, text_str)
 		plt.text(.75, .4, text_str, transform=plt.gcf().transFigure)
 
 		plt.subplots_adjust(right=0.7)
-
-		# time.sleep(self.exchange._batch_time)
-
 
 	def animate(self, func):
 		# Recalls the run_batch function every batch_time

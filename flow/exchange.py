@@ -1,5 +1,5 @@
 from order_book import OrderBook
-from exceptions import InvalidMessageType
+from exceptions import InvalidMessageType, NoCrossFound
 
 import numpy as np
 import itertools
@@ -72,8 +72,15 @@ class Exchange(OrderBook):
 		return agg_supply
 
 	def calc_crossing(self):
+		self.clearing_price = 0
+		self. clearing_price = 0
+		self.best_bid = 0
+		self.best_ask = 0
 		try:
 			self.clearing_price = self.binary_search_cross()
+			if self.clearing_price < 0:
+				self.clearing_price = 0
+				raise NoCrossFound
 			self.best_bid, self.best_ask = self.calc_aggs(self.clearing_price)
 			self.clearing_rate = (self.best_bid + self.best_ask) / 2
 
@@ -105,14 +112,14 @@ class Exchange(OrderBook):
 				# We are right of the crossing
 				R = index
 			else:
-				print(f'Founds it at {L}!')
+				print(f'Found cross at {L}!')
 				return L
 			iterations += 1
 			if iterations > max_iterations:
 				print('Uh oh did not find crossing within max_iterations!')
-				return L
+				return -1
 		# If there isn't an exact crossing, return leftmost index after cross
-		print(f'Found crossing after {iterations} iterations')
+		# print(f'Found crossing after {iterations} iterations')
 		return L 
 
 	# @prof

@@ -17,3 +17,7 @@ class NoOrderToUpdate(Exception):
 class NoOrderToCancel(Exception):
 	'''Raised when a trader tries to cancel a message but hasn't send a message before'''
 	pass
+
+class NoCrossFound(Exception):
+	'''Raised when there is no crossing point to be found'''
+	pass

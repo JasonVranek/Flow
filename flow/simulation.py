@@ -25,6 +25,8 @@ class Simulation(object):
 		self.html = ''
 
 	def start(self, graph):
+		print(f'Starting simulation @{str(datetime.datetime.now())}')
+		self.book.pretty_book()
 		# Start a thread that will always process messages
 		t = Thread(target=self.process_forever)
 		t.daemon = True
@@ -43,6 +45,7 @@ class Simulation(object):
 
 	def run_batch(self, graph=False):
 		print(self.get_batch_time())
+		self.book.pretty_book()
 
 		self.exchange.hold_batch()
 
@@ -54,12 +57,12 @@ class Simulation(object):
 		while True:
 			self.book.process_messages()
 
-	def gen_rand_num(self):
+	def gen_rand_num(self, beta=.002):
 		#tau is the batch length
-		tau = 3000
+		tau = self.exchange._batch_time * 1000
 
 		# beta is expected wait time for traders to arrive
-		beta = (1 / 200) 
+		# beta = (1 / 200) 
 
 		# lambda is the intensity param
 		lam = beta * tau
@@ -70,25 +73,30 @@ class Simulation(object):
 		
 	def rand_trader_behavior(self):
 		while True:
-			# if np.random.randint(0, 100) == 1:
-			# 	num_traders = np.random.randint(0, 5)
-			num_traders = self.gen_rand_num()
+			# Cancel from current traders
+			try:
+				num_traders = self.gen_rand_num(beta=.005)
+				print(f'Cancelling {num_traders} orders!')
+				for x in range(0, num_traders):
+					self.cancel_trader(np.random.choice(self.traders))
+			except ValueError:
+				print('Tried to cancel but not enough traders in book')
+				pass
+
+			# Updates for current traders
+
+			# Send in new traders
+			num_traders = self.gen_rand_num(beta=.01)
 			print(f'Sending {num_traders} new orders!')
 			traders = []
 			traders = self.setup_rand_traders(num_traders)
 			self.submit_traders_orders(traders)
-			# time.sleep(self.exchange._batch_time)
 
-			# Send random cancels
-			# if np.random.randint(0, 100) == 2:
-				# num_traders = np.random.randint(0, 5)
-			num_traders = self.gen_rand_num()
-			print(f'Cancelling {num_traders} orders!')
-			for x in range(0, num_traders):
-				self.cancel_trader(np.random.choice(self.traders))
+			# Sleep after sending til batch is over
 			time.sleep(self.exchange._batch_time)
 
-		# Send random updates
+			
+
 
 	def setup_rand_trader(self):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
@@ -110,7 +118,9 @@ class Simulation(object):
 
 	def cancel_trader(self, trader):
 		trader.cancel_order()
+		print(f'Sending CANCEL for: {trader.current_order}')
 		self.exchange.get_order(trader.current_order)
+		self.traders.remove(trader)
 
 	def update_trader(self, trader, update):
 		trader.update_order(*update)
@@ -124,6 +134,7 @@ class Simulation(object):
 
 	def submit_traders_orders(self, traders):
 		for trader in traders:
+			print(f'ENTER ORDER: {trader.current_order}')
 			self.exchange.get_order(trader.current_order)
 
 	def submit_all_orders(self):
@@ -157,33 +168,12 @@ def single_random_graph(num_orders, g=True):
 
 def setup_simulation(num_orders):
 	sim = Simulation('DEX', '0xADDR', 1000, 'ETH', 'DAI')
-
-	# Create num_orders number of random traders 
-	sim.setup_rand_traders(num_orders)
-
 	return sim
 
 def run_simulation(num_orders, g):
 	sim = setup_simulation(num_orders)
 
 	sim.start(g)
-
-	sim.submit_all_orders()
-
-	# sim.animation_loop()
-
-	# The graphing must happen on the main thread
-	# while(True):
-		# Send random new traders
-		# html = sim.run_batch(g)
-
-		# time.sleep(Exchange._batch_time)
-
-		# sim.graph.pause()
-		# sim.graph.close()
-		# sim.graph.redraw()
-
-
 
 def main():
 	num_orders = 50

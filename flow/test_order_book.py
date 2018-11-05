@@ -63,7 +63,7 @@ def test_update_order_on_active_bidder(active_bidder):
 
 def test_recieve_enter_bid(active_bidder, order_book):
 	order_book.receive_message(active_bidder.current_order)
-	assert order_book.message_queue[0] == {'order_type': 'e', 
+	assert order_book.message_queue.get() == {'order_type': 'e', 
 											'trader_type': 'bid', 
 											'p_low': 80, 
 											'p_high': 100, 
@@ -112,7 +112,7 @@ def test_process_cancel_bid(active_bidder, order_book):
 
 def test_recieve_enter_ask(active_asker, order_book):
 	order_book.receive_message(active_asker.current_order)
-	assert order_book.message_queue[0] == {'order_type': 'e', 
+	assert order_book.message_queue.get() == {'order_type': 'e', 
 											'trader_type': 'ask', 
 											'p_low': 80, 
 											'p_high': 100, 
