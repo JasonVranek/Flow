@@ -7,6 +7,8 @@ import math
 from copy import deepcopy
 import datetime
 
+import pickle
+
 from profiler import prof
 
 class Exchange(OrderBook):
@@ -36,6 +38,8 @@ class Exchange(OrderBook):
 		self.max_price = 0
 		self.best_bid = 0
 		self.best_ask = 0
+		self.bid_history = []
+		self.ask_history = []
 
 	def add_book(self, book):
 		self.book = book
@@ -74,10 +78,9 @@ class Exchange(OrderBook):
 
 	def calc_crossing(self):
 		self.clearing_price = 0
-		self. clearing_price = 0
+		self.clearing_price = 0
 		self.best_bid = 0
 		self.best_ask = 0
-		self.print_books()
 		try:
 			self.clearing_price = self.binary_search_cross()
 			if self.clearing_price < 0:
@@ -86,7 +89,6 @@ class Exchange(OrderBook):
 			self.best_bid, self.best_ask = self.calc_aggs(self.clearing_price)
 			self.clearing_rate = (self.best_bid + self.best_ask) / 2
 			
-			self.print_results()
 
 		except Exception as e:
 			print('Error calculating crossing', e)
@@ -130,8 +132,15 @@ class Exchange(OrderBook):
 		self.min_price = self.book.min_price
 		self.max_price = self.book.max_price
 
+		# Save the state of the books before
+		self.print_books()
+
 		# Find the average aggregate schedules and then find p*
 		self.calc_crossing()
+		
+		# Save the results of the batch
+		self.print_results()
+
 
 		self.batch_num += 1
 
@@ -144,6 +153,7 @@ class Exchange(OrderBook):
 		print(f'Order Book({self.book.base_currency} -> {self.book.desired_currency})')
 		print(f'Number of bids: {len(self.bids)}, Number of Asks: {len(self.asks)}')
 		print('BIDS')
+
 		for order_id in self.bids:
 			print(f'{order_id}: {self.bids[order_id]}')
 
@@ -153,12 +163,27 @@ class Exchange(OrderBook):
 			print(f'{order_id}: {self.asks[order_id]}')
 		print()
 
+		self.write_to_file('bids', self.bids)
+		self.write_to_file('asks', self.asks)
+
 	def print_results(self):
-		print(f'Results of batch {self.batch_num} @{str(datetime.datetime.now())}:')
+		time = str(datetime.datetime.now())
+		print(f'Results of batch {self.batch_num} @{time}:')
 		print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
 		print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
 		print()
 		print()
+		result = {'timestamp': time, 'batch_num': self.batch_num, 
+					'p*': self.clearing_price, 'u*': self.clearing_rate,
+					'best_ask': self.best_ask, 'best_bid': self.best_bid,
+					'min_price': self.min_price, 'max_price': self.max_price}
+		self.write_to_file('result', result)
+
+	def write_to_file(self, dest, data):
+		file_name = f'data/{dest}_{self.batch_num}'
+		file = open(file_name, 'wb')
+		pickle.dump(data, file)
+		file.close()
 
 	def _get_balance(self):
 		return self.balance
