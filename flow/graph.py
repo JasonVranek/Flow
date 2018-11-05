@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt, mpld3
 from matplotlib.animation import FuncAnimation
+from matplotlib.animation import TimedAnimation
 import numpy as np
 import math
 import time
@@ -55,15 +56,20 @@ class Graph():
 
 		text_str = 'p*=%.2f\nu*=%.2f\ndem=%.2f\nsup=%.2f\nnum_bids=%d\nnum_ask=%d'%(nice_cp, nice_cr, nice_bb, nice_ba, num_bids, num_asks)
 
-		plt.text(.9 * max_price, cr, text_str)
+		# plt.text(.9 * max_price, cr, text_str)
+		# plt.gcf().text(max_price + 20, cr, text_str)
+		plt.text(.75, .4, text_str, transform=plt.gcf().transFigure)
 
-		time.sleep(self.exchange._batch_time)
+		plt.subplots_adjust(right=0.7)
+
+		# time.sleep(self.exchange._batch_time)
 
 
 	def animate(self, func):
-		ani = FuncAnimation(self.fig, func, frames=1000)
+		# Recalls the run_batch function every batch_time
+		ani = FuncAnimation(self.fig, func, frames=60, interval=self.exchange._batch_time * 1000)
+		# ani.save('animation.html', writer="avconv", codec="libx264")
 		plt.show()
-		# time.sleep(self.exchange._batch_time)
 
 	def pause(self):
 		plt.pause(1)

@@ -34,73 +34,61 @@ class Simulation(object):
 		t.daemon = True
 		t.start()
 
-		# Start a thread that will recursively hold batches
-		# t = Thread(target=self.run_batch)
-		# t.daemon = True
-		# t.start()
-
-	def get_batch_time(self):
-		t = str(datetime.datetime.now())
-		print(f'Holding Batch: self.exchange.batch_num @ {t}')
-
-		return t
+		# Start the animation loop which triggers the batches
+		self.animation_loop()
 
 	def animation_loop(self):
 		# Make the animation loop run a new batch 
 		self.graph.animate(self.run_batch)
 
 	def run_batch(self, graph=False):
-		# Sleep thread until batch 
-		# timeout = Exchange._batch_time
-		# time.sleep(timeout)
-
-
 		print(self.get_batch_time())
 
 		self.exchange.hold_batch()
 
-		# Update the graph
-		self.graph.graph_aggregates()
-
 		if graph:
-			return self.make_graph()
-
-		# Sleep until the next batch time
-		# time.sleep(Exchange._batch_time)
+			# Update the graph
+			self.graph.graph_aggregates()
 
 	def process_forever(self):
 		while True:
 			self.book.process_messages()
+
+	def gen_rand_num(self):
+		#tau is the batch length
+		tau = 3000
+
+		# beta is expected wait time for traders to arrive
+		beta = (1 / 200) 
+
+		# lambda is the intensity param
+		lam = beta * tau
+
+		n = np.random.poisson(int(lam))
+
+		return n
 		
 	def rand_trader_behavior(self):
 		while True:
-			if np.random.randint(0, 100) == 1:
-				num_traders = np.random.randint(0, 5)
-				print(f'Sending {num_traders} new orders!')
-				traders = []
-				traders = self.setup_rand_traders(num_traders)
-				self.submit_traders_orders(traders)
-				time.sleep(1)
+			# if np.random.randint(0, 100) == 1:
+			# 	num_traders = np.random.randint(0, 5)
+			num_traders = self.gen_rand_num()
+			print(f'Sending {num_traders} new orders!')
+			traders = []
+			traders = self.setup_rand_traders(num_traders)
+			self.submit_traders_orders(traders)
+			# time.sleep(self.exchange._batch_time)
 
 			# Send random cancels
-			if np.random.randint(0, 100) == 2:
-				num_traders = np.random.randint(0, 5)
-				print(f'Cancelling {num_traders} orders!')
-				for x in range(0, num_traders):
-					self.cancel_trader(np.random.choice(self.traders))
-				time.sleep(1)
+			# if np.random.randint(0, 100) == 2:
+				# num_traders = np.random.randint(0, 5)
+			num_traders = self.gen_rand_num()
+			print(f'Cancelling {num_traders} orders!')
+			for x in range(0, num_traders):
+				self.cancel_trader(np.random.choice(self.traders))
+			time.sleep(self.exchange._batch_time)
 
 		# Send random updates
-
-
-	def make_graph(self):
-		# self.graph.redraw()
-		# self.graph.graph_aggregates()
-		# self.graph.animate()
-		# self.graph.display()
-		# self.html = self.graph.graph_as_html()
-		# return self.html
-		return ''
 
 	def setup_rand_trader(self):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
@@ -142,6 +130,11 @@ class Simulation(object):
 		for trader in self.traders:
 			self.exchange.get_order(trader.current_order)
 
+	def get_batch_time(self):
+		t = str(datetime.datetime.now())
+		print(f'Holding Batch: self.exchange.batch_num @ {t}')
+		return t
+
 # @prof
 def single_random_graph(num_orders, g=True):
 	# Setup the simulation
@@ -157,8 +150,8 @@ def single_random_graph(num_orders, g=True):
 	
 	html = sim.run_batch(g)
 
-	# if g:
-	# 	html = sim.make_graph()
+	if g:
+		sim.graph.display()
 
 	return html
 
@@ -177,7 +170,7 @@ def run_simulation(num_orders, g):
 
 	sim.submit_all_orders()
 
-	sim.animation_loop()
+	# sim.animation_loop()
 
 	# The graphing must happen on the main thread
 	# while(True):
