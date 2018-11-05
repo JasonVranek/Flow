@@ -1,9 +1,11 @@
+import sys
+sys.path.append('util/')
+
 from trader import Trader
 from order_book import OrderBook
 from exchange import Exchange
 from graph import Graph
-
-import sys
+from profiler import prof
 
 import random
 import numpy as np
@@ -12,7 +14,7 @@ import string
 from threading import Thread
 import datetime
 
-from profiler import prof
+
 
 class Simulation(object):
 	def __init__(self, name, addr, balance, base_cur, desired_cur):

@@ -1,3 +1,6 @@
+import sys
+sys.path.append('util')
+
 from exceptions import InvalidMessageType, NoEntryFound, InvalidMessageParameter
 from copy import deepcopy
 from queue import Queue

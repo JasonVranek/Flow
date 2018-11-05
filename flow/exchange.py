@@ -1,5 +1,8 @@
+import sys
+sys.path.append('util')
 from order_book import OrderBook
 from exceptions import InvalidMessageType, NoCrossFound
+from profiler import prof
 
 import numpy as np
 import itertools
@@ -9,7 +12,7 @@ import datetime
 
 import pickle
 
-from profiler import prof
+
 
 class Exchange(OrderBook):
 	"""
