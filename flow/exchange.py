@@ -16,7 +16,7 @@ class Exchange(OrderBook):
 
 	"""
 
-	_batch_time = 2
+	_batch_time = 1
 	_min_tick_size = .01
 
 	def __init__(self, name, address, balance=0.0):

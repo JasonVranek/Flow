@@ -1,54 +1,69 @@
 import matplotlib.pyplot as plt, mpld3
+from matplotlib.animation import FuncAnimation
 import numpy as np
 import math
+import time
 
 class Graph():
 
-	def __init__(self):
-		self.exchange = object
-		self.fig = object
-
-	def set_exchange(self, exchange):
+	def __init__(self, exchange):
 		self.exchange = exchange
+		# self.fig, self.ax = plt.subplots()
+		# self.ln, = plt.plot([], [], 'ro', animated=True)
+		self.fig = plt.figure()
+		self.ax = self.fig.add_subplot(111)
+		# self.ax.grid(color='white', linestyle='solid')
+		# self.line, = plt.plot([],[])
+
+	def add_titles(self):
+		plt.title(f'Total of batch {self.exchange.batch_num}')
+		plt.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
+		plt.ylabel(f'(Quantity Traded (shares/batch)')
 
 	def graph_aggregates(self):
-		self.fig = plt.figure()
-		plt.ioff()
-		ax = self.fig.add_subplot(111)
-		ax.grid(color='white', linestyle='solid')
-
+		zoom = 5
+		self.ax.clear()
+		self.add_titles()
 		sup_array = []
 		dem_array = []
 		p_array = []
-		for x in range(math.floor(self.exchange.min_price - 10), math.floor(self.exchange.max_price + 10)):
+		max_price = self.exchange.max_price
+		min_price = self.exchange.min_price
+		for x in range(math.floor(min_price - 10), math.floor(max_price + 10)):
 			dem, sup = self.exchange.calc_aggs(x)
 			dem_array.append(dem)
 			sup_array.append(sup)
 			p_array.append(x)
 
-		ax.plot(p_array, dem_array)
-		ax.plot(p_array, sup_array)
+		self.ax.plot(p_array, dem_array, 'b')
+		self.ax.plot(p_array, sup_array, 'r')
 
 		# plot horizontal clearing rate line
-		ax.plot([self.exchange.min_price - 10, self.exchange.clearing_price], [self.exchange.clearing_rate, self.exchange.clearing_rate], 'g')
+		cr = self.exchange.clearing_rate
+		cp = self.exchange.clearing_price
+		self.ax.plot([0, cp], [cr, cr], 'g')
 
 		# plot vertical clearing price line
-		ax.plot([self.exchange.clearing_price, self.exchange.clearing_price], [0, self.exchange.clearing_rate], 'g')
+		self.ax.plot([cp, cp], [0, cr], 'g')
 		
-		plt.title(f'Total of batch {self.exchange.batch_num}')
-
-		nice_cp = self.exchange.nice_precision(self.exchange.clearing_price)
-		nice_cr = self.exchange.nice_precision(self.exchange.clearing_rate)
+		nice_cp = self.exchange.nice_precision(cp)
+		nice_cr = self.exchange.nice_precision(cr)
 		nice_bb = self.exchange.nice_precision(self.exchange.best_bid)
 		nice_ba = self.exchange.nice_precision(self.exchange.best_ask)
+		num_bids = self.exchange.book.num_bids
+		num_asks = self.exchange.book.num_asks
 
-		text_str = f'p*={nice_cp},\nu*={nice_cr},\nu_best_bid={nice_bb},\nu_best_ask={nice_ba}\n'
-		plt.text(.9 * self.exchange.max_price, self.exchange.clearing_rate, text_str)
+		text_str = 'p*=%.2f\nu*=%.2f\ndem=%.2f\nsup=%.2f\nnum_bids=%d\nnum_ask=%d'%(nice_cp, nice_cr, nice_bb, nice_ba, num_bids, num_asks)
 
-		plt.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
-		plt.ylabel(f'(Quantity Traded (shares/batch)')
+		plt.text(.9 * max_price, cr, text_str)
 
-		# plt.show(block=False)
+		time.sleep(self.exchange._batch_time)
+
+
+	def animate(self, func):
+		ani = FuncAnimation(self.fig, func, frames=1000)
+		plt.show()
+		# time.sleep(self.exchange._batch_time)
 
 	def pause(self):
 		plt.pause(1)
@@ -61,6 +76,7 @@ class Graph():
 
 	def redraw(self):
 		self.fig.clear()
+		# self.ax.clear()
 
 	def close(self):
 		plt.close()

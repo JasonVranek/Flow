@@ -30,53 +30,6 @@ class OrderBook(object):
 		self.message_queue.put(copied_order)
 
 	def process_messages(self):
-		while True:
-			while not self.message_queue.empty():
-				# Pop msg from message queue
-				msg = self.message_queue.get()
-				#print('processing message', msg)
-				try:
-					order_type = msg['order_type']
-					if order_type == 'c':
-						# Delete the message from book's queue
-						# Cancel the order and check if the min/max prices changed
-						old_p_low, old_p_high = self.cancel_order(msg)
-						if old_p_low >= 0 or old_p_high >= 0:
-							self.check_prices(old_p_low, old_p_high, 'c')
-						else:
-							print('Couldnt cancel order')
-
-					elif order_type == 'u':
-						# Check if this update changes min/max
-						self.check_prices(msg['p_low'], msg['p_high'], 'u')
-						print(f'in u: msg: {msg}')
-
-						# need to update the bid/ask in the respective book
-						old_p_low, old_p_high = self.update_order(msg)
-						if old_p_low >= 0 or old_p_high >= 0:
-							# If I updated from [80, 120] -> [90, 110], and self.min_price = 80,
-							# Then I would have to update self.min_price since my old price is 
-							# no longer valid. 
-							self.check_prices(old_p_low, old_p_high, 'c')
-						else:
-							print('Couldnt update order')
-
-					elif order_type == 'e':
-						# Check if this new message contains min/max price
-						self.check_prices(msg['p_low'], msg['p_high'], 'e')
-
-						# Add the message to the respective books
-						self.add_order(msg)
-					else:
-						# Remove invalid messages from the queue
-						# self.message_queue.remove(msg)
-						raise InvalidMessageType
-
-				except InvalidMessageType:
-					pass
-					#print('Invalid Message Type', msg)
-
-	def temp_process_messages(self):
 		while not self.message_queue.empty():
 			# Pop msg from message queue
 			msg = self.message_queue.get()
