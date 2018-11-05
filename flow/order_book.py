@@ -158,16 +158,16 @@ class OrderBook(object):
 	def check_prices(self, p_low, p_high, order_type):
 		if order_type == 'C':
 			if p_low == self.min_price or p_high == self.max_price:
-				print('Cancelled previous min_price/max_price')
+				# print('Cancelled previous min_price/max_price')
 				self.min_price, self.max_price = self.find_new_prices()
 
 		else:
 			if p_low < self.min_price:
 				self.min_price = p_low
-				print('New min_price ', p_low)
+				# print('New min_price ', p_low)
 			if p_high > self.max_price:
 				self.max_price = p_high
-				print('New max_price ', p_high)
+				# print('New max_price ', p_high)
 
 	def find_new_prices():
 		new_max = 0
@@ -202,14 +202,14 @@ class OrderBook(object):
 		print()
 		print(f'Order Book({self.base_currency} -> {self.desired_currency})')
 		print(f'Number of bids: {self.num_bids}, Number of Asks: {self.num_asks}')
-		print('Bids')
+		print('BIDS')
 		for order_id in self.bids:
-			print(order_id)
-		print()
+			print(f'{order_id}: {self.bids[order_id]}')
 
-		print('Asks')
+		print()
+		print('ASKS')
 		for order_id in self.asks:
-			print(order_id)
+			print(f'{order_id}: {self.asks[order_id]}')
 		print()
 
 

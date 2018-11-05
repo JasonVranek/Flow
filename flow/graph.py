@@ -58,7 +58,7 @@ class Graph():
 
 	def animate(self, func):
 		# Recalls the run_batch function every batch_time
-		ani = FuncAnimation(self.fig, func, frames=60, interval=self.exchange._batch_time * 1000)
+		ani = FuncAnimation(self.fig, func, frames=30, interval=self.exchange._batch_time * 1000)
 		# ani.save('animation.html', writer="avconv", codec="libx264")
 		plt.show()
 

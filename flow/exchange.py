@@ -5,6 +5,7 @@ import numpy as np
 import itertools
 import math
 from copy import deepcopy
+import datetime
 
 from profiler import prof
 
@@ -76,6 +77,7 @@ class Exchange(OrderBook):
 		self. clearing_price = 0
 		self.best_bid = 0
 		self.best_ask = 0
+		self.print_books()
 		try:
 			self.clearing_price = self.binary_search_cross()
 			if self.clearing_price < 0:
@@ -83,12 +85,8 @@ class Exchange(OrderBook):
 				raise NoCrossFound
 			self.best_bid, self.best_ask = self.calc_aggs(self.clearing_price)
 			self.clearing_rate = (self.best_bid + self.best_ask) / 2
-
-			print()
-			print(f'Results of batch {self.batch_num}')
-			print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
-			print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
-			print()
+			
+			self.print_results()
 
 		except Exception as e:
 			print('Error calculating crossing', e)
@@ -98,7 +96,7 @@ class Exchange(OrderBook):
 		R = self.max_price 
 		iterations = 0
 		max_iterations = math.ceil(math.log2((R - L) / Exchange._min_tick_size))
-		print(f'max_iterations: {max_iterations}, p_low: {L}, p_high: {R}')
+		# print(f'max_iterations: {max_iterations}, p_low: {L}, p_high: {R}')
 		while L < R:
 			# Finds a midpoint with the correct price tick precision
 			# index = self.nice_precision((L + R) / 2)
@@ -139,6 +137,28 @@ class Exchange(OrderBook):
 
 	def nice_precision(self, num):
 		return math.floor(num / Exchange._min_tick_size) * Exchange._min_tick_size
+
+	def print_books(self):
+		print(f'Book for batch {self.batch_num} @{str(datetime.datetime.now())}:')
+		print()
+		print(f'Order Book({self.book.base_currency} -> {self.book.desired_currency})')
+		print(f'Number of bids: {len(self.bids)}, Number of Asks: {len(self.asks)}')
+		print('BIDS')
+		for order_id in self.bids:
+			print(f'{order_id}: {self.bids[order_id]}')
+
+		print()
+		print('ASKS')
+		for order_id in self.asks:
+			print(f'{order_id}: {self.asks[order_id]}')
+		print()
+
+	def print_results(self):
+		print(f'Results of batch {self.batch_num} @{str(datetime.datetime.now())}:')
+		print(f'p*:{self.clearing_price}, u*:{self.clearing_rate}')
+		print(f'best bid: {self.best_bid}, best ask:{self.best_ask}')
+		print()
+		print()
 
 	def _get_balance(self):
 		return self.balance
