@@ -1,8 +1,7 @@
 import sys
-sys.path.append('util')
 from order_book import OrderBook
-from exceptions import InvalidMessageType, NoCrossFound
-from profiler import prof
+from util.exceptions import InvalidMessageType, NoCrossFound
+from util.profiler import prof
 
 import numpy as np
 import itertools
@@ -183,7 +182,7 @@ class Exchange(OrderBook):
 		self.write_to_file('result', result)
 
 	def write_to_file(self, dest, data):
-		file_name = f'data/{dest}_{self.batch_num}'
+		file_name = f'../flow/data/{dest}_{self.batch_num}'
 		file = open(file_name, 'wb')
 		pickle.dump(data, file)
 		file.close()

@@ -6,6 +6,8 @@ from exchange import Exchange
 from pickle_helpers import read_file, get_books
 import pytest
 import pickle
+import numpy as np
+
 
 @pytest.fixture
 def new_exchange():
@@ -25,6 +27,8 @@ def test_batch(new_exchange):
 		print(f'Batch {x}, calculated: {new_exchange.clearing_price}, from data: {p}')
 
 		# assert new_exchange.clearing_price == result['p*']
+
+# TODO, write a more iterative calc_cross alg and test if it also equals result['p*']
 
 if __name__ == '__main__':
 	ex = new_exchange()

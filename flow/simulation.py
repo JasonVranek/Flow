@@ -1,11 +1,10 @@
 import sys
-sys.path.append('util/')
 
+from util.profiler import prof
 from trader import Trader
 from order_book import OrderBook
 from exchange import Exchange
 from graph import Graph
-from profiler import prof
 
 import random
 import numpy as np
@@ -30,11 +29,13 @@ class Simulation(object):
 	def start(self):
 		print(f'Starting simulation @{str(datetime.datetime.now())}')
 		self.book.pretty_book()
+
 		# Start a thread that will always process messages
 		t = Thread(target=self.process_forever)
 		t.daemon = True
 		t.start()
 
+		# Start a thead that sends random traders ever batch
 		t = Thread(target=self.rand_trader_behavior)
 		t.daemon = True
 		t.start()
@@ -54,6 +55,7 @@ class Simulation(object):
 		if self.display_graph:
 			# Update the graph
 			self.graph.graph_aggregates()
+			self.html = self.graph.graph_as_html()
 
 	def process_forever(self):
 		while True:
@@ -87,6 +89,14 @@ class Simulation(object):
 				pass
 
 			# Updates for current traders
+			try:
+				num_traders = self.gen_rand_num(beta=.005)
+				# print(f'Cancelling {num_traders} orders!')
+				for x in range(0, num_traders):
+					self.update_trader(np.random.choice(self.traders))
+			except ValueError:
+				print('Tried to update but failed')
+				pass
 
 			# Send in new traders
 			num_traders = self.gen_rand_num(beta=.01)
@@ -97,9 +107,6 @@ class Simulation(object):
 
 			# Sleep after sending til batch is over
 			time.sleep(self.exchange._batch_time)
-
-			
-
 
 	def setup_rand_trader(self):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
@@ -125,8 +132,15 @@ class Simulation(object):
 		self.exchange.get_order(trader.current_order)
 		self.traders.remove(trader)
 
-	def update_trader(self, trader, update):
+	def update_trader(self, trader):
+		#update = [p_high, p_low, u_max, q_max]
+		update = [np.random.randint(101, 200), 		# p_high
+					np.random.randint(10, 100),  		# p_low
+					np.random.randint(400, 500), 		# u_max
+					np.random.randint(1000, 2000)]
 		trader.update_order(*update)
+		print(f'UPDATE @{str(datetime.datetime.now())}: {trader.current_order}')
+		self.exchange.get_order(trader.current_order)
 
 	def setup_rand_traders(self, n):
 		traders = []
@@ -165,12 +179,12 @@ def single_random_graph(num_orders, g=True):
 
 	sim.exchange.book.process_messages()
 	
-	html = sim.run_batch()
+	html = sim.run_batch(1)
 
 	if g:
 		sim.graph.display()
 
-	html = sim.graph.graph_as_html()
+	html = sim.html
 
 	return html
 
@@ -184,6 +198,8 @@ def run_simulation(g):
 
 	sim.start()
 
+	return sim
+
 def main():
 	num_orders = 50
 	g = True
@@ -194,7 +210,7 @@ def main():
 		if sys.argv[2] == 'f':
 			g = False
 
-	# single_random_graph(num_orders, g)
+	# print(single_random_graph(num_orders, g))
 
 	run_simulation(g)
 

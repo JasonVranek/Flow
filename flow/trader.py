@@ -1,4 +1,4 @@
-from exceptions import NoOrderToUpdate, NoOrderToCancel
+from util.exceptions import NoOrderToUpdate, NoOrderToCancel
 
 class Trader(object):
 	"""
