@@ -74,6 +74,10 @@ class Simulation(object):
 		n = np.random.poisson(int(lam))
 
 		return n
+
+	def get_html(self):
+		html = self.html
+		return html
 		
 	def rand_trader_behavior(self):
 		while True:
