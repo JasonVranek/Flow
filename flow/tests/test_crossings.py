@@ -14,8 +14,16 @@ def new_exchange():
 	return Exchange('name', 'addr', 1000)
 
 def test_batch(new_exchange):
-	for x in range(0, 10):
-		bids, asks, result = get_books(x)
+	success = 0
+	num_batches = 100
+	num_error = 0
+	for x in range(0, num_batches):
+		try:
+			bids, asks, result = get_books(x)
+		except Exception as e:
+			num_error += 1
+			# print(e)
+			continue
 		new_exchange.bids = bids
 		new_exchange.asks = asks
 		new_exchange.min_price = result['min_price']
@@ -25,8 +33,11 @@ def test_batch(new_exchange):
 
 		p = result['p*']
 		print(f'Batch {x}, calculated: {new_exchange.clearing_price}, from data: {p}')
+		if new_exchange.clearing_price == result['p*']:
+			success += 1
 
 		# assert new_exchange.clearing_price == result['p*']
+	print(f'Succeeded {success} / {num_batches - num_error}')
 
 # TODO, write a more iterative calc_cross alg and test if it also equals result['p*']
 
