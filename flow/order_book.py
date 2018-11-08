@@ -46,7 +46,6 @@ class OrderBook(object):
 				elif order_type == 'u':
 					# Check if this update changes min/max
 					self.check_prices(msg['p_low'], msg['p_high'], 'u')
-					print(f'in u: msg: {msg}')
 
 					# need to update the bid/ask in the respective book
 					old_p_low, old_p_high = self.update_order(msg)

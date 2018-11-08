@@ -1,9 +1,10 @@
 import pickle
 
 def read_file(filename):
-	file = open(filename, 'rb')
-	data = pickle.load(file)
-	file.close()
+	# file = open(filename, 'rb')
+	with open(filename) as file:
+		data = pickle.load(file)
+	# file.close()
 	return data
 
 def get_books(batch_num):

@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt, mpld3
 from matplotlib.animation import FuncAnimation
-from matplotlib.animation import TimedAnimation
 import numpy as np
 import math
 import time

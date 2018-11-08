@@ -2,6 +2,7 @@ import sys
 sys.path.append('../flow/')
 sys.path.append('../flow/util/')
 sys.path.append('../flow/data/')
+sys.path.append('../flow/html/')
 
 from simulation import Simulation, single_random_graph, run_simulation
 
@@ -41,6 +42,13 @@ def update():
     print(str(session['html']))
     return str(session['html'])
     # return 'asdfasdf'
+
+@app.route('/test')
+def test():
+	with open('../html/market.html') as file:
+		html = file.read()
+
+	return html
 
 if __name__ == '__main__':
     app.run(debug=True)
