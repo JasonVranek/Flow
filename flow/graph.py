@@ -51,9 +51,15 @@ class Graph():
 		num_asks = self.exchange.book.num_asks
 
 		# text_str = 'p*=%.2f\nu*=%.2f\ndem=%.2f\nsup=%.2f\nnum_bids=%d\nnum_ask=%d'%(nice_cp, nice_cr, nice_bb, nice_ba, num_bids, num_asks)
-		text_str = 'p*=%.2f<br/>u*=%.2f<br/>dem=%.2f<br/>sup=%.2f<br/>num_bids=%d<br/>num_ask=%d'%(nice_cp, nice_cr, nice_bb, nice_ba, num_bids, num_asks)
+		# plt.text(.75, .4, text_str, transform=plt.gcf().transFigure)
 
-		plt.text(.75, .4, text_str, transform=plt.gcf().transFigure)
+		text_str = 'p*=%.2f  u*=%.2f'%(nice_cp, nice_cr)
+		text_str2 = 'dem=%.2f  sup=%.2f'%(nice_bb, nice_ba)
+		text_str3 = 'num_bids=%d  num_ask=%d'%(num_bids, num_asks)
+
+		plt.text(.75, .5, text_str, transform=plt.gcf().transFigure)
+		plt.text(.75, .45, text_str2, transform=plt.gcf().transFigure)
+		plt.text(.75, .4, text_str3, transform=plt.gcf().transFigure)
 
 		plt.subplots_adjust(right=0.7)
 

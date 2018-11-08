@@ -127,8 +127,9 @@ class Exchange(OrderBook):
 	# @prof
 	def hold_batch(self):
 		# Create deep copy (snapshot) of book's bids and asks at this time
-		self.bids = deepcopy(self.book.bids)
-		self.asks = deepcopy(self.book.asks)
+		# self.bids = deepcopy(self.book.bids)
+		# self.asks = deepcopy(self.book.asks)
+		self.snapshot_books()
 
 		# Record the min and max prices from the books
 		self.min_price = self.book.min_price
@@ -145,6 +146,24 @@ class Exchange(OrderBook):
 
 
 		self.batch_num += 1
+
+	def snapshot_books(self):
+		# By making a list of the keys, it saves the keys at the current moment
+		# and if the dict changes size during the batch we'll be fine
+		self.bids = {}
+		self.asks = {}
+		for key in list(self.book.bids):
+			try:
+				self.bids[key] = deepcopy(self.book.bids[key])
+
+			except KeyError:
+				print(f'Tried to copy {key} but could not find it!')
+
+		for key in list(self.book.asks):
+			try:
+				self.asks[key] = deepcopy(self.book.asks[key])
+			except KeyError:
+				print(f'Tried to copy {key} but could not find it!')
 
 	def nice_precision(self, num):
 		return math.floor(num / Exchange._min_tick_size) * Exchange._min_tick_size
