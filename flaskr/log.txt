@@ -1,4 +1,4 @@
-Starting simulation @2018-11-06 00:23:02.679123
+Starting simulation @2018-11-08 06:17:14.106520
 
 Order Book(DAI -> ETH)
 Number of bids: 0, Number of Asks: 0
@@ -9,572 +9,66 @@ ASKS
 New orders:
 Tried to cancel but not enough traders in book
 Tried to update but failed
-ENTER @2018-11-06 00:23:02.695620: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 192, 'u_max': 430, 'q_max': 1746, 'funds': 3170.7645395780614, 'order_id': '4KOP51IU4K'}
-ENTER @2018-11-06 00:23:02.695689: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 17, 'p_high': 160, 'u_max': 460, 'q_max': 1956, 'funds': 6160.754979327653, 'order_id': 'UKA3TVEPPM'}
-ENTER @2018-11-06 00:23:02.695731: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 10, 'p_high': 125, 'u_max': 472, 'q_max': 1670, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-ENTER @2018-11-06 00:23:02.695763: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 59, 'p_high': 114, 'u_max': 493, 'q_max': 1365, 'funds': 6418.652309609607, 'order_id': 'PQ44Q09VCS'}
-ENTER @2018-11-06 00:23:02.695793: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 36, 'p_high': 179, 'u_max': 410, 'q_max': 1652, 'funds': 7817.171937683951, 'order_id': 'Z92STFXW2Y'}
-ENTER @2018-11-06 00:23:02.695821: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 129, 'u_max': 476, 'q_max': 1212, 'funds': 1961.2057562749974, 'order_id': 'QZ6XF60YXO'}
-ENTER @2018-11-06 00:23:02.695857: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 58, 'p_high': 178, 'u_max': 498, 'q_max': 1859, 'funds': 294.90077915656275, 'order_id': '1AYKMS4CJ7'}
-ENTER @2018-11-06 00:23:02.695885: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 116, 'u_max': 416, 'q_max': 1266, 'funds': 914.912251105211, 'order_id': '87N74HJ7M1'}
+ENTER @2018-11-08 06:17:14.119707: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 34, 'p_high': 126, 'u_max': 435, 'q_max': 1132, 'funds': 5329.087338285233, 'order_id': 'LPDADZ6N5Z'}
+
+Book for batch 0 @2018-11-08 06:17:14.119810:
+
+Order Book(DAI -> ETH)
+Number of bids: 0, Number of Asks: 0
+BIDS
+
+ASKS
+
+Error calculating crossing math domain error
+Results of batch 0 @2018-11-08 06:17:14.120074:
+p*:0, u*:0
+best bid: 0, best ask:0
+
+
+ENTER @2018-11-08 06:17:14.130204: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 35, 'p_high': 132, 'u_max': 404, 'q_max': 1478, 'funds': 6493.823639635737, 'order_id': 'WBEU2SZ0SF'}
+ENTER @2018-11-08 06:17:14.130264: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 31, 'p_high': 172, 'u_max': 474, 'q_max': 1141, 'funds': 5718.157127591465, 'order_id': 'BQYDEYQYRL'}
+ENTER @2018-11-08 06:17:14.130301: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 56, 'p_high': 171, 'u_max': 458, 'q_max': 1533, 'funds': 4586.882656583351, 'order_id': 'E74RT0HM0T'}
+ENTER @2018-11-08 06:17:14.130331: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 79, 'p_high': 184, 'u_max': 414, 'q_max': 1809, 'funds': 8879.238595082417, 'order_id': '6RZCILMEJ0'}
+ENTER @2018-11-08 06:17:14.130359: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 31, 'p_high': 159, 'u_max': 486, 'q_max': 1985, 'funds': 9040.825878459322, 'order_id': 'GOTFE726KN'}
+ENTER @2018-11-08 06:17:14.130387: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 18, 'p_high': 130, 'u_max': 483, 'q_max': 1791, 'funds': 9754.833401628935, 'order_id': 'JDOKE2L1SF'}
+ENTER @2018-11-08 06:17:14.130415: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 88, 'p_high': 122, 'u_max': 458, 'q_max': 1943, 'funds': 1120.2850552098698, 'order_id': 'Y4CCXIG8HL'}
+ENTER @2018-11-08 06:17:14.130442: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 92, 'p_high': 194, 'u_max': 464, 'q_max': 1574, 'funds': 2286.0208204275523, 'order_id': '63RQF92LPP'}
+ENTER @2018-11-08 06:17:14.130469: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 93, 'p_high': 112, 'u_max': 460, 'q_max': 1375, 'funds': 1519.4624586204486, 'order_id': '3Z7CH9FGXJ'}
 New orders:
-CANCEL @2018-11-06 00:23:03.702196: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 58, 'p_high': 178, 'u_max': 498, 'q_max': 1859, 'order_id': '1AYKMS4CJ7'}
-CANCEL @2018-11-06 00:23:03.702318: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 129, 'u_max': 476, 'q_max': 1212, 'order_id': 'QZ6XF60YXO'}
-CANCEL @2018-11-06 00:23:03.702378: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 67, 'p_high': 116, 'u_max': 416, 'q_max': 1266, 'order_id': '87N74HJ7M1'}
-CANCEL @2018-11-06 00:23:03.702430: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 59, 'p_high': 114, 'u_max': 493, 'q_max': 1365, 'order_id': 'PQ44Q09VCS'}
-CANCEL @2018-11-06 00:23:03.702478: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 11, 'p_high': 192, 'u_max': 430, 'q_max': 1746, 'order_id': '4KOP51IU4K'}
-CANCEL @2018-11-06 00:23:03.702523: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 36, 'p_high': 179, 'u_max': 410, 'q_max': 1652, 'order_id': 'Z92STFXW2Y'}
-CANCEL @2018-11-06 00:23:03.702567: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 17, 'p_high': 160, 'u_max': 460, 'q_max': 1956, 'order_id': 'UKA3TVEPPM'}
-UPDATE @2018-11-06 00:23:03.702629: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 69, 'p_high': 188, 'u_max': 487, 'q_max': 1551, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:03.702689: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 47, 'p_high': 158, 'u_max': 474, 'q_max': 1763, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:03.702753: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 44, 'p_high': 185, 'u_max': 466, 'q_max': 1342, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:03.702806: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 39, 'p_high': 115, 'u_max': 403, 'q_max': 1815, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:03.702871: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 99, 'p_high': 186, 'u_max': 438, 'q_max': 1091, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:03.702921: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 83, 'p_high': 127, 'u_max': 483, 'q_max': 1022, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:03.702971: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 60, 'p_high': 108, 'u_max': 460, 'q_max': 1281, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:03.703021: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 59, 'p_high': 107, 'u_max': 430, 'q_max': 1604, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-ENTER @2018-11-06 00:23:03.703286: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 15, 'p_high': 167, 'u_max': 446, 'q_max': 1967, 'funds': 7848.598667648475, 'order_id': 'GLMENETHFS'}
-ENTER @2018-11-06 00:23:03.703332: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 64, 'p_high': 146, 'u_max': 483, 'q_max': 1079, 'funds': 7741.703444378231, 'order_id': 'ZLIWMQZDV8'}
-ENTER @2018-11-06 00:23:03.703362: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 95, 'p_high': 135, 'u_max': 422, 'q_max': 1347, 'funds': 2742.3342830602846, 'order_id': 'CFUR9KZ57N'}
-ENTER @2018-11-06 00:23:03.703393: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 26, 'p_high': 152, 'u_max': 410, 'q_max': 1430, 'funds': 5161.564113696227, 'order_id': 'FULKHMH26S'}
-ENTER @2018-11-06 00:23:03.703419: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 42, 'p_high': 124, 'u_max': 476, 'q_max': 1043, 'funds': 9417.043836419065, 'order_id': 'R00YINLU8X'}
-ENTER @2018-11-06 00:23:03.703444: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 83, 'p_high': 193, 'u_max': 465, 'q_max': 1218, 'funds': 8082.015382460437, 'order_id': 'GFPCGRC9H7'}
-ENTER @2018-11-06 00:23:03.703468: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 99, 'p_high': 185, 'u_max': 439, 'q_max': 1011, 'funds': 7962.855185673599, 'order_id': '95SWX1RDYM'}
-ENTER @2018-11-06 00:23:03.703493: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 51, 'p_high': 146, 'u_max': 436, 'q_max': 1456, 'funds': 1695.5500050362893, 'order_id': '0YSGL8FCL2'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 69, 'p_high': 188, 'u_max': 487, 'q_max': 1551, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 47, 'p_high': 158, 'u_max': 474, 'q_max': 1763, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 44, 'p_high': 185, 'u_max': 466, 'q_max': 1342, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 39, 'p_high': 115, 'u_max': 403, 'q_max': 1815, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 99, 'p_high': 186, 'u_max': 438, 'q_max': 1091, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 83, 'p_high': 127, 'u_max': 483, 'q_max': 1022, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 60, 'p_high': 108, 'u_max': 460, 'q_max': 1281, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 59, 'p_high': 107, 'u_max': 430, 'q_max': 1604, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-New orders:
-CANCEL @2018-11-06 00:23:04.709809: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 42, 'p_high': 124, 'u_max': 476, 'q_max': 1043, 'order_id': 'R00YINLU8X'}
-CANCEL @2018-11-06 00:23:04.709925: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 83, 'p_high': 193, 'u_max': 465, 'q_max': 1218, 'order_id': 'GFPCGRC9H7'}
-CANCEL @2018-11-06 00:23:04.709996: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 26, 'p_high': 152, 'u_max': 410, 'q_max': 1430, 'order_id': 'FULKHMH26S'}
-CANCEL @2018-11-06 00:23:04.710052: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 15, 'p_high': 167, 'u_max': 446, 'q_max': 1967, 'order_id': 'GLMENETHFS'}
-CANCEL @2018-11-06 00:23:04.710113: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 99, 'p_high': 185, 'u_max': 439, 'q_max': 1011, 'order_id': '95SWX1RDYM'}
-CANCEL @2018-11-06 00:23:04.710178: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 95, 'p_high': 135, 'u_max': 422, 'q_max': 1347, 'order_id': 'CFUR9KZ57N'}
-UPDATE @2018-11-06 00:23:04.710274: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 83, 'p_high': 175, 'u_max': 415, 'q_max': 1423, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:04.710414: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 96, 'p_high': 123, 'u_max': 407, 'q_max': 1389, 'funds': 1695.5500050362893, 'order_id': '0YSGL8FCL2'}
-ENTER @2018-11-06 00:23:04.710636: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 66, 'p_high': 125, 'u_max': 425, 'q_max': 1103, 'funds': 3511.6632458751064, 'order_id': '551KTT5AQK'}
-ENTER @2018-11-06 00:23:04.710678: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 54, 'p_high': 159, 'u_max': 456, 'q_max': 1714, 'funds': 2339.584896622862, 'order_id': '1HHXPRXMLW'}
-ENTER @2018-11-06 00:23:04.710708: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 57, 'p_high': 150, 'u_max': 410, 'q_max': 1080, 'funds': 6678.682766143596, 'order_id': '3BX3ABD4PJ'}
-ENTER @2018-11-06 00:23:04.710736: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 34, 'p_high': 104, 'u_max': 460, 'q_max': 1475, 'funds': 1821.925322592618, 'order_id': '5OR3LB25IB'}
-ENTER @2018-11-06 00:23:04.710774: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 53, 'p_high': 134, 'u_max': 447, 'q_max': 1499, 'funds': 1352.7713955965326, 'order_id': 'JB419N6O9C'}
-ENTER @2018-11-06 00:23:04.710801: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 18, 'p_high': 110, 'u_max': 470, 'q_max': 1433, 'funds': 1451.261981342834, 'order_id': 'NBRHZGLQY8'}
-ENTER @2018-11-06 00:23:04.710828: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 158, 'u_max': 470, 'q_max': 1486, 'funds': 481.6608254856369, 'order_id': 'HEGVIFMVZA'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 83, 'p_high': 175, 'u_max': 415, 'q_max': 1423, 'funds': 495.90364561538314, 'order_id': '8XMWZZZZI4'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 96, 'p_high': 123, 'u_max': 407, 'q_max': 1389, 'funds': 1695.5500050362893, 'order_id': '0YSGL8FCL2'}
-New orders:
-CANCEL @2018-11-06 00:23:05.717146: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 56, 'p_high': 158, 'u_max': 470, 'q_max': 1486, 'order_id': 'HEGVIFMVZA'}
-CANCEL @2018-11-06 00:23:05.717275: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 53, 'p_high': 134, 'u_max': 447, 'q_max': 1499, 'order_id': 'JB419N6O9C'}
-CANCEL @2018-11-06 00:23:05.717336: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 66, 'p_high': 125, 'u_max': 425, 'q_max': 1103, 'order_id': '551KTT5AQK'}
-CANCEL @2018-11-06 00:23:05.717403: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 83, 'p_high': 175, 'u_max': 415, 'q_max': 1423, 'order_id': '8XMWZZZZI4'}
-UPDATE @2018-11-06 00:23:05.717472: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 86, 'p_high': 176, 'u_max': 407, 'q_max': 1689, 'funds': 2339.584896622862, 'order_id': '1HHXPRXMLW'}
-ENTER @2018-11-06 00:23:05.717644: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 84, 'p_high': 195, 'u_max': 420, 'q_max': 1271, 'funds': 8637.92968693842, 'order_id': '6LAGE55DKN'}
-ENTER @2018-11-06 00:23:05.717689: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 54, 'p_high': 150, 'u_max': 412, 'q_max': 1590, 'funds': 1095.8724664128772, 'order_id': 'ZBVKCHFIPM'}
-ENTER @2018-11-06 00:23:05.717721: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 34, 'p_high': 185, 'u_max': 412, 'q_max': 1238, 'funds': 2798.1839564083457, 'order_id': '6HA5HZ8YJW'}
-ENTER @2018-11-06 00:23:05.717749: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 55, 'p_high': 106, 'u_max': 416, 'q_max': 1298, 'funds': 1327.310022353768, 'order_id': '5MXCETPIGV'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 86, 'p_high': 176, 'u_max': 407, 'q_max': 1689, 'funds': 2339.584896622862, 'order_id': '1HHXPRXMLW'}
-New orders:
-CANCEL @2018-11-06 00:23:06.723392: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 86, 'p_high': 176, 'u_max': 407, 'q_max': 1689, 'order_id': '1HHXPRXMLW'}
-CANCEL @2018-11-06 00:23:06.723524: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 55, 'p_high': 106, 'u_max': 416, 'q_max': 1298, 'order_id': '5MXCETPIGV'}
-CANCEL @2018-11-06 00:23:06.723597: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 34, 'p_high': 185, 'u_max': 412, 'q_max': 1238, 'order_id': '6HA5HZ8YJW'}
-CANCEL @2018-11-06 00:23:06.723648: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 18, 'p_high': 110, 'u_max': 470, 'q_max': 1433, 'order_id': 'NBRHZGLQY8'}
-CANCEL @2018-11-06 00:23:06.723702: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 64, 'p_high': 146, 'u_max': 483, 'q_max': 1079, 'order_id': 'ZLIWMQZDV8'}
-UPDATE @2018-11-06 00:23:06.723784: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 89, 'p_high': 160, 'u_max': 492, 'q_max': 1321, 'funds': 1821.925322592618, 'order_id': '5OR3LB25IB'}
-UPDATE @2018-11-06 00:23:06.723851: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 49, 'p_high': 115, 'u_max': 422, 'q_max': 1781, 'funds': 1095.8724664128772, 'order_id': 'ZBVKCHFIPM'}
-UPDATE @2018-11-06 00:23:06.723914: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 38, 'p_high': 191, 'u_max': 440, 'q_max': 1515, 'funds': 8637.92968693842, 'order_id': '6LAGE55DKN'}
-UPDATE @2018-11-06 00:23:06.723971: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 18, 'p_high': 112, 'u_max': 439, 'q_max': 1296, 'funds': 1821.925322592618, 'order_id': '5OR3LB25IB'}
-ENTER @2018-11-06 00:23:06.724413: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 35, 'p_high': 193, 'u_max': 465, 'q_max': 1496, 'funds': 9990.854795646512, 'order_id': 'XQ3OTNOZAD'}
-ENTER @2018-11-06 00:23:06.724458: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 102, 'u_max': 432, 'q_max': 1400, 'funds': 1617.4466819755162, 'order_id': 'IMZCU51028'}
-ENTER @2018-11-06 00:23:06.724491: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 77, 'p_high': 190, 'u_max': 442, 'q_max': 1294, 'funds': 6628.899558332272, 'order_id': 'NEGCCMIIRQ'}
-ENTER @2018-11-06 00:23:06.724520: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 45, 'p_high': 182, 'u_max': 454, 'q_max': 1556, 'funds': 6887.206332106378, 'order_id': 'ZY3SK9Y9KU'}
-ENTER @2018-11-06 00:23:06.724547: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 94, 'p_high': 130, 'u_max': 481, 'q_max': 1745, 'funds': 8860.31483995911, 'order_id': 'B3921VWQ7A'}
-ENTER @2018-11-06 00:23:06.724575: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 10, 'p_high': 113, 'u_max': 449, 'q_max': 1196, 'funds': 6936.275383403246, 'order_id': '4F64IR4MON'}
-ENTER @2018-11-06 00:23:06.724625: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 36, 'p_high': 126, 'u_max': 442, 'q_max': 1418, 'funds': 7127.496532124911, 'order_id': 'VPJF3UR5OL'}
-ENTER @2018-11-06 00:23:06.724650: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 29, 'p_high': 187, 'u_max': 432, 'q_max': 1747, 'funds': 9992.355599899809, 'order_id': 'P79BJPQ3PJ'}
-ENTER @2018-11-06 00:23:06.724674: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 70, 'p_high': 178, 'u_max': 404, 'q_max': 1086, 'funds': 7524.288705066663, 'order_id': '7R5E3I23K2'}
-ENTER @2018-11-06 00:23:06.724699: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 14, 'p_high': 114, 'u_max': 430, 'q_max': 1738, 'funds': 331.68702284572913, 'order_id': 'EXXCEJQUKR'}
-ENTER @2018-11-06 00:23:06.724723: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 51, 'p_high': 191, 'u_max': 474, 'q_max': 1040, 'funds': 9491.542255854323, 'order_id': '5PQLUAWQV6'}
-ENTER @2018-11-06 00:23:06.724760: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 94, 'p_high': 175, 'u_max': 409, 'q_max': 1869, 'funds': 9197.547404232299, 'order_id': 'Y70PAHVQEI'}
-ENTER @2018-11-06 00:23:06.724786: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 95, 'p_high': 150, 'u_max': 428, 'q_max': 1116, 'funds': 3017.0659005817392, 'order_id': 'Y6K2E6MT0B'}
-ENTER @2018-11-06 00:23:06.724811: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 91, 'p_high': 103, 'u_max': 423, 'q_max': 1994, 'funds': 7472.677763763937, 'order_id': '06N1P7NT86'}
-ENTER @2018-11-06 00:23:06.724837: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 76, 'p_high': 101, 'u_max': 494, 'q_max': 1086, 'funds': 8243.329942662762, 'order_id': 'DSHJ26F0CH'}
-ENTER @2018-11-06 00:23:06.724862: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 72, 'p_high': 185, 'u_max': 455, 'q_max': 1677, 'funds': 5998.885852273721, 'order_id': 'BGKSN3PY5H'}
-ENTER @2018-11-06 00:23:06.724888: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 71, 'p_high': 177, 'u_max': 471, 'q_max': 1774, 'funds': 7225.607087161739, 'order_id': 'UJ16PA9RGE'}
-ENTER @2018-11-06 00:23:06.724970: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 62, 'p_high': 120, 'u_max': 422, 'q_max': 1594, 'funds': 3667.243350643071, 'order_id': 'ECKTAPAK7V'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 89, 'p_high': 160, 'u_max': 492, 'q_max': 1321, 'funds': 1821.925322592618, 'order_id': '5OR3LB25IB'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 49, 'p_high': 115, 'u_max': 422, 'q_max': 1781, 'funds': 1095.8724664128772, 'order_id': 'ZBVKCHFIPM'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 38, 'p_high': 191, 'u_max': 440, 'q_max': 1515, 'funds': 8637.92968693842, 'order_id': '6LAGE55DKN'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 18, 'p_high': 112, 'u_max': 439, 'q_max': 1296, 'funds': 1821.925322592618, 'order_id': '5OR3LB25IB'}
-New orders:
-CANCEL @2018-11-06 00:23:07.731302: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 62, 'p_high': 120, 'u_max': 422, 'q_max': 1594, 'order_id': 'ECKTAPAK7V'}
-CANCEL @2018-11-06 00:23:07.731428: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 96, 'p_high': 123, 'u_max': 407, 'q_max': 1389, 'order_id': '0YSGL8FCL2'}
-CANCEL @2018-11-06 00:23:07.731506: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 94, 'p_high': 130, 'u_max': 481, 'q_max': 1745, 'order_id': 'B3921VWQ7A'}
-CANCEL @2018-11-06 00:23:07.731579: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 102, 'u_max': 432, 'q_max': 1400, 'order_id': 'IMZCU51028'}
-UPDATE @2018-11-06 00:23:07.731681: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 52, 'p_high': 125, 'u_max': 448, 'q_max': 1968, 'funds': 9491.542255854323, 'order_id': '5PQLUAWQV6'}
-UPDATE @2018-11-06 00:23:07.731770: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 93, 'p_high': 149, 'u_max': 475, 'q_max': 1503, 'funds': 7127.496532124911, 'order_id': 'VPJF3UR5OL'}
-UPDATE @2018-11-06 00:23:07.731847: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 190, 'u_max': 437, 'q_max': 1670, 'funds': 7127.496532124911, 'order_id': 'VPJF3UR5OL'}
-UPDATE @2018-11-06 00:23:07.731923: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 25, 'p_high': 135, 'u_max': 447, 'q_max': 1410, 'funds': 9992.355599899809, 'order_id': 'P79BJPQ3PJ'}
-ENTER @2018-11-06 00:23:07.732106: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 95, 'p_high': 116, 'u_max': 431, 'q_max': 1697, 'funds': 4825.317217912147, 'order_id': 'W6K4S8LI57'}
-ENTER @2018-11-06 00:23:07.732150: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 72, 'p_high': 125, 'u_max': 486, 'q_max': 1654, 'funds': 7163.906837460852, 'order_id': 'V3HXXMUWAI'}
-ENTER @2018-11-06 00:23:07.732183: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 73, 'p_high': 105, 'u_max': 488, 'q_max': 1361, 'funds': 9509.555237627308, 'order_id': '3UEOR7U412'}
-ENTER @2018-11-06 00:23:07.732217: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 34, 'p_high': 132, 'u_max': 462, 'q_max': 1553, 'funds': 4490.941312355553, 'order_id': 'E6S4491WR7'}
-ENTER @2018-11-06 00:23:07.732247: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 82, 'p_high': 152, 'u_max': 418, 'q_max': 1688, 'funds': 904.0563618463171, 'order_id': 'X3V9E6XH30'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 52, 'p_high': 125, 'u_max': 448, 'q_max': 1968, 'funds': 9491.542255854323, 'order_id': '5PQLUAWQV6'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 93, 'p_high': 149, 'u_max': 475, 'q_max': 1503, 'funds': 7127.496532124911, 'order_id': 'VPJF3UR5OL'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 190, 'u_max': 437, 'q_max': 1670, 'funds': 7127.496532124911, 'order_id': 'VPJF3UR5OL'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 25, 'p_high': 135, 'u_max': 447, 'q_max': 1410, 'funds': 9992.355599899809, 'order_id': 'P79BJPQ3PJ'}
-New orders:
-CANCEL @2018-11-06 00:23:08.738579: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 49, 'p_high': 115, 'u_max': 422, 'q_max': 1781, 'order_id': 'ZBVKCHFIPM'}
-CANCEL @2018-11-06 00:23:08.738730: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 38, 'p_high': 191, 'u_max': 440, 'q_max': 1515, 'order_id': '6LAGE55DKN'}
-CANCEL @2018-11-06 00:23:08.738812: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 34, 'p_high': 132, 'u_max': 462, 'q_max': 1553, 'order_id': 'E6S4491WR7'}
-CANCEL @2018-11-06 00:23:08.738897: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 45, 'p_high': 182, 'u_max': 454, 'q_max': 1556, 'order_id': 'ZY3SK9Y9KU'}
-CANCEL @2018-11-06 00:23:08.738965: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 76, 'p_high': 101, 'u_max': 494, 'q_max': 1086, 'order_id': 'DSHJ26F0CH'}
-CANCEL @2018-11-06 00:23:08.739031: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 77, 'p_high': 190, 'u_max': 442, 'q_max': 1294, 'order_id': 'NEGCCMIIRQ'}
-CANCEL @2018-11-06 00:23:08.739107: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 52, 'p_high': 125, 'u_max': 448, 'q_max': 1968, 'order_id': '5PQLUAWQV6'}
-CANCEL @2018-11-06 00:23:08.739179: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 95, 'p_high': 150, 'u_max': 428, 'q_max': 1116, 'order_id': 'Y6K2E6MT0B'}
-UPDATE @2018-11-06 00:23:08.739273: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 30, 'p_high': 158, 'u_max': 404, 'q_max': 1141, 'funds': 7163.906837460852, 'order_id': 'V3HXXMUWAI'}
-UPDATE @2018-11-06 00:23:08.739364: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 49, 'p_high': 181, 'u_max': 415, 'q_max': 1748, 'funds': 6678.682766143596, 'order_id': '3BX3ABD4PJ'}
-UPDATE @2018-11-06 00:23:08.739444: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 145, 'u_max': 442, 'q_max': 1055, 'funds': 9509.555237627308, 'order_id': '3UEOR7U412'}
-UPDATE @2018-11-06 00:23:08.739516: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 46, 'p_high': 162, 'u_max': 439, 'q_max': 1070, 'funds': 6678.682766143596, 'order_id': '3BX3ABD4PJ'}
-UPDATE @2018-11-06 00:23:08.739590: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 83, 'p_high': 145, 'u_max': 492, 'q_max': 1396, 'funds': 6936.275383403246, 'order_id': '4F64IR4MON'}
-UPDATE @2018-11-06 00:23:08.739660: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 101, 'u_max': 448, 'q_max': 1395, 'funds': 7472.677763763937, 'order_id': '06N1P7NT86'}
-ENTER @2018-11-06 00:23:08.740175: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 120, 'u_max': 494, 'q_max': 1440, 'funds': 3170.802793171823, 'order_id': 'FCS8T3AWSZ'}
-ENTER @2018-11-06 00:23:08.740225: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 165, 'u_max': 403, 'q_max': 1746, 'funds': 189.56486711471987, 'order_id': 'C6MXTY9K9R'}
-ENTER @2018-11-06 00:23:08.740260: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 179, 'u_max': 498, 'q_max': 1756, 'funds': 7712.975516585977, 'order_id': 'M26ZN2OGD4'}
-ENTER @2018-11-06 00:23:08.740296: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 13, 'p_high': 172, 'u_max': 432, 'q_max': 1662, 'funds': 6606.787879976758, 'order_id': 'VAC19ZPDD3'}
-ENTER @2018-11-06 00:23:08.740324: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 94, 'p_high': 196, 'u_max': 443, 'q_max': 1236, 'funds': 6011.9627205419765, 'order_id': '82QHQS7WQW'}
-ENTER @2018-11-06 00:23:08.740352: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 91, 'p_high': 184, 'u_max': 406, 'q_max': 1681, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-ENTER @2018-11-06 00:23:08.740380: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 63, 'p_high': 187, 'u_max': 464, 'q_max': 1709, 'funds': 7560.805092943362, 'order_id': 'H9F3UPMM63'}
-ENTER @2018-11-06 00:23:08.740407: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 12, 'p_high': 128, 'u_max': 485, 'q_max': 1231, 'funds': 3434.2299420356703, 'order_id': 'NSTO71H2YK'}
-ENTER @2018-11-06 00:23:08.740434: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 84, 'p_high': 101, 'u_max': 426, 'q_max': 1632, 'funds': 5408.3088316083185, 'order_id': '6CI568SHQL'}
-ENTER @2018-11-06 00:23:08.740473: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 73, 'p_high': 159, 'u_max': 475, 'q_max': 1906, 'funds': 167.38403044495033, 'order_id': 'ND6UKAA7MV'}
-ENTER @2018-11-06 00:23:08.740498: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 68, 'p_high': 177, 'u_max': 476, 'q_max': 1515, 'funds': 2650.0940012583296, 'order_id': 'O4W2O279OK'}
-ENTER @2018-11-06 00:23:08.740576: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 23, 'p_high': 152, 'u_max': 434, 'q_max': 1605, 'funds': 7315.087723281342, 'order_id': 'DLZPFRKX99'}
-ENTER @2018-11-06 00:23:08.740607: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 27, 'p_high': 161, 'u_max': 432, 'q_max': 1128, 'funds': 4674.555744564708, 'order_id': '2JNM2N1G3V'}
-ENTER @2018-11-06 00:23:08.740633: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 87, 'p_high': 105, 'u_max': 435, 'q_max': 1902, 'funds': 4164.023747740923, 'order_id': 'EC5EG3ZP64'}
-ENTER @2018-11-06 00:23:08.740663: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 57, 'p_high': 150, 'u_max': 471, 'q_max': 1076, 'funds': 614.4818267672869, 'order_id': 'IQYSSWHTR2'}
-ENTER @2018-11-06 00:23:08.740689: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 29, 'p_high': 143, 'u_max': 458, 'q_max': 1978, 'funds': 5362.124318080113, 'order_id': 'RUWIQ9JMV6'}
-ENTER @2018-11-06 00:23:08.740715: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 78, 'p_high': 110, 'u_max': 435, 'q_max': 1916, 'funds': 2559.8207050336164, 'order_id': 'DAMXJYOA0V'}
-ENTER @2018-11-06 00:23:08.740741: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 20, 'p_high': 188, 'u_max': 414, 'q_max': 1650, 'funds': 6441.326706246101, 'order_id': '82Z4S6YFWH'}
-ENTER @2018-11-06 00:23:08.740767: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 41, 'p_high': 133, 'u_max': 416, 'q_max': 1022, 'funds': 299.85748577510793, 'order_id': '4KC0IC14VK'}
-ENTER @2018-11-06 00:23:08.740797: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 50, 'p_high': 192, 'u_max': 487, 'q_max': 1480, 'funds': 6504.507737969408, 'order_id': '676DB321QH'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 30, 'p_high': 158, 'u_max': 404, 'q_max': 1141, 'funds': 7163.906837460852, 'order_id': 'V3HXXMUWAI'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 49, 'p_high': 181, 'u_max': 415, 'q_max': 1748, 'funds': 6678.682766143596, 'order_id': '3BX3ABD4PJ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 145, 'u_max': 442, 'q_max': 1055, 'funds': 9509.555237627308, 'order_id': '3UEOR7U412'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 46, 'p_high': 162, 'u_max': 439, 'q_max': 1070, 'funds': 6678.682766143596, 'order_id': '3BX3ABD4PJ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 83, 'p_high': 145, 'u_max': 492, 'q_max': 1396, 'funds': 6936.275383403246, 'order_id': '4F64IR4MON'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 101, 'u_max': 448, 'q_max': 1395, 'funds': 7472.677763763937, 'order_id': '06N1P7NT86'}
-New orders:
-CANCEL @2018-11-06 00:23:09.747160: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 71, 'p_high': 177, 'u_max': 471, 'q_max': 1774, 'order_id': 'UJ16PA9RGE'}
-CANCEL @2018-11-06 00:23:09.747320: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 35, 'p_high': 193, 'u_max': 465, 'q_max': 1496, 'order_id': 'XQ3OTNOZAD'}
-CANCEL @2018-11-06 00:23:09.747407: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 46, 'p_high': 165, 'u_max': 403, 'q_max': 1746, 'order_id': 'C6MXTY9K9R'}
-CANCEL @2018-11-06 00:23:09.747500: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 29, 'p_high': 143, 'u_max': 458, 'q_max': 1978, 'order_id': 'RUWIQ9JMV6'}
-UPDATE @2018-11-06 00:23:09.747615: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 69, 'p_high': 155, 'u_max': 448, 'q_max': 1952, 'funds': 167.38403044495033, 'order_id': 'ND6UKAA7MV'}
-UPDATE @2018-11-06 00:23:09.747717: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 73, 'p_high': 133, 'u_max': 409, 'q_max': 1077, 'funds': 1821.925322592618, 'order_id': '5OR3LB25IB'}
-UPDATE @2018-11-06 00:23:09.747818: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 113, 'u_max': 434, 'q_max': 1835, 'funds': 6936.275383403246, 'order_id': '4F64IR4MON'}
-UPDATE @2018-11-06 00:23:09.747912: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 11, 'p_high': 168, 'u_max': 425, 'q_max': 1838, 'funds': 6011.9627205419765, 'order_id': '82QHQS7WQW'}
-ENTER @2018-11-06 00:23:09.748188: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 25, 'p_high': 140, 'u_max': 428, 'q_max': 1561, 'funds': 8629.433793821723, 'order_id': '78B9LAQBQ0'}
-ENTER @2018-11-06 00:23:09.748237: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 92, 'p_high': 162, 'u_max': 463, 'q_max': 1044, 'funds': 7117.719274445213, 'order_id': '4XSWFVQ22J'}
-ENTER @2018-11-06 00:23:09.748283: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 18, 'p_high': 168, 'u_max': 444, 'q_max': 1517, 'funds': 8026.584386236543, 'order_id': 'GD4MO4GXYJ'}
-ENTER @2018-11-06 00:23:09.748313: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 37, 'p_high': 160, 'u_max': 421, 'q_max': 1969, 'funds': 5481.349720535209, 'order_id': 'HDRK07M377'}
-ENTER @2018-11-06 00:23:09.748342: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 65, 'p_high': 166, 'u_max': 409, 'q_max': 1563, 'funds': 2422.635426129316, 'order_id': 'I492E8UJJ1'}
-ENTER @2018-11-06 00:23:09.748383: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 22, 'p_high': 169, 'u_max': 470, 'q_max': 1078, 'funds': 9565.365463905173, 'order_id': '3IKPXQLNBO'}
-ENTER @2018-11-06 00:23:09.748410: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 50, 'p_high': 160, 'u_max': 487, 'q_max': 1015, 'funds': 603.4801203395001, 'order_id': 'I1EN8YWQ7S'}
-ENTER @2018-11-06 00:23:09.748437: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 23, 'p_high': 125, 'u_max': 419, 'q_max': 1350, 'funds': 8742.014858220306, 'order_id': 'KUOT2KZ2T9'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 69, 'p_high': 155, 'u_max': 448, 'q_max': 1952, 'funds': 167.38403044495033, 'order_id': 'ND6UKAA7MV'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 73, 'p_high': 133, 'u_max': 409, 'q_max': 1077, 'funds': 1821.925322592618, 'order_id': '5OR3LB25IB'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 113, 'u_max': 434, 'q_max': 1835, 'funds': 6936.275383403246, 'order_id': '4F64IR4MON'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 11, 'p_high': 168, 'u_max': 425, 'q_max': 1838, 'funds': 6011.9627205419765, 'order_id': '82QHQS7WQW'}
-New orders:
-CANCEL @2018-11-06 00:23:10.754777: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 94, 'p_high': 101, 'u_max': 448, 'q_max': 1395, 'order_id': '06N1P7NT86'}
-CANCEL @2018-11-06 00:23:10.754954: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 30, 'p_high': 158, 'u_max': 404, 'q_max': 1141, 'order_id': 'V3HXXMUWAI'}
-CANCEL @2018-11-06 00:23:10.755074: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 50, 'p_high': 160, 'u_max': 487, 'q_max': 1015, 'order_id': 'I1EN8YWQ7S'}
-CANCEL @2018-11-06 00:23:10.755174: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 50, 'p_high': 192, 'u_max': 487, 'q_max': 1480, 'order_id': '676DB321QH'}
-CANCEL @2018-11-06 00:23:10.755255: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 70, 'p_high': 178, 'u_max': 404, 'q_max': 1086, 'order_id': '7R5E3I23K2'}
-UPDATE @2018-11-06 00:23:10.755351: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 34, 'p_high': 157, 'u_max': 469, 'q_max': 1109, 'funds': 614.4818267672869, 'order_id': 'IQYSSWHTR2'}
-UPDATE @2018-11-06 00:23:10.755445: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 27, 'p_high': 181, 'u_max': 437, 'q_max': 1655, 'funds': 7315.087723281342, 'order_id': 'DLZPFRKX99'}
-UPDATE @2018-11-06 00:23:10.755533: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 33, 'p_high': 122, 'u_max': 422, 'q_max': 1683, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-UPDATE @2018-11-06 00:23:10.755618: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 61, 'p_high': 142, 'u_max': 425, 'q_max': 1330, 'funds': 8629.433793821723, 'order_id': '78B9LAQBQ0'}
-UPDATE @2018-11-06 00:23:10.755709: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 71, 'p_high': 197, 'u_max': 402, 'q_max': 1699, 'funds': 4825.317217912147, 'order_id': 'W6K4S8LI57'}
-UPDATE @2018-11-06 00:23:10.755797: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 20, 'p_high': 158, 'u_max': 462, 'q_max': 1591, 'funds': 9992.355599899809, 'order_id': 'P79BJPQ3PJ'}
-ENTER @2018-11-06 00:23:10.756279: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 42, 'p_high': 184, 'u_max': 493, 'q_max': 1649, 'funds': 8040.444649049533, 'order_id': 'Z09DUGFCZU'}
-ENTER @2018-11-06 00:23:10.756324: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 13, 'p_high': 169, 'u_max': 495, 'q_max': 1383, 'funds': 682.9818862262193, 'order_id': 'U0I5C0CV10'}
-ENTER @2018-11-06 00:23:10.756369: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 26, 'p_high': 119, 'u_max': 472, 'q_max': 1812, 'funds': 3965.978081395668, 'order_id': 'W1HZ521KUT'}
-ENTER @2018-11-06 00:23:10.756398: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 195, 'u_max': 475, 'q_max': 1544, 'funds': 9381.457530544238, 'order_id': 'EIQS5R7UP1'}
-ENTER @2018-11-06 00:23:10.756425: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 84, 'p_high': 146, 'u_max': 494, 'q_max': 1962, 'funds': 9155.792759255231, 'order_id': 'IGBJ9MIV4G'}
-ENTER @2018-11-06 00:23:10.756453: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 24, 'p_high': 135, 'u_max': 432, 'q_max': 1402, 'funds': 6717.065265734288, 'order_id': 'O95NRG6SI6'}
-ENTER @2018-11-06 00:23:10.756479: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 50, 'p_high': 146, 'u_max': 412, 'q_max': 1382, 'funds': 1997.1522226136185, 'order_id': 'XF0WD33UVD'}
-ENTER @2018-11-06 00:23:10.756518: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 164, 'u_max': 427, 'q_max': 1872, 'funds': 664.0704810056997, 'order_id': 'A7002PE77K'}
-ENTER @2018-11-06 00:23:10.756551: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 98, 'p_high': 104, 'u_max': 417, 'q_max': 1216, 'funds': 6311.11411611841, 'order_id': 'VVD4MKPJAB'}
-ENTER @2018-11-06 00:23:10.756577: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 99, 'p_high': 121, 'u_max': 436, 'q_max': 1495, 'funds': 6118.952715563371, 'order_id': 'RC457BJ4UX'}
-ENTER @2018-11-06 00:23:10.756601: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 60, 'p_high': 105, 'u_max': 443, 'q_max': 1163, 'funds': 5035.9794030178255, 'order_id': 'EZIHZCW6DX'}
-ENTER @2018-11-06 00:23:10.756625: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 70, 'p_high': 161, 'u_max': 472, 'q_max': 1236, 'funds': 5329.993572810736, 'order_id': '3JKYFHM0YH'}
-ENTER @2018-11-06 00:23:10.756652: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 63, 'p_high': 159, 'u_max': 433, 'q_max': 1948, 'funds': 5366.634393233951, 'order_id': '6D2QMOUIOB'}
-ENTER @2018-11-06 00:23:10.756677: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 89, 'p_high': 116, 'u_max': 414, 'q_max': 1084, 'funds': 8717.517511906426, 'order_id': 'F2T591P7W5'}
-ENTER @2018-11-06 00:23:10.756701: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 74, 'p_high': 172, 'u_max': 400, 'q_max': 1051, 'funds': 3866.632553996445, 'order_id': '5HCU7VZMAL'}
-ENTER @2018-11-06 00:23:10.756725: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 22, 'p_high': 143, 'u_max': 485, 'q_max': 1787, 'funds': 8912.583324368667, 'order_id': 'DVMV9EKCZS'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 34, 'p_high': 157, 'u_max': 469, 'q_max': 1109, 'funds': 614.4818267672869, 'order_id': 'IQYSSWHTR2'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 27, 'p_high': 181, 'u_max': 437, 'q_max': 1655, 'funds': 7315.087723281342, 'order_id': 'DLZPFRKX99'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 33, 'p_high': 122, 'u_max': 422, 'q_max': 1683, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 61, 'p_high': 142, 'u_max': 425, 'q_max': 1330, 'funds': 8629.433793821723, 'order_id': '78B9LAQBQ0'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 71, 'p_high': 197, 'u_max': 402, 'q_max': 1699, 'funds': 4825.317217912147, 'order_id': 'W6K4S8LI57'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 20, 'p_high': 158, 'u_max': 462, 'q_max': 1591, 'funds': 9992.355599899809, 'order_id': 'P79BJPQ3PJ'}
-New orders:
-CANCEL @2018-11-06 00:23:11.763088: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 61, 'p_high': 142, 'u_max': 425, 'q_max': 1330, 'order_id': '78B9LAQBQ0'}
-CANCEL @2018-11-06 00:23:11.763276: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 11, 'p_high': 179, 'u_max': 498, 'q_max': 1756, 'order_id': 'M26ZN2OGD4'}
-CANCEL @2018-11-06 00:23:11.763383: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 26, 'p_high': 119, 'u_max': 472, 'q_max': 1812, 'order_id': 'W1HZ521KUT'}
-CANCEL @2018-11-06 00:23:11.763496: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 67, 'p_high': 195, 'u_max': 475, 'q_max': 1544, 'order_id': 'EIQS5R7UP1'}
-CANCEL @2018-11-06 00:23:11.763606: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 42, 'p_high': 184, 'u_max': 493, 'q_max': 1649, 'order_id': 'Z09DUGFCZU'}
-CANCEL @2018-11-06 00:23:11.763715: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 82, 'p_high': 152, 'u_max': 418, 'q_max': 1688, 'order_id': 'X3V9E6XH30'}
-CANCEL @2018-11-06 00:23:11.763813: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 89, 'p_high': 116, 'u_max': 414, 'q_max': 1084, 'order_id': 'F2T591P7W5'}
-CANCEL @2018-11-06 00:23:11.763908: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 23, 'p_high': 125, 'u_max': 419, 'q_max': 1350, 'order_id': 'KUOT2KZ2T9'}
-UPDATE @2018-11-06 00:23:11.764033: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 36, 'p_high': 155, 'u_max': 428, 'q_max': 1296, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-UPDATE @2018-11-06 00:23:11.764172: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 10, 'p_high': 114, 'u_max': 402, 'q_max': 1418, 'funds': 5035.9794030178255, 'order_id': 'EZIHZCW6DX'}
-UPDATE @2018-11-06 00:23:11.764272: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 68, 'p_high': 118, 'u_max': 456, 'q_max': 1087, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-UPDATE @2018-11-06 00:23:11.764383: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 43, 'p_high': 138, 'u_max': 460, 'q_max': 1161, 'funds': 614.4818267672869, 'order_id': 'IQYSSWHTR2'}
-ENTER @2018-11-06 00:23:11.764577: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 82, 'p_high': 176, 'u_max': 473, 'q_max': 1918, 'funds': 177.8985230079533, 'order_id': 'ZA5XGBS2VY'}
-ENTER @2018-11-06 00:23:11.764620: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 84, 'p_high': 111, 'u_max': 432, 'q_max': 1400, 'funds': 3833.929019488309, 'order_id': 'OAMPP8LX57'}
-ENTER @2018-11-06 00:23:11.764651: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 80, 'p_high': 157, 'u_max': 448, 'q_max': 1661, 'funds': 7180.706152227126, 'order_id': 'PNFEOXF3PZ'}
-ENTER @2018-11-06 00:23:11.764692: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 16, 'p_high': 177, 'u_max': 481, 'q_max': 1987, 'funds': 3188.0166966968472, 'order_id': 'DHI1PFUX8N'}
-ENTER @2018-11-06 00:23:11.764729: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 40, 'p_high': 140, 'u_max': 428, 'q_max': 1963, 'funds': 2481.7998094000072, 'order_id': 'MAQY738HEK'}
-ENTER @2018-11-06 00:23:11.764756: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 31, 'p_high': 178, 'u_max': 409, 'q_max': 1730, 'funds': 6583.291843238865, 'order_id': 'BIX0W3B9OG'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 36, 'p_high': 155, 'u_max': 428, 'q_max': 1296, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 10, 'p_high': 114, 'u_max': 402, 'q_max': 1418, 'funds': 5035.9794030178255, 'order_id': 'EZIHZCW6DX'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 68, 'p_high': 118, 'u_max': 456, 'q_max': 1087, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 43, 'p_high': 138, 'u_max': 460, 'q_max': 1161, 'funds': 614.4818267672869, 'order_id': 'IQYSSWHTR2'}
-New orders:
-CANCEL @2018-11-06 00:23:12.771118: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 43, 'p_high': 138, 'u_max': 460, 'q_max': 1161, 'order_id': 'IQYSSWHTR2'}
-CANCEL @2018-11-06 00:23:12.771280: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 37, 'p_high': 160, 'u_max': 421, 'q_max': 1969, 'order_id': 'HDRK07M377'}
-CANCEL @2018-11-06 00:23:12.771396: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 80, 'p_high': 157, 'u_max': 448, 'q_max': 1661, 'order_id': 'PNFEOXF3PZ'}
-ENTER @2018-11-06 00:23:12.771991: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 60, 'p_high': 177, 'u_max': 462, 'q_max': 1736, 'funds': 8353.10416227115, 'order_id': 'E9ZUPJODSI'}
-ENTER @2018-11-06 00:23:12.772045: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 97, 'p_high': 107, 'u_max': 495, 'q_max': 1134, 'funds': 9509.188104013674, 'order_id': 'P9L0W33OI2'}
-ENTER @2018-11-06 00:23:12.772091: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 63, 'p_high': 148, 'u_max': 426, 'q_max': 1125, 'funds': 3117.1323837533414, 'order_id': '28FIF2Y5XJ'}
-ENTER @2018-11-06 00:23:12.772121: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 35, 'p_high': 132, 'u_max': 481, 'q_max': 1419, 'funds': 7346.505774291882, 'order_id': 'YV4XLOY6KN'}
-ENTER @2018-11-06 00:23:12.772149: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 93, 'p_high': 130, 'u_max': 411, 'q_max': 1041, 'funds': 6094.587683761854, 'order_id': '6MVRQGXINS'}
-ENTER @2018-11-06 00:23:12.772189: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 73, 'p_high': 113, 'u_max': 427, 'q_max': 1151, 'funds': 3089.5212786709258, 'order_id': 'PQMMOVVIK5'}
-ENTER @2018-11-06 00:23:12.772214: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 34, 'p_high': 110, 'u_max': 405, 'q_max': 1893, 'funds': 5321.9478748073025, 'order_id': 'LINPASE1LG'}
-ENTER @2018-11-06 00:23:12.772238: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 37, 'p_high': 130, 'u_max': 433, 'q_max': 1426, 'funds': 1376.1053696340298, 'order_id': 'BZJFT1K5XY'}
-ENTER @2018-11-06 00:23:12.772262: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 98, 'p_high': 146, 'u_max': 450, 'q_max': 1643, 'funds': 8110.954197828048, 'order_id': '2RGC59I6DG'}
-ENTER @2018-11-06 00:23:12.772287: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 53, 'p_high': 181, 'u_max': 434, 'q_max': 1662, 'funds': 1464.5263364653615, 'order_id': 'OAB4NS86C5'}
-ENTER @2018-11-06 00:23:12.772311: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 82, 'p_high': 144, 'u_max': 439, 'q_max': 1383, 'funds': 7654.932476775812, 'order_id': '9UGCIKL2QQ'}
-ENTER @2018-11-06 00:23:12.772335: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 57, 'p_high': 139, 'u_max': 465, 'q_max': 1851, 'funds': 3287.0220623816795, 'order_id': '6W0UTH23SI'}
-ENTER @2018-11-06 00:23:12.772359: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 29, 'p_high': 127, 'u_max': 445, 'q_max': 1585, 'funds': 9442.502869488353, 'order_id': '57TJUOW7PO'}
-ENTER @2018-11-06 00:23:12.772383: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 23, 'p_high': 183, 'u_max': 455, 'q_max': 1397, 'funds': 1867.0938309654227, 'order_id': 'W71A74UI4E'}
-ENTER @2018-11-06 00:23:12.772407: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 96, 'p_high': 108, 'u_max': 462, 'q_max': 1555, 'funds': 4970.010196858358, 'order_id': 'LI4CRQ8Y79'}
-ENTER @2018-11-06 00:23:12.772430: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 89, 'p_high': 167, 'u_max': 429, 'q_max': 1583, 'funds': 1022.3611523445253, 'order_id': 'CTQMF76H0H'}
-New orders:
-CANCEL @2018-11-06 00:23:13.778797: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 63, 'p_high': 148, 'u_max': 426, 'q_max': 1125, 'order_id': '28FIF2Y5XJ'}
-CANCEL @2018-11-06 00:23:13.778966: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 94, 'p_high': 175, 'u_max': 409, 'q_max': 1869, 'order_id': 'Y70PAHVQEI'}
-CANCEL @2018-11-06 00:23:13.779075: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 92, 'p_high': 162, 'u_max': 463, 'q_max': 1044, 'order_id': '4XSWFVQ22J'}
-CANCEL @2018-11-06 00:23:13.779185: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 46, 'p_high': 162, 'u_max': 439, 'q_max': 1070, 'order_id': '3BX3ABD4PJ'}
-CANCEL @2018-11-06 00:23:13.779289: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 12, 'p_high': 128, 'u_max': 485, 'q_max': 1231, 'order_id': 'NSTO71H2YK'}
-CANCEL @2018-11-06 00:23:13.779394: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 63, 'p_high': 159, 'u_max': 433, 'q_max': 1948, 'order_id': '6D2QMOUIOB'}
-UPDATE @2018-11-06 00:23:13.779511: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 77, 'p_high': 165, 'u_max': 425, 'q_max': 1647, 'funds': 3866.632553996445, 'order_id': '5HCU7VZMAL'}
-UPDATE @2018-11-06 00:23:13.779631: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 28, 'p_high': 150, 'u_max': 452, 'q_max': 1014, 'funds': 664.0704810056997, 'order_id': 'A7002PE77K'}
-UPDATE @2018-11-06 00:23:13.779740: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 68, 'p_high': 180, 'u_max': 429, 'q_max': 1480, 'funds': 6094.587683761854, 'order_id': '6MVRQGXINS'}
-UPDATE @2018-11-06 00:23:13.779858: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 80, 'p_high': 175, 'u_max': 460, 'q_max': 1444, 'funds': 9509.188104013674, 'order_id': 'P9L0W33OI2'}
-UPDATE @2018-11-06 00:23:13.779970: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 72, 'p_high': 126, 'u_max': 475, 'q_max': 1460, 'funds': 6094.587683761854, 'order_id': '6MVRQGXINS'}
-UPDATE @2018-11-06 00:23:13.780081: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 53, 'p_high': 123, 'u_max': 489, 'q_max': 1219, 'funds': 2481.7998094000072, 'order_id': 'MAQY738HEK'}
-ENTER @2018-11-06 00:23:13.780318: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 76, 'p_high': 169, 'u_max': 402, 'q_max': 1540, 'funds': 3902.0688293394987, 'order_id': 'S4MFOCUZ0Z'}
-ENTER @2018-11-06 00:23:13.780363: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 69, 'p_high': 159, 'u_max': 400, 'q_max': 1833, 'funds': 225.28379459695546, 'order_id': 'XTLG7AJ8F7'}
-ENTER @2018-11-06 00:23:13.780396: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 15, 'p_high': 157, 'u_max': 407, 'q_max': 1563, 'funds': 970.4191953177188, 'order_id': 'RP5DYHCAT1'}
-ENTER @2018-11-06 00:23:13.780423: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 17, 'p_high': 101, 'u_max': 433, 'q_max': 1870, 'funds': 1901.5175085187375, 'order_id': '8XJP6Q8W0V'}
-ENTER @2018-11-06 00:23:13.780448: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 94, 'p_high': 101, 'u_max': 490, 'q_max': 1067, 'funds': 5085.989015843573, 'order_id': 'MIDGIJ0FEC'}
-ENTER @2018-11-06 00:23:13.780473: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 99, 'p_high': 118, 'u_max': 404, 'q_max': 1699, 'funds': 6876.727766422112, 'order_id': '0IK5BPLQH3'}
-ENTER @2018-11-06 00:23:13.780497: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 30, 'p_high': 173, 'u_max': 492, 'q_max': 1661, 'funds': 5438.329464014186, 'order_id': 'MQYCMUT74Y'}
-ENTER @2018-11-06 00:23:13.780523: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 77, 'p_high': 166, 'u_max': 495, 'q_max': 1532, 'funds': 7181.808574408215, 'order_id': 'TG32ZLPZ5Z'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 77, 'p_high': 165, 'u_max': 425, 'q_max': 1647, 'funds': 3866.632553996445, 'order_id': '5HCU7VZMAL'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 28, 'p_high': 150, 'u_max': 452, 'q_max': 1014, 'funds': 664.0704810056997, 'order_id': 'A7002PE77K'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 68, 'p_high': 180, 'u_max': 429, 'q_max': 1480, 'funds': 6094.587683761854, 'order_id': '6MVRQGXINS'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 80, 'p_high': 175, 'u_max': 460, 'q_max': 1444, 'funds': 9509.188104013674, 'order_id': 'P9L0W33OI2'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 72, 'p_high': 126, 'u_max': 475, 'q_max': 1460, 'funds': 6094.587683761854, 'order_id': '6MVRQGXINS'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 53, 'p_high': 123, 'u_max': 489, 'q_max': 1219, 'funds': 2481.7998094000072, 'order_id': 'MAQY738HEK'}
-New orders:
-CANCEL @2018-11-06 00:23:14.786868: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 120, 'u_max': 494, 'q_max': 1440, 'order_id': 'FCS8T3AWSZ'}
-CANCEL @2018-11-06 00:23:14.787052: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 99, 'p_high': 118, 'u_max': 404, 'q_max': 1699, 'order_id': '0IK5BPLQH3'}
-UPDATE @2018-11-06 00:23:14.787201: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 92, 'p_high': 109, 'u_max': 472, 'q_max': 1806, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-UPDATE @2018-11-06 00:23:14.787371: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 40, 'p_high': 114, 'u_max': 471, 'q_max': 1428, 'funds': 5408.3088316083185, 'order_id': '6CI568SHQL'}
-ENTER @2018-11-06 00:23:14.787643: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 39, 'p_high': 119, 'u_max': 435, 'q_max': 1310, 'funds': 9504.282440062729, 'order_id': 'XE9H1LK2KT'}
-ENTER @2018-11-06 00:23:14.787687: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 16, 'p_high': 192, 'u_max': 425, 'q_max': 1148, 'funds': 6950.996725458799, 'order_id': 'SA4QTJQYDX'}
-ENTER @2018-11-06 00:23:14.787718: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 49, 'p_high': 123, 'u_max': 449, 'q_max': 1812, 'funds': 7167.101560393716, 'order_id': '77A22N3LWR'}
-ENTER @2018-11-06 00:23:14.787759: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 27, 'p_high': 174, 'u_max': 454, 'q_max': 1629, 'funds': 4018.6614793306385, 'order_id': 'EELN2Q6CH3'}
-ENTER @2018-11-06 00:23:14.787787: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 15, 'p_high': 133, 'u_max': 429, 'q_max': 1146, 'funds': 5728.364596942466, 'order_id': 'FIAF0BIZGS'}
-ENTER @2018-11-06 00:23:14.787814: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 161, 'u_max': 450, 'q_max': 1165, 'funds': 5686.286316973466, 'order_id': 'X4MBTWVHZK'}
-ENTER @2018-11-06 00:23:14.787853: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 98, 'p_high': 178, 'u_max': 451, 'q_max': 1760, 'funds': 3420.7045615797238, 'order_id': '65ZF59URV3'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 92, 'p_high': 109, 'u_max': 472, 'q_max': 1806, 'funds': 5118.66370259899, 'order_id': 'Z87P2B82KY'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 40, 'p_high': 114, 'u_max': 471, 'q_max': 1428, 'funds': 5408.3088316083185, 'order_id': '6CI568SHQL'}
-New orders:
-CANCEL @2018-11-06 00:23:15.794262: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 73, 'p_high': 113, 'u_max': 427, 'q_max': 1151, 'order_id': 'PQMMOVVIK5'}
-CANCEL @2018-11-06 00:23:15.794445: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 98, 'p_high': 104, 'u_max': 417, 'q_max': 1216, 'order_id': 'VVD4MKPJAB'}
-CANCEL @2018-11-06 00:23:15.794589: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 20, 'p_high': 188, 'u_max': 414, 'q_max': 1650, 'order_id': '82Z4S6YFWH'}
-CANCEL @2018-11-06 00:23:15.794702: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 76, 'p_high': 169, 'u_max': 402, 'q_max': 1540, 'order_id': 'S4MFOCUZ0Z'}
-CANCEL @2018-11-06 00:23:15.794812: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 10, 'p_high': 114, 'u_max': 402, 'q_max': 1418, 'order_id': 'EZIHZCW6DX'}
-CANCEL @2018-11-06 00:23:15.794951: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 72, 'p_high': 126, 'u_max': 475, 'q_max': 1460, 'order_id': '6MVRQGXINS'}
-CANCEL @2018-11-06 00:23:15.795067: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 98, 'p_high': 146, 'u_max': 450, 'q_max': 1643, 'order_id': '2RGC59I6DG'}
-CANCEL @2018-11-06 00:23:15.795193: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 77, 'p_high': 166, 'u_max': 495, 'q_max': 1532, 'order_id': 'TG32ZLPZ5Z'}
-UPDATE @2018-11-06 00:23:15.795326: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 69, 'p_high': 134, 'u_max': 484, 'q_max': 1498, 'funds': 2422.635426129316, 'order_id': 'I492E8UJJ1'}
-UPDATE @2018-11-06 00:23:15.795462: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 78, 'p_high': 180, 'u_max': 484, 'q_max': 1455, 'funds': 682.9818862262193, 'order_id': 'U0I5C0CV10'}
-UPDATE @2018-11-06 00:23:15.795575: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 80, 'p_high': 176, 'u_max': 493, 'q_max': 1465, 'funds': 5686.286316973466, 'order_id': 'X4MBTWVHZK'}
-ENTER @2018-11-06 00:23:15.795798: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 27, 'p_high': 143, 'u_max': 447, 'q_max': 1252, 'funds': 8999.983223532581, 'order_id': 'ZXVD4T29XP'}
-ENTER @2018-11-06 00:23:15.795838: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 39, 'p_high': 184, 'u_max': 448, 'q_max': 1119, 'funds': 2128.4155602504184, 'order_id': 'YCBHPXB5ZJ'}
-ENTER @2018-11-06 00:23:15.795869: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 49, 'p_high': 143, 'u_max': 485, 'q_max': 1428, 'funds': 797.823640647084, 'order_id': 'YBDWHJUDTN'}
-ENTER @2018-11-06 00:23:15.795896: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 60, 'p_high': 103, 'u_max': 437, 'q_max': 1957, 'funds': 7027.02601784162, 'order_id': 'V6V9I4H66R'}
-ENTER @2018-11-06 00:23:15.795922: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 144, 'u_max': 469, 'q_max': 1694, 'funds': 8673.088271794, 'order_id': '7WIMAO4ETB'}
-ENTER @2018-11-06 00:23:15.795947: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 72, 'p_high': 179, 'u_max': 438, 'q_max': 1551, 'funds': 8824.714919441287, 'order_id': 'BYSK25VEP9'}
-ENTER @2018-11-06 00:23:15.795972: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 54, 'p_high': 118, 'u_max': 455, 'q_max': 1057, 'funds': 4590.313336703741, 'order_id': '5AI0Y98D06'}
-ENTER @2018-11-06 00:23:15.795996: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 55, 'p_high': 108, 'u_max': 485, 'q_max': 1247, 'funds': 6173.889751209222, 'order_id': '4WQ6T4JCG8'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 69, 'p_high': 134, 'u_max': 484, 'q_max': 1498, 'funds': 2422.635426129316, 'order_id': 'I492E8UJJ1'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 78, 'p_high': 180, 'u_max': 484, 'q_max': 1455, 'funds': 682.9818862262193, 'order_id': 'U0I5C0CV10'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 80, 'p_high': 176, 'u_max': 493, 'q_max': 1465, 'funds': 5686.286316973466, 'order_id': 'X4MBTWVHZK'}
-New orders:
-CANCEL @2018-11-06 00:23:16.802322: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 54, 'p_high': 118, 'u_max': 455, 'q_max': 1057, 'order_id': '5AI0Y98D06'}
-CANCEL @2018-11-06 00:23:16.802492: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 22, 'p_high': 143, 'u_max': 485, 'q_max': 1787, 'order_id': 'DVMV9EKCZS'}
-CANCEL @2018-11-06 00:23:16.802612: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 89, 'p_high': 167, 'u_max': 429, 'q_max': 1583, 'order_id': 'CTQMF76H0H'}
-CANCEL @2018-11-06 00:23:16.802726: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 28, 'p_high': 150, 'u_max': 452, 'q_max': 1014, 'order_id': 'A7002PE77K'}
-UPDATE @2018-11-06 00:23:16.802854: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 79, 'p_high': 108, 'u_max': 479, 'q_max': 1545, 'funds': 3420.7045615797238, 'order_id': '65ZF59URV3'}
-UPDATE @2018-11-06 00:23:16.802996: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 28, 'p_high': 141, 'u_max': 436, 'q_max': 1922, 'funds': 6936.275383403246, 'order_id': '4F64IR4MON'}
-UPDATE @2018-11-06 00:23:16.803117: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 82, 'p_high': 148, 'u_max': 493, 'q_max': 1635, 'funds': 7654.932476775812, 'order_id': '9UGCIKL2QQ'}
-UPDATE @2018-11-06 00:23:16.803235: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 18, 'p_high': 126, 'u_max': 441, 'q_max': 1144, 'funds': 1464.5263364653615, 'order_id': 'OAB4NS86C5'}
-UPDATE @2018-11-06 00:23:16.803352: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 32, 'p_high': 156, 'u_max': 421, 'q_max': 1287, 'funds': 5408.3088316083185, 'order_id': '6CI568SHQL'}
-UPDATE @2018-11-06 00:23:16.803469: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 53, 'p_high': 196, 'u_max': 465, 'q_max': 1054, 'funds': 4018.6614793306385, 'order_id': 'EELN2Q6CH3'}
-ENTER @2018-11-06 00:23:16.803676: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 78, 'p_high': 143, 'u_max': 456, 'q_max': 1982, 'funds': 49.42764228292873, 'order_id': 'CX7LXTUCUD'}
-ENTER @2018-11-06 00:23:16.803718: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 81, 'p_high': 149, 'u_max': 449, 'q_max': 1523, 'funds': 4835.330425901011, 'order_id': 'HMFTCJDGK5'}
-ENTER @2018-11-06 00:23:16.803760: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 32, 'p_high': 183, 'u_max': 483, 'q_max': 1050, 'funds': 1998.3946513838157, 'order_id': 'CL4N7KI3V2'}
-ENTER @2018-11-06 00:23:16.803789: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 25, 'p_high': 106, 'u_max': 442, 'q_max': 1707, 'funds': 9968.608341967263, 'order_id': 'JOGPKWVLKX'}
-ENTER @2018-11-06 00:23:16.803816: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 74, 'p_high': 183, 'u_max': 492, 'q_max': 1077, 'funds': 8679.382510272824, 'order_id': '5IC4Y2UJVJ'}
-ENTER @2018-11-06 00:23:16.803904: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 78, 'p_high': 166, 'u_max': 447, 'q_max': 1653, 'funds': 2303.9723876863227, 'order_id': 'BYGLYCK5DX'}
-ENTER @2018-11-06 00:23:16.803953: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 33, 'p_high': 104, 'u_max': 489, 'q_max': 1311, 'funds': 7222.404332224851, 'order_id': 'BSCQWQOJWR'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 79, 'p_high': 108, 'u_max': 479, 'q_max': 1545, 'funds': 3420.7045615797238, 'order_id': '65ZF59URV3'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 28, 'p_high': 141, 'u_max': 436, 'q_max': 1922, 'funds': 6936.275383403246, 'order_id': '4F64IR4MON'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 82, 'p_high': 148, 'u_max': 493, 'q_max': 1635, 'funds': 7654.932476775812, 'order_id': '9UGCIKL2QQ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 18, 'p_high': 126, 'u_max': 441, 'q_max': 1144, 'funds': 1464.5263364653615, 'order_id': 'OAB4NS86C5'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 32, 'p_high': 156, 'u_max': 421, 'q_max': 1287, 'funds': 5408.3088316083185, 'order_id': '6CI568SHQL'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 53, 'p_high': 196, 'u_max': 465, 'q_max': 1054, 'funds': 4018.6614793306385, 'order_id': 'EELN2Q6CH3'}
-New orders:
-CANCEL @2018-11-06 00:23:17.810287: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 27, 'p_high': 161, 'u_max': 432, 'q_max': 1128, 'order_id': '2JNM2N1G3V'}
-CANCEL @2018-11-06 00:23:17.810424: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 72, 'p_high': 185, 'u_max': 455, 'q_max': 1677, 'order_id': 'BGKSN3PY5H'}
-CANCEL @2018-11-06 00:23:17.810557: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 92, 'p_high': 109, 'u_max': 472, 'q_max': 1806, 'order_id': 'Z87P2B82KY'}
-CANCEL @2018-11-06 00:23:17.810678: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 69, 'p_high': 159, 'u_max': 400, 'q_max': 1833, 'order_id': 'XTLG7AJ8F7'}
-CANCEL @2018-11-06 00:23:17.810815: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 18, 'p_high': 168, 'u_max': 444, 'q_max': 1517, 'order_id': 'GD4MO4GXYJ'}
-CANCEL @2018-11-06 00:23:17.810936: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 80, 'p_high': 175, 'u_max': 460, 'q_max': 1444, 'order_id': 'P9L0W33OI2'}
-UPDATE @2018-11-06 00:23:17.811114: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 91, 'p_high': 107, 'u_max': 462, 'q_max': 1135, 'funds': 2650.0940012583296, 'order_id': 'O4W2O279OK'}
-UPDATE @2018-11-06 00:23:17.811250: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 84, 'p_high': 139, 'u_max': 440, 'q_max': 1132, 'funds': 9968.608341967263, 'order_id': 'JOGPKWVLKX'}
-UPDATE @2018-11-06 00:23:17.811401: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 47, 'p_high': 198, 'u_max': 400, 'q_max': 1264, 'funds': 5686.286316973466, 'order_id': 'X4MBTWVHZK'}
-UPDATE @2018-11-06 00:23:17.811530: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 63, 'p_high': 163, 'u_max': 428, 'q_max': 1515, 'funds': 5728.364596942466, 'order_id': 'FIAF0BIZGS'}
-UPDATE @2018-11-06 00:23:17.811654: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 77, 'p_high': 190, 'u_max': 435, 'q_max': 1859, 'funds': 4018.6614793306385, 'order_id': 'EELN2Q6CH3'}
-ENTER @2018-11-06 00:23:17.812123: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 12, 'p_high': 133, 'u_max': 469, 'q_max': 1185, 'funds': 6651.0762551383195, 'order_id': 'G3HKZ8YDQ1'}
-ENTER @2018-11-06 00:23:17.812194: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 55, 'p_high': 169, 'u_max': 448, 'q_max': 1341, 'funds': 9449.954970458124, 'order_id': '8B67F0XICA'}
-ENTER @2018-11-06 00:23:17.812238: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 46, 'p_high': 181, 'u_max': 468, 'q_max': 1402, 'funds': 296.44976608324214, 'order_id': '0A0OUWHK5R'}
-ENTER @2018-11-06 00:23:17.812291: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 16, 'p_high': 141, 'u_max': 431, 'q_max': 1319, 'funds': 8925.333836247555, 'order_id': 'EW3QOBZPB3'}
-ENTER @2018-11-06 00:23:17.812330: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 12, 'p_high': 136, 'u_max': 444, 'q_max': 1123, 'funds': 6610.258758469082, 'order_id': 'MI05CLQ97O'}
-ENTER @2018-11-06 00:23:17.812368: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 32, 'p_high': 190, 'u_max': 459, 'q_max': 1961, 'funds': 1761.8203009780175, 'order_id': 'XNM2CHKZN2'}
-ENTER @2018-11-06 00:23:17.812406: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 90, 'p_high': 107, 'u_max': 485, 'q_max': 1310, 'funds': 4167.212959365327, 'order_id': 'KO6NTFXIHJ'}
-ENTER @2018-11-06 00:23:17.812442: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 51, 'p_high': 122, 'u_max': 491, 'q_max': 1357, 'funds': 622.5191648635631, 'order_id': 'JA9CGHBB2T'}
-ENTER @2018-11-06 00:23:17.812478: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 58, 'p_high': 147, 'u_max': 446, 'q_max': 1331, 'funds': 7481.449770117311, 'order_id': 'HLEL57G6QM'}
-ENTER @2018-11-06 00:23:17.812515: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 10, 'p_high': 129, 'u_max': 479, 'q_max': 1553, 'funds': 9250.69258420434, 'order_id': 'NXLGOJQNQZ'}
-ENTER @2018-11-06 00:23:17.812562: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 14, 'p_high': 116, 'u_max': 421, 'q_max': 1476, 'funds': 2757.59347605778, 'order_id': '2QHEQM73MZ'}
-ENTER @2018-11-06 00:23:17.812591: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 19, 'p_high': 119, 'u_max': 449, 'q_max': 1451, 'funds': 2867.8216406169763, 'order_id': 'D9YC4ZF28V'}
-ENTER @2018-11-06 00:23:17.812616: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 52, 'p_high': 130, 'u_max': 448, 'q_max': 1065, 'funds': 8671.563581373503, 'order_id': 'TT1JFJZ57T'}
-ENTER @2018-11-06 00:23:17.812641: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 75, 'p_high': 199, 'u_max': 430, 'q_max': 1452, 'funds': 1347.6890419778488, 'order_id': 'Y9E4DN35N8'}
-ENTER @2018-11-06 00:23:17.812666: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 13, 'p_high': 124, 'u_max': 487, 'q_max': 1517, 'funds': 5645.852778769963, 'order_id': 'QKY55W10DQ'}
-ENTER @2018-11-06 00:23:17.812693: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 40, 'p_high': 195, 'u_max': 431, 'q_max': 1361, 'funds': 5061.043550689767, 'order_id': 'CLDLPYFUZN'}
-ENTER @2018-11-06 00:23:17.812725: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 12, 'p_high': 113, 'u_max': 423, 'q_max': 1297, 'funds': 2766.7792339418706, 'order_id': '7KJGZ7JNXH'}
-ENTER @2018-11-06 00:23:17.812763: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 31, 'p_high': 157, 'u_max': 495, 'q_max': 1297, 'funds': 7921.038277069435, 'order_id': '2YGS4KTMHO'}
-ENTER @2018-11-06 00:23:17.812788: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 60, 'p_high': 133, 'u_max': 409, 'q_max': 1035, 'funds': 6024.473673546252, 'order_id': 'L9J2TZFTB6'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 91, 'p_high': 107, 'u_max': 462, 'q_max': 1135, 'funds': 2650.0940012583296, 'order_id': 'O4W2O279OK'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 84, 'p_high': 139, 'u_max': 440, 'q_max': 1132, 'funds': 9968.608341967263, 'order_id': 'JOGPKWVLKX'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 47, 'p_high': 198, 'u_max': 400, 'q_max': 1264, 'funds': 5686.286316973466, 'order_id': 'X4MBTWVHZK'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 63, 'p_high': 163, 'u_max': 428, 'q_max': 1515, 'funds': 5728.364596942466, 'order_id': 'FIAF0BIZGS'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 77, 'p_high': 190, 'u_max': 435, 'q_max': 1859, 'funds': 4018.6614793306385, 'order_id': 'EELN2Q6CH3'}
-New orders:
-CANCEL @2018-11-06 00:23:18.819151: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 60, 'p_high': 133, 'u_max': 409, 'q_max': 1035, 'order_id': 'L9J2TZFTB6'}
-CANCEL @2018-11-06 00:23:18.819338: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 84, 'p_high': 139, 'u_max': 440, 'q_max': 1132, 'order_id': 'JOGPKWVLKX'}
-CANCEL @2018-11-06 00:23:18.819514: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 10, 'p_high': 129, 'u_max': 479, 'q_max': 1553, 'order_id': 'NXLGOJQNQZ'}
-CANCEL @2018-11-06 00:23:18.819677: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 69, 'p_high': 155, 'u_max': 448, 'q_max': 1952, 'order_id': 'ND6UKAA7MV'}
-UPDATE @2018-11-06 00:23:18.819908: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 191, 'u_max': 449, 'q_max': 1608, 'funds': 7654.932476775812, 'order_id': '9UGCIKL2QQ'}
-UPDATE @2018-11-06 00:23:18.820049: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 40, 'p_high': 126, 'u_max': 402, 'q_max': 1419, 'funds': 5061.043550689767, 'order_id': 'CLDLPYFUZN'}
-UPDATE @2018-11-06 00:23:18.820186: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 18, 'p_high': 101, 'u_max': 428, 'q_max': 1646, 'funds': 2757.59347605778, 'order_id': '2QHEQM73MZ'}
-UPDATE @2018-11-06 00:23:18.820319: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 160, 'u_max': 463, 'q_max': 1711, 'funds': 7222.404332224851, 'order_id': 'BSCQWQOJWR'}
-UPDATE @2018-11-06 00:23:18.820449: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 154, 'u_max': 408, 'q_max': 1819, 'funds': 8671.563581373503, 'order_id': 'TT1JFJZ57T'}
-UPDATE @2018-11-06 00:23:18.820596: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 45, 'p_high': 106, 'u_max': 452, 'q_max': 1611, 'funds': 9449.954970458124, 'order_id': '8B67F0XICA'}
-UPDATE @2018-11-06 00:23:18.820739: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 39, 'p_high': 184, 'u_max': 496, 'q_max': 1009, 'funds': 2757.59347605778, 'order_id': '2QHEQM73MZ'}
-UPDATE @2018-11-06 00:23:18.820869: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 42, 'p_high': 134, 'u_max': 471, 'q_max': 1677, 'funds': 8353.10416227115, 'order_id': 'E9ZUPJODSI'}
-UPDATE @2018-11-06 00:23:18.820998: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 13, 'p_high': 103, 'u_max': 434, 'q_max': 1164, 'funds': 7346.505774291882, 'order_id': 'YV4XLOY6KN'}
-ENTER @2018-11-06 00:23:18.821300: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 35, 'p_high': 141, 'u_max': 496, 'q_max': 1491, 'funds': 853.011600019754, 'order_id': '97QZWQFC8T'}
-ENTER @2018-11-06 00:23:18.821342: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 56, 'p_high': 163, 'u_max': 456, 'q_max': 1826, 'funds': 4236.004145365643, 'order_id': '32M119Q1P6'}
-ENTER @2018-11-06 00:23:18.821372: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 40, 'p_high': 169, 'u_max': 413, 'q_max': 1046, 'funds': 3630.0290649574094, 'order_id': 'LZMBEJPGH9'}
-ENTER @2018-11-06 00:23:18.821399: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 70, 'p_high': 111, 'u_max': 432, 'q_max': 1146, 'funds': 5514.503354204897, 'order_id': 'OXFEX68X76'}
-ENTER @2018-11-06 00:23:18.821425: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 69, 'p_high': 139, 'u_max': 414, 'q_max': 1041, 'funds': 9639.752705649533, 'order_id': '3XSNS6TFDQ'}
-ENTER @2018-11-06 00:23:18.821450: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 57, 'p_high': 184, 'u_max': 419, 'q_max': 1477, 'funds': 9804.207376349017, 'order_id': 'XLMEISQ05D'}
-ENTER @2018-11-06 00:23:18.821474: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 85, 'p_high': 127, 'u_max': 453, 'q_max': 1074, 'funds': 8492.957469900064, 'order_id': 'A1P8WIR46V'}
-ENTER @2018-11-06 00:23:18.821499: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 66, 'p_high': 117, 'u_max': 459, 'q_max': 1958, 'funds': 8034.95945649401, 'order_id': 'WIYLS4QR0V'}
-ENTER @2018-11-06 00:23:18.821527: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 25, 'p_high': 137, 'u_max': 463, 'q_max': 1168, 'funds': 7917.8286473396765, 'order_id': 'SOSGW9F9YT'}
-ENTER @2018-11-06 00:23:18.821566: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 93, 'p_high': 129, 'u_max': 418, 'q_max': 1775, 'funds': 9591.207657977488, 'order_id': 'S7G576KW11'}
-ENTER @2018-11-06 00:23:18.821598: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 49, 'p_high': 184, 'u_max': 427, 'q_max': 1635, 'funds': 3669.005301369117, 'order_id': '86UYH0HNS8'}
-ENTER @2018-11-06 00:23:18.821624: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 24, 'p_high': 153, 'u_max': 403, 'q_max': 1719, 'funds': 1609.6459208097735, 'order_id': 'DNO8VSYKHU'}
-ENTER @2018-11-06 00:23:18.821650: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 26, 'p_high': 150, 'u_max': 409, 'q_max': 1198, 'funds': 2665.6946073252284, 'order_id': 'NL8R93N2JY'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 94, 'p_high': 191, 'u_max': 449, 'q_max': 1608, 'funds': 7654.932476775812, 'order_id': '9UGCIKL2QQ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 40, 'p_high': 126, 'u_max': 402, 'q_max': 1419, 'funds': 5061.043550689767, 'order_id': 'CLDLPYFUZN'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 18, 'p_high': 101, 'u_max': 428, 'q_max': 1646, 'funds': 2757.59347605778, 'order_id': '2QHEQM73MZ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 160, 'u_max': 463, 'q_max': 1711, 'funds': 7222.404332224851, 'order_id': 'BSCQWQOJWR'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 154, 'u_max': 408, 'q_max': 1819, 'funds': 8671.563581373503, 'order_id': 'TT1JFJZ57T'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 45, 'p_high': 106, 'u_max': 452, 'q_max': 1611, 'funds': 9449.954970458124, 'order_id': '8B67F0XICA'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 39, 'p_high': 184, 'u_max': 496, 'q_max': 1009, 'funds': 2757.59347605778, 'order_id': '2QHEQM73MZ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 42, 'p_high': 134, 'u_max': 471, 'q_max': 1677, 'funds': 8353.10416227115, 'order_id': 'E9ZUPJODSI'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 13, 'p_high': 103, 'u_max': 434, 'q_max': 1164, 'funds': 7346.505774291882, 'order_id': 'YV4XLOY6KN'}
-New orders:
-CANCEL @2018-11-06 00:23:19.827456: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 72, 'p_high': 179, 'u_max': 438, 'q_max': 1551, 'order_id': 'BYSK25VEP9'}
-CANCEL @2018-11-06 00:23:19.827669: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 13, 'p_high': 172, 'u_max': 432, 'q_max': 1662, 'order_id': 'VAC19ZPDD3'}
-CANCEL @2018-11-06 00:23:19.827832: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 91, 'p_high': 107, 'u_max': 462, 'q_max': 1135, 'order_id': 'O4W2O279OK'}
-UPDATE @2018-11-06 00:23:19.827984: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 77, 'p_high': 142, 'u_max': 477, 'q_max': 1085, 'funds': 8671.563581373503, 'order_id': 'TT1JFJZ57T'}
-UPDATE @2018-11-06 00:23:19.828148: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 33, 'p_high': 143, 'u_max': 462, 'q_max': 1678, 'funds': 970.4191953177188, 'order_id': 'RP5DYHCAT1'}
-UPDATE @2018-11-06 00:23:19.828297: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 21, 'p_high': 174, 'u_max': 443, 'q_max': 1297, 'funds': 4835.330425901011, 'order_id': 'HMFTCJDGK5'}
-UPDATE @2018-11-06 00:23:19.828441: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 96, 'p_high': 102, 'u_max': 418, 'q_max': 1063, 'funds': 4164.023747740923, 'order_id': 'EC5EG3ZP64'}
-UPDATE @2018-11-06 00:23:19.828583: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 88, 'p_high': 113, 'u_max': 459, 'q_max': 1837, 'funds': 299.85748577510793, 'order_id': '4KC0IC14VK'}
-UPDATE @2018-11-06 00:23:19.828726: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 82, 'p_high': 171, 'u_max': 457, 'q_max': 1419, 'funds': 3833.929019488309, 'order_id': 'OAMPP8LX57'}
-UPDATE @2018-11-06 00:23:19.828871: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 26, 'p_high': 107, 'u_max': 428, 'q_max': 1884, 'funds': 5329.993572810736, 'order_id': '3JKYFHM0YH'}
-UPDATE @2018-11-06 00:23:19.829012: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 49, 'p_high': 169, 'u_max': 443, 'q_max': 1857, 'funds': 8925.333836247555, 'order_id': 'EW3QOBZPB3'}
-ENTER @2018-11-06 00:23:19.829284: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 75, 'p_high': 169, 'u_max': 474, 'q_max': 1726, 'funds': 6061.625819166758, 'order_id': 'PFI05NMAIV'}
-ENTER @2018-11-06 00:23:19.829325: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 43, 'p_high': 173, 'u_max': 401, 'q_max': 1814, 'funds': 2627.0088712886263, 'order_id': 'OUU3H4P16S'}
-ENTER @2018-11-06 00:23:19.829354: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 29, 'p_high': 121, 'u_max': 492, 'q_max': 1957, 'funds': 2005.708823642286, 'order_id': 'KOW0Y566JA'}
-ENTER @2018-11-06 00:23:19.829382: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 57, 'p_high': 103, 'u_max': 463, 'q_max': 1710, 'funds': 6186.390017860845, 'order_id': 'VGMX3YI6KI'}
-ENTER @2018-11-06 00:23:19.829443: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 98, 'p_high': 180, 'u_max': 420, 'q_max': 1303, 'funds': 3405.532145764082, 'order_id': 'NTVWA2WD13'}
-ENTER @2018-11-06 00:23:19.829474: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 97, 'p_high': 189, 'u_max': 482, 'q_max': 1956, 'funds': 6425.110079576256, 'order_id': 'J2TXNSLW65'}
-ENTER @2018-11-06 00:23:19.829499: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 20, 'p_high': 130, 'u_max': 430, 'q_max': 1755, 'funds': 8528.065211155743, 'order_id': '5BCT6GGOI3'}
-ENTER @2018-11-06 00:23:19.829524: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 92, 'p_high': 130, 'u_max': 465, 'q_max': 1571, 'funds': 5407.224638158489, 'order_id': '8W1FDHR5O1'}
-ENTER @2018-11-06 00:23:19.829549: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 86, 'p_high': 183, 'u_max': 483, 'q_max': 1609, 'funds': 6856.702139003239, 'order_id': 'LO2FNWHYI9'}
-ENTER @2018-11-06 00:23:19.829574: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 29, 'p_high': 194, 'u_max': 487, 'q_max': 1695, 'funds': 5558.223997925412, 'order_id': 'AYYCCVS90D'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 77, 'p_high': 142, 'u_max': 477, 'q_max': 1085, 'funds': 8671.563581373503, 'order_id': 'TT1JFJZ57T'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 33, 'p_high': 143, 'u_max': 462, 'q_max': 1678, 'funds': 970.4191953177188, 'order_id': 'RP5DYHCAT1'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 21, 'p_high': 174, 'u_max': 443, 'q_max': 1297, 'funds': 4835.330425901011, 'order_id': 'HMFTCJDGK5'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 96, 'p_high': 102, 'u_max': 418, 'q_max': 1063, 'funds': 4164.023747740923, 'order_id': 'EC5EG3ZP64'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 88, 'p_high': 113, 'u_max': 459, 'q_max': 1837, 'funds': 299.85748577510793, 'order_id': '4KC0IC14VK'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 82, 'p_high': 171, 'u_max': 457, 'q_max': 1419, 'funds': 3833.929019488309, 'order_id': 'OAMPP8LX57'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 26, 'p_high': 107, 'u_max': 428, 'q_max': 1884, 'funds': 5329.993572810736, 'order_id': '3JKYFHM0YH'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 49, 'p_high': 169, 'u_max': 443, 'q_max': 1857, 'funds': 8925.333836247555, 'order_id': 'EW3QOBZPB3'}
-New orders:
-CANCEL @2018-11-06 00:23:20.835513: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 23, 'p_high': 183, 'u_max': 455, 'q_max': 1397, 'order_id': 'W71A74UI4E'}
-UPDATE @2018-11-06 00:23:20.835771: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 94, 'p_high': 178, 'u_max': 441, 'q_max': 1245, 'funds': 9565.365463905173, 'order_id': '3IKPXQLNBO'}
-UPDATE @2018-11-06 00:23:20.835960: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 99, 'p_high': 147, 'u_max': 496, 'q_max': 1429, 'funds': 4236.004145365643, 'order_id': '32M119Q1P6'}
-UPDATE @2018-11-06 00:23:20.836127: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 91, 'p_high': 154, 'u_max': 473, 'q_max': 1332, 'funds': 6610.258758469082, 'order_id': 'MI05CLQ97O'}
-UPDATE @2018-11-06 00:23:20.836303: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 52, 'p_high': 179, 'u_max': 452, 'q_max': 1425, 'funds': 2665.6946073252284, 'order_id': 'NL8R93N2JY'}
-ENTER @2018-11-06 00:23:20.836551: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 33, 'p_high': 126, 'u_max': 410, 'q_max': 1460, 'funds': 9816.556498851423, 'order_id': 'O3PG6JYZZG'}
-ENTER @2018-11-06 00:23:20.836597: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 93, 'p_high': 127, 'u_max': 420, 'q_max': 1540, 'funds': 8367.958212159914, 'order_id': '661F9WMGB3'}
-ENTER @2018-11-06 00:23:20.836637: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 72, 'p_high': 158, 'u_max': 487, 'q_max': 1847, 'funds': 8099.49464334059, 'order_id': 'L18MOWOTFO'}
-ENTER @2018-11-06 00:23:20.836669: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 77, 'p_high': 197, 'u_max': 446, 'q_max': 1819, 'funds': 3937.724036432839, 'order_id': 'OEDTEHHY1K'}
-ENTER @2018-11-06 00:23:20.836698: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 11, 'p_high': 148, 'u_max': 438, 'q_max': 1520, 'funds': 3714.5719017034207, 'order_id': 'KNP92PDRU7'}
-ENTER @2018-11-06 00:23:20.836725: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 67, 'p_high': 184, 'u_max': 432, 'q_max': 1909, 'funds': 6922.175931321616, 'order_id': 'GEV26IPXA9'}
-ENTER @2018-11-06 00:23:20.836752: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 38, 'p_high': 138, 'u_max': 440, 'q_max': 1964, 'funds': 4535.5963070608595, 'order_id': 'AQ2MFWON14'}
-ENTER @2018-11-06 00:23:20.836784: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 55, 'p_high': 129, 'u_max': 490, 'q_max': 1270, 'funds': 8604.395698324206, 'order_id': 'UHXCMM8UXL'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 94, 'p_high': 178, 'u_max': 441, 'q_max': 1245, 'funds': 9565.365463905173, 'order_id': '3IKPXQLNBO'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 99, 'p_high': 147, 'u_max': 496, 'q_max': 1429, 'funds': 4236.004145365643, 'order_id': '32M119Q1P6'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 91, 'p_high': 154, 'u_max': 473, 'q_max': 1332, 'funds': 6610.258758469082, 'order_id': 'MI05CLQ97O'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 52, 'p_high': 179, 'u_max': 452, 'q_max': 1425, 'funds': 2665.6946073252284, 'order_id': 'NL8R93N2JY'}
-New orders:
-CANCEL @2018-11-06 00:23:21.843224: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 11, 'p_high': 168, 'u_max': 425, 'q_max': 1838, 'order_id': '82QHQS7WQW'}
-CANCEL @2018-11-06 00:23:21.843452: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 77, 'p_high': 142, 'u_max': 477, 'q_max': 1085, 'order_id': 'TT1JFJZ57T'}
-CANCEL @2018-11-06 00:23:21.843612: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 20, 'p_high': 130, 'u_max': 430, 'q_max': 1755, 'order_id': '5BCT6GGOI3'}
-CANCEL @2018-11-06 00:23:21.843787: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 70, 'p_high': 111, 'u_max': 432, 'q_max': 1146, 'order_id': 'OXFEX68X76'}
-CANCEL @2018-11-06 00:23:21.843958: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 19, 'p_high': 119, 'u_max': 449, 'q_max': 1451, 'order_id': 'D9YC4ZF28V'}
-UPDATE @2018-11-06 00:23:21.844138: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 91, 'p_high': 187, 'u_max': 423, 'q_max': 1029, 'funds': 5438.329464014186, 'order_id': 'MQYCMUT74Y'}
-UPDATE @2018-11-06 00:23:21.844352: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 33, 'p_high': 149, 'u_max': 440, 'q_max': 1736, 'funds': 1901.5175085187375, 'order_id': '8XJP6Q8W0V'}
-UPDATE @2018-11-06 00:23:21.844529: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 69, 'p_high': 119, 'u_max': 471, 'q_max': 1299, 'funds': 1376.1053696340298, 'order_id': 'BZJFT1K5XY'}
-UPDATE @2018-11-06 00:23:21.844702: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 66, 'p_high': 106, 'u_max': 480, 'q_max': 1181, 'funds': 9565.365463905173, 'order_id': '3IKPXQLNBO'}
-UPDATE @2018-11-06 00:23:21.844888: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 78, 'p_high': 137, 'u_max': 413, 'q_max': 1498, 'funds': 6717.065265734288, 'order_id': 'O95NRG6SI6'}
-ENTER @2018-11-06 00:23:21.845101: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 20, 'p_high': 145, 'u_max': 413, 'q_max': 1785, 'funds': 1188.9474671548717, 'order_id': 'FRP1UU67WG'}
-ENTER @2018-11-06 00:23:21.845151: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 16, 'p_high': 101, 'u_max': 410, 'q_max': 1375, 'funds': 1381.530835775081, 'order_id': 'ONRX0UIFVY'}
-ENTER @2018-11-06 00:23:21.845184: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 89, 'p_high': 197, 'u_max': 498, 'q_max': 1394, 'funds': 6330.282222579748, 'order_id': 'DRHSOK6SLZ'}
-ENTER @2018-11-06 00:23:21.845225: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 34, 'p_high': 152, 'u_max': 461, 'q_max': 1257, 'funds': 3171.0785958637966, 'order_id': 'DFF2QAVPIP'}
-ENTER @2018-11-06 00:23:21.845255: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 72, 'p_high': 115, 'u_max': 487, 'q_max': 1967, 'funds': 8389.788335174642, 'order_id': 'X3JBQT7X5V'}
-ENTER @2018-11-06 00:23:21.845337: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 78, 'p_high': 146, 'u_max': 427, 'q_max': 1525, 'funds': 5529.891052530176, 'order_id': 'ZHZ9WRQGCN'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 91, 'p_high': 187, 'u_max': 423, 'q_max': 1029, 'funds': 5438.329464014186, 'order_id': 'MQYCMUT74Y'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 33, 'p_high': 149, 'u_max': 440, 'q_max': 1736, 'funds': 1901.5175085187375, 'order_id': '8XJP6Q8W0V'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 69, 'p_high': 119, 'u_max': 471, 'q_max': 1299, 'funds': 1376.1053696340298, 'order_id': 'BZJFT1K5XY'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 66, 'p_high': 106, 'u_max': 480, 'q_max': 1181, 'funds': 9565.365463905173, 'order_id': '3IKPXQLNBO'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 78, 'p_high': 137, 'u_max': 413, 'q_max': 1498, 'funds': 6717.065265734288, 'order_id': 'O95NRG6SI6'}
-New orders:
-CANCEL @2018-11-06 00:23:22.851450: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 57, 'p_high': 103, 'u_max': 463, 'q_max': 1710, 'order_id': 'VGMX3YI6KI'}
-CANCEL @2018-11-06 00:23:22.851634: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 55, 'p_high': 129, 'u_max': 490, 'q_max': 1270, 'order_id': 'UHXCMM8UXL'}
-CANCEL @2018-11-06 00:23:22.851792: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 67, 'p_high': 184, 'u_max': 432, 'q_max': 1909, 'order_id': 'GEV26IPXA9'}
-CANCEL @2018-11-06 00:23:22.851976: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 20, 'p_high': 145, 'u_max': 413, 'q_max': 1785, 'order_id': 'FRP1UU67WG'}
-CANCEL @2018-11-06 00:23:22.852151: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 57, 'p_high': 139, 'u_max': 465, 'q_max': 1851, 'order_id': '6W0UTH23SI'}
-CANCEL @2018-11-06 00:23:22.852342: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 92, 'p_high': 130, 'u_max': 465, 'q_max': 1571, 'order_id': '8W1FDHR5O1'}
-CANCEL @2018-11-06 00:23:22.852489: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 21, 'p_high': 174, 'u_max': 443, 'q_max': 1297, 'order_id': 'HMFTCJDGK5'}
-CANCEL @2018-11-06 00:23:22.852633: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 26, 'p_high': 107, 'u_max': 428, 'q_max': 1884, 'order_id': '3JKYFHM0YH'}
-UPDATE @2018-11-06 00:23:22.852807: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 27, 'p_high': 148, 'u_max': 474, 'q_max': 1983, 'funds': 6583.291843238865, 'order_id': 'BIX0W3B9OG'}
-UPDATE @2018-11-06 00:23:22.852986: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 22, 'p_high': 117, 'u_max': 477, 'q_max': 1741, 'funds': 9591.207657977488, 'order_id': 'S7G576KW11'}
-UPDATE @2018-11-06 00:23:22.853138: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 16, 'p_high': 132, 'u_max': 438, 'q_max': 1950, 'funds': 7346.505774291882, 'order_id': 'YV4XLOY6KN'}
-UPDATE @2018-11-06 00:23:22.853289: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 78, 'p_high': 176, 'u_max': 428, 'q_max': 1379, 'funds': 7027.02601784162, 'order_id': 'V6V9I4H66R'}
-UPDATE @2018-11-06 00:23:22.853438: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 90, 'p_high': 121, 'u_max': 440, 'q_max': 1700, 'funds': 4236.004145365643, 'order_id': '32M119Q1P6'}
-UPDATE @2018-11-06 00:23:22.853591: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 30, 'p_high': 197, 'u_max': 445, 'q_max': 1640, 'funds': 5686.286316973466, 'order_id': 'X4MBTWVHZK'}
-ENTER @2018-11-06 00:23:22.853871: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 84, 'p_high': 118, 'u_max': 496, 'q_max': 1814, 'funds': 402.98877063480563, 'order_id': 'GE9LJK4ZQO'}
-ENTER @2018-11-06 00:23:22.853923: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 15, 'p_high': 199, 'u_max': 415, 'q_max': 1969, 'funds': 5030.234580845656, 'order_id': 'P3A8OCB421'}
-ENTER @2018-11-06 00:23:22.853956: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 69, 'p_high': 193, 'u_max': 448, 'q_max': 1455, 'funds': 4508.636461751287, 'order_id': 'NLH5ZOY3IW'}
-ENTER @2018-11-06 00:23:22.853985: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 13, 'p_high': 102, 'u_max': 484, 'q_max': 1763, 'funds': 4447.944780409464, 'order_id': 'KDA1WSG7ZS'}
-ENTER @2018-11-06 00:23:22.854011: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 57, 'p_high': 158, 'u_max': 407, 'q_max': 1431, 'funds': 1574.7952699121126, 'order_id': 'BPNIU7HWDA'}
-ENTER @2018-11-06 00:23:22.854041: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 72, 'p_high': 192, 'u_max': 491, 'q_max': 1562, 'funds': 7416.9773494717065, 'order_id': 'X0Z3VO9BYL'}
-ENTER @2018-11-06 00:23:22.854067: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 22, 'p_high': 116, 'u_max': 479, 'q_max': 1023, 'funds': 5303.763363201256, 'order_id': 'PZ9H2RO200'}
-ENTER @2018-11-06 00:23:22.854092: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 74, 'p_high': 196, 'u_max': 427, 'q_max': 1769, 'funds': 273.10558037949795, 'order_id': 'ICS6EEHX7N'}
-ENTER @2018-11-06 00:23:22.854119: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 80, 'p_high': 179, 'u_max': 496, 'q_max': 1389, 'funds': 5173.49605391457, 'order_id': 'NDCB9Y1TB4'}
-ENTER @2018-11-06 00:23:22.854207: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 81, 'p_high': 168, 'u_max': 440, 'q_max': 1639, 'funds': 6882.502558863001, 'order_id': 'TIB1YN7FR3'}
-ENTER @2018-11-06 00:23:22.854246: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 20, 'p_high': 162, 'u_max': 479, 'q_max': 1484, 'funds': 6442.573441164695, 'order_id': 'CTHM7Z5LR9'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 27, 'p_high': 148, 'u_max': 474, 'q_max': 1983, 'funds': 6583.291843238865, 'order_id': 'BIX0W3B9OG'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 22, 'p_high': 117, 'u_max': 477, 'q_max': 1741, 'funds': 9591.207657977488, 'order_id': 'S7G576KW11'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 16, 'p_high': 132, 'u_max': 438, 'q_max': 1950, 'funds': 7346.505774291882, 'order_id': 'YV4XLOY6KN'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 78, 'p_high': 176, 'u_max': 428, 'q_max': 1379, 'funds': 7027.02601784162, 'order_id': 'V6V9I4H66R'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 90, 'p_high': 121, 'u_max': 440, 'q_max': 1700, 'funds': 4236.004145365643, 'order_id': '32M119Q1P6'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 30, 'p_high': 197, 'u_max': 445, 'q_max': 1640, 'funds': 5686.286316973466, 'order_id': 'X4MBTWVHZK'}
-New orders:
-CANCEL @2018-11-06 00:23:23.860650: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 43, 'p_high': 160, 'u_max': 463, 'q_max': 1711, 'order_id': 'BSCQWQOJWR'}
-CANCEL @2018-11-06 00:23:23.860882: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 96, 'p_high': 102, 'u_max': 418, 'q_max': 1063, 'order_id': 'EC5EG3ZP64'}
-CANCEL @2018-11-06 00:23:23.861076: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 12, 'p_high': 133, 'u_max': 469, 'q_max': 1185, 'order_id': 'G3HKZ8YDQ1'}
-CANCEL @2018-11-06 00:23:23.861242: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 27, 'p_high': 148, 'u_max': 474, 'q_max': 1983, 'order_id': 'BIX0W3B9OG'}
-UPDATE @2018-11-06 00:23:23.861422: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 90, 'p_high': 156, 'u_max': 495, 'q_max': 1339, 'funds': 8099.49464334059, 'order_id': 'L18MOWOTFO'}
-UPDATE @2018-11-06 00:23:23.861614: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 47, 'p_high': 142, 'u_max': 499, 'q_max': 1372, 'funds': 4236.004145365643, 'order_id': '32M119Q1P6'}
-UPDATE @2018-11-06 00:23:23.861796: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 45, 'p_high': 123, 'u_max': 491, 'q_max': 1945, 'funds': 1998.3946513838157, 'order_id': 'CL4N7KI3V2'}
-UPDATE @2018-11-06 00:23:23.861972: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 21, 'p_high': 172, 'u_max': 445, 'q_max': 1992, 'funds': 7560.805092943362, 'order_id': 'H9F3UPMM63'}
-ENTER @2018-11-06 00:23:23.862316: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 72, 'p_high': 193, 'u_max': 471, 'q_max': 1491, 'funds': 903.411329443592, 'order_id': 'JJP7E9ZQDE'}
-ENTER @2018-11-06 00:23:23.862364: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 79, 'p_high': 176, 'u_max': 442, 'q_max': 1398, 'funds': 935.0694771613244, 'order_id': 'OHQ7KLRKER'}
-ENTER @2018-11-06 00:23:23.862463: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 13, 'p_high': 177, 'u_max': 475, 'q_max': 1648, 'funds': 9461.468788033439, 'order_id': 'HCMB8YKARQ'}
-ENTER @2018-11-06 00:23:23.862509: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 20, 'p_high': 149, 'u_max': 426, 'q_max': 1501, 'funds': 787.0346459090083, 'order_id': '55SK5ONOB9'}
-ENTER @2018-11-06 00:23:23.862539: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 10, 'p_high': 161, 'u_max': 484, 'q_max': 1744, 'funds': 5403.47205970441, 'order_id': '9K95RBO5GP'}
-ENTER @2018-11-06 00:23:23.862578: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 38, 'p_high': 108, 'u_max': 408, 'q_max': 1597, 'funds': 6499.703349435091, 'order_id': 'M95AW7K8ZH'}
-ENTER @2018-11-06 00:23:23.862605: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 47, 'p_high': 192, 'u_max': 410, 'q_max': 1722, 'funds': 6536.759196101063, 'order_id': 'W7LEMVQH8D'}
-ENTER @2018-11-06 00:23:23.862632: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 18, 'p_high': 196, 'u_max': 407, 'q_max': 1910, 'funds': 8452.214513875857, 'order_id': 'B1M130ZSJW'}
-ENTER @2018-11-06 00:23:23.862659: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 20, 'p_high': 117, 'u_max': 457, 'q_max': 1571, 'funds': 1509.7114261135168, 'order_id': 'W01TKA2SAY'}
-ENTER @2018-11-06 00:23:23.862685: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 53, 'p_high': 128, 'u_max': 412, 'q_max': 1939, 'funds': 6128.4483584050595, 'order_id': '69QSAX6O2N'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 90, 'p_high': 156, 'u_max': 495, 'q_max': 1339, 'funds': 8099.49464334059, 'order_id': 'L18MOWOTFO'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 47, 'p_high': 142, 'u_max': 499, 'q_max': 1372, 'funds': 4236.004145365643, 'order_id': '32M119Q1P6'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 45, 'p_high': 123, 'u_max': 491, 'q_max': 1945, 'funds': 1998.3946513838157, 'order_id': 'CL4N7KI3V2'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 21, 'p_high': 172, 'u_max': 445, 'q_max': 1992, 'funds': 7560.805092943362, 'order_id': 'H9F3UPMM63'}
-New orders:
-CANCEL @2018-11-06 00:23:24.869105: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 55, 'p_high': 108, 'u_max': 485, 'q_max': 1247, 'order_id': '4WQ6T4JCG8'}
-CANCEL @2018-11-06 00:23:24.869331: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 34, 'p_high': 110, 'u_max': 405, 'q_max': 1893, 'order_id': 'LINPASE1LG'}
-CANCEL @2018-11-06 00:23:24.869514: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 39, 'p_high': 184, 'u_max': 496, 'q_max': 1009, 'order_id': '2QHEQM73MZ'}
-CANCEL @2018-11-06 00:23:24.869691: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 69, 'p_high': 134, 'u_max': 484, 'q_max': 1498, 'order_id': 'I492E8UJJ1'}
-CANCEL @2018-11-06 00:23:24.869865: {'order_type': 'c', 'trader_type': 'bid', 'p_low': 78, 'p_high': 137, 'u_max': 413, 'q_max': 1498, 'order_id': 'O95NRG6SI6'}
-UPDATE @2018-11-06 00:23:24.870053: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 45, 'p_high': 120, 'u_max': 423, 'q_max': 1704, 'funds': 2559.8207050336164, 'order_id': 'DAMXJYOA0V'}
-UPDATE @2018-11-06 00:23:24.870259: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 83, 'p_high': 135, 'u_max': 433, 'q_max': 1743, 'funds': 622.5191648635631, 'order_id': 'JA9CGHBB2T'}
-UPDATE @2018-11-06 00:23:24.870452: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 70, 'p_high': 173, 'u_max': 462, 'q_max': 1314, 'funds': 4167.212959365327, 'order_id': 'KO6NTFXIHJ'}
-UPDATE @2018-11-06 00:23:24.870634: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 66, 'p_high': 163, 'u_max': 400, 'q_max': 1215, 'funds': 9461.468788033439, 'order_id': 'HCMB8YKARQ'}
-UPDATE @2018-11-06 00:23:24.870817: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 50, 'p_high': 155, 'u_max': 445, 'q_max': 1255, 'funds': 3833.929019488309, 'order_id': 'OAMPP8LX57'}
-ENTER @2018-11-06 00:23:24.871101: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 38, 'p_high': 166, 'u_max': 444, 'q_max': 1621, 'funds': 8464.144531717102, 'order_id': 'HOMF00FLY1'}
-ENTER @2018-11-06 00:23:24.871147: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 39, 'p_high': 124, 'u_max': 496, 'q_max': 1973, 'funds': 723.6118166459504, 'order_id': 'IEHI1DJ0QC'}
-ENTER @2018-11-06 00:23:24.871181: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 22, 'p_high': 176, 'u_max': 414, 'q_max': 1893, 'funds': 2480.534377380732, 'order_id': 'BPRP990093'}
-ENTER @2018-11-06 00:23:24.871211: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 90, 'p_high': 122, 'u_max': 478, 'q_max': 1385, 'funds': 7399.788020624573, 'order_id': '1CSYEP7GAQ'}
-ENTER @2018-11-06 00:23:24.871240: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 31, 'p_high': 162, 'u_max': 449, 'q_max': 1586, 'funds': 7861.350160377948, 'order_id': 'E78BAH8VS5'}
-ENTER @2018-11-06 00:23:24.871268: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 77, 'p_high': 133, 'u_max': 452, 'q_max': 1442, 'funds': 5847.701993001922, 'order_id': 'SSCPW2RLAB'}
-ENTER @2018-11-06 00:23:24.871297: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 47, 'p_high': 176, 'u_max': 416, 'q_max': 1510, 'funds': 4927.037433808737, 'order_id': 'ZLQZ4ID1H6'}
-ENTER @2018-11-06 00:23:24.871324: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 17, 'p_high': 144, 'u_max': 469, 'q_max': 1851, 'funds': 6011.6591508977535, 'order_id': '0BZVP9NT54'}
-ENTER @2018-11-06 00:23:24.871351: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 74, 'p_high': 192, 'u_max': 406, 'q_max': 1828, 'funds': 3810.864183402031, 'order_id': 'T3XHXKGVDD'}
-ENTER @2018-11-06 00:23:24.871378: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 77, 'p_high': 170, 'u_max': 489, 'q_max': 1569, 'funds': 4678.442947742453, 'order_id': '1FI22HC5SZ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 45, 'p_high': 120, 'u_max': 423, 'q_max': 1704, 'funds': 2559.8207050336164, 'order_id': 'DAMXJYOA0V'}
-in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 83, 'p_high': 135, 'u_max': 433, 'q_max': 1743, 'funds': 622.5191648635631, 'order_id': 'JA9CGHBB2T'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 70, 'p_high': 173, 'u_max': 462, 'q_max': 1314, 'funds': 4167.212959365327, 'order_id': 'KO6NTFXIHJ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 66, 'p_high': 163, 'u_max': 400, 'q_max': 1215, 'funds': 9461.468788033439, 'order_id': 'HCMB8YKARQ'}
-in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 50, 'p_high': 155, 'u_max': 445, 'q_max': 1255, 'funds': 3833.929019488309, 'order_id': 'OAMPP8LX57'}
+CANCEL @2018-11-08 06:17:15.136778: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 92, 'p_high': 194, 'u_max': 464, 'q_max': 1574, 'order_id': '63RQF92LPP'}
+CANCEL @2018-11-08 06:17:15.136918: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 35, 'p_high': 132, 'u_max': 404, 'q_max': 1478, 'order_id': 'WBEU2SZ0SF'}
+CANCEL @2018-11-08 06:17:15.136987: {'order_type': 'c', 'trader_type': 'ask', 'p_low': 56, 'p_high': 171, 'u_max': 458, 'q_max': 1533, 'order_id': 'E74RT0HM0T'}
+UPDATE @2018-11-08 06:17:15.137069: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 82, 'p_high': 148, 'u_max': 423, 'q_max': 1585, 'funds': 9754.833401628935, 'order_id': 'JDOKE2L1SF'}
+UPDATE @2018-11-08 06:17:15.137155: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 94, 'p_high': 130, 'u_max': 432, 'q_max': 1173, 'funds': 9040.825878459322, 'order_id': 'GOTFE726KN'}
+UPDATE @2018-11-08 06:17:15.137239: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 25, 'p_high': 126, 'u_max': 462, 'q_max': 1525, 'funds': 8879.238595082417, 'order_id': '6RZCILMEJ0'}
+UPDATE @2018-11-08 06:17:15.137303: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 172, 'u_max': 441, 'q_max': 1949, 'funds': 9754.833401628935, 'order_id': 'JDOKE2L1SF'}
+ENTER @2018-11-08 06:17:15.137697: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 75, 'p_high': 195, 'u_max': 402, 'q_max': 1916, 'funds': 5119.313914830694, 'order_id': 'LJ9UXIDY3T'}
+ENTER @2018-11-08 06:17:15.137744: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 16, 'p_high': 157, 'u_max': 470, 'q_max': 1638, 'funds': 8722.977007298035, 'order_id': 'C0D8VQWJK1'}
+ENTER @2018-11-08 06:17:15.137790: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 88, 'p_high': 125, 'u_max': 465, 'q_max': 1604, 'funds': 8406.623620622358, 'order_id': '5QYAKVSKQV'}
+ENTER @2018-11-08 06:17:15.137820: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 15, 'p_high': 150, 'u_max': 435, 'q_max': 1597, 'funds': 7839.0878882848665, 'order_id': 'EOODCHVEUI'}
+ENTER @2018-11-08 06:17:15.137850: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 45, 'p_high': 101, 'u_max': 477, 'q_max': 1619, 'funds': 241.88851543881174, 'order_id': 'KLZYMAQAIW'}
+ENTER @2018-11-08 06:17:15.137890: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 42, 'p_high': 137, 'u_max': 458, 'q_max': 1508, 'funds': 349.30886735031976, 'order_id': 'IOOVKJMICU'}
+ENTER @2018-11-08 06:17:15.137919: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 38, 'p_high': 167, 'u_max': 464, 'q_max': 1197, 'funds': 702.38701919909, 'order_id': 'G08QIMC7T1'}
+ENTER @2018-11-08 06:17:15.137957: {'order_type': 'e', 'trader_type': 'bid', 'p_low': 33, 'p_high': 158, 'u_max': 445, 'q_max': 1400, 'funds': 2642.1543885386945, 'order_id': '94705UFFE1'}
+ENTER @2018-11-08 06:17:15.137987: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 36, 'p_high': 198, 'u_max': 486, 'q_max': 1486, 'funds': 8792.226674258549, 'order_id': 'DNCXKCGXUX'}
+ENTER @2018-11-08 06:17:15.138015: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 79, 'p_high': 137, 'u_max': 457, 'q_max': 1940, 'funds': 2960.3946001739046, 'order_id': '5VBVO7A8VJ'}
+ENTER @2018-11-08 06:17:15.138042: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 77, 'p_high': 189, 'u_max': 438, 'q_max': 1234, 'funds': 8951.311424989548, 'order_id': 'NZJKZZTDK0'}
+ENTER @2018-11-08 06:17:15.138070: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 95, 'p_high': 137, 'u_max': 461, 'q_max': 1917, 'funds': 2718.897970119598, 'order_id': 'ZYUIUT4QH6'}
+ENTER @2018-11-08 06:17:15.138097: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 75, 'p_high': 139, 'u_max': 458, 'q_max': 1856, 'funds': 9327.038654312779, 'order_id': '26JY66EQKL'}
+ENTER @2018-11-08 06:17:15.138125: {'order_type': 'e', 'trader_type': 'ask', 'p_low': 83, 'p_high': 169, 'u_max': 451, 'q_max': 1746, 'funds': 3724.4602461208233, 'order_id': 'UE241HC7W4'}
+in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 82, 'p_high': 148, 'u_max': 423, 'q_max': 1585, 'funds': 9754.833401628935, 'order_id': 'JDOKE2L1SF'}
+in u: msg: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 94, 'p_high': 130, 'u_max': 432, 'q_max': 1173, 'funds': 9040.825878459322, 'order_id': 'GOTFE726KN'}
+in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 25, 'p_high': 126, 'u_max': 462, 'q_max': 1525, 'funds': 8879.238595082417, 'order_id': '6RZCILMEJ0'}
+in u: msg: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 43, 'p_high': 172, 'u_max': 441, 'q_max': 1949, 'funds': 9754.833401628935, 'order_id': 'JDOKE2L1SF'}
+Traceback (most recent call last):
+  File "../flow/simulation.py", line 246, in <module>
+    main()
+  File "../flow/simulation.py", line 234, in main
+    sim = run_simulation(g)
+  File "../flow/simulation.py", line 218, in run_simulation
+    sim.start()
+  File "../flow/simulation.py", line 49, in start
+    self.batch_loop()
+  File "../flow/simulation.py", line 57, in batch_loop
+    time.sleep(self.exchange._batch_time)
+KeyboardInterrupt

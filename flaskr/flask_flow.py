@@ -8,10 +8,10 @@ from simulation import Simulation, single_random_graph, run_simulation
 from flask import Flask, render_template, Markup, session
 import time
 
+from threading import Thread
+
 app = Flask(__name__)
 app.secret_key = 'asdfasfasfdasdf'
-
-sim = Simulation('DEX', '0xADDR', 1000, 'ETH', 'DAI')
 
 @app.route("/")
 def hello():
@@ -26,24 +26,31 @@ def rand_graph(num_orders):
     safer = Markup('<strong>' + html + '</strong>')
     return safer
 
+# @app.route("/simulation")
+# def run_sim():
+#     return render_template('simulation.html')
+
 @app.route("/simulation")
-def run_sim():
-    # sim = Simulation('DEX', '0xADDR', 1000, 'ETH', 'DAI')
-    # sim.display_graph = True
-    # sim.start()
-    print(sim.get_html())
-    session['html'] = sim.get_html()
-    print('\n\n\n\nASIFDNSDFKASNFDLAAL0100012930239120931209312093190',session['html'])
+def test():
+    # run_simulation(False)
+    t = Thread(target=simulate)
+    t.daemon = True
+    t.start()
     return render_template('simulation.html')
 
+def simulate():
+    try:
+        run_simulation(False)
+    except Exception as e:
+        print('oops ', e)
+
 @app.route('/update_graph', methods=['GET'])
-def update():
-    print(str(session['html']))
-    return str(session['html'])
-    # return 'asdfasdf'
+def get_html():
+    with open('../html/market.html') as file:
+        html = file.read()
+
+    # print(html)
+    return html
 
 if __name__ == '__main__':
     app.run(debug=True)
-    # sim = Simulation('DEX', '0xADDR', 1000, 'ETH', 'DAI')
-    sim.display_graph = True
-    sim.start()

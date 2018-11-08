@@ -24,7 +24,7 @@ class Simulation(object):
 		self.graph = Graph(self.exchange)
 		self.traders = []
 		self.html = ''
-		self.display_graph = True
+		self.display_graph = False
 
 	def start(self):
 		print(f'Starting simulation @{str(datetime.datetime.now())}')
@@ -41,21 +41,36 @@ class Simulation(object):
 		t.start()
 
 		# Start the animation loop which triggers the batches
-		self.animation_loop()
+
+		if self.display_graph:
+			self.animation_loop()
+
+		else:
+			self.batch_loop()
 
 	def animation_loop(self):
 		# Make the animation loop run a new batch 
 		self.graph.animate(self.run_batch)
+
+	def batch_loop(self):
+		self.run_batch(1)
+		time.sleep(self.exchange._batch_time)
+		self.batch_loop()
 
 	def run_batch(self, i):
 		self.get_batch_time()
 
 		self.exchange.hold_batch()
 
-		if self.display_graph:
+		# if self.display_graph:
 			# Update the graph
-			self.graph.graph_aggregates()
-			self.html = self.graph.graph_as_html()
+		self.graph.graph_aggregates()
+		self.html = self.graph.graph_as_html()
+		self.write_html()
+
+	def write_html(self):
+		with open('../html/market.html', 'w') as file:
+			file.write(self.html)
 
 	def process_forever(self):
 		while True:
@@ -216,7 +231,8 @@ def main():
 
 	# print(single_random_graph(num_orders, g))
 
-	run_simulation(g)
+	sim = run_simulation(g)
+
 
 
 
