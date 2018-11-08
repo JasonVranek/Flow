@@ -183,10 +183,9 @@ class Exchange(OrderBook):
 
 	def write_to_file(self, dest, data):
 		file_name = f'../flow/data/{dest}_{self.batch_num}'
-		with open(file_name, 'wb') as file:
-		# file = open(file_name, 'wb')
-			pickle.dump(data, file)
-		# file.close()
+		file = open(file_name, 'wb')
+		pickle.dump(data, file)
+		file.close()
 
 	def _get_balance(self):
 		return self.balance

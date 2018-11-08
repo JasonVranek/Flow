@@ -56,14 +56,6 @@ class Simulation(object):
 			# Update the graph
 			self.graph.graph_aggregates()
 			self.html = self.graph.graph_as_html()
-			self.write_html()
-
-	def write_html(self):
-		try:
-			with open('../html/market.html', 'w') as file:
-				file.write(self.html)
-		except FileNotFoundError:
-			pass
 
 	def process_forever(self):
 		while True:
@@ -112,7 +104,7 @@ class Simulation(object):
 
 			# Send in new traders
 			num_traders = self.gen_rand_num(beta=.01)
-			print(f'Sending {num_traders} new orders!')
+			# print(f'Sending {num_traders} new orders!')
 			traders = []
 			traders = self.setup_rand_traders(num_traders)
 			self.submit_traders_orders(traders)
@@ -173,7 +165,7 @@ class Simulation(object):
 	def get_batch_time(self):
 		t = str(datetime.datetime.now())
 		print()
-		print(f'Holding Batch: {self.exchange.batch_num} @ {t}')
+		# print(f'Holding Batch: {self.exchange.batch_num} @ {t}')
 		return t
 
 # @prof
