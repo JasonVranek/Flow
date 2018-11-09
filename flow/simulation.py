@@ -1,6 +1,7 @@
 import sys
 
 from util.profiler import prof
+from util.rand_distributions import RandDists as rd
 from trader import Trader
 from order_book import OrderBook
 from exchange import Exchange
@@ -94,20 +95,6 @@ class Simulation(object):
 			# Stop processing if the flag is cleared (during a batch)
 			print(f'Pausing message processing @ {str(datetime.datetime.now())}')
 
-	def gen_rand_num(self, beta=.002):
-		#tau is the batch length
-		tau = self.exchange._batch_time * 1000
-
-		# beta is expected wait time for traders to arrive
-		# beta = (1 / 200) 
-
-		# lambda is the intensity param
-		lam = beta * tau
-
-		n = np.random.poisson(int(lam))
-
-		return n
-
 	def get_html(self):
 		html = self.html
 		return html
@@ -117,7 +104,7 @@ class Simulation(object):
 			print('New orders:')
 			# Cancel from current traders
 			try:
-				num_traders = self.gen_rand_num(beta=.005)
+				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.005)
 				# print(f'Cancelling {num_traders} orders!')
 				for x in range(0, num_traders):
 					self.cancel_trader(np.random.choice(self.traders))
@@ -127,7 +114,7 @@ class Simulation(object):
 
 			# Updates for current traders
 			try:
-				num_traders = self.gen_rand_num(beta=.005)
+				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.005)
 				# print(f'Cancelling {num_traders} orders!')
 				for x in range(0, num_traders):
 					self.update_trader(np.random.choice(self.traders))
@@ -136,8 +123,7 @@ class Simulation(object):
 				pass
 
 			# Send in new traders
-			num_traders = self.gen_rand_num(beta=.01)
-			# num_traders = self.gen_rand_num(beta=1)
+			num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.01)
 			# print(f'Sending {num_traders} new orders!')
 			traders = []
 			traders = self.setup_rand_traders(num_traders)
@@ -148,13 +134,15 @@ class Simulation(object):
 
 	def setup_rand_trader(self):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
-		balance = np.random.uniform(0, 10000)
+		balance = rd.trader_balance(1000)
 		trader = Trader(name, balance)
-		trader.enter_order(np.random.choice(['bid', 'ask']), 	# 'bid', 'ask'
-							np.random.randint(101, 200), 		# p_high
-							np.random.randint(10, 100),  		# p_low
-							np.random.randint(400, 500), 		# u_max
-							np.random.randint(1000, 2000))		# q_max
+		p_low, p_high = rd.rand_prices(100)
+		trader.enter_order(rd.rand_trader_type(), 		# 'bid', 'ask'
+							p_high, 				# p_high
+							p_low,  				# p_low
+							rd.rand_u_max(10), 		# u_max
+							rd.rand_q_max(100))		# q_max
+		print(trader.current_order)
 		self.traders.append(trader)
 		return trader
 

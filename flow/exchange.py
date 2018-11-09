@@ -61,6 +61,7 @@ class Exchange(OrderBook):
 
 			# The price index is within their [p_low, p_high]
 			elif p_i >= bid['p_low'] and p_i <= bid['p_high']: 
+				print('cur agg', agg_demand, 'to add: ', bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low'])))
 				agg_demand += bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low']))
 
 		return agg_demand
@@ -70,6 +71,7 @@ class Exchange(OrderBook):
 		for o_id, ask in self.asks.items():
 			# The price index is within their [p_low, p_high]
 			if p_i >= ask['p_low'] and p_i <= ask['p_high']:
+				print('cur agg', agg_supply, 'to add: ', ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max'])
 				agg_supply += ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max']
 
 			# Supply schedules add their u_max if pi > p_high
@@ -136,16 +138,62 @@ class Exchange(OrderBook):
 		self.max_price = self.book.max_price
 
 		# Save the state of the books before
-		self.print_books()
+		# self.print_books()
 
 		# Find the average aggregate schedules and then find p*
 		self.calc_crossing()
 		
 		# Save the results of the batch
-		self.print_results()
+		# self.print_results()
+
+		p_outs, sum_bids, sum_asks = self.payout_traders()
+
+		# print(p_outs, sum_bids, sum_asks)
 
 
 		self.batch_num += 1
+
+	def payout_traders(self):
+		payoffs = {}
+		sum_bids = 0
+		sum_asks = 0
+		for o_id, bid in self.bids.items():
+			shares = self.calc_bid_shares(bid, self.clearing_price)
+			payoffs[o_id] = {'shares': shares,
+							 'p*': self.clearing_price}
+			sum_bids += shares
+
+
+		for o_id, ask in self.asks.items():
+			shares = self.calc_ask_shares(ask, self.clearing_price)
+			payoffs[o_id] = {'shares': shares,
+							 'p*': self.clearing_price}
+			sum_asks += shares
+
+		# traders need currency 1 and 2
+		return payoffs, sum_bids, sum_asks
+
+	def calc_bid_shares(self, bid, p_i):
+		if p_i < bid['p_low']:
+				return bid['u_max']
+
+		# The price index is within their [p_low, p_high]
+		elif p_i >= bid['p_low'] and p_i <= bid['p_high']: 
+			return bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low']))
+
+		else: 
+			return 0
+
+	def calc_ask_shares(self, ask, p_i):
+			if p_i >= ask['p_low'] and p_i <= ask['p_high']:
+				return ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max']
+
+			# Supply schedules add their u_max if pi > p_high
+			elif p_i > ask['p_high']:
+				return ask['u_max']
+
+			else:
+				return 0
 
 	def snapshot_books(self):
 		# By making a list of the keys, it saves the keys at the current moment

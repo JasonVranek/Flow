@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-'''
 #tau is the batch length
 tau = 3000
 
@@ -25,9 +24,4 @@ print(n)
 # count, bins, ignored = plt.hist(n, 14, density=True)
 # plt.show()
 
-'''
-filename = 'data/result_1'
-file = open(filename, 'rb')
-bid_1 = pickle.load(file)
-file.close()
-print(bid_1)
+
