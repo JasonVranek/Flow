@@ -2,6 +2,7 @@ import sys
 from order_book import OrderBook
 from util.exceptions import InvalidMessageType, NoCrossFound
 from util.profiler import prof
+from payer import Payer
 
 import numpy as np
 import itertools
@@ -102,10 +103,10 @@ class Exchange(OrderBook):
 		R = self.max_price 
 		iterations = 0
 		max_iterations = math.ceil(math.log2((R - L) / Exchange._min_tick_size))
+		# max_iterations = 1000
 		# print(f'max_iterations: {max_iterations}, p_low: {L}, p_high: {R}')
 		while L < R:
 			# Finds a midpoint with the correct price tick precision
-			# index = self.nice_precision((L + R) / 2)
 			index = math.floor(((L + R) / 2) / Exchange._min_tick_size) * Exchange._min_tick_size
 			# print(index)
 			dem, sup = self.calc_aggs(index)
@@ -121,7 +122,8 @@ class Exchange(OrderBook):
 			iterations += 1
 			if iterations > max_iterations:
 				print('Uh oh did not find crossing within max_iterations!')
-				return -1
+				return L
+				# return -1
 		# If there isn't an exact crossing, return leftmost index after cross
 		# print(f'Found crossing after {iterations} iterations')
 		return L 
@@ -144,56 +146,16 @@ class Exchange(OrderBook):
 		self.calc_crossing()
 		
 		# Save the results of the batch
-		# self.print_results()
+		self.print_results()
 
-		p_outs, sum_bids, sum_asks = self.payout_traders()
+		# Calculate each trader's owed shares based on clearing price
+		b_shares, a_shares, sum_bids, sum_asks = Payer.find_shares_owed(self.bids, self.asks, self.clearing_price)
 
-		# print(p_outs, sum_bids, sum_asks)
-
+		print('bids\n', b_shares, '\nasks\n', a_shares, sum_bids, sum_asks)
 
 		self.batch_num += 1
 
-	def payout_traders(self):
-		payoffs = {}
-		sum_bids = 0
-		sum_asks = 0
-		for o_id, bid in self.bids.items():
-			shares = self.calc_bid_shares(bid, self.clearing_price)
-			payoffs[o_id] = {'shares': shares,
-							 'p*': self.clearing_price}
-			sum_bids += shares
-
-
-		for o_id, ask in self.asks.items():
-			shares = self.calc_ask_shares(ask, self.clearing_price)
-			payoffs[o_id] = {'shares': shares,
-							 'p*': self.clearing_price}
-			sum_asks += shares
-
-		# traders need currency 1 and 2
-		return payoffs, sum_bids, sum_asks
-
-	def calc_bid_shares(self, bid, p_i):
-		if p_i < bid['p_low']:
-				return bid['u_max']
-
-		# The price index is within their [p_low, p_high]
-		elif p_i >= bid['p_low'] and p_i <= bid['p_high']: 
-			return bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low']))
-
-		else: 
-			return 0
-
-	def calc_ask_shares(self, ask, p_i):
-			if p_i >= ask['p_low'] and p_i <= ask['p_high']:
-				return ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max']
-
-			# Supply schedules add their u_max if pi > p_high
-			elif p_i > ask['p_high']:
-				return ask['u_max']
-
-			else:
-				return 0
+		return b_shares, a_shares
 
 	def snapshot_books(self):
 		# By making a list of the keys, it saves the keys at the current moment

@@ -35,13 +35,14 @@ class Graph():
 		self.ax.plot(p_array, dem_array, 'b')
 		self.ax.plot(p_array, sup_array, 'r')
 
-		# plot horizontal clearing rate line
 		cr = self.exchange.clearing_rate
 		cp = self.exchange.clearing_price
-		self.ax.plot([min_price, cp], [cr, cr], 'g')
+		if cp > 0 and cr > 0:
+			# plot horizontal clearing rate line
+			self.ax.plot([min_price, cp], [cr, cr], 'g')
 
-		# plot vertical clearing price line
-		self.ax.plot([cp, cp], [0, cr], 'g')
+			# plot vertical clearing price line
+			self.ax.plot([cp, cp], [0, cr], 'g')
 		
 		nice_cp = self.exchange.nice_precision(cp)
 		nice_cr = self.exchange.nice_precision(cr)

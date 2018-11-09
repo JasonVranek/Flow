@@ -10,11 +10,12 @@ class Trader(object):
 		current_order: A dictionary containing the Trader's current order in the book
 		order_count: an integer that increments per order sent
 	"""
-	def __init__(self, account, balance=0.0):
+	def __init__(self, account, funds=0.0):
 		"""Return a Trader object whose account number is 
 		*account* and balance is *balance*."""
 		self.account = account
-		self.balance = balance
+		self.balance = 0.0
+		self.funds = funds
 		self.current_order = {}
 		self.order_count = 0
 
@@ -35,6 +36,9 @@ class Trader(object):
 
 	def get_account(self):
 		return self.account
+
+	def get_funds(self):
+		return self.funds
 
 	def new_order(self, order_type, p_high, p_low, u_max, q_max):
 		"""Returns an order defined by the *order_type*."""
@@ -58,7 +62,7 @@ class Trader(object):
 		new_order['p_high'] = p_high
 		new_order['u_max'] = u_max
 		new_order['q_max'] = q_max
-		new_order['funds'] = self.balance
+		new_order['funds'] = self.funds
 		new_order['order_id'] = self.account
 		self.current_order = new_order
 
@@ -87,11 +91,11 @@ class Trader(object):
 		new_order['p_high'] = p_high
 		new_order['u_max'] = u_max
 		new_order['q_max'] = q_max
-		new_order['funds'] = self.balance
+		new_order['funds'] = self.funds
 		new_order['order_id'] = self.account
 		self.current_order = new_order
 
 	def describe(self):
-		print(self.get_account(), self.get_balance(), 
-			  self.get_current_order())
+		print(self.account, 'Balance: ', self.balance, 
+			  'Funds Remaining: ', self.funds)
 

@@ -69,7 +69,7 @@ class Simulation(object):
 		# Clear the process flag in prep for batch which blocks the process_forever thread
 		self.process_flag.clear()
 
-		self.exchange.hold_batch()
+		bid_shares_owed, ask_shares_owed = self.exchange.hold_batch()
 
 		# After the batch is run, done the event to resume processing messages
 		self.process_flag.set()
@@ -80,7 +80,42 @@ class Simulation(object):
 		self.html = self.graph.graph_as_html()
 		self.write_html()
 
+		self.pay_traders(bid_shares_owed, ask_shares_owed)
+
+	def pay_traders(self, b_shares, a_shares):
+		for o_id in b_shares:
+			contents = b_shares[o_id]
+			shares_to_add = contents['shares'] 
+			p = contents['p*']
+			trader = self.traders[self.get_trader(o_id)]
+			print('Bid Before ')
+			trader.describe()
+			# A bidder adds shares of markets base currency and subtracts shares of markets desired currency
+			trader.balance += shares_to_add 
+			trader.funds -= shares_to_add * p
+			print('Bid After ')
+			trader.describe()
+		for o_id in a_shares:
+			contents = a_shares[o_id]
+			shares_to_add = contents['shares'] 
+			p = contents['p*']
+			trader = self.traders[self.get_trader(o_id)]
+			print('Ask Before ')
+			trader.describe()
+			# An asker adds shares of markets base currency and subtracts shares of markets desired currency
+			trader.balance += shares_to_add 
+			trader.funds -= shares_to_add * p
+			print('Ask After ')
+			trader.describe()
+
+	def get_trader(self, order_id):
+		for x in range(0, len(self.traders)):
+			if self.traders[x].account == order_id:
+				# return self.traders[x]
+				return x
+
 	def write_html(self):
+		# Write html to a file for flask to display
 		with open('../html/market.html', 'w') as file:
 			file.write(self.html)
 
@@ -88,17 +123,13 @@ class Simulation(object):
 		while True:
 			# Block when until the process_flag is set
 			self.process_flag.wait()
-			print(f'Resuming message processing @ {str(datetime.datetime.now())}')
+			# print(f'Resuming message processing @ {str(datetime.datetime.now())}')
 			while self.process_flag.is_set():
 				self.book.process_messages()
 
 			# Stop processing if the flag is cleared (during a batch)
-			print(f'Pausing message processing @ {str(datetime.datetime.now())}')
+			# print(f'Pausing message processing @ {str(datetime.datetime.now())}')
 
-	def get_html(self):
-		html = self.html
-		return html
-		
 	def rand_trader_behavior(self):
 		while True:
 			print('New orders:')
@@ -134,20 +165,15 @@ class Simulation(object):
 
 	def setup_rand_trader(self):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
-		balance = rd.trader_balance(1000)
-		trader = Trader(name, balance)
-		p_low, p_high = rd.rand_prices(self.clearing_price)
-		trader.enter_order(rd.rand_trader_type(), 		# 'bid', 'ask'
+		funds = rd.trader_funds(1000)
+		trader = Trader(name, funds)
+		bid_or_ask = rd.rand_trader_type()
+		p_low, p_high = rd.rand_prices(self.clearing_price, bid_or_ask)
+		trader.enter_order(bid_or_ask, 				# 'bid', 'ask'
 							p_high, 				# p_high
 							p_low,  				# p_low
 							rd.rand_u_max(10), 		# u_max
 							rd.rand_q_max(100))		# q_max
-		self.traders.append(trader)
-		return trader
-
-	def setup_trader(self, name, balance, order):
-		trader = Trader(name, balance)
-		trader.enter_order(*order)
 		self.traders.append(trader)
 		return trader
 
@@ -159,8 +185,7 @@ class Simulation(object):
 
 	def update_trader(self, trader):
 		# Update centered around current p*
-		p_low, p_high = rd.rand_prices(self.exchange.clearing_price)
-		#update = [p_high, p_low, u_max, q_max]
+		p_low, p_high = rd.rand_prices(self.exchange.clearing_price, trader.current_order['trader_type'])
 		update = [p_high, 					# p_high
 					p_low,  				# p_low
 					rd.rand_u_max(10), 		# u_max
