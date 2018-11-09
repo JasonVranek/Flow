@@ -10,7 +10,7 @@ import random
 import numpy as np
 import time
 import string
-from threading import Thread
+import threading
 import datetime
 
 
@@ -30,21 +30,24 @@ class Simulation(object):
 		print(f'Starting simulation @{str(datetime.datetime.now())}')
 		self.book.pretty_book()
 
+		self.process_flag = threading.Event()
 		# Start a thread that will always process messages
-		t = Thread(target=self.process_forever)
-		t.daemon = True
-		t.start()
+		t1 = threading.Thread(target=self.process_forever, args=[self.process_flag])
+		# t1 = threading.Thread(target=self.process_forever, args=(self.batch_event, ))
+		t1.daemon = True
+		t1.start()
 
 		# Start a thead that sends random traders ever batch
-		t = Thread(target=self.rand_trader_behavior)
-		t.daemon = True
-		t.start()
+		t2 = threading.Thread(target=self.rand_trader_behavior)
+		t2.daemon = True
+		t2.start()
 
-		# Start the animation loop which triggers the batches
+		self.process_flag.set()
 
 		if self.display_graph:
+		# Start the animation loop which triggers the batches
 			self.animation_loop()
-
+		# If no graphic is desired run the batch on timer
 		else:
 			self.batch_loop()
 
@@ -53,14 +56,22 @@ class Simulation(object):
 		self.graph.animate(self.run_batch)
 
 	def batch_loop(self):
+		
 		self.run_batch(1)
+		
 		time.sleep(self.exchange._batch_time)
 		self.batch_loop()
 
 	def run_batch(self, i):
 		self.get_batch_time()
 
+		# Clear the process flag in prep for batch which blocks the process_forever thread
+		self.process_flag.clear()
+
 		self.exchange.hold_batch()
+
+		# After the batch is run, done the event to resume processing messages
+		self.process_flag.set()
 
 		# if self.display_graph:
 			# Update the graph
@@ -72,9 +83,16 @@ class Simulation(object):
 		with open('../html/market.html', 'w') as file:
 			file.write(self.html)
 
-	def process_forever(self):
+	def process_forever(self, event):
 		while True:
-			self.book.process_messages()
+			# Block when until the process_flag is set
+			self.process_flag.wait()
+			print(f'Resuming message processing @ {str(datetime.datetime.now())}')
+			while self.process_flag.is_set():
+				self.book.process_messages()
+
+			# Stop processing if the flag is cleared (during a batch)
+			print(f'Pausing message processing @ {str(datetime.datetime.now())}')
 
 	def gen_rand_num(self, beta=.002):
 		#tau is the batch length
@@ -119,6 +137,7 @@ class Simulation(object):
 
 			# Send in new traders
 			num_traders = self.gen_rand_num(beta=.01)
+			# num_traders = self.gen_rand_num(beta=1)
 			# print(f'Sending {num_traders} new orders!')
 			traders = []
 			traders = self.setup_rand_traders(num_traders)
@@ -147,7 +166,7 @@ class Simulation(object):
 
 	def cancel_trader(self, trader):
 		trader.cancel_order()
-		print(f'CANCEL @{str(datetime.datetime.now())}: {trader.current_order}')
+		# print(f'CANCEL @{str(datetime.datetime.now())}: {trader.current_order}')
 		self.exchange.get_order(trader.current_order)
 		self.traders.remove(trader)
 
@@ -158,7 +177,7 @@ class Simulation(object):
 					np.random.randint(400, 500), 		# u_max
 					np.random.randint(1000, 2000)]
 		trader.update_order(*update)
-		print(f'UPDATE @{str(datetime.datetime.now())}: {trader.current_order}')
+		# print(f'UPDATE @{str(datetime.datetime.now())}: {trader.current_order}')
 		self.exchange.get_order(trader.current_order)
 
 	def setup_rand_traders(self, n):
@@ -170,7 +189,7 @@ class Simulation(object):
 
 	def submit_traders_orders(self, traders):
 		for trader in traders:
-			print(f'ENTER @{str(datetime.datetime.now())}: {trader.current_order}')
+			# print(f'ENTER @{str(datetime.datetime.now())}: {trader.current_order}')
 			self.exchange.get_order(trader.current_order)
 
 	def submit_all_orders(self):
@@ -180,7 +199,7 @@ class Simulation(object):
 	def get_batch_time(self):
 		t = str(datetime.datetime.now())
 		print()
-		# print(f'Holding Batch: {self.exchange.batch_num} @ {t}')
+		print(f'Holding Batch: {self.exchange.batch_num} @ {t}')
 		return t
 
 # @prof
@@ -230,6 +249,7 @@ def main():
 			g = False
 
 	# print(single_random_graph(num_orders, g))
+	# single_random_graph(num_orders, g)
 
 	sim = run_simulation(g)
 

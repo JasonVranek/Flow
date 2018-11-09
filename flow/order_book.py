@@ -1,6 +1,7 @@
 from util.exceptions import InvalidMessageType, NoEntryFound, InvalidMessageParameter
 from copy import deepcopy
-from queue import Queue
+# from queue import Queue
+from multiprocessing import Queue
 
 class OrderBook(object):
 	"""
@@ -28,7 +29,8 @@ class OrderBook(object):
 		self.message_queue.put(copied_order)
 
 	def process_messages(self):
-		while not self.message_queue.empty():
+		# while not self.message_queue.empty():
+		if not self.message_queue.empty():
 			# Pop msg from message queue
 			msg = self.message_queue.get()
 			#print('processing message', msg)
@@ -46,7 +48,6 @@ class OrderBook(object):
 				elif order_type == 'u':
 					# Check if this update changes min/max
 					self.check_prices(msg['p_low'], msg['p_high'], 'u')
-					print(f'in u: msg: {msg}')
 
 					# need to update the bid/ask in the respective book
 					old_p_low, old_p_high = self.update_order(msg)
