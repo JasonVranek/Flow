@@ -26,7 +26,7 @@ class Graph():
 		p_array = []
 		max_price = self.exchange.max_price
 		min_price = self.exchange.min_price
-		for x in range(math.floor(min_price - 10), math.floor(max_price + 10)):
+		for x in range(math.floor(min_price), math.floor(max_price)):
 			dem, sup = self.exchange.calc_aggs(x)
 			dem_array.append(dem)
 			sup_array.append(sup)
@@ -38,7 +38,7 @@ class Graph():
 		# plot horizontal clearing rate line
 		cr = self.exchange.clearing_rate
 		cp = self.exchange.clearing_price
-		self.ax.plot([0, cp], [cr, cr], 'g')
+		self.ax.plot([min_price, cp], [cr, cr], 'g')
 
 		# plot vertical clearing price line
 		self.ax.plot([cp, cp], [0, cr], 'g')

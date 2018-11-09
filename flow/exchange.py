@@ -61,7 +61,7 @@ class Exchange(OrderBook):
 
 			# The price index is within their [p_low, p_high]
 			elif p_i >= bid['p_low'] and p_i <= bid['p_high']: 
-				print('cur agg', agg_demand, 'to add: ', bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low'])))
+				# print('cur agg', agg_demand, 'to add: ', bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low'])))
 				agg_demand += bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low']))
 
 		return agg_demand
@@ -71,7 +71,7 @@ class Exchange(OrderBook):
 		for o_id, ask in self.asks.items():
 			# The price index is within their [p_low, p_high]
 			if p_i >= ask['p_low'] and p_i <= ask['p_high']:
-				print('cur agg', agg_supply, 'to add: ', ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max'])
+				# print('cur agg', agg_supply, 'to add: ', ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max'])
 				agg_supply += ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max']
 
 			# Supply schedules add their u_max if pi > p_high

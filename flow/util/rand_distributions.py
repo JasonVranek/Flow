@@ -15,10 +15,11 @@ class RandDists():
 		return n
 
 	def rand_prices(base_p):
+		# print(base_p)
 		prices = np.random.poisson(float(base_p), 2)
 		if prices[0] == prices[1]:
-			extra = abs(np.random.poisson(math.ceil(.1 * base_p), 1))
-			print(f'adding extra: {extra}')
+			extra = np.random.uniform(0.1, .01 * float(base_p), 1)
+			print(f'adding extra: {extra[0]}')
 			return prices[0], prices[1] + extra[0]
 		return min(prices), max(prices)
 

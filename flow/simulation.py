@@ -26,6 +26,7 @@ class Simulation(object):
 		self.traders = []
 		self.html = ''
 		self.display_graph = False
+		self.clearing_price = np.random.uniform(100)
 
 	def start(self):
 		print(f'Starting simulation @{str(datetime.datetime.now())}')
@@ -57,9 +58,8 @@ class Simulation(object):
 		self.graph.animate(self.run_batch)
 
 	def batch_loop(self):
-		
 		self.run_batch(1)
-		
+		# self.clearing_price = self.exchange.clearing_price
 		time.sleep(self.exchange._batch_time)
 		self.batch_loop()
 
@@ -136,13 +136,12 @@ class Simulation(object):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
 		balance = rd.trader_balance(1000)
 		trader = Trader(name, balance)
-		p_low, p_high = rd.rand_prices(100)
+		p_low, p_high = rd.rand_prices(self.clearing_price)
 		trader.enter_order(rd.rand_trader_type(), 		# 'bid', 'ask'
 							p_high, 				# p_high
 							p_low,  				# p_low
 							rd.rand_u_max(10), 		# u_max
 							rd.rand_q_max(100))		# q_max
-		print(trader.current_order)
 		self.traders.append(trader)
 		return trader
 
@@ -159,11 +158,13 @@ class Simulation(object):
 		self.traders.remove(trader)
 
 	def update_trader(self, trader):
+		# Update centered around current p*
+		p_low, p_high = rd.rand_prices(self.exchange.clearing_price)
 		#update = [p_high, p_low, u_max, q_max]
-		update = [np.random.randint(101, 200), 		# p_high
-					np.random.randint(10, 100),  		# p_low
-					np.random.randint(400, 500), 		# u_max
-					np.random.randint(1000, 2000)]
+		update = [p_high, 					# p_high
+					p_low,  				# p_low
+					rd.rand_u_max(10), 		# u_max
+					rd.rand_q_max(100)]
 		trader.update_order(*update)
 		# print(f'UPDATE @{str(datetime.datetime.now())}: {trader.current_order}')
 		self.exchange.get_order(trader.current_order)
