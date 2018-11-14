@@ -35,7 +35,6 @@ class Simulation(object):
 		self.process_flag = threading.Event()
 		# Start a thread that will always process messages
 		t1 = threading.Thread(target=self.process_forever, args=[self.process_flag])
-		# t1 = threading.Thread(target=self.process_forever, args=(self.batch_event, ))
 		t1.daemon = True
 		t1.start()
 
@@ -59,27 +58,29 @@ class Simulation(object):
 
 	def batch_loop(self):
 		self.run_batch(1)
-		# self.clearing_price = self.exchange.clearing_price
+		# Sleep after initiating the batch process until the next batch
 		time.sleep(self.exchange._batch_time)
 		self.batch_loop()
 
 	def run_batch(self, i):
+		# Print out the batch's start time
 		self.get_batch_time()
 
 		# Clear the process flag in prep for batch which blocks the process_forever thread
 		self.process_flag.clear()
 
+		# Hold the batch and get back the payout dictionaries
 		bid_shares_owed, ask_shares_owed = self.exchange.hold_batch()
 
-		# After the batch is run, done the event to resume processing messages
+		# After the batch is run, set the event to resume processing messages
 		self.process_flag.set()
 
-		# if self.display_graph:
-			# Update the graph
+		# Graph the outcome of the batch and write it to html file
 		self.graph.graph_aggregates()
 		self.html = self.graph.graph_as_html()
 		self.write_html()
 
+		# Pay the traders based on the clearing price
 		self.pay_traders(bid_shares_owed, ask_shares_owed)
 
 	def pay_traders(self, b_shares, a_shares):
@@ -104,7 +105,7 @@ class Simulation(object):
 			trader.describe()
 			# An asker adds shares of markets base currency and subtracts shares of markets desired currency
 			trader.balance += shares_to_add 
-			trader.funds -= shares_to_add * p
+			trader.funds -= shares_to_add / p
 			print('Ask After ')
 			trader.describe()
 
