@@ -23,7 +23,7 @@ class Simulation(object):
 		self.book = OrderBook(base_cur, desired_cur)
 		self.exchange.book = self.book	
 		self.graph = Graph(self.exchange)
-		self.traders = []
+		self.traders = {}
 		self.html = ''
 		self.display_graph = False
 		self.clearing_price = np.random.uniform(100)
@@ -84,36 +84,31 @@ class Simulation(object):
 		self.pay_traders(bid_shares_owed, ask_shares_owed)
 
 	def pay_traders(self, b_shares, a_shares):
+		# Iterate over the payout dictionary and update each trader's balance and funds
 		for o_id in b_shares:
+			# Get the trader's owed shares from dictionary
 			contents = b_shares[o_id]
-			shares_to_add = contents['shares'] 
-			p = contents['p*']
-			trader = self.traders[self.get_trader(o_id)]
+			# Get the trader from the dictionary of all traders
+			trader = self.traders[o_id]
 			print('Bid Before ')
 			trader.describe()
-			# A bidder adds shares of markets base currency and subtracts shares of markets desired currency
-			trader.balance += shares_to_add 
-			trader.funds -= shares_to_add * p
+			# A bidder adds shares to balance and subtracts shares*clearing_price from funds
+			trader.balance += contents['shares']  
+			trader.funds -= contents['shares']  * contents['p*']
 			print('Bid After ')
 			trader.describe()
 		for o_id in a_shares:
 			contents = a_shares[o_id]
 			shares_to_add = contents['shares'] 
 			p = contents['p*']
-			trader = self.traders[self.get_trader(o_id)]
+			trader = self.traders[o_id]
 			print('Ask Before ')
 			trader.describe()
-			# An asker adds shares of markets base currency and subtracts shares of markets desired currency
-			trader.balance += shares_to_add 
-			trader.funds -= shares_to_add / p
+			# An asker adds shares to balance and subtracts shares/clearing_price from funds
+			trader.balance += contents['shares']  
+			trader.funds -= contents['shares']  / contents['p*']
 			print('Ask After ')
 			trader.describe()
-
-	def get_trader(self, order_id):
-		for x in range(0, len(self.traders)):
-			if self.traders[x].account == order_id:
-				# return self.traders[x]
-				return x
 
 	def write_html(self):
 		# Write html to a file for flask to display
@@ -139,7 +134,8 @@ class Simulation(object):
 				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.005)
 				# print(f'Cancelling {num_traders} orders!')
 				for x in range(0, num_traders):
-					self.cancel_trader(np.random.choice(self.traders))
+					trader_id = np.random.choice(list(self.traders))
+					self.cancel_trader(self.traders[trader_id])
 			except ValueError:
 				print('Tried to cancel but not enough traders in book')
 				pass
@@ -149,7 +145,8 @@ class Simulation(object):
 				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.005)
 				# print(f'Cancelling {num_traders} orders!')
 				for x in range(0, num_traders):
-					self.update_trader(np.random.choice(self.traders))
+					trader_id = np.random.choice(list(self.traders))
+					self.update_trader(self.traders[trader_id])
 			except ValueError:
 				print('Tried to update but failed')
 				pass
@@ -175,14 +172,14 @@ class Simulation(object):
 							p_low,  				# p_low
 							rd.rand_u_max(10), 		# u_max
 							rd.rand_q_max(100))		# q_max
-		self.traders.append(trader)
+		self.traders[name] = trader
 		return trader
 
 	def cancel_trader(self, trader):
 		trader.cancel_order()
 		# print(f'CANCEL @{str(datetime.datetime.now())}: {trader.current_order}')
 		self.exchange.get_order(trader.current_order)
-		self.traders.remove(trader)
+		self.traders.pop(trader.account)
 
 	def update_trader(self, trader):
 		# Update centered around current p*
