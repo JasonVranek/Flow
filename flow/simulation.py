@@ -13,6 +13,7 @@ import time
 import string
 import threading
 import datetime
+import math
 
 
 
@@ -26,7 +27,8 @@ class Simulation(object):
 		self.traders = {}
 		self.html = ''
 		self.display_graph = False
-		self.clearing_price = np.random.uniform(100)
+		self.clearing_price = np.random.uniform(20, 50)
+		self.first_time = True
 
 	def start(self):
 		print(f'Starting simulation @{str(datetime.datetime.now())}')
@@ -84,31 +86,52 @@ class Simulation(object):
 		self.pay_traders(bid_shares_owed, ask_shares_owed)
 
 	def pay_traders(self, b_shares, a_shares):
+		sum_to_askers = 0
+		sum_from_askers = 0
+		sum_to_bidders = 0
+		sum_from_bidders = 0
 		# Iterate over the payout dictionary and update each trader's balance and funds
 		for o_id in b_shares:
 			# Get the trader's owed shares from dictionary
 			contents = b_shares[o_id]
+			if contents['shares'] == 0:
+				continue
 			# Get the trader from the dictionary of all traders
 			trader = self.traders[o_id]
-			print('Bid Before ')
-			trader.describe()
+			# print('Bid Before ')
+			# trader.describe()
 			# A bidder adds shares to balance and subtracts shares*clearing_price from funds
-			trader.balance += contents['shares']  
-			trader.funds -= contents['shares']  * contents['p*']
-			print('Bid After ')
-			trader.describe()
+			trader.balance += contents['shares']  * contents['p*'] 
+			trader.funds -= contents['shares'] 
+			sum_to_bidders += contents['shares']  * contents['p*'] 
+			sum_from_bidders -= contents['shares']
+			# print('Bid After ')
+			# trader.describe()
+			if trader.funds <= 0:
+				print('Cancelling trader')
+				trader.describe()
+				self.cancel_trader(trader)
 		for o_id in a_shares:
 			contents = a_shares[o_id]
-			shares_to_add = contents['shares'] 
+			if contents['shares'] == 0:
+				continue
 			p = contents['p*']
 			trader = self.traders[o_id]
-			print('Ask Before ')
-			trader.describe()
+			# print('Ask Before ')
+			# trader.describe()
 			# An asker adds shares to balance and subtracts shares/clearing_price from funds
 			trader.balance += contents['shares']  
-			trader.funds -= contents['shares']  / contents['p*']
-			print('Ask After ')
-			trader.describe()
+			trader.funds -= contents['shares']  * contents['p*'] 
+			sum_to_askers += contents['shares']
+			sum_from_askers -= contents['shares']  * contents['p*'] 
+			# print('Ask After ')
+			# trader.describe()
+			if trader.funds <= 0:
+
+				self.cancel_trader(trader)
+
+		print(f'Amount bidders paid: {sum_from_bidders}, received: {sum_to_bidders}')
+		print(f'Amount askers paid: {sum_from_askers}, received: {sum_to_askers}')
 
 	def write_html(self):
 		# Write html to a file for flask to display
@@ -131,7 +154,7 @@ class Simulation(object):
 			print('New orders:')
 			# Cancel from current traders
 			try:
-				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.005)
+				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.001)
 				# print(f'Cancelling {num_traders} orders!')
 				for x in range(0, num_traders):
 					trader_id = np.random.choice(list(self.traders))
@@ -143,7 +166,7 @@ class Simulation(object):
 			# Updates for current traders
 			try:
 				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.005)
-				# print(f'Cancelling {num_traders} orders!')
+				# print(f'Updating {num_traders} orders!')
 				for x in range(0, num_traders):
 					trader_id = np.random.choice(list(self.traders))
 					self.update_trader(self.traders[trader_id])
@@ -152,20 +175,23 @@ class Simulation(object):
 				pass
 
 			# Send in new traders
-			num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.01)
-			# print(f'Sending {num_traders} new orders!')
-			traders = []
-			traders = self.setup_rand_traders(num_traders)
-			self.submit_traders_orders(traders)
+			if self.first_time:
+				# self.first_time = False
+				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.01)
+				# num_traders = math.ceil(np.random.uniform(20, 50))
+				print(f'Sending {num_traders} new orders!')
+				traders = []
+				traders = self.setup_rand_traders(num_traders)
+				self.submit_traders_orders(traders)
 
 			# Sleep after sending til batch is over
 			time.sleep(self.exchange._batch_time)
 
 	def setup_rand_trader(self):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
-		funds = rd.trader_funds(1000)
-		trader = Trader(name, funds)
 		bid_or_ask = rd.rand_trader_type()
+		funds = rd.trader_funds(50, bid_or_ask)
+		trader = Trader(name, funds)
 		p_low, p_high = rd.rand_prices(self.clearing_price, bid_or_ask)
 		trader.enter_order(bid_or_ask, 				# 'bid', 'ask'
 							p_high, 				# p_high
@@ -265,7 +291,7 @@ def main():
 
 	sim = run_simulation(g)
 
-
+	
 
 
 

@@ -15,7 +15,8 @@ class Graph():
 	def add_titles(self):
 		plt.title(f'Total of batch {self.exchange.batch_num}')
 		plt.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
-		plt.ylabel(f'(Quantity Traded (shares/batch)')
+		# plt.ylabel(f'(Quantity Traded ({self.exchange.book.base_currency}/batch)')
+		plt.ylabel(f'Volume')
 
 	def graph_aggregates(self):
 		zoom = 5

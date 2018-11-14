@@ -17,14 +17,15 @@ class RandDists():
 	def rand_prices(base_p, o_type):
 		if o_type == 'ask':
 			# Change the conversion ratio between currencies
-			base_p = float(base_p) * .5
+			# base_p = float(base_p) * .1
+			# base_p = float(1 / base_p)
 			pass
 		prices = np.random.poisson(float(base_p), 2)
 		if prices[0] == prices[1]:
 			extra = np.random.uniform(0.1, .01 * float(base_p), 1)
 			# print(f'adding extra: {extra[0]}')
-			return prices[0], prices[1] + extra[0]
-		return min(prices), max(prices)
+			return prices[0] + .00001, prices[1] + extra[0]
+		return min(prices) + .00001, max(prices)
 
 
 	def rand_q_max(base_q):
@@ -38,7 +39,9 @@ class RandDists():
 		choices = ['bid', 'ask']
 		return choices[round(np.random.uniform(0, 1))]
 
-	def trader_funds(base_balance):
+	def trader_funds(base_balance, o_type):
+		if o_type == 'ask':
+			return np.random.poisson(float(base_balance * 20))
 		return np.random.poisson(base_balance)
 
 

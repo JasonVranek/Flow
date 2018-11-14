@@ -121,11 +121,11 @@ class Exchange(OrderBook):
 				return L
 			iterations += 1
 			if iterations > max_iterations:
-				print('Uh oh did not find crossing within max_iterations!')
+				print(f'Uh oh did not find crossing within max_iterations! {L}')
 				return L
 				# return -1
 		# If there isn't an exact crossing, return leftmost index after cross
-		# print(f'Found crossing after {iterations} iterations')
+		print(f'Found crossing after {iterations} iterations')
 		return L 
 
 	# @prof
@@ -151,7 +151,9 @@ class Exchange(OrderBook):
 		# Calculate each trader's owed shares based on clearing price
 		b_shares, a_shares, sum_bids, sum_asks = Payer.find_shares_owed(self.bids, self.asks, self.clearing_price)
 
-		print('bids\n', b_shares, '\nasks\n', a_shares, sum_bids, sum_asks)
+		# print('bids\n', b_shares, '\nasks\n', a_shares, sum_bids, sum_asks)
+
+		print(f'agg_demand: {self.best_bid}, paid_bids: {sum_bids}, agg_supply: {self.best_ask}, paid_asks: {sum_asks}, difference: {self.best_bid + self.best_ask - sum_bids - sum_asks}')
 
 		self.batch_num += 1
 
