@@ -15,7 +15,7 @@ class RandDists():
 		return n
 
 	def rand_prices(base_p, o_type):
-		if o_type == 'ask':
+		if o_type == 'bid':
 			# Change the conversion ratio between currencies
 			# base_p = float(base_p) * .1
 			# base_p = float(1 / base_p)
@@ -40,7 +40,7 @@ class RandDists():
 		return choices[round(np.random.uniform(0, 1))]
 
 	def trader_funds(base_balance, o_type):
-		if o_type == 'ask':
+		if o_type == 'bid':
 			return np.random.poisson(float(base_balance * 20))
 		return np.random.poisson(base_balance)
 

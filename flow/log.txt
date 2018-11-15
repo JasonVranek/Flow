@@ -1,4 +1,4 @@
-Starting simulation @2018-11-13 19:24:32.510920
+Starting simulation @2018-11-15 00:37:24.881977
 
 Order Book(DAI -> ETH)
 Number of bids: 0, Number of Asks: 0
@@ -8,1034 +8,1703 @@ ASKS
 
 New orders:
 Tried to update but failed
+Sending 37 new orders!
 
-Holding Batch: 0 @ 2018-11-13 19:24:32.600504
-Uh oh did not find crossing within max_iterations!
-Results of batch 0 @2018-11-13 19:24:32.601436:
-p*:5.3999999999999995, u*:45.999047619047616
-best bid: 45.99809523809524, best ask:46
+Holding Batch: 0 @ 2018-11-15 00:37:24.972103
+Uh oh did not find crossing within max_iterations! 32.589999999999996
+Error calculating crossing 
+Results of batch 0 @2018-11-15 00:37:24.976433:
+p*:0, u*:0
+best bid: 0, best ask:0
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 10.266666666666667, 'p*': 5.3999999999999995}, 'B5YG687G7C': {'shares': 3.771428571428572, 'p*': 5.3999999999999995}, 'MTT4CX2G9Z': {'shares': 9, 'p*': 5.3999999999999995}, 'WCA373HH5Q': {'shares': 11, 'p*': 5.3999999999999995}, 'ZS88NOK7SG': {'shares': 11.960000000000003, 'p*': 5.3999999999999995}} 
-asks
- {'6WL99PL8Y9': {'shares': 12, 'p*': 5.3999999999999995}, '9Q3XH0V6H4': {'shares': 10, 'p*': 5.3999999999999995}, 'U2M0LZBCLN': {'shares': 7, 'p*': 5.3999999999999995}, 'JT8QA6V6QA': {'shares': 9, 'p*': 5.3999999999999995}, '6WEGEYY05G': {'shares': 8, 'p*': 5.3999999999999995}} 45.99809523809524 46
-Bid Before 
-WJS6K7FJ7B Balance:  0.0 Funds Remaining:  98
-Bid After 
-WJS6K7FJ7B Balance:  10.266666666666667 Funds Remaining:  42.56
-Bid Before 
-B5YG687G7C Balance:  0.0 Funds Remaining:  110
-Bid After 
-B5YG687G7C Balance:  3.771428571428572 Funds Remaining:  89.63428571428571
-Bid Before 
-MTT4CX2G9Z Balance:  0.0 Funds Remaining:  102
-Bid After 
-MTT4CX2G9Z Balance:  9.0 Funds Remaining:  53.400000000000006
-Bid Before 
-WCA373HH5Q Balance:  0.0 Funds Remaining:  101
-Bid After 
-WCA373HH5Q Balance:  11.0 Funds Remaining:  41.60000000000001
-Bid Before 
-ZS88NOK7SG Balance:  0.0 Funds Remaining:  109
-Bid After 
-ZS88NOK7SG Balance:  11.960000000000003 Funds Remaining:  44.416
-Ask Before 
-6WL99PL8Y9 Balance:  0.0 Funds Remaining:  8
-Ask After 
-6WL99PL8Y9 Balance:  12.0 Funds Remaining:  5.777777777777778
-Ask Before 
-9Q3XH0V6H4 Balance:  0.0 Funds Remaining:  9
-Ask After 
-9Q3XH0V6H4 Balance:  10.0 Funds Remaining:  7.148148148148148
-Ask Before 
-U2M0LZBCLN Balance:  0.0 Funds Remaining:  12
-Ask After 
-U2M0LZBCLN Balance:  7.0 Funds Remaining:  10.703703703703704
-Ask Before 
-JT8QA6V6QA Balance:  0.0 Funds Remaining:  7
-Ask After 
-JT8QA6V6QA Balance:  9.0 Funds Remaining:  5.333333333333333
-Ask Before 
-6WEGEYY05G Balance:  0.0 Funds Remaining:  11
-Ask After 
-6WEGEYY05G Balance:  8.0 Funds Remaining:  9.518518518518519
+agg_demand: 0, paid_bids: 129.0, agg_supply: 0, paid_asks: 0, difference: -129.0
+Bidder 960BP4OK7M: balance 0.0->4.0, funds 688->688.0
+Bidder BQRR2XGE2Z: balance 0.0->12.0, funds 670->670.0
+Bidder ZA6LCJMKS2: balance 0.0->5.0, funds 685->685.0
+Bidder W0ISDHQ1T1: balance 0.0->11.0, funds 696->696.0
+Bidder YQ0KS1K76I: balance 0.0->7.0, funds 656->656.0
+Bidder T8TR6HGSFU: balance 0.0->9.0, funds 687->687.0
+Bidder I9BY2KFEUK: balance 0.0->11.0, funds 679->679.0
+Bidder CQEDA8YU47: balance 0.0->9.0, funds 680->680.0
+Bidder WX88TD9FIW: balance 0.0->12.0, funds 723->723.0
+Bidder GPS6A2SINP: balance 0.0->7.0, funds 642->642.0
+Bidder LHMC4MZU7G: balance 0.0->10.0, funds 708->708.0
+Bidder M13N95X6QQ: balance 0.0->6.0, funds 685->685.0
+Bidder IPI9AOYF26: balance 0.0->8.0, funds 690->690.0
+Bidder L7E1R8ZVM5: balance 0.0->10.0, funds 659->659.0
+Bidder 6YVYHRBMQS: balance 0.0->3.0, funds 692->692.0
+Bidder DT9CYYKWXK: balance 0.0->5.0, funds 675->675.0
+
+Amount bidders paid: 0.0, received: 129.0
+Amount askers paid: 0, received: 0
 New orders:
-UPDATE @2018-11-13 19:24:33.522741: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 6, 'u_max': 7, 'q_max': 104, 'funds': 41.60000000000001, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:33.523269: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 6, 'p_high': 9, 'u_max': 12, 'q_max': 105, 'funds': 89.63428571428571, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:33.523412: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 4, 'u_max': 9, 'q_max': 127, 'funds': 42.56, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:33.524228: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 7, 'p_high': 8, 'u_max': 9, 'q_max': 91, 'funds': 42.56, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:33.524414: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.07850354666972895, 'u_max': 3, 'q_max': 100, 'funds': 7.148148148148148, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:33.524551: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.09917589531425434, 'u_max': 11, 'q_max': 111, 'funds': 5.333333333333333, 'order_id': 'JT8QA6V6QA'}
-UPDATE @2018-11-13 19:24:33.524660: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 12, 'q_max': 108, 'funds': 10.703703703703704, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:33.524775: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 10, 'u_max': 14, 'q_max': 114, 'funds': 41.60000000000001, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:33.524887: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.030681445893006684, 'u_max': 4, 'q_max': 95, 'funds': 7.148148148148148, 'order_id': '9Q3XH0V6H4'}
 
-Holding Batch: 1 @ 2018-11-13 19:24:33.938320
-Results of batch 1 @2018-11-13 19:24:33.939139:
-p*:6.05, u*:46.99125
-best bid: 46.9825, best ask:47
+Holding Batch: 1 @ 2018-11-15 00:37:26.320632
+Found crossing after 12 iterations
+Results of batch 1 @2018-11-15 00:37:26.323600:
+p*:32.18, u*:62.67263740050031
+best bid: 62.63874690015207, best ask:62.70652790084854
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 9, 'p*': 6.05}, 'B5YG687G7C': {'shares': 11.8, 'p*': 6.05}, 'MTT4CX2G9Z': {'shares': 9, 'p*': 6.05}, 'WCA373HH5Q': {'shares': 6.9125000000000005, 'p*': 6.05}, 'ZS88NOK7SG': {'shares': 10.27, 'p*': 6.05}} 
-asks
- {'6WL99PL8Y9': {'shares': 12, 'p*': 6.05}, '9Q3XH0V6H4': {'shares': 4, 'p*': 6.05}, 'U2M0LZBCLN': {'shares': 12, 'p*': 6.05}, 'JT8QA6V6QA': {'shares': 11, 'p*': 6.05}, '6WEGEYY05G': {'shares': 8, 'p*': 6.05}} 46.9825 47
-Bid Before 
-WJS6K7FJ7B Balance:  10.266666666666667 Funds Remaining:  42.56
-Bid After 
-WJS6K7FJ7B Balance:  19.266666666666666 Funds Remaining:  -11.889999999999993
-Bid Before 
-B5YG687G7C Balance:  3.771428571428572 Funds Remaining:  89.63428571428571
-Bid After 
-B5YG687G7C Balance:  15.571428571428573 Funds Remaining:  18.24428571428571
-Bid Before 
-MTT4CX2G9Z Balance:  9.0 Funds Remaining:  53.400000000000006
-Bid After 
-MTT4CX2G9Z Balance:  18.0 Funds Remaining:  -1.04999999999999
-Bid Before 
-WCA373HH5Q Balance:  11.0 Funds Remaining:  41.60000000000001
-Bid After 
-WCA373HH5Q Balance:  17.9125 Funds Remaining:  -0.2206249999999912
-Bid Before 
-ZS88NOK7SG Balance:  11.960000000000003 Funds Remaining:  44.416
-Bid After 
-ZS88NOK7SG Balance:  22.230000000000004 Funds Remaining:  -17.7175
-Ask Before 
-6WL99PL8Y9 Balance:  12.0 Funds Remaining:  5.777777777777778
-Ask After 
-6WL99PL8Y9 Balance:  24.0 Funds Remaining:  3.7943067033976123
-Ask Before 
-9Q3XH0V6H4 Balance:  10.0 Funds Remaining:  7.148148148148148
-Ask After 
-9Q3XH0V6H4 Balance:  14.0 Funds Remaining:  6.486991123354759
-Ask Before 
-U2M0LZBCLN Balance:  7.0 Funds Remaining:  10.703703703703704
-Ask After 
-U2M0LZBCLN Balance:  19.0 Funds Remaining:  8.720232629323538
-Ask Before 
-JT8QA6V6QA Balance:  9.0 Funds Remaining:  5.333333333333333
-Ask After 
-JT8QA6V6QA Balance:  20.0 Funds Remaining:  3.5151515151515147
-Ask Before 
-6WEGEYY05G Balance:  8.0 Funds Remaining:  9.518518518518519
-Ask After 
-6WEGEYY05G Balance:  16.0 Funds Remaining:  8.196204468931743
+agg_demand: 62.63874690015207, paid_bids: 62.63874690015207, agg_supply: 62.70652790084854, paid_asks: 62.70652790084854, difference: 0.0
+Bidder 960BP4OK7M: balance 4.0->8.0, funds 688.0->559.28
+Bidder BQRR2XGE2Z: balance 12.0->24.0, funds 670.0->283.84000000000003
+Bidder W0ISDHQ1T1: balance 11.0->22.0, funds 696.0->342.02
+Bidder T8TR6HGSFU: balance 9.0->16.38007380073803, funds 687.0->449.50922509225006
+Bidder CQEDA8YU47: balance 9.0->18.0, funds 680.0->390.38
+Bidder M13N95X6QQ: balance 6.0->10.692004692004693, funds 685.0->534.011289011289
+Bidder L7E1R8ZVM5: balance 10.0->20.0, funds 659.0->337.2
+Bidder 6YVYHRBMQS: balance 3.0->6.0, funds 692.0->595.46
+Bidder DT9CYYKWXK: balance 5.0->6.566668407409342, funds 675.0->624.5846106495674
+
+Asker RQ6ZV8WDKA: balance 0.0->204.66466806167014, funds 32->25.640004100010252
+Asker SML1Z0QCD5: balance 0.0->43.440803704017746, funds 31->29.650068250341278
+Asker UPF65ZKF6B: balance 0.0->23.16839002796634, funds 22->21.280037600125347
+Asker 0L8CKKJ09T: balance 0.0->386.15999999999997, funds 24->12.0
+Asker 7VNVSYCR8O: balance 0.0->193.07999999999998, funds 41->35.0
+Asker QGCA00IN3F: balance 0.0->225.26, funds 35->28.0
+Asker EOORRCMUNF: balance 0.0->67.25612317015397, funds 33->30.910002387502985
+Asker DWLM27I0AP: balance 0.0->56.958259695649254, funds 35->33.23001057502644
+Asker 0KK5P85HIQ: balance 0.0->321.8, funds 42->32.0
+Asker 7APUIYKR83: balance 0.0->112.09349191124328, funds 27->23.516672097226746
+Asker 25RGEWHMPN: balance 0.0->68.22149916916528, funds 31->28.880003133338555
+Asker QK2L67BIW7: balance 0.0->128.72, funds 30->26.0
+Asker KPMOKS5VZO: balance 0.0->187.07283210944036, funds 38->32.18667395557985
+Amount bidders paid: -2015.7148752468934, received: 62.63874690015207
+Amount askers paid: -62.70652790084854, received: 2017.8960678493063
 New orders:
-UPDATE @2018-11-13 19:24:34.526691: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.0307030702167988, 'u_max': 9, 'q_max': 102, 'funds': 8.720232629323538, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:34.526864: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.04198246511642936, 'u_max': 4, 'q_max': 101, 'funds': 6.486991123354759, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:34.527295: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 6, 'p_high': 9, 'u_max': 12, 'q_max': 98, 'funds': -1.04999999999999, 'order_id': 'MTT4CX2G9Z'}
-UPDATE @2018-11-13 19:24:34.527487: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 4, 'p_high': 6, 'u_max': 12, 'q_max': 102, 'funds': -1.04999999999999, 'order_id': 'MTT4CX2G9Z'}
-UPDATE @2018-11-13 19:24:34.527594: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 3, 'p_high': 6, 'u_max': 19, 'q_max': 96, 'funds': -1.04999999999999, 'order_id': 'MTT4CX2G9Z'}
 
-Holding Batch: 2 @ 2018-11-13 19:24:34.938325
-Uh oh did not find crossing within max_iterations!
-Results of batch 2 @2018-11-13 19:24:34.939241:
-p*:5.4799999999999995, u*:43.97766666666667
-best bid: 43.95533333333334, best ask:44
+Holding Batch: 2 @ 2018-11-15 00:37:27.320692
+Updating Bid u_max from  12 ->  7.671349278013709 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  8.550497862375533 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  8.64615162919189 L7E1R8ZVM5
+Found crossing after 12 iterations
+Results of batch 2 @2018-11-15 00:37:27.323771:
+p*:31.87, u*:64.53230110426347
+best bid: 64.43742298740277, best ask:64.62717922112418
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 9, 'p*': 5.4799999999999995}, 'B5YG687G7C': {'shares': 12, 'p*': 5.4799999999999995}, 'MTT4CX2G9Z': {'shares': 3.293333333333336, 'p*': 5.4799999999999995}, 'WCA373HH5Q': {'shares': 7.910000000000001, 'p*': 5.4799999999999995}, 'ZS88NOK7SG': {'shares': 11.752000000000002, 'p*': 5.4799999999999995}} 
-asks
- {'6WL99PL8Y9': {'shares': 12, 'p*': 5.4799999999999995}, '9Q3XH0V6H4': {'shares': 4, 'p*': 5.4799999999999995}, 'U2M0LZBCLN': {'shares': 9, 'p*': 5.4799999999999995}, 'JT8QA6V6QA': {'shares': 11, 'p*': 5.4799999999999995}, '6WEGEYY05G': {'shares': 8, 'p*': 5.4799999999999995}} 43.95533333333334 44
-Bid Before 
-WJS6K7FJ7B Balance:  19.266666666666666 Funds Remaining:  -11.889999999999993
-Bid After 
-WJS6K7FJ7B Balance:  28.266666666666666 Funds Remaining:  -61.20999999999999
-Bid Before 
-B5YG687G7C Balance:  15.571428571428573 Funds Remaining:  18.24428571428571
-Bid After 
-B5YG687G7C Balance:  27.571428571428573 Funds Remaining:  -47.51571428571428
-Bid Before 
-MTT4CX2G9Z Balance:  18.0 Funds Remaining:  -1.04999999999999
-Bid After 
-MTT4CX2G9Z Balance:  21.293333333333337 Funds Remaining:  -19.09746666666667
-Bid Before 
-WCA373HH5Q Balance:  17.9125 Funds Remaining:  -0.2206249999999912
-Bid After 
-WCA373HH5Q Balance:  25.8225 Funds Remaining:  -43.56742499999999
-Bid Before 
-ZS88NOK7SG Balance:  22.230000000000004 Funds Remaining:  -17.7175
-Bid After 
-ZS88NOK7SG Balance:  33.982000000000006 Funds Remaining:  -82.11846000000001
-Ask Before 
-6WL99PL8Y9 Balance:  24.0 Funds Remaining:  3.7943067033976123
-Ask After 
-6WL99PL8Y9 Balance:  36.0 Funds Remaining:  1.6045256814998021
-Ask Before 
-9Q3XH0V6H4 Balance:  14.0 Funds Remaining:  6.486991123354759
-Ask After 
-9Q3XH0V6H4 Balance:  18.0 Funds Remaining:  5.7570641160554885
-Ask Before 
-U2M0LZBCLN Balance:  19.0 Funds Remaining:  8.720232629323538
-Ask After 
-U2M0LZBCLN Balance:  28.0 Funds Remaining:  7.077896862900181
-Ask Before 
-JT8QA6V6QA Balance:  20.0 Funds Remaining:  3.5151515151515147
-Ask After 
-JT8QA6V6QA Balance:  31.0 Funds Remaining:  1.5078522450785217
-Ask Before 
-6WEGEYY05G Balance:  16.0 Funds Remaining:  8.196204468931743
-Ask After 
-6WEGEYY05G Balance:  24.0 Funds Remaining:  6.736350454333203
+agg_demand: 64.43742298740277, paid_bids: 64.43742298740277, agg_supply: 64.62717922112418, paid_asks: 64.62717922112418, difference: -1.4210854715202004e-14
+Bidder 960BP4OK7M: balance 8.0->12.0, funds 559.28->431.79999999999995
+Bidder BQRR2XGE2Z: balance 24.0->31.671349278013707, funds 283.84000000000003->39.35409850970311
+Bidder W0ISDHQ1T1: balance 22.0->30.550497862375533, funds 342.02->69.51563312609176
+Bidder YQ0KS1K76I: balance 7.0->7.455002275011371, funds 656.0->641.4990774953876
+Bidder T8TR6HGSFU: balance 16.38007380073803->26.552599232051605, funds 449.50922509225006->125.31083959628648
+Bidder CQEDA8YU47: balance 18.0->27.0, funds 390.38->103.55000000000001
+Bidder GPS6A2SINP: balance 7.0->13.0, funds 642.0->450.78
+Bidder LHMC4MZU7G: balance 10.0->10.32500081250203, funds 708.0->697.6422241055603
+Bidder M13N95X6QQ: balance 10.692004692004693->15.570009570009569, funds 534.011289011289->378.5492735492736
+Bidder L7E1R8ZVM5: balance 20.0->28.64615162919189, funds 337.2->61.64714757765444
+Bidder 6YVYHRBMQS: balance 6.0->9.0, funds 595.46->499.85
+Bidder DT9CYYKWXK: balance 6.566668407409342->8.305559228399142, funds 624.5846106495674->569.1661601846224
+
+Asker RQ6ZV8WDKA: balance 204.66466806167014->387.59828799572006, funds 25.640004100010252->19.900009750024374
+Asker SML1Z0QCD5: balance 43.440803704017746->251.3039027741279, funds 29.650068250341278->23.127849892320878
+Asker 0L8CKKJ09T: balance 386.15999999999997->768.5999999999999, funds 12.0->0.0
+Cancelling trader
+0L8CKKJ09T Balance:  768.5999999999999 Funds Remaining:  0.0
+
+Asker 7VNVSYCR8O: balance 193.07999999999998->384.29999999999995, funds 35.0->29.0
+Asker QGCA00IN3F: balance 225.26->448.35, funds 28.0->21.0
+Asker EOORRCMUNF: balance 67.25612317015397->128.92449090561365, funds 30.910002387502985->28.97500496875621
+Asker DWLM27I0AP: balance 56.958259695649254->98.54823562058914, funds 33.23001057502644->31.925022312555782
+Asker 0KK5P85HIQ: balance 321.8->640.5, funds 32.0->22.0
+Asker 7APUIYKR83: balance 112.09349191124328->214.87406197838504, funds 23.516672097226746->20.29167774306478
+Asker 25RGEWHMPN: balance 68.22149916916528->129.19932166553613, funds 28.880003133338555->26.966673277788793
+Asker QK2L67BIW7: balance 128.72->256.2, funds 26.0->22.0
+Asker KPMOKS5VZO: balance 187.07283210944036->345.9975786585956, funds 32.18667395557985->27.200017333391106
+Amount bidders paid: -2053.6206706085263, received: 64.43742298740277
+Amount askers paid: -64.62717922112418, received: 2059.6682017772273
+KeyError updating 0L8CKKJ09T funds
 New orders:
-UPDATE @2018-11-13 19:24:35.530903: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 4, 'p_high': 7, 'u_max': 13, 'q_max': 93, 'funds': -47.51571428571428, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:35.531072: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 8, 'p_high': 10, 'u_max': 11, 'q_max': 91, 'funds': -19.09746666666667, 'order_id': 'MTT4CX2G9Z'}
-UPDATE @2018-11-13 19:24:35.531186: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 5, 'u_max': 11, 'q_max': 103, 'funds': -61.20999999999999, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:35.531290: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 2, 'u_max': 7, 'q_max': 111, 'funds': 1.6045256814998021, 'order_id': '6WL99PL8Y9'}
 
-Holding Batch: 3 @ 2018-11-13 19:24:35.938382
-Results of batch 3 @2018-11-13 19:24:35.939257:
-p*:5.28, u*:38.992666666666665
-best bid: 38.98533333333333, best ask:39
+Holding Batch: 3 @ 2018-11-15 00:37:28.320707
+Updating Bid u_max from  12 ->  1.0636239965800849 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  2.044576843538921 W0ISDHQ1T1
+Updating Bid u_max from  13 ->  4.042283844304776 T8TR6HGSFU
+Updating Bid u_max from  9 ->  2.876388089892197 CQEDA8YU47
+Updating Bid u_max from  10 ->  1.5806956864281427 L7E1R8ZVM5
+Found crossing after 12 iterations
+Results of batch 3 @2018-11-15 00:37:28.323536:
+p*:30.130000000000003, u*:44.479560084946364
+best bid: 44.45517735717461, best ask:44.503942812718115
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 5.28}, 'B5YG687G7C': {'shares': 7.453333333333332, 'p*': 5.28}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 5.28}, 'WCA373HH5Q': {'shares': 8.26, 'p*': 5.28}, 'ZS88NOK7SG': {'shares': 12.271999999999998, 'p*': 5.28}} 
-asks
- {'6WL99PL8Y9': {'shares': 7, 'p*': 5.28}, '9Q3XH0V6H4': {'shares': 4, 'p*': 5.28}, 'U2M0LZBCLN': {'shares': 9, 'p*': 5.28}, 'JT8QA6V6QA': {'shares': 11, 'p*': 5.28}, '6WEGEYY05G': {'shares': 8, 'p*': 5.28}} 38.98533333333333 39
-Bid Before 
-B5YG687G7C Balance:  27.571428571428573 Funds Remaining:  -47.51571428571428
-Bid After 
-B5YG687G7C Balance:  35.0247619047619 Funds Remaining:  -86.86931428571427
-Bid Before 
-MTT4CX2G9Z Balance:  21.293333333333337 Funds Remaining:  -19.09746666666667
-Bid After 
-MTT4CX2G9Z Balance:  32.29333333333334 Funds Remaining:  -77.17746666666667
-Bid Before 
-WCA373HH5Q Balance:  25.8225 Funds Remaining:  -43.56742499999999
-Bid After 
-WCA373HH5Q Balance:  34.0825 Funds Remaining:  -87.180225
-Bid Before 
-ZS88NOK7SG Balance:  33.982000000000006 Funds Remaining:  -82.11846000000001
-Bid After 
-ZS88NOK7SG Balance:  46.254000000000005 Funds Remaining:  -146.91462
-Ask Before 
-6WL99PL8Y9 Balance:  36.0 Funds Remaining:  1.6045256814998021
-Ask After 
-6WL99PL8Y9 Balance:  43.0 Funds Remaining:  0.27876810574222644
-Ask Before 
-9Q3XH0V6H4 Balance:  18.0 Funds Remaining:  5.7570641160554885
-Ask After 
-9Q3XH0V6H4 Balance:  22.0 Funds Remaining:  4.999488358479731
-Ask Before 
-U2M0LZBCLN Balance:  28.0 Funds Remaining:  7.077896862900181
-Ask After 
-U2M0LZBCLN Balance:  37.0 Funds Remaining:  5.3733514083547265
-Ask Before 
-JT8QA6V6QA Balance:  31.0 Funds Remaining:  1.5078522450785217
-Ask After 
-JT8QA6V6QA Balance:  42.0 Funds Remaining:  -0.5754810882548114
-Ask Before 
-6WEGEYY05G Balance:  24.0 Funds Remaining:  6.736350454333203
-Ask After 
-6WEGEYY05G Balance:  32.0 Funds Remaining:  5.221198939181688
+agg_demand: 44.45517735717461, paid_bids: 44.45517735717461, agg_supply: 44.503942812718115, paid_asks: 44.503942812718115, difference: 0.0
+Bidder 960BP4OK7M: balance 12.0->16.0, funds 431.79999999999995->311.28
+Bidder BQRR2XGE2Z: balance 31.671349278013707->32.73497327459379, funds 39.35409850970311->7.307107492745146
+Bidder W0ISDHQ1T1: balance 30.550497862375533->32.595074705914456, funds 69.51563312609176->7.912532830264055
+Bidder YQ0KS1K76I: balance 7.455002275011371->14.000035000174988, funds 641.4990774953876->444.29724148620784
+Bidder T8TR6HGSFU: balance 26.552599232051605->30.594883076356382, funds 125.31083959628648->3.516827367383584
+Bidder CQEDA8YU47: balance 27.0->29.876388089892195, funds 103.55000000000001->16.8844268515481
+Bidder GPS6A2SINP: balance 13.0->19.0, funds 450.78->269.99999999999994
+Bidder LHMC4MZU7G: balance 10.32500081250203->15.000012500031241, funds 697.6422241055603->556.7841219603051
+Bidder M13N95X6QQ: balance 15.570009570009569->21.49201549201549, funds 378.5492735492736->200.1192351192352
+Bidder L7E1R8ZVM5: balance 28.64615162919189->30.226847315620034, funds 61.64714757765444->14.020786545574495
+Bidder 6YVYHRBMQS: balance 9.0->12.0, funds 499.85->409.46000000000004
+Bidder DT9CYYKWXK: balance 8.305559228399142->11.011117790130875, funds 569.1661601846224->487.6476807196453
+
+Asker RQ6ZV8WDKA: balance 387.59828799572006->455.6916556291393, funds 19.900009750024374->17.640024100060245
+Asker 0CG3QLWWID: balance 0.0->331.43, funds 32->21.0
+Asker 7VNVSYCR8O: balance 384.29999999999995->595.21, funds 29.0->22.0
+Asker QGCA00IN3F: balance 448.35->659.26, funds 21.0->14.0
+Asker EOORRCMUNF: balance 128.92449090561365->161.01283036603803, funds 28.97500496875621->27.910008637510796
+Asker 0KK5P85HIQ: balance 640.5->941.8, funds 22.0->12.0
+Asker 7APUIYKR83: balance 214.87406197838504->268.3546054621714, funds 20.29167774306478->18.51668459723716
+Asker 25RGEWHMPN: balance 129.19932166553613->151.89709196182002, funds 26.966673277788793->26.213345355575587
+Asker QK2L67BIW7: balance 256.2->355.7494780589562, funds 22.0->18.69600139200278
+Asker KPMOKS5VZO: balance 345.9975786585956->356.44187667292255, funds 27.200017333391106->26.85337617792058
+Amount bidders paid: -1339.434493771671, received: 44.45517735717461
+Amount askers paid: -44.503942812718115, received: 1340.9037969471967
 New orders:
-UPDATE @2018-11-13 19:24:36.535006: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.009560811889596343, 'u_max': 11, 'q_max': 101, 'funds': 5.3733514083547265, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:36.535165: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 3, 'p_high': 8, 'u_max': 9, 'q_max': 96, 'funds': -61.20999999999999, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:36.535297: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.04498576365815129, 'u_max': 12, 'q_max': 101, 'funds': 5.3733514083547265, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:36.535420: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 3, 'p_high': 5, 'u_max': 7, 'q_max': 95, 'funds': -86.86931428571427, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:36.535586: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.09207537411099403, 'u_max': 11, 'q_max': 96, 'funds': 0.27876810574222644, 'order_id': '6WL99PL8Y9'}
-UPDATE @2018-11-13 19:24:36.536129: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.05829656605649862, 'u_max': 14, 'q_max': 96, 'funds': 4.999488358479731, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:36.536289: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 4, 'u_max': 7, 'q_max': 86, 'funds': -146.91462, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:36.536507: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.08790319821239699, 'u_max': 9, 'q_max': 103, 'funds': 0.27876810574222644, 'order_id': '6WL99PL8Y9'}
 
-Holding Batch: 4 @ 2018-11-13 19:24:36.938408
-Uh oh did not find crossing within max_iterations!
-Results of batch 4 @2018-11-13 19:24:36.939145:
-p*:0.06999999999999999, u*:48.465479038735396
-best bid: 48, best ask:48.930958077470784
+Holding Batch: 4 @ 2018-11-15 00:37:29.320757
+Updating Bid u_max from  12 ->  0.1974893383203179 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  0.23272148538380003 W0ISDHQ1T1
+Updating Bid u_max from  13 ->  0.11344600751366159 T8TR6HGSFU
+Updating Bid u_max from  9 ->  0.46901172670641195 CQEDA8YU47
+Updating Bid u_max from  10 ->  0.35950725514107545 L7E1R8ZVM5
+Found crossing after 13 iterations
+Results of batch 4 @2018-11-15 00:37:29.323781:
+p*:28.610000000000003, u*:44.93531886124736
+best bid: 44.91933272668279, best ask:44.95130499581193
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 9, 'p*': 0.06999999999999999}, 'B5YG687G7C': {'shares': 7, 'p*': 0.06999999999999999}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 0.06999999999999999}, 'WCA373HH5Q': {'shares': 14, 'p*': 0.06999999999999999}, 'ZS88NOK7SG': {'shares': 7, 'p*': 0.06999999999999999}} 
-asks
- {'6WL99PL8Y9': {'shares': 7.166974726878038, 'p*': 0.06999999999999999}, '9Q3XH0V6H4': {'shares': 14, 'p*': 0.06999999999999999}, 'U2M0LZBCLN': {'shares': 12, 'p*': 0.06999999999999999}, 'JT8QA6V6QA': {'shares': 7.7639833505927465, 'p*': 0.06999999999999999}, '6WEGEYY05G': {'shares': 8, 'p*': 0.06999999999999999}} 48 48.930958077470784
-Bid Before 
-WJS6K7FJ7B Balance:  28.266666666666666 Funds Remaining:  -61.20999999999999
-Bid After 
-WJS6K7FJ7B Balance:  37.266666666666666 Funds Remaining:  -61.83999999999999
-Bid Before 
-B5YG687G7C Balance:  35.0247619047619 Funds Remaining:  -86.86931428571427
-Bid After 
-B5YG687G7C Balance:  42.0247619047619 Funds Remaining:  -87.35931428571426
-Bid Before 
-MTT4CX2G9Z Balance:  32.29333333333334 Funds Remaining:  -77.17746666666667
-Bid After 
-MTT4CX2G9Z Balance:  43.29333333333334 Funds Remaining:  -77.94746666666667
-Bid Before 
-WCA373HH5Q Balance:  34.0825 Funds Remaining:  -87.180225
-Bid After 
-WCA373HH5Q Balance:  48.0825 Funds Remaining:  -88.160225
-Bid Before 
-ZS88NOK7SG Balance:  46.254000000000005 Funds Remaining:  -146.91462
-Bid After 
-ZS88NOK7SG Balance:  53.254000000000005 Funds Remaining:  -147.40462000000002
-Ask Before 
-6WL99PL8Y9 Balance:  43.0 Funds Remaining:  0.27876810574222644
-Ask After 
-6WL99PL8Y9 Balance:  50.16697472687804 Funds Remaining:  -102.10658513537261
-Ask Before 
-9Q3XH0V6H4 Balance:  22.0 Funds Remaining:  4.999488358479731
-Ask After 
-9Q3XH0V6H4 Balance:  36.0 Funds Remaining:  -195.0005116415203
-Ask Before 
-U2M0LZBCLN Balance:  37.0 Funds Remaining:  5.3733514083547265
-Ask After 
-U2M0LZBCLN Balance:  49.0 Funds Remaining:  -166.05522002021672
-Ask Before 
-JT8QA6V6QA Balance:  42.0 Funds Remaining:  -0.5754810882548114
-Ask After 
-JT8QA6V6QA Balance:  49.763983350592746 Funds Remaining:  -111.48952895386549
-Ask Before 
-6WEGEYY05G Balance:  32.0 Funds Remaining:  5.221198939181688
-Ask After 
-6WEGEYY05G Balance:  40.0 Funds Remaining:  -109.0645153465326
+agg_demand: 44.91933272668279, paid_bids: 44.91933272668279, agg_supply: 44.95130499581193, paid_asks: 44.95130499581193, difference: 0.0
+Bidder 960BP4OK7M: balance 16.0->20.0, funds 311.28->196.83999999999997
+Bidder BQRR2XGE2Z: balance 32.73497327459379->32.93246261291411, funds 7.307107492745146->1.6569375234008508
+Bidder ZA6LCJMKS2: balance 5.0->5.975004875024368, funds 685.0->657.1051105255528
+Bidder W0ISDHQ1T1: balance 32.595074705914456->32.827796191298255, funds 7.912532830264055->1.2543711334335361
+Bidder YQ0KS1K76I: balance 14.000035000174988->22.211155234753022, funds 444.29724148620784->209.37709157493023
+Bidder T8TR6HGSFU: balance 30.594883076356382->30.708329083870044, funds 3.516827367383584->0.2711370924177259
+Bidder CQEDA8YU47: balance 29.876388089892195->30.345399816598608, funds 16.8844268515481->3.4660013504776526
+Bidder WX88TD9FIW: balance 12.0->15.336006672013337, funds 723.0->627.5568491136984
+Bidder GPS6A2SINP: balance 19.0->25.0, funds 269.99999999999994->98.33999999999992
+Bidder LHMC4MZU7G: balance 15.000012500031241->23.4750336875842, funds 556.7841219603051->314.31376578441495
+Bidder M13N95X6QQ: balance 21.49201549201549->27.49201549201549, funds 200.1192351192352->28.45923511923519
+Bidder L7E1R8ZVM5: balance 30.226847315620034->30.58635457076111, funds 14.020786545574495->3.7352839759883256
+Bidder 6YVYHRBMQS: balance 12.0->15.0, funds 409.46000000000004->323.63
+Bidder DT9CYYKWXK: balance 11.011117790130875->14.5611217345797, funds 487.6476807196453->386.0820678689644
+
+Asker RQ6ZV8WDKA: balance 455.6916556291393->679.7076573691439, funds 17.640024100060245->9.810034525086298
+Asker 0CG3QLWWID: balance 331.43->646.1400000000001, funds 21.0->10.0
+Asker 7VNVSYCR8O: balance 595.21->795.48, funds 22.0->15.0
+Asker QGCA00IN3F: balance 659.26->859.53, funds 14.0->7.0
+Asker EOORRCMUNF: balance 161.01283036603803->169.7387482234354, funds 27.910008637510796->27.605013256266567
+Asker 0KK5P85HIQ: balance 941.8->1205.5841553683108, funds 12.0->2.7800015600031145
+Asker 7APUIYKR83: balance 268.3546054621714->282.89779583149675, funds 18.51668459723716->18.008359173632638
+Asker QK2L67BIW7: balance 355.7494780589562->415.48704865409746, funds 18.69600139200278->16.608005216010426
+Amount bidders paid: -1285.1421093103947, received: 44.91933272668279
+Amount askers paid: -44.95130499581193, received: 1286.0568359301797
 New orders:
-UPDATE @2018-11-13 19:24:37.541815: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 12, 'p_high': 12.12540014960122, 'u_max': 11, 'q_max': 99, 'funds': -166.05522002021672, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:37.541977: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 14, 'q_max': 113, 'funds': -88.160225, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:37.542118: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 16, 'p_high': 18, 'u_max': 8, 'q_max': 108, 'funds': -109.0645153465326, 'order_id': '6WEGEYY05G'}
-UPDATE @2018-11-13 19:24:37.542224: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 11, 'p_high': 20, 'u_max': 7, 'q_max': 85, 'funds': -166.05522002021672, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:37.542348: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 12, 'p_high': 15, 'u_max': 15, 'q_max': 108, 'funds': -166.05522002021672, 'order_id': 'U2M0LZBCLN'}
 
-Holding Batch: 5 @ 2018-11-13 19:24:37.938439
-Found cross at 1.75!
-Results of batch 5 @2018-11-13 19:24:37.939314:
-p*:1.75, u*:34.0
-best bid: 34.0, best ask:34
+Holding Batch: 5 @ 2018-11-15 00:37:30.320554
+Updating Bid u_max from  12 ->  0.04478208312378431 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  0.03689325777943995 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  7.7547042232551116 YQ0KS1K76I
+Updating Bid u_max from  13 ->  0.008746354998521803 T8TR6HGSFU
+Updating Bid u_max from  9 ->  0.09627778854721575 CQEDA8YU47
+Updating Bid u_max from  6 ->  2.7316659078705787 GPS6A2SINP
+Updating Bid u_max from  6 ->  0.9486408544275549 M13N95X6QQ
+Updating Bid u_max from  10 ->  0.0957764876467551 L7E1R8ZVM5
+Updating Ask u_max from  12 -> 9.810034525086298 RQ6ZV8WDKA 30
+Updating Ask u_max from  11 -> 10.0 0CG3QLWWID 28
+Updating Ask u_max from  10 -> 2.7800015600031145 0KK5P85HIQ 29
+Found crossing after 12 iterations
+Results of batch 5 @2018-11-15 00:37:30.323320:
+p*:28.14, u*:35.671918995597366
+best bid: 35.660380346408765, best ask:35.68345764478597
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 9, 'p*': 1.75}, 'B5YG687G7C': {'shares': 7, 'p*': 1.75}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 1.75}, 'WCA373HH5Q': {'shares': 1.75, 'p*': 1.75}, 'ZS88NOK7SG': {'shares': 5.25, 'p*': 1.75}} 
-asks
- {'6WL99PL8Y9': {'shares': 9, 'p*': 1.75}, '9Q3XH0V6H4': {'shares': 14, 'p*': 1.75}, 'U2M0LZBCLN': {'shares': 0, 'p*': 1.75}, 'JT8QA6V6QA': {'shares': 11, 'p*': 1.75}, '6WEGEYY05G': {'shares': 0, 'p*': 1.75}} 34.0 34
-Bid Before 
-WJS6K7FJ7B Balance:  37.266666666666666 Funds Remaining:  -61.83999999999999
-Bid After 
-WJS6K7FJ7B Balance:  46.266666666666666 Funds Remaining:  -77.58999999999999
-Bid Before 
-B5YG687G7C Balance:  42.0247619047619 Funds Remaining:  -87.35931428571426
-Bid After 
-B5YG687G7C Balance:  49.0247619047619 Funds Remaining:  -99.60931428571426
-Bid Before 
-MTT4CX2G9Z Balance:  43.29333333333334 Funds Remaining:  -77.94746666666667
-Bid After 
-MTT4CX2G9Z Balance:  54.29333333333334 Funds Remaining:  -97.19746666666667
-Bid Before 
-WCA373HH5Q Balance:  48.0825 Funds Remaining:  -88.160225
-Bid After 
-WCA373HH5Q Balance:  49.8325 Funds Remaining:  -91.222725
-Bid Before 
-ZS88NOK7SG Balance:  53.254000000000005 Funds Remaining:  -147.40462000000002
-Bid After 
-ZS88NOK7SG Balance:  58.504000000000005 Funds Remaining:  -156.59212000000002
-Ask Before 
-6WL99PL8Y9 Balance:  50.16697472687804 Funds Remaining:  -102.10658513537261
-Ask After 
-6WL99PL8Y9 Balance:  59.16697472687804 Funds Remaining:  -107.24944227822975
-Ask Before 
-9Q3XH0V6H4 Balance:  36.0 Funds Remaining:  -195.0005116415203
-Ask After 
-9Q3XH0V6H4 Balance:  50.0 Funds Remaining:  -203.0005116415203
-Ask Before 
-JT8QA6V6QA Balance:  49.763983350592746 Funds Remaining:  -111.48952895386549
-Ask After 
-JT8QA6V6QA Balance:  60.763983350592746 Funds Remaining:  -117.77524323957978
+agg_demand: 35.660380346408765, paid_bids: 35.660380346408765, agg_supply: 35.68345764478597, paid_asks: 35.68345764478597, difference: 0.0
+Bidder 960BP4OK7M: balance 20.0->24.0, funds 196.83999999999997->84.27999999999997
+Bidder BQRR2XGE2Z: balance 32.93246261291411->32.97724469603789, funds 1.6569375234008508->0.3967697042975602
+Bidder W0ISDHQ1T1: balance 32.827796191298255->32.864689449077694, funds 1.2543711334335361->0.21619485952009598
+Bidder YQ0KS1K76I: balance 22.211155234753022->28.983604448006055, funds 209.37709157493023->18.80037071398985
+Bidder T8TR6HGSFU: balance 30.708329083870044->30.717075438868566, funds 0.2711370924177259->0.025014662759322348
+Bidder CQEDA8YU47: balance 30.345399816598608->30.441677605145824, funds 3.4660013504776526->0.7567443807590015
+Bidder WX88TD9FIW: balance 15.336006672013337->19.80001560003119, funds 627.5568491136984->501.93963787927595
+Bidder GPS6A2SINP: balance 25.0->27.73166590787058, funds 98.33999999999992->21.470921352521827
+Bidder LHMC4MZU7G: balance 23.4750336875842->33.12505781264451, funds 314.31376578441495->42.762086905217814
+Bidder M13N95X6QQ: balance 27.49201549201549->28.440656346443046, funds 28.45923511923519->1.7644814756437945
+Bidder L7E1R8ZVM5: balance 30.58635457076111->30.682131058407865, funds 3.7352839759883256->1.0401336136086372
+Bidder 6YVYHRBMQS: balance 15.0->18.0, funds 323.63->239.20999999999998
+Bidder DT9CYYKWXK: balance 14.5611217345797->18.372237080263417, funds 386.0820678689644->278.8372820414246
+
+Asker RQ6ZV8WDKA: balance 679.7076573691439->827.3964252268565, funds 9.810034525086298->4.561677458358773
+Asker 0CG3QLWWID: balance 646.1400000000001->927.5400000000001, funds 10.0->0.0
+Cancelling trader
+0CG3QLWWID Balance:  927.5400000000001 Funds Remaining:  0.0
+
+Asker 7VNVSYCR8O: balance 795.48->992.46, funds 15.0->8.0
+Asker QGCA00IN3F: balance 859.53->1056.51, funds 7.0->0.0
+Cancelling trader
+QGCA00IN3F Balance:  1056.51 Funds Remaining:  0.0
+
+Asker EOORRCMUNF: balance 169.7387482234354->234.59037198622298, funds 27.605013256266567->25.300406868107807
+Asker 0KK5P85HIQ: balance 1205.5841553683108->1270.3579424053448, funds 2.7800015600031145->0.4781612246429847
+Asker 7APUIYKR83: balance 282.89779583149675->286.18056406713697, funds 18.008359173632638->17.891700743083945
+Asker QK2L67BIW7: balance 415.48704865409746->463.66259988519994, funds 16.608005216010426->14.896009792019576
+Amount bidders paid: -1003.4831029479426, received: 35.660380346408765
+Amount askers paid: -35.68345764478597, received: 1004.1324981242769
+KeyError updating 0CG3QLWWID funds
+KeyError updating QGCA00IN3F funds
 New orders:
-UPDATE @2018-11-13 19:24:38.544512: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.08380692674764846, 'u_max': 10, 'q_max': 108, 'funds': -203.0005116415203, 'order_id': '9Q3XH0V6H4'}
 
-Holding Batch: 6 @ 2018-11-13 19:24:38.938504
-Uh oh did not find crossing within max_iterations!
-Results of batch 6 @2018-11-13 19:24:38.939378:
-p*:2.7199999999999998, u*:29.993333333333332
-best bid: 29.986666666666668, best ask:30
+Holding Batch: 6 @ 2018-11-15 00:37:31.348135
+Updating Bid u_max from  4 ->  2.4079993120001957 960BP4OK7M
+Updating Bid u_max from  12 ->  0.010723502623311728 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  0.006358670468629155 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  0.6963097685515617 YQ0KS1K76I
+Updating Bid u_max from  13 ->  0.0008069243448412548 T8TR6HGSFU
+Updating Bid u_max from  9 ->  0.021020671404230206 CQEDA8YU47
+Updating Bid u_max from  6 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.5272168440374776 LHMC4MZU7G
+Updating Bid u_max from  6 ->  0.05881602958278329 M13N95X6QQ
+Updating Bid u_max from  10 ->  0.026670085818148177 L7E1R8ZVM5
+Updating Ask u_max from  12 -> 4.561677458358773 RQ6ZV8WDKA 30
+Updating Ask u_max from  10 -> 0.4781612246429847 0KK5P85HIQ 29
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Found crossing after 12 iterations
+Updating Bid u_max from  0.5964143163438518 ->  0.5964143163438518 GPS6A2SINP
+Results of batch 6 @2018-11-15 00:37:31.351075:
+p*:28.000000000000004, u*:17.00249931965707
+best bid: 16.963871870728394, best ask:17.04112676858574
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 9, 'p*': 2.7199999999999998}, 'B5YG687G7C': {'shares': 7, 'p*': 2.7199999999999998}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 2.7199999999999998}, 'WCA373HH5Q': {'shares': 0, 'p*': 2.7199999999999998}, 'ZS88NOK7SG': {'shares': 2.9866666666666672, 'p*': 2.7199999999999998}} 
-asks
- {'6WL99PL8Y9': {'shares': 9, 'p*': 2.7199999999999998}, '9Q3XH0V6H4': {'shares': 10, 'p*': 2.7199999999999998}, 'U2M0LZBCLN': {'shares': 0, 'p*': 2.7199999999999998}, 'JT8QA6V6QA': {'shares': 11, 'p*': 2.7199999999999998}, '6WEGEYY05G': {'shares': 0, 'p*': 2.7199999999999998}} 29.986666666666668 30
-Bid Before 
-WJS6K7FJ7B Balance:  46.266666666666666 Funds Remaining:  -77.58999999999999
-Bid After 
-WJS6K7FJ7B Balance:  55.266666666666666 Funds Remaining:  -102.07
-Bid Before 
-B5YG687G7C Balance:  49.0247619047619 Funds Remaining:  -99.60931428571426
-Bid After 
-B5YG687G7C Balance:  56.0247619047619 Funds Remaining:  -118.64931428571427
-Bid Before 
-MTT4CX2G9Z Balance:  54.29333333333334 Funds Remaining:  -97.19746666666667
-Bid After 
-MTT4CX2G9Z Balance:  65.29333333333334 Funds Remaining:  -127.11746666666667
-Bid Before 
-ZS88NOK7SG Balance:  58.504000000000005 Funds Remaining:  -156.59212000000002
-Bid After 
-ZS88NOK7SG Balance:  61.49066666666667 Funds Remaining:  -164.71585333333337
-Ask Before 
-6WL99PL8Y9 Balance:  59.16697472687804 Funds Remaining:  -107.24944227822975
-Ask After 
-6WL99PL8Y9 Balance:  68.16697472687804 Funds Remaining:  -110.55826580764152
-Ask Before 
-9Q3XH0V6H4 Balance:  50.0 Funds Remaining:  -203.0005116415203
-Ask After 
-9Q3XH0V6H4 Balance:  60.0 Funds Remaining:  -206.6769822297556
-Ask Before 
-JT8QA6V6QA Balance:  60.763983350592746 Funds Remaining:  -117.77524323957978
-Ask After 
-JT8QA6V6QA Balance:  71.76398335059275 Funds Remaining:  -121.8193608866386
+agg_demand: 16.963871870728394, paid_bids: 16.963871870728394, agg_supply: 17.04112676858574, paid_asks: 17.04112676858574, difference: 3.552713678800501e-15
+Bidder 960BP4OK7M: balance 24.0->26.407999312000197, funds 84.27999999999997->16.856019263994483
+Bidder BQRR2XGE2Z: balance 32.97724469603789->32.98796819866121, funds 0.3967697042975602->0.09651163084483178
+Bidder W0ISDHQ1T1: balance 32.864689449077694->32.87104811954632, funds 0.21619485952009598->0.03815208639847961
+Bidder YQ0KS1K76I: balance 28.983604448006055->29.602547152210448, funds 18.80037071398985->1.4699749962668562
+Bidder T8TR6HGSFU: balance 30.717075438868566->30.717882363213405, funds 0.025014662759322348->0.0024207811037672104
+Bidder CQEDA8YU47: balance 30.441677605145824->30.462698276550054, funds 0.7567443807590015->0.1681655814405557
+Bidder WX88TD9FIW: balance 19.80001560003119->24.600025200050382, funds 501.93963787927595->367.53936907873856
+Bidder GPS6A2SINP: balance 27.73166590787058->28.328080224214432, funds 21.470921352521827->4.771320494893974
+Bidder LHMC4MZU7G: balance 33.12505781264451->34.65227465668199, funds 42.762086905217814->1.5272168433000388e-05
+Bidder M13N95X6QQ: balance 28.440656346443046->28.499472376025828, funds 1.7644814756437945->0.1176326473258622
+Bidder L7E1R8ZVM5: balance 30.682131058407865->30.708801144226012, funds 1.0401336136086372->0.2933712107004881
+Bidder 6YVYHRBMQS: balance 18.0->21.0, funds 239.20999999999998->155.20999999999998
+Bidder DT9CYYKWXK: balance 18.372237080263417->22.26113029014476, funds 278.8372820414246->169.948272164747
+
+Asker RQ6ZV8WDKA: balance 827.3964252268565->891.2597499847693, funds 4.561677458358773->2.2808444312904603
+Asker 7VNVSYCR8O: balance 992.46->1188.46, funds 8.0->1.0
+Asker EOORRCMUNF: balance 234.59037198622298->396.36792507239323, funds 25.300406868107807->19.5226371150303
+Asker 0KK5P85HIQ: balance 1270.3579424053448->1281.0687484819314, funds 0.4781612246429847->0.09563243619346895
+Asker QK2L67BIW7: balance 463.66259988519994->508.4624654849312, funds 14.896009792019576->13.296014592029174
+Amount bidders paid: -474.98841238039506, received: 16.963871870728394
+Amount askers paid: -17.04112676858574, received: 477.15154952040075
 New orders:
-UPDATE @2018-11-13 19:24:39.544983: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 2.069091550000566, 'u_max': 14, 'q_max': 106, 'funds': -164.71585333333337, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:39.545509: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.04737955930408875, 'u_max': 7, 'q_max': 85, 'funds': -121.8193608866386, 'order_id': 'JT8QA6V6QA'}
-UPDATE @2018-11-13 19:24:39.545904: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 4, 'u_max': 10, 'q_max': 105, 'funds': -110.55826580764152, 'order_id': '6WL99PL8Y9'}
-UPDATE @2018-11-13 19:24:39.546062: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.03272890539418395, 'u_max': 5, 'q_max': 91, 'funds': -110.55826580764152, 'order_id': '6WL99PL8Y9'}
-UPDATE @2018-11-13 19:24:39.546742: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 4, 'u_max': 9, 'q_max': 92, 'funds': -102.07, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:39.546980: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 2, 'u_max': 13, 'q_max': 118, 'funds': -206.6769822297556, 'order_id': '9Q3XH0V6H4'}
 
-Holding Batch: 7 @ 2018-11-13 19:24:39.938506
-Results of batch 7 @2018-11-13 19:24:39.939387:
-p*:2.07, u*:24.395
-best bid: 23.79, best ask:25
+Holding Batch: 7 @ 2018-11-15 00:37:32.320877
+Updating Bid u_max from  4 ->  0.4816004127997244 960BP4OK7M
+Updating Bid u_max from  12 ->  0.002608421750286872 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  0.0011221198581553243 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  0.056537478111233656 YQ0KS1K76I
+Updating Bid u_max from  10 ->  9.310692971915052e-05 T8TR6HGSFU
+Updating Bid u_max from  9 ->  0.004671264853552977 CQEDA8YU47
+Updating Bid u_max from  6 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  10 ->  5.454343920948739e-07 LHMC4MZU7G
+Updating Bid u_max from  6 ->  0.003921086937166428 M13N95X6QQ
+Updating Bid u_max from  10 ->  0.007522336807105641 L7E1R8ZVM5
+Updating Ask u_max from  12 -> 2.2808444312904603 RQ6ZV8WDKA 30
+Updating Ask u_max from  11 -> 1.0 7VNVSYCR8O 31
+Updating Ask u_max from  10 -> 0.09563243619346895 0KK5P85HIQ 29
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Found crossing after 13 iterations
+Updating Bid u_max from  0.13253664359798717 ->  0.13253664359798717 GPS6A2SINP
+Results of batch 7 @2018-11-15 00:37:32.323756:
+p*:27.610000000000003, u*:13.518743394007842
+best bid: 13.513969307866372, best ask:13.523517480149312
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 5.790000000000001, 'p*': 2.07}, 'B5YG687G7C': {'shares': 7, 'p*': 2.07}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 2.07}, 'WCA373HH5Q': {'shares': 0, 'p*': 2.07}, 'ZS88NOK7SG': {'shares': 0, 'p*': 2.07}} 
-asks
- {'6WL99PL8Y9': {'shares': 5, 'p*': 2.07}, '9Q3XH0V6H4': {'shares': 13, 'p*': 2.07}, 'U2M0LZBCLN': {'shares': 0, 'p*': 2.07}, 'JT8QA6V6QA': {'shares': 7, 'p*': 2.07}, '6WEGEYY05G': {'shares': 0, 'p*': 2.07}} 23.79 25
-Bid Before 
-WJS6K7FJ7B Balance:  55.266666666666666 Funds Remaining:  -102.07
-Bid After 
-WJS6K7FJ7B Balance:  61.056666666666665 Funds Remaining:  -114.05529999999999
-Bid Before 
-B5YG687G7C Balance:  56.0247619047619 Funds Remaining:  -118.64931428571427
-Bid After 
-B5YG687G7C Balance:  63.0247619047619 Funds Remaining:  -133.13931428571428
-Bid Before 
-MTT4CX2G9Z Balance:  65.29333333333334 Funds Remaining:  -127.11746666666667
-Bid After 
-MTT4CX2G9Z Balance:  76.29333333333334 Funds Remaining:  -149.88746666666668
-Ask Before 
-6WL99PL8Y9 Balance:  68.16697472687804 Funds Remaining:  -110.55826580764152
-Ask After 
-6WL99PL8Y9 Balance:  73.16697472687804 Funds Remaining:  -112.97372474483959
-Ask Before 
-9Q3XH0V6H4 Balance:  60.0 Funds Remaining:  -206.6769822297556
-Ask After 
-9Q3XH0V6H4 Balance:  73.0 Funds Remaining:  -212.95717546647057
-Ask Before 
-JT8QA6V6QA Balance:  71.76398335059275 Funds Remaining:  -121.8193608866386
-Ask After 
-JT8QA6V6QA Balance:  78.76398335059275 Funds Remaining:  -125.2010033987159
+agg_demand: 13.513969307866372, paid_bids: 13.513969307866372, agg_supply: 13.523517480149312, paid_asks: 13.523517480149312, difference: 0.0
+Bidder 960BP4OK7M: balance 26.407999312000197->26.889599724799922, funds 16.856019263994483->3.5590318665940917
+Bidder BQRR2XGE2Z: balance 32.98796819866121->32.990576620411495, funds 0.09651163084483178->0.024493106319411234
+Bidder W0ISDHQ1T1: balance 32.87104811954632->32.872170239404475, funds 0.03815208639847961->0.007170357114811104
+Bidder YQ0KS1K76I: balance 29.602547152210448->29.64087963903484, funds 1.4699749962668562->0.4116150350454473
+Bidder T8TR6HGSFU: balance 30.717882363213405->30.717964762905066, funds 0.0024207811037672104->0.00014572561707959248
+Bidder CQEDA8YU47: balance 30.462698276550054->30.467369541403606, funds 0.1681655814405557->0.03919195883395801
+Bidder WX88TD9FIW: balance 24.600025200050382->30.33603667207332, funds 367.53936907873856->209.16809233618525
+Bidder GPS6A2SINP: balance 28.328080224214432->28.46061686781242, funds 4.771320494893974->1.111983765153548
+Bidder LHMC4MZU7G: balance 34.65227465668199->34.65227520211638, funds 1.5272168433000388e-05->2.1272486726091853e-07
+Bidder M13N95X6QQ: balance 28.499472376025828->28.503393462962993, funds 0.1176326473258622->0.009371436990697132
+Bidder L7E1R8ZVM5: balance 30.708801144226012->30.71632348103312, funds 0.2933712107004881->0.08567949145630133
+Bidder 6YVYHRBMQS: balance 21.0->24.0, funds 155.20999999999998->72.37999999999997
+Bidder DT9CYYKWXK: balance 22.26113029014476->26.366690407433776, funds 169.948272164747->56.59375732639724
+
+Asker RQ6ZV8WDKA: balance 891.2597499847693->916.6067371029919, funds 2.2808444312904603->1.362807954715935
+Asker 7VNVSYCR8O: balance 1188.46->1197.3503825607652, funds 1.0->0.6780013560027114
+Asker EOORRCMUNF: balance 396.36792507239323->540.3384973396959, funds 19.5226371150303->14.308201321212746
+Asker 0KK5P85HIQ: balance 1281.0687484819314->1282.9751241625634, funds 0.09563243619346895->0.02658587043352517
+Asker QK2L67BIW7: balance 508.4624654849312->701.7324654849313, funds 13.296014592029174->6.296014592029174
+Amount bidders paid: -373.12069259019063, received: 13.513969307866372
+Amount askers paid: -13.523517480149312, received: 373.38431762692255
 New orders:
-UPDATE @2018-11-13 19:24:40.547512: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 11, 'q_max': 97, 'funds': -212.95717546647057, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:40.547877: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 15, 'q_max': 102, 'funds': -114.05529999999999, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:40.548002: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 4, 'u_max': 11, 'q_max': 103, 'funds': -114.05529999999999, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:40.548109: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 19, 'q_max': 99, 'funds': -125.2010033987159, 'order_id': 'JT8QA6V6QA'}
-UPDATE @2018-11-13 19:24:40.548219: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 11, 'q_max': 104, 'funds': -212.95717546647057, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:40.548453: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 8, 'q_max': 99, 'funds': -166.05522002021672, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:40.548639: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 3, 'u_max': 11, 'q_max': 113, 'funds': -164.71585333333337, 'order_id': 'ZS88NOK7SG'}
 
-Holding Batch: 8 @ 2018-11-13 19:24:40.938558
-Found cross at 1.32!
-Results of batch 8 @2018-11-13 19:24:40.939517:
-p*:1.32, u*:43.0
-best bid: 43.0, best ask:43
+Holding Batch: 8 @ 2018-11-15 00:37:33.320431
+Updating Bid u_max from  4 ->  0.10168659570651813 960BP4OK7M
+Updating Bid u_max from  12 ->  0.0006619756675582312 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  0.00021089279429068117 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  10 ->  5.6048292704346064e-06 T8TR6HGSFU
+Updating Bid u_max from  9 ->  0.0010886652207584945 CQEDA8YU47
+Updating Bid u_max from  12 ->  8.366720346759271 WX88TD9FIW
+Updating Bid u_max from  11 ->  0.03971369171487967 GPS6A2SINP
+Updating Bid u_max from  10 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  6 ->  0.0003123811288961948 M13N95X6QQ
+Updating Bid u_max from  10 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  3 ->  2.12882290328738 6YVYHRBMQS
+Updating Bid u_max from  10 ->  2.176682136906764 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.362807954715935 RQ6ZV8WDKA 30
+Updating Ask u_max from  11 -> 0.6780013560027114 7VNVSYCR8O 31
+Updating Ask u_max from  10 -> 0.02658587043352517 0KK5P85HIQ 29
+Updating Ask u_max from  7 -> 6.296014592029174 QK2L67BIW7 38
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Found crossing after 13 iterations
+Updating Bid u_max from  0.015831341412770508 ->  0.015831341412770508 YQ0KS1K76I
+Updating Bid u_max from  7.597313974563529e-09 ->  7.597313974563529e-09 LHMC4MZU7G
+Updating Bid u_max from  0.002196909474030938 ->  0.002196909474030938 L7E1R8ZVM5
+Results of batch 8 @2018-11-15 00:37:33.324997:
+p*:26.26, u*:12.014571302036824
+best bid: 12.000532866109872, best ask:12.028609737963777
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 11, 'p*': 1.32}, 'B5YG687G7C': {'shares': 7, 'p*': 1.32}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 1.32}, 'WCA373HH5Q': {'shares': 4.76, 'p*': 1.32}, 'ZS88NOK7SG': {'shares': 9.24, 'p*': 1.32}} 
-asks
- {'6WL99PL8Y9': {'shares': 5, 'p*': 1.32}, '9Q3XH0V6H4': {'shares': 11, 'p*': 1.32}, 'U2M0LZBCLN': {'shares': 8, 'p*': 1.32}, 'JT8QA6V6QA': {'shares': 19, 'p*': 1.32}, '6WEGEYY05G': {'shares': 0, 'p*': 1.32}} 43.0 43
-Bid Before 
-WJS6K7FJ7B Balance:  61.056666666666665 Funds Remaining:  -114.05529999999999
-Bid After 
-WJS6K7FJ7B Balance:  72.05666666666667 Funds Remaining:  -128.5753
-Bid Before 
-B5YG687G7C Balance:  63.0247619047619 Funds Remaining:  -133.13931428571428
-Bid After 
-B5YG687G7C Balance:  70.0247619047619 Funds Remaining:  -142.3793142857143
-Bid Before 
-MTT4CX2G9Z Balance:  76.29333333333334 Funds Remaining:  -149.88746666666668
-Bid After 
-MTT4CX2G9Z Balance:  87.29333333333334 Funds Remaining:  -164.4074666666667
-Bid Before 
-WCA373HH5Q Balance:  49.8325 Funds Remaining:  -91.222725
-Bid After 
-WCA373HH5Q Balance:  54.5925 Funds Remaining:  -97.50592499999999
-Bid Before 
-ZS88NOK7SG Balance:  61.49066666666667 Funds Remaining:  -164.71585333333337
-Bid After 
-ZS88NOK7SG Balance:  70.73066666666666 Funds Remaining:  -176.91265333333337
-Ask Before 
-6WL99PL8Y9 Balance:  73.16697472687804 Funds Remaining:  -112.97372474483959
-Ask After 
-6WL99PL8Y9 Balance:  78.16697472687804 Funds Remaining:  -116.76160353271837
-Ask Before 
-9Q3XH0V6H4 Balance:  73.0 Funds Remaining:  -212.95717546647057
-Ask After 
-9Q3XH0V6H4 Balance:  84.0 Funds Remaining:  -221.29050879980392
-Ask Before 
-U2M0LZBCLN Balance:  49.0 Funds Remaining:  -166.05522002021672
-Ask After 
-U2M0LZBCLN Balance:  57.0 Funds Remaining:  -172.11582608082279
-Ask Before 
-JT8QA6V6QA Balance:  78.76398335059275 Funds Remaining:  -125.2010033987159
-Ask After 
-JT8QA6V6QA Balance:  97.76398335059275 Funds Remaining:  -139.5949427926553
+agg_demand: 12.000532866109872, paid_bids: 12.000532866109872, agg_supply: 12.028609737963777, paid_asks: 12.028609737963777, difference: 0.0
+Bidder 960BP4OK7M: balance 26.889599724799922->26.99128632050644, funds 3.5590318665940917->0.8887418633409254
+Bidder BQRR2XGE2Z: balance 32.990576620411495->32.99123859607905, funds 0.024493106319411234->0.0071096252893320805
+Bidder ZA6LCJMKS2: balance 5.975004875024368->7.331673802805911, funds 657.1051105255528->621.4789844820095
+Bidder W0ISDHQ1T1: balance 32.872170239404475->32.87238113219877, funds 0.007170357114811104->0.001632312336737816
+Bidder YQ0KS1K76I: balance 29.64087963903484->29.65588778071043, funds 0.4116150350454473->0.017501234644459462
+Bidder T8TR6HGSFU: balance 30.717964762905066->30.717970263648578, funds 0.00014572561707959248->1.2760924259491973e-06
+Bidder CQEDA8YU47: balance 30.467369541403606->30.468458206624366, funds 0.03919195883395801->0.010603610136839945
+Bidder WX88TD9FIW: balance 30.33603667207332->36.59435600808792, funds 209.16809233618525->44.82462657244176
+Bidder GPS6A2SINP: balance 28.46061686781242->28.5003305595273, funds 1.111983765153548->0.06910222072080785
+Bidder LHMC4MZU7G: balance 34.65227520211638->34.65227520971369, funds 2.1272486726091853e-07->1.3219402288880252e-08
+Bidder M13N95X6QQ: balance 28.503393462962993->28.50370584409189, funds 0.009371436990697132->0.0011683085458830556
+Bidder L7E1R8ZVM5: balance 30.71632348103312->30.718520390507148, funds 0.08567949145630133->0.027988648668248885
+Bidder 6YVYHRBMQS: balance 24.0->26.12882290328738, funds 72.37999999999997->16.477110559673363
+Bidder DT9CYYKWXK: balance 26.366690407433776->28.46252734473677, funds 56.59375732639724->1.5570793528206082
+
+Asker RQ6ZV8WDKA: balance 916.6067371029919->918.9328303477874, funds 1.362807954715935->1.2742286232309568
+Asker 2JVD6AVE8N: balance 0.0->85.60745969637104, funds 49->45.74000534286478
+Asker UPF65ZKF6B: balance 23.16839002796634->128.20839002796635, funds 21.280037600125347->17.280037600125347
+Asker 7VNVSYCR8O: balance 1197.3503825607652->1198.276173215364, funds 0.6780013560027114->0.6427465709837121
+Asker EOORRCMUNF: balance 540.3384973396959->626.062524388615, funds 14.308201321212746->11.043767694064268
+Asker 0KK5P85HIQ: balance 1282.9751241625634->1283.2906849182232, funds 0.02658587043352517->0.014569086135744055
+Asker QK2L67BIW7: balance 701.7324654849313->737.6648258035158, funds 6.296014592029174->4.927684039150859
+Amount bidders paid: -315.13399306404517, received: 12.000532866109872
+Amount askers paid: -12.028609737963777, received: 315.87129171892883
 New orders:
-UPDATE @2018-11-13 19:24:41.550294: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 1.094776001919782, 'u_max': 6, 'q_max': 113, 'funds': -142.3793142857143, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:41.550534: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 6, 'q_max': 97, 'funds': -172.11582608082279, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:41.550672: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 1, 'p_high': 3, 'u_max': 12, 'q_max': 106, 'funds': -172.11582608082279, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:41.550800: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 2, 'u_max': 6, 'q_max': 92, 'funds': -221.29050879980392, 'order_id': '9Q3XH0V6H4'}
 
-Holding Batch: 9 @ 2018-11-13 19:24:41.938564
-Results of batch 9 @2018-11-13 19:24:41.939570:
-p*:1.61, u*:32.432500000000005
-best bid: 32.375, best ask:32.49
+Holding Batch: 9 @ 2018-11-15 00:37:34.320948
+Updating Bid u_max from  4 ->  0.025392617411850036 960BP4OK7M
+Updating Bid u_max from  12 ->  0.0001921519829138446 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  4.800917225429686e-05 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  0.000673124150508383 YQ0KS1K76I
+Updating Bid u_max from  10 ->  4.9080459044023344e-08 T8TR6HGSFU
+Updating Bid u_max from  9 ->  0.00029454464420537507 CQEDA8YU47
+Updating Bid u_max from  12 ->  1.792984345703932 WX88TD9FIW
+Updating Bid u_max from  11 ->  0.002467935572909004 GPS6A2SINP
+Updating Bid u_max from  10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  6 ->  3.894360521490012e-05 M13N95X6QQ
+Updating Bid u_max from  10 ->  0.0007176574741454908 L7E1R8ZVM5
+Updating Bid u_max from  3 ->  0.48462075627840584 6YVYHRBMQS
+Updating Bid u_max from  10 ->  0.05988764438246786 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.2742286232309568 RQ6ZV8WDKA 30
+Updating Ask u_max from  8 -> 0.6427465709837121 7VNVSYCR8O 25
+Updating Ask u_max from  13 -> 11.043767694064268 EOORRCMUNF 33
+Updating Ask u_max from  10 -> 0.014569086135744055 0KK5P85HIQ 29
+Updating Ask u_max from  7 -> 4.927684039150859 QK2L67BIW7 38
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Found crossing after 13 iterations
+Updating Bid u_max from  4.72121341702387e-10 ->  4.72121341702387e-10 LHMC4MZU7G
+Results of batch 9 @2018-11-15 00:37:34.323629:
+p*:25.180000000000003, u*:5.6448467296184575
+best bid: 5.639446028153817, best ask:5.650247431083098
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 11, 'p*': 1.61}, 'B5YG687G7C': {'shares': 0, 'p*': 1.61}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 1.61}, 'WCA373HH5Q': {'shares': 2.7299999999999995, 'p*': 1.61}, 'ZS88NOK7SG': {'shares': 7.645, 'p*': 1.61}} 
-asks
- {'6WL99PL8Y9': {'shares': 5, 'p*': 1.61}, '9Q3XH0V6H4': {'shares': 4.83, 'p*': 1.61}, 'U2M0LZBCLN': {'shares': 3.66, 'p*': 1.61}, 'JT8QA6V6QA': {'shares': 19, 'p*': 1.61}, '6WEGEYY05G': {'shares': 0, 'p*': 1.61}} 32.375 32.49
-Bid Before 
-WJS6K7FJ7B Balance:  72.05666666666667 Funds Remaining:  -128.5753
-Bid After 
-WJS6K7FJ7B Balance:  83.05666666666667 Funds Remaining:  -146.2853
-Bid Before 
-MTT4CX2G9Z Balance:  87.29333333333334 Funds Remaining:  -164.4074666666667
-Bid After 
-MTT4CX2G9Z Balance:  98.29333333333334 Funds Remaining:  -182.1174666666667
-Bid Before 
-WCA373HH5Q Balance:  54.5925 Funds Remaining:  -97.50592499999999
-Bid After 
-WCA373HH5Q Balance:  57.3225 Funds Remaining:  -101.901225
-Bid Before 
-ZS88NOK7SG Balance:  70.73066666666666 Funds Remaining:  -176.91265333333337
-Bid After 
-ZS88NOK7SG Balance:  78.37566666666666 Funds Remaining:  -189.22110333333336
-Ask Before 
-6WL99PL8Y9 Balance:  78.16697472687804 Funds Remaining:  -116.76160353271837
-Ask After 
-6WL99PL8Y9 Balance:  83.16697472687804 Funds Remaining:  -119.86719359483017
-Ask Before 
-9Q3XH0V6H4 Balance:  84.0 Funds Remaining:  -221.29050879980392
-Ask After 
-9Q3XH0V6H4 Balance:  88.83 Funds Remaining:  -224.29050879980392
-Ask Before 
-U2M0LZBCLN Balance:  57.0 Funds Remaining:  -172.11582608082279
-Ask After 
-U2M0LZBCLN Balance:  60.66 Funds Remaining:  -174.3891180062886
-Ask Before 
-JT8QA6V6QA Balance:  97.76398335059275 Funds Remaining:  -139.5949427926553
-Ask After 
-JT8QA6V6QA Balance:  116.76398335059275 Funds Remaining:  -151.39618502868015
+agg_demand: 5.639446028153817, paid_bids: 5.639446028153817, agg_supply: 5.650247431083098, paid_asks: 5.650247431083098, difference: 0.0
+Bidder 960BP4OK7M: balance 26.99128632050644->27.01667893791829, funds 0.8887418633409254->0.24935575691054146
+Bidder BQRR2XGE2Z: balance 32.99123859607905->32.991430748061966, funds 0.0071096252893320805->0.0022712383595614727
+Bidder ZA6LCJMKS2: balance 7.331673802805911->10.66834603059295, funds 621.4789844820095->537.4615777863319
+Bidder W0ISDHQ1T1: balance 32.87238113219877->32.87242914137102, funds 0.001632312336737816->0.0004234413793746208
+Bidder YQ0KS1K76I: balance 29.65588778071043->29.65656090486094, funds 0.017501234644459462->0.0005519685346583765
+Bidder T8TR6HGSFU: balance 30.717970263648578->30.717970312729037, funds 1.2760924259491973e-06->4.02464672206893e-08
+Bidder CQEDA8YU47: balance 30.468458206624366->30.46875275126857, funds 0.010603610136839945->0.0031869759957485998
+Bidder WX88TD9FIW: balance 36.59435600808792->38.322796374227245, funds 44.82462657244176->1.3024981530536337
+Bidder GPS6A2SINP: balance 28.5003305595273->28.50279849510021, funds 0.06910222072080785->0.006959602994959117
+Bidder LHMC4MZU7G: balance 34.65227520971369->34.65227521018581, funds 1.3219402288880252e-08->1.3313869048141462e-09
+Bidder M13N95X6QQ: balance 28.50370584409189->28.503744787697105, funds 0.0011683085458830556->0.00018770856657187055
+Bidder L7E1R8ZVM5: balance 30.718520390507148->30.719238047981293, funds 0.027988648668248885->0.009918033469265425
+Bidder 6YVYHRBMQS: balance 26.12882290328738->26.613443659565785, funds 16.477110559673363->4.274359916583103
+Bidder DT9CYYKWXK: balance 28.46252734473677->28.522414989119238, funds 1.5570793528206082->0.049108467270067235
+
+Asker 2JVD6AVE8N: balance 85.60745969637104->140.4996863138377, funds 45.74000534286478->43.560012228588896
+Asker 7VNVSYCR8O: balance 1198.276173215364->1214.4605318727338, funds 0.6427465709837121->0.0
+Cancelling trader
+7VNVSYCR8O Balance:  1214.4605318727338 Funds Remaining:  0.0
+
+Asker EOORRCMUNF: balance 626.062524388615->662.5219051670837, funds 11.043767694064268->9.595817702862174
+Asker 0KK5P85HIQ: balance 1283.2906849182232->1283.3772608606557, funds 0.014569086135744055->0.011130804069316587
+Asker 25RGEWHMPN: balance 151.89709196182002->168.5150240882608, funds 26.213345355575587->25.55337982235713
+Asker QK2L67BIW7: balance 737.6648258035158->755.6975819960095, funds 4.927684039150859->4.211530099814333
+Amount bidders paid: -142.0012509889131, received: 5.639446028153817
+Amount askers paid: -5.650247431083098, received: 142.27323031467242
+KeyError updating 7VNVSYCR8O funds
 New orders:
-UPDATE @2018-11-13 19:24:42.556069: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 3, 'u_max': 10, 'q_max': 118, 'funds': -146.2853, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:42.556366: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 11, 'q_max': 94, 'funds': -189.22110333333336, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:42.556504: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 6, 'q_max': 103, 'funds': -119.86719359483017, 'order_id': '6WL99PL8Y9'}
 
-Holding Batch: 10 @ 2018-11-13 19:24:42.938562
-Results of batch 10 @2018-11-13 19:24:42.939658:
-p*:1.21, u*:29.8575
-best bid: 29.825000000000003, best ask:29.89
+Holding Batch: 10 @ 2018-11-15 00:37:35.320948
+Updating Bid u_max from  4 ->  0.007124448161887423 960BP4OK7M
+Updating Bid u_max from  12 ->  6.138480393820089e-05 BQRR2XGE2Z
+Updating Bid u_max from  10 ->  1.2454154553913976e-05 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  2.1229550860110303e-05 YQ0KS1K76I
+Updating Bid u_max from  10 ->  1.5479404515878764e-09 T8TR6HGSFU
+Updating Bid u_max from  9 ->  8.852708640215931e-05 CQEDA8YU47
+Updating Bid u_max from  7 ->  0.05663032985871022 WX88TD9FIW
+Updating Bid u_max from  11 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  10 ->  4.754951533282118e-11 LHMC4MZU7G
+Updating Bid u_max from  6 ->  6.2569501334123075e-06 M13N95X6QQ
+Updating Bid u_max from  10 ->  0.0002543084852866813 L7E1R8ZVM5
+Updating Bid u_max from  3 ->  0.12571643115937622 6YVYHRBMQS
+Updating Bid u_max from  10 ->  0.0018887864762385568 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.2742286232309568 RQ6ZV8WDKA 30
+Updating Ask u_max from  13 -> 9.595817702862174 EOORRCMUNF 33
+Updating Ask u_max from  10 -> 0.011130804069316587 0KK5P85HIQ 29
+Updating Ask u_max from  7 -> 4.211530099814333 QK2L67BIW7 38
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Found crossing after 13 iterations
+Updating Bid u_max from  0.00024855716104955385 ->  0.00024855716104955385 GPS6A2SINP
+Results of batch 10 @2018-11-15 00:37:35.323409:
+p*:25.03, u*:3.8006691279568816
+best bid: 3.790952164782595, best ask:3.810386091131168
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 8.95, 'p*': 1.21}, 'B5YG687G7C': {'shares': 0, 'p*': 1.21}, 'MTT4CX2G9Z': {'shares': 11, 'p*': 1.21}, 'WCA373HH5Q': {'shares': 5.53, 'p*': 1.21}, 'ZS88NOK7SG': {'shares': 4.345000000000001, 'p*': 1.21}} 
-asks
- {'6WL99PL8Y9': {'shares': 6, 'p*': 1.21}, '9Q3XH0V6H4': {'shares': 3.63, 'p*': 1.21}, 'U2M0LZBCLN': {'shares': 1.2599999999999998, 'p*': 1.21}, 'JT8QA6V6QA': {'shares': 19, 'p*': 1.21}, '6WEGEYY05G': {'shares': 0, 'p*': 1.21}} 29.825000000000003 29.89
-Bid Before 
-WJS6K7FJ7B Balance:  83.05666666666667 Funds Remaining:  -146.2853
-Bid After 
-WJS6K7FJ7B Balance:  92.00666666666667 Funds Remaining:  -157.1148
-Bid Before 
-MTT4CX2G9Z Balance:  98.29333333333334 Funds Remaining:  -182.1174666666667
-Bid After 
-MTT4CX2G9Z Balance:  109.29333333333334 Funds Remaining:  -195.4274666666667
-Bid Before 
-WCA373HH5Q Balance:  57.3225 Funds Remaining:  -101.901225
-Bid After 
-WCA373HH5Q Balance:  62.8525 Funds Remaining:  -108.592525
-Bid Before 
-ZS88NOK7SG Balance:  78.37566666666666 Funds Remaining:  -189.22110333333336
-Bid After 
-ZS88NOK7SG Balance:  82.72066666666666 Funds Remaining:  -194.47855333333337
-Ask Before 
-6WL99PL8Y9 Balance:  83.16697472687804 Funds Remaining:  -119.86719359483017
-Ask After 
-6WL99PL8Y9 Balance:  89.16697472687804 Funds Remaining:  -124.82587128078059
-Ask Before 
-9Q3XH0V6H4 Balance:  88.83 Funds Remaining:  -224.29050879980392
-Ask After 
-9Q3XH0V6H4 Balance:  92.46 Funds Remaining:  -227.29050879980392
-Ask Before 
-U2M0LZBCLN Balance:  60.66 Funds Remaining:  -174.3891180062886
-Ask After 
-U2M0LZBCLN Balance:  61.919999999999995 Funds Remaining:  -175.4304403203382
-Ask Before 
-JT8QA6V6QA Balance:  116.76398335059275 Funds Remaining:  -151.39618502868015
-Ask After 
-JT8QA6V6QA Balance:  135.76398335059275 Funds Remaining:  -167.09866436752313
+agg_demand: 3.790952164782595, paid_bids: 3.790952164782595, agg_supply: 3.810386091131168, paid_asks: 3.810386091131168, difference: 0.0
+Bidder 960BP4OK7M: balance 27.01667893791829->27.02380338608018, funds 0.24935575691054146->0.07103081941849926
+Bidder BQRR2XGE2Z: balance 32.991430748061966->32.9914921328659, funds 0.0022712383595614727->0.0007347767169883044
+Bidder ZA6LCJMKS2: balance 10.66834603059295->14.28001871671409, funds 537.4615777863319->447.0614104527197
+Bidder W0ISDHQ1T1: balance 32.87242914137102->32.87244159552558, funds 0.0004234413793746208->0.00011171389089015396
+Bidder YQ0KS1K76I: balance 29.65656090486094->29.6565821344118, funds 0.0005519685346583765->2.0592876629815554e-05
+Bidder T8TR6HGSFU: balance 30.717970312729037->30.71797031427698, funds 4.02464672206893e-08->1.501517717444752e-09
+Bidder CQEDA8YU47: balance 30.46875275126857->30.468841278354972, funds 0.0031869759957485998->0.0009711430231025523
+Bidder WX88TD9FIW: balance 38.322796374227245->38.366653467303486, funds 1.3024981530536337->0.2047551133553993
+Bidder GPS6A2SINP: balance 28.50279849510021->28.50304705226126, funds 0.006959602994959117->0.0007382172538887843
+Bidder LHMC4MZU7G: balance 34.65227521018581->34.65227521023336, funds 1.3313869048141462e-09->1.4122253603363215e-10
+Bidder M13N95X6QQ: balance 28.503744787697105->28.503751044647238, funds 0.00018770856657187055->3.109710473256049e-05
+Bidder L7E1R8ZVM5: balance 30.719238047981293->30.719492356466578, funds 0.009918033469265425->0.0035526920825397915
+Bidder 6YVYHRBMQS: balance 26.613443659565785->26.73916009072516, funds 4.274359916583103->1.1276776446639163
+Bidder DT9CYYKWXK: balance 28.522414989119238->28.524303775595477, funds 0.049108467270067235->0.0018321417698161577
+
+Asker 2JVD6AVE8N: balance 140.4996863138377->191.31040860058388, funds 43.560012228588896->41.53001932859904
+Asker EOORRCMUNF: balance 662.5219051670837->690.0093151289335, funds 9.595817702862174->8.49763911868919
+Asker 0KK5P85HIQ: balance 1283.3772608606557->1283.4346528475578, funds 0.011130804069316587->0.00883787610678958
+Asker 25RGEWHMPN: balance 168.5150240882608->171.26741549623227, funds 25.55337982235713->25.443416122478126
+Asker QK2L67BIW7: balance 755.6975819960095->769.9636302135531, funds 4.211530099814333->3.6415721206875395
+Amount bidders paid: -94.88753268450834, received: 3.790952164782595
+Amount askers paid: -3.810386091131168, received: 95.37396386101314
 New orders:
-UPDATE @2018-11-13 19:24:43.557907: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 4, 'u_max': 8, 'q_max': 100, 'funds': -108.592525, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:43.558085: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 1, 'p_high': 1.0505788460496162, 'u_max': 11, 'q_max': 112, 'funds': -227.29050879980392, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:43.558199: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 1, 'u_max': 8, 'q_max': 95, 'funds': -195.4274666666667, 'order_id': 'MTT4CX2G9Z'}
-UPDATE @2018-11-13 19:24:43.558326: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.06239862703968224, 'u_max': 4, 'q_max': 99, 'funds': -175.4304403203382, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:43.558430: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 1, 'u_max': 13, 'q_max': 110, 'funds': -195.4274666666667, 'order_id': 'MTT4CX2G9Z'}
-UPDATE @2018-11-13 19:24:43.558529: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 1, 'p_high': 2, 'u_max': 9, 'q_max': 103, 'funds': -175.4304403203382, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:43.558625: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 10, 'q_max': 77, 'funds': -157.1148, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:43.558900: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 1, 'p_high': 1.025473862659022, 'u_max': 21, 'q_max': 105, 'funds': -167.09866436752313, 'order_id': 'JT8QA6V6QA'}
 
-Holding Batch: 11 @ 2018-11-13 19:24:43.938677
-Results of batch 11 @2018-11-13 19:24:43.939731:
-p*:1.02, u*:24.993827840769903
-best bid: 22.970523364888994, best ask:27.01713231665081
+Holding Batch: 11 @ 2018-11-15 00:37:36.320978
+Updating Bid u_max from  4 ->  0.0020294514035424345 960BP4OK7M
+Updating Bid u_max from  8 ->  3.673881748000648e-05 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  6.982113816813487e-06 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  7.920334119031321e-07 YQ0KS1K76I
+Updating Bid u_max from  10 ->  5.775065922839076e-11 T8TR6HGSFU
+Updating Bid u_max from  9 ->  2.6976187592796563e-05 CQEDA8YU47
+Updating Bid u_max from  7 ->  0.008902392362238073 WX88TD9FIW
+Updating Bid u_max from  11 ->  2.6364892508566402e-05 GPS6A2SINP
+Updating Bid u_max from  10 ->  5.043660199893934e-12 LHMC4MZU7G
+Updating Bid u_max from  6 ->  1.0365698122287456e-06 M13N95X6QQ
+Updating Bid u_max from  10 ->  9.109464542547018e-05 L7E1R8ZVM5
+Updating Bid u_max from  3 ->  0.03316697979394465 6YVYHRBMQS
+Updating Bid u_max from  10 ->  7.046696404409682e-05 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.2742286232309568 RQ6ZV8WDKA 30
+Updating Ask u_max from  13 -> 8.49763911868919 EOORRCMUNF 33
+Updating Ask u_max from  12 -> 0.00883787610678958 0KK5P85HIQ 24
+Updating Ask u_max from  7 -> 3.6415721206875395 QK2L67BIW7 38
+Found crossing after 13 iterations
+Results of batch 11 @2018-11-15 00:37:36.323432:
+p*:24.48, u*:4.666088058187221
+best bid: 4.662859314226858, best ask:4.669316802147582
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 4.9, 'p*': 1.02}, 'B5YG687G7C': {'shares': 4.733856698222326, 'p*': 1.02}, 'MTT4CX2G9Z': {'shares': 0, 'p*': 1.02}, 'WCA373HH5Q': {'shares': 7.946666666666666, 'p*': 1.02}, 'ZS88NOK7SG': {'shares': 5.39, 'p*': 1.02}} 
-asks
- {'6WL99PL8Y9': {'shares': 6, 'p*': 1.02}, '9Q3XH0V6H4': {'shares': 4.349644509172621, 'p*': 1.02}, 'U2M0LZBCLN': {'shares': 0.17999999999999972, 'p*': 1.02}, 'JT8QA6V6QA': {'shares': 16.48748780747819, 'p*': 1.02}, '6WEGEYY05G': {'shares': 0, 'p*': 1.02}} 22.970523364888994 27.01713231665081
-Bid Before 
-WJS6K7FJ7B Balance:  92.00666666666667 Funds Remaining:  -157.1148
-Bid After 
-WJS6K7FJ7B Balance:  96.90666666666668 Funds Remaining:  -162.1128
-Bid Before 
-B5YG687G7C Balance:  70.0247619047619 Funds Remaining:  -142.3793142857143
-Bid After 
-B5YG687G7C Balance:  74.75861860298423 Funds Remaining:  -147.20784811790105
-Bid Before 
-WCA373HH5Q Balance:  62.8525 Funds Remaining:  -108.592525
-Bid After 
-WCA373HH5Q Balance:  70.79916666666666 Funds Remaining:  -116.69812499999999
-Bid Before 
-ZS88NOK7SG Balance:  82.72066666666666 Funds Remaining:  -194.47855333333337
-Bid After 
-ZS88NOK7SG Balance:  88.11066666666666 Funds Remaining:  -199.97635333333338
-Ask Before 
-6WL99PL8Y9 Balance:  89.16697472687804 Funds Remaining:  -124.82587128078059
-Ask After 
-6WL99PL8Y9 Balance:  95.16697472687804 Funds Remaining:  -130.70822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  92.46 Funds Remaining:  -227.29050879980392
-Ask After 
-9Q3XH0V6H4 Balance:  96.80964450917261 Funds Remaining:  -231.55486616173786
-Ask Before 
-U2M0LZBCLN Balance:  61.919999999999995 Funds Remaining:  -175.4304403203382
-Ask After 
-U2M0LZBCLN Balance:  62.099999999999994 Funds Remaining:  -175.6069109085735
-Ask Before 
-JT8QA6V6QA Balance:  135.76398335059275 Funds Remaining:  -167.09866436752313
-Ask After 
-JT8QA6V6QA Balance:  152.25147115807096 Funds Remaining:  -183.2628681003449
+agg_demand: 4.662859314226858, paid_bids: 4.662859314226858, agg_supply: 4.669316802147582, paid_asks: 4.669316802147582, difference: 8.881784197001252e-16
+Bidder 960BP4OK7M: balance 27.02380338608018->27.025832837483723, funds 0.07103081941849926->0.021349849059780462
+Bidder ZA6LCJMKS2: balance 14.28001871671409->18.900026416726924, funds 447.0614104527197->333.9636219564056
+Bidder YQ0KS1K76I: balance 29.6565821344118->29.65658292644521, funds 2.0592876629815554e-05->1.203898706426879e-06
+Bidder T8TR6HGSFU: balance 30.71797031427698->30.71797031433473, funds 1.501517717444752e-09->8.77815795337463e-11
+Bidder CQEDA8YU47: balance 30.468841278354972->30.468868254542564, funds 0.0009711430231025523->0.0003107659508308924
+Bidder WX88TD9FIW: balance 38.366653467303486->38.37409191896444, funds 0.2047551133553993->0.022661816695351722
+Bidder GPS6A2SINP: balance 28.50304705226126->28.503073417153768, funds 0.0007382172538887843->9.280468527907886e-05
+Bidder LHMC4MZU7G: balance 34.65227521023336->34.65227521023841, funds 1.4122253603363215e-10->1.7753734340228628e-11
+Bidder M13N95X6QQ: balance 28.503751044647238->28.50375208121705, funds 3.109710473256049e-05->5.7218757292008e-06
+Bidder L7E1R8ZVM5: balance 30.719492356466578->30.719583451112005, funds 0.0035526920825397915->0.0013226951625242814
+Bidder 6YVYHRBMQS: balance 26.73916009072516->26.772327070519104, funds 1.1276776446639163->0.3157499793081512
+Bidder DT9CYYKWXK: balance 28.524303775595477->28.52437424255952, funds 0.0018321417698161577->0.00010711049001666754
+
+Asker DEKQRE9TJ2: balance 0.0->57.96836425672854, funds 33->30.632011264022527
+Asker 2JVD6AVE8N: balance 191.31040860058388->227.5406155580224, funds 41.53001932859904->40.05002721432459
+Asker EOORRCMUNF: balance 690.0093151289335->701.1036139535088, funds 8.49763911868919->8.044440637293139
+Asker 0KK5P85HIQ: balance 1283.4346528475578->1283.651004054652, funds 0.00883787610678958->0.0
+Cancelling trader
+0KK5P85HIQ Balance:  1283.651004054652 Funds Remaining:  0.0
+
+Asker QK2L67BIW7: balance 769.9636302135531->778.7592842842893, funds 3.6415721206875395->3.2822725262947197
+Amount bidders paid: -114.14679601227348, received: 4.662859314226858
+Amount askers paid: -4.669316802147582, received: 114.30487531657282
+KeyError updating 0KK5P85HIQ funds
 New orders:
-UPDATE @2018-11-13 19:24:44.562522: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 3, 'u_max': 9, 'q_max': 104, 'funds': -116.69812499999999, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:44.562796: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 1.0510130192231828, 'u_max': 5, 'q_max': 94, 'funds': -162.1128, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:44.563019: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 3, 'u_max': 17, 'q_max': 105, 'funds': -231.55486616173786, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:44.563141: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 2, 'u_max': 9, 'q_max': 100, 'funds': -183.2628681003449, 'order_id': 'JT8QA6V6QA'}
-UPDATE @2018-11-13 19:24:44.563254: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 6, 'u_max': 9, 'q_max': 84, 'funds': -130.70822422195707, 'order_id': '6WL99PL8Y9'}
 
-Holding Batch: 12 @ 2018-11-13 19:24:44.938404
-Results of batch 12 @2018-11-13 19:24:44.939522:
-p*:1.1, u*:13.616666666666667
-best bid: 13.499999999999998, best ask:13.733333333333334
+Holding Batch: 12 @ 2018-11-15 00:37:37.320544
+Updating Bid u_max from  4 ->  0.0006099955131378665 960BP4OK7M
+Updating Bid u_max from  8 ->  3.673881748000648e-05 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  6.982113816813487e-06 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  4.63037785918882e-08 YQ0KS1K76I
+Updating Bid u_max from  18 ->  5.4863452918933364e-12 T8TR6HGSFU
+Updating Bid u_max from  9 ->  8.632385125195586e-06 CQEDA8YU47
+Updating Bid u_max from  7 ->  0.0009852959496692271 WX88TD9FIW
+Updating Bid u_max from  11 ->  3.31445186194858e-06 GPS6A2SINP
+Updating Bid u_max from  10 ->  6.340617142718387e-13 LHMC4MZU7G
+Updating Bid u_max from  6 ->  1.907291273969842e-07 M13N95X6QQ
+Updating Bid u_max from  10 ->  3.391525188132724e-05 L7E1R8ZVM5
+Updating Bid u_max from  3 ->  0.009286761365898162 6YVYHRBMQS
+Updating Bid u_max from  10 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.2742286232309568 RQ6ZV8WDKA 30
+Updating Ask u_max from  7 -> 3.2822725262947197 QK2L67BIW7 38
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Found crossing after 12 iterations
+Updating Bid u_max from  4.119632646936195e-06 ->  4.119632646936195e-06 DT9CYYKWXK
+Results of batch 12 @2018-11-15 00:37:37.323318:
+p*:24.01, u*:15.115015234325918
+best bid: 14.967474041644293, best ask:15.262556427007544
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.1}, 'B5YG687G7C': {'shares': 0, 'p*': 1.1}, 'MTT4CX2G9Z': {'shares': 0, 'p*': 1.1}, 'WCA373HH5Q': {'shares': 8.549999999999999, 'p*': 1.1}, 'ZS88NOK7SG': {'shares': 4.949999999999999, 'p*': 1.1}} 
-asks
- {'6WL99PL8Y9': {'shares': 1.6499999999999995, 'p*': 1.1}, '9Q3XH0V6H4': {'shares': 6.233333333333334, 'p*': 1.1}, 'U2M0LZBCLN': {'shares': 0.9000000000000004, 'p*': 1.1}, 'JT8QA6V6QA': {'shares': 4.95, 'p*': 1.1}, '6WEGEYY05G': {'shares': 0, 'p*': 1.1}} 13.499999999999998 13.733333333333334
-Bid Before 
-WCA373HH5Q Balance:  70.79916666666666 Funds Remaining:  -116.69812499999999
-Bid After 
-WCA373HH5Q Balance:  79.34916666666666 Funds Remaining:  -126.10312499999999
-Bid Before 
-ZS88NOK7SG Balance:  88.11066666666666 Funds Remaining:  -199.97635333333338
-Bid After 
-ZS88NOK7SG Balance:  93.06066666666666 Funds Remaining:  -205.42135333333337
-Ask Before 
-6WL99PL8Y9 Balance:  95.16697472687804 Funds Remaining:  -130.70822422195707
-Ask After 
-6WL99PL8Y9 Balance:  96.81697472687804 Funds Remaining:  -132.20822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  96.80964450917261 Funds Remaining:  -231.55486616173786
-Ask After 
-9Q3XH0V6H4 Balance:  103.04297784250595 Funds Remaining:  -237.22153282840452
-Ask Before 
-U2M0LZBCLN Balance:  62.099999999999994 Funds Remaining:  -175.6069109085735
-Ask After 
-U2M0LZBCLN Balance:  62.99999999999999 Funds Remaining:  -176.4250927267553
-Ask Before 
-JT8QA6V6QA Balance:  152.25147115807096 Funds Remaining:  -183.2628681003449
-Ask After 
-JT8QA6V6QA Balance:  157.20147115807094 Funds Remaining:  -187.7628681003449
+agg_demand: 14.967474041644293, paid_bids: 14.967474041644293, agg_supply: 15.262556427007544, paid_asks: 15.262556427007544, difference: 0.0
+Bidder 960BP4OK7M: balance 27.025832837483723->27.02644283299686, funds 0.021349849059780462->0.006703856789340287
+Bidder ZA6LCJMKS2: balance 18.900026416726924->24.381702219519923, funds 333.9636219564056->202.3485859313456
+Bidder YQ0KS1K76I: balance 29.65658292644521->29.65658297274899, funds 1.203898706426879e-06->9.214498243564328e-08
+Bidder T8TR6HGSFU: balance 30.71797031433473->30.71797031433582, funds 8.77815795337463e-11->6.156785037880372e-11
+Bidder CQEDA8YU47: balance 30.468868254542564->30.46887688692769, funds 0.0003107659508308924->0.00010350238397494635
+Bidder WX88TD9FIW: balance 38.37409191896444->38.37496664378501, funds 0.022661816695351722->0.001659673753531838
+Bidder GPS6A2SINP: balance 28.503073417153768->28.50307673160563, funds 9.280468527907886e-05->1.3224696073693457e-05
+Bidder LHMC4MZU7G: balance 34.65227521023841->34.65227521023904, funds 1.7753734340228628e-11->2.529912580561777e-12
+Bidder M13N95X6QQ: balance 28.50375208121705->28.50375227194618, funds 5.7218757292008e-06->1.1424693803992091e-06
+Bidder IPI9AOYF26: balance 8.0->17.474976538395538, funds 690.0->462.5058133131231
+Bidder L7E1R8ZVM5: balance 30.719583451112005->30.719617366363885, funds 0.0013226951625242814->0.0005083899648536143
+Bidder 6YVYHRBMQS: balance 26.772327070519104->26.781613831885004, funds 0.3157499793081512->0.09277483891293631
+Bidder DT9CYYKWXK: balance 28.52437424255952->28.524378362192166, funds 0.00010711049001666754->8.198110163729476e-06
+
+Asker DEKQRE9TJ2: balance 57.96836425672854->96.7682176964355, funds 30.632011264022527->29.01602403204806
+Asker 2JVD6AVE8N: balance 227.5406155580224->251.79051010072894, funds 40.05002721432459->39.040035771479666
+Asker DWLM27I0AP: balance 98.54823562058914->159.17318849535363, funds 31.925022312555782->29.400034687617655
+Asker VZI1YK8XWW: balance 0.0->237.47296548997977, funds 28->18.10941418200834
+Asker QK2L67BIW7: balance 778.7592842842893->784.0655977495827, funds 3.2822725262947197->3.0612682170363525
+Amount bidders paid: -359.3690517398794, received: 14.967474041644293
+Amount askers paid: -15.262556427007544, received: 366.4539798124511
 New orders:
-UPDATE @2018-11-13 19:24:45.564041: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 1.0749620794828885, 'u_max': 9, 'q_max': 92, 'funds': -205.42135333333337, 'order_id': 'ZS88NOK7SG'}
 
-Holding Batch: 13 @ 2018-11-13 19:24:45.938690
-Results of batch 13 @2018-11-13 19:24:45.939759:
-p*:1.06, u*:12.817297275081927
-best bid: 12.727927883497184, best ask:12.90666666666667
+Holding Batch: 13 @ 2018-11-15 00:37:38.321000
+Updating Bid u_max from  4 ->  0.00019153871068437655 960BP4OK7M
+Updating Bid u_max from  8 ->  3.673881748000648e-05 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  9.635642360710571 ZA6LCJMKS2
+Updating Bid u_max from  11 ->  6.982113816813487e-06 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  3.5440364228953483e-09 YQ0KS1K76I
+Updating Bid u_max from  18 ->  3.84798824368258e-12 T8TR6HGSFU
+Updating Bid u_max from  9 ->  2.875065422897003e-06 CQEDA8YU47
+Updating Bid u_max from  7 ->  7.215969704064642e-05 WX88TD9FIW
+Updating Bid u_max from  11 ->  4.7231040537819297e-07 GPS6A2SINP
+Updating Bid u_max from  10 ->  9.035398846506759e-14 LHMC4MZU7G
+Updating Bid u_max from  6 ->  3.808229998587364e-08 M13N95X6QQ
+Updating Bid u_max from  10 ->  1.3035636781980677e-05 L7E1R8ZVM5
+Updating Bid u_max from  3 ->  0.002728670930183147 6YVYHRBMQS
+Updating Bid u_max from  10 ->  3.153118081004383e-07 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.2742286232309568 RQ6ZV8WDKA 30
+Updating Ask u_max from  7 -> 3.0612682170363525 QK2L67BIW7 38
+Found crossing after 12 iterations
+Results of batch 13 @2018-11-15 00:37:38.323435:
+p*:23.96, u*:14.913181183681711
+best bid: 14.88506834519839, best ask:14.941294022165035
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.06}, 'B5YG687G7C': {'shares': 2.2015700946669763, 'p*': 1.06}, 'MTT4CX2G9Z': {'shares': 0, 'p*': 1.06}, 'WCA373HH5Q': {'shares': 8.73, 'p*': 1.06}, 'ZS88NOK7SG': {'shares': 1.7963577888302065, 'p*': 1.06}} 
-asks
- {'6WL99PL8Y9': {'shares': 1.5900000000000007, 'p*': 1.06}, '9Q3XH0V6H4': {'shares': 6.006666666666668, 'p*': 1.06}, 'U2M0LZBCLN': {'shares': 0.5400000000000009, 'p*': 1.06}, 'JT8QA6V6QA': {'shares': 4.7700000000000005, 'p*': 1.06}, '6WEGEYY05G': {'shares': 0, 'p*': 1.06}} 12.727927883497184 12.90666666666667
-Bid Before 
-B5YG687G7C Balance:  74.75861860298423 Funds Remaining:  -147.20784811790105
-Bid After 
-B5YG687G7C Balance:  76.9601886976512 Funds Remaining:  -149.54151241824803
-Bid Before 
-WCA373HH5Q Balance:  79.34916666666666 Funds Remaining:  -126.10312499999999
-Bid After 
-WCA373HH5Q Balance:  88.07916666666667 Funds Remaining:  -135.356925
-Bid Before 
-ZS88NOK7SG Balance:  93.06066666666666 Funds Remaining:  -205.42135333333337
-Bid After 
-ZS88NOK7SG Balance:  94.85702445549687 Funds Remaining:  -207.3254925894934
-Ask Before 
-6WL99PL8Y9 Balance:  96.81697472687804 Funds Remaining:  -132.20822422195707
-Ask After 
-6WL99PL8Y9 Balance:  98.40697472687805 Funds Remaining:  -133.70822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  103.04297784250595 Funds Remaining:  -237.22153282840452
-Ask After 
-9Q3XH0V6H4 Balance:  109.04964450917262 Funds Remaining:  -242.88819949507118
-Ask Before 
-U2M0LZBCLN Balance:  62.99999999999999 Funds Remaining:  -176.4250927267553
-Ask After 
-U2M0LZBCLN Balance:  63.53999999999999 Funds Remaining:  -176.93452668901946
-Ask Before 
-JT8QA6V6QA Balance:  157.20147115807094 Funds Remaining:  -187.7628681003449
-Ask After 
-JT8QA6V6QA Balance:  161.97147115807095 Funds Remaining:  -192.2628681003449
+agg_demand: 14.88506834519839, paid_bids: 14.88506834519839, agg_supply: 14.941294022165035, paid_asks: 14.941294022165035, difference: -1.7763568394002505e-15
+Bidder 960BP4OK7M: balance 27.02644283299686->27.026634371707544, funds 0.006703856789340287->0.0021145892813426246
+Bidder ZA6LCJMKS2: balance 24.381702219519923->29.2637691523915, funds 202.3485859313456->85.37426221974263
+Bidder YQ0KS1K76I: balance 29.65658297274899->29.656582976293027, funds 9.214498243564328e-08->7.229869743070738e-09
+Bidder T8TR6HGSFU: balance 30.71797031433582->30.717970314336604, funds 6.156785037880372e-11->4.2759480713432596e-11
+Bidder CQEDA8YU47: balance 30.46887688692769->30.46887976199311, funds 0.00010350238397494635->3.461581644233414e-05
+Bidder WX88TD9FIW: balance 38.37496664378501->38.37503110651932, funds 0.001659673753531838->0.00011514663934672682
+Bidder GPS6A2SINP: balance 28.50307673160563->28.503077203916035, funds 1.3224696073693457e-05->1.9081387608319528e-06
+Bidder LHMC4MZU7G: balance 34.65227521023904->34.65227521023913, funds 2.529912580561777e-12->3.650310169387577e-13
+Bidder M13N95X6QQ: balance 28.50375227194618->28.50375231002848, funds 1.1424693803992091e-06->2.3001747273767663e-07
+Bidder IPI9AOYF26: balance 17.474976538395538->27.474976538395538, funds 462.5058133131231->222.90581331312308
+Bidder L7E1R8ZVM5: balance 30.719617366363885->30.719630402000668, funds 0.0005083899648536143->0.00019605610755735723
+Bidder 6YVYHRBMQS: balance 26.781613831885004->26.784342502815186, funds 0.09277483891293631->0.0273958834257481
+Bidder DT9CYYKWXK: balance 28.524378362192166->28.524378677503975, funds 8.198110163729476e-06->6.432392416429746e-07
+
+Asker DEKQRE9TJ2: balance 96.7682176964355->133.57046794093606, funds 29.01602403204806->27.48003696007391
+Asker 2JVD6AVE8N: balance 251.79051010072894->274.7919033598622, funds 39.040035771479666->38.08004440006342
+Asker DWLM27I0AP: balance 159.17318849535363->216.6768770137963, funds 29.400034687617655->27.000047687682653
+Asker VZI1YK8XWW: balance 237.47296548997977->473.4648128734194, funds 18.10941418200834->8.260004858826385
+Asker QK2L67BIW7: balance 784.0655977495827->788.7598231151409, funds 3.0612682170363525->2.865348961378667
+Amount bidders paid: -356.64623755095346, received: 14.88506834519839
+Amount askers paid: -14.941294022165035, received: 357.9934047710743
 New orders:
-UPDATE @2018-11-13 19:24:46.569338: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 1.014212039771075, 'u_max': 17, 'q_max': 106, 'funds': -207.3254925894934, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:46.569517: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 2.045217288627016, 'u_max': 15, 'q_max': 95, 'funds': -149.54151241824803, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:46.569638: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 2, 'u_max': 7, 'q_max': 103, 'funds': -176.93452668901946, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:46.569749: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 4, 'u_max': 12, 'q_max': 103, 'funds': -135.356925, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:46.569869: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 0.09740510489601993, 'u_max': 9, 'q_max': 92, 'funds': -149.54151241824803, 'order_id': 'B5YG687G7C'}
 
-Holding Batch: 14 @ 2018-11-13 19:24:46.938732
-Results of batch 14 @2018-11-13 19:24:46.939812:
-p*:1.02, u*:15.214858052681626
-best bid: 14.959716105363253, best ask:15.469999999999999
+Holding Batch: 14 @ 2018-11-15 00:37:39.321056
+Updating Bid u_max from  4 ->  6.041681934784088e-05 960BP4OK7M
+Updating Bid u_max from  8 ->  3.673881748000648e-05 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  4.065439122159591 ZA6LCJMKS2
+Updating Bid u_max from  11 ->  6.982113816813487e-06 W0ISDHQ1T1
+Updating Bid u_max from  8 ->  2.7807180624433367e-10 YQ0KS1K76I
+Updating Bid u_max from  10 ->  1.4253155486759036e-12 T8TR6HGSFU
+Updating Bid u_max from  9 ->  9.61550189634229e-07 CQEDA8YU47
+Updating Bid u_max from  7 ->  5.0063734470866235e-06 WX88TD9FIW
+Updating Bid u_max from  11 ->  6.814778854835954e-08 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.3036817377520854e-14 LHMC4MZU7G
+Updating Bid u_max from  6 ->  7.667246535507043e-09 M13N95X6QQ
+Updating Bid u_max from  10 ->  5.027078391963418e-06 L7E1R8ZVM5
+Updating Bid u_max from  3 ->  0.000805761040239344 6YVYHRBMQS
+Updating Bid u_max from  7 ->  2.2972821854098432e-08 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.2742286232309568 RQ6ZV8WDKA 30
+Updating Ask u_max from  14 -> 8.260004858826385 VZI1YK8XWW 29
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Found crossing after 13 iterations
+Results of batch 14 @2018-11-15 00:37:39.323226:
+p*:20.880000000000003, u*:4.310487091297191
+best bid: 4.306338671259979, best ask:4.314635511334403
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 3.0397161053632518, 'p*': 1.02}, 'B5YG687G7C': {'shares': 0, 'p*': 1.02}, 'MTT4CX2G9Z': {'shares': 0, 'p*': 1.02}, 'WCA373HH5Q': {'shares': 11.92, 'p*': 1.02}, 'ZS88NOK7SG': {'shares': 0, 'p*': 1.02}} 
-asks
- {'6WL99PL8Y9': {'shares': 1.5299999999999994, 'p*': 1.02}, '9Q3XH0V6H4': {'shares': 5.779999999999999, 'p*': 1.02}, 'U2M0LZBCLN': {'shares': 3.5700000000000003, 'p*': 1.02}, 'JT8QA6V6QA': {'shares': 4.59, 'p*': 1.02}, '6WEGEYY05G': {'shares': 0, 'p*': 1.02}} 14.959716105363253 15.469999999999999
-Bid Before 
-WJS6K7FJ7B Balance:  96.90666666666668 Funds Remaining:  -162.1128
-Bid After 
-WJS6K7FJ7B Balance:  99.94638277202993 Funds Remaining:  -165.2133104274705
-Bid Before 
-WCA373HH5Q Balance:  88.07916666666667 Funds Remaining:  -135.356925
-Bid After 
-WCA373HH5Q Balance:  99.99916666666667 Funds Remaining:  -147.515325
-Ask Before 
-6WL99PL8Y9 Balance:  98.40697472687805 Funds Remaining:  -133.70822422195707
-Ask After 
-6WL99PL8Y9 Balance:  99.93697472687805 Funds Remaining:  -135.20822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  109.04964450917262 Funds Remaining:  -242.88819949507118
-Ask After 
-9Q3XH0V6H4 Balance:  114.82964450917262 Funds Remaining:  -248.55486616173783
-Ask Before 
-U2M0LZBCLN Balance:  63.53999999999999 Funds Remaining:  -176.93452668901946
-Ask After 
-U2M0LZBCLN Balance:  67.10999999999999 Funds Remaining:  -180.43452668901946
-Ask Before 
-JT8QA6V6QA Balance:  161.97147115807095 Funds Remaining:  -192.2628681003449
-Ask After 
-JT8QA6V6QA Balance:  166.56147115807096 Funds Remaining:  -196.7628681003449
+agg_demand: 4.306338671259979, paid_bids: 4.306338671259979, agg_supply: 4.314635511334403, paid_asks: 4.314635511334403, difference: 0.0
+Bidder 960BP4OK7M: balance 27.026634371707544->27.026694788526893, funds 0.0021145892813426246->0.0008530860933597068
+Bidder BQRR2XGE2Z: balance 32.9914921328659->32.99151270670656, funds 0.0007347767169883044->0.0003051949240491209
+Bidder ZA6LCJMKS2: balance 29.2637691523915->33.32920827455109, funds 85.37426221974263->0.48789334905035275
+Bidder W0ISDHQ1T1: balance 32.87244159552558->32.87244289885567, funds 0.00011171389089015396->8.450035872185483e-05
+Bidder YQ0KS1K76I: balance 29.656582976293027->29.656582976571098, funds 7.229869743070738e-09->1.4237304286890499e-09
+Bidder T8TR6HGSFU: balance 30.717970314336604->30.71797031433803, funds 4.2759480713432596e-11->1.2998892057079721e-11
+Bidder CQEDA8YU47: balance 30.46887976199311->30.4688807235433, funds 3.461581644233414e-05->1.453864848277144e-05
+Bidder WX88TD9FIW: balance 38.37503110651932->38.37503611289277, funds 0.00011514663934672682->1.0613561771558106e-05
+Bidder GPS6A2SINP: balance 28.503077203916035->28.503077272063823, funds 1.9081387608319528e-06->4.852129359422054e-07
+Bidder LHMC4MZU7G: balance 34.65227521023913->34.65227521023915, funds 3.650310169387577e-13->9.282227009612224e-14
+Bidder M13N95X6QQ: balance 28.50375231002848->28.503752317695728, funds 2.3001747273767663e-07->6.992536507628954e-08
+Bidder IPI9AOYF26: balance 27.474976538395538->27.714976938396198, funds 222.90581331312308->217.89460496110925
+Bidder L7E1R8ZVM5: balance 30.719630402000668->30.71963542907906, funds 0.00019605610755735723->9.109071073316107e-05
+Bidder 6YVYHRBMQS: balance 26.784342502815186->26.785148263855426, funds 0.0273958834257481->0.010571592905550594
+Bidder DT9CYYKWXK: balance 28.524378677503975->28.524378700476795, funds 6.432392416429746e-07->1.6356672132939935e-07
+
+Asker VZI1YK8XWW: balance 473.4648128734194->563.5544023500818, funds 8.260004858826385->3.9453693474919813
+Amount bidders paid: -89.91635145590836, received: 4.306338671259979
+Amount askers paid: -4.314635511334403, received: 90.08958947666235
 New orders:
-UPDATE @2018-11-13 19:24:47.571615: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 10, 'q_max': 96, 'funds': -165.2133104274705, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:47.571807: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 0.07397647972899585, 'u_max': 5, 'q_max': 103, 'funds': -207.3254925894934, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:47.571933: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 13, 'q_max': 115, 'funds': -207.3254925894934, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:47.572042: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 3, 'u_max': 8, 'q_max': 87, 'funds': -195.4274666666667, 'order_id': 'MTT4CX2G9Z'}
-UPDATE @2018-11-13 19:24:47.572170: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 1, 'u_max': 10, 'q_max': 115, 'funds': -165.2133104274705, 'order_id': 'WJS6K7FJ7B'}
 
-Holding Batch: 15 @ 2018-11-13 19:24:47.938759
-Results of batch 15 @2018-11-13 19:24:47.939965:
-p*:1.3900000000000001, u*:20.963333333333335
-best bid: 20.845, best ask:21.08166666666667
+Holding Batch: 15 @ 2018-11-15 00:37:40.321105
+Updating Bid u_max from  4 ->  2.4373881417739785e-05 960BP4OK7M
+Updating Bid u_max from  8 ->  1.525973857258676e-05 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  0.02323300555810939 ZA6LCJMKS2
+Updating Bid u_max from  11 ->  5.281269119322727e-06 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  5.694919436788425e-11 YQ0KS1K76I
+Updating Bid u_max from  10 ->  4.332962574705716e-13 T8TR6HGSFU
+Updating Bid u_max from  9 ->  4.038512345627526e-07 CQEDA8YU47
+Updating Bid u_max from  7 ->  4.614590068246973e-07 WX88TD9FIW
+Updating Bid u_max from  9 ->  2.6956259243311832e-08 GPS6A2SINP
+Updating Bid u_max from  10 ->  3.315079890904405e-15 LHMC4MZU7G
+Updating Bid u_max from  6 ->  2.330844725594743e-09 M13N95X6QQ
+Updating Bid u_max from  10 ->  2.3356586506813987e-06 L7E1R8ZVM5
+Updating Bid u_max from  15 ->  0.0006607241436443224 6YVYHRBMQS
+Updating Bid u_max from  7 ->  5.841666532597644e-09 DT9CYYKWXK
+Updating Ask u_max from  12 -> 1.2742286232309568 RQ6ZV8WDKA 30
+Updating Ask u_max from  15 -> 8.044440637293139 EOORRCMUNF 13.174485963107237
+Updating Ask u_max from  14 -> 3.9453693474919813 VZI1YK8XWW 29
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Found crossing after 12 iterations
+Results of batch 15 @2018-11-15 00:37:40.323226:
+p*:15.05, u*:9.038084645046139
+best bid: 9.023941880745912, best ask:9.052227409346365
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.3900000000000001}, 'B5YG687G7C': {'shares': 0, 'p*': 1.3900000000000001}, 'MTT4CX2G9Z': {'shares': 6.4399999999999995, 'p*': 1.3900000000000001}, 'WCA373HH5Q': {'shares': 10.44, 'p*': 1.3900000000000001}, 'ZS88NOK7SG': {'shares': 3.964999999999999, 'p*': 1.3900000000000001}} 
-asks
- {'6WL99PL8Y9': {'shares': 2.085000000000001, 'p*': 1.3900000000000001}, '9Q3XH0V6H4': {'shares': 7.876666666666667, 'p*': 1.3900000000000001}, 'U2M0LZBCLN': {'shares': 4.865, 'p*': 1.3900000000000001}, 'JT8QA6V6QA': {'shares': 6.255000000000001, 'p*': 1.3900000000000001}, '6WEGEYY05G': {'shares': 0, 'p*': 1.3900000000000001}} 20.845 21.08166666666667
-Bid Before 
-MTT4CX2G9Z Balance:  109.29333333333334 Funds Remaining:  -195.4274666666667
-Bid After 
-MTT4CX2G9Z Balance:  115.73333333333333 Funds Remaining:  -204.37906666666672
-Bid Before 
-WCA373HH5Q Balance:  99.99916666666667 Funds Remaining:  -147.515325
-Bid After 
-WCA373HH5Q Balance:  110.43916666666667 Funds Remaining:  -162.026925
-Bid Before 
-ZS88NOK7SG Balance:  94.85702445549687 Funds Remaining:  -207.3254925894934
-Bid After 
-ZS88NOK7SG Balance:  98.82202445549687 Funds Remaining:  -212.8368425894934
-Ask Before 
-6WL99PL8Y9 Balance:  99.93697472687805 Funds Remaining:  -135.20822422195707
-Ask After 
-6WL99PL8Y9 Balance:  102.02197472687806 Funds Remaining:  -136.70822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  114.82964450917262 Funds Remaining:  -248.55486616173783
-Ask After 
-9Q3XH0V6H4 Balance:  122.70631117583929 Funds Remaining:  -254.2215328284045
-Ask Before 
-U2M0LZBCLN Balance:  67.10999999999999 Funds Remaining:  -180.43452668901946
-Ask After 
-U2M0LZBCLN Balance:  71.97499999999998 Funds Remaining:  -183.93452668901946
-Ask Before 
-JT8QA6V6QA Balance:  166.56147115807096 Funds Remaining:  -196.7628681003449
-Ask After 
-JT8QA6V6QA Balance:  172.81647115807095 Funds Remaining:  -201.2628681003449
+agg_demand: 9.023941880745912, paid_bids: 9.023941880745912, agg_supply: 9.052227409346365, paid_asks: 9.052227409346365, difference: 0.0
+Bidder 960BP4OK7M: balance 27.026694788526893->27.02671916240831, funds 0.0008530860933597068->0.000486259178022723
+Bidder BQRR2XGE2Z: balance 32.99151270670656->32.99152796644513, funds 0.0003051949240491209->7.553585853169016e-05
+Bidder ZA6LCJMKS2: balance 33.32920827455109->33.352441280109204, funds 0.48789334905035275->0.13823661540080645
+Bidder W0ISDHQ1T1: balance 32.87244289885567->32.872448180124785, funds 8.450035872185483e-05->5.017258476047772e-06
+Bidder YQ0KS1K76I: balance 29.656582976571098->29.656582976628048, funds 1.4237304286890499e-09->5.666450534523919e-10
+Bidder T8TR6HGSFU: balance 30.71797031433803->30.717970314338462, funds 1.2998892057079721e-11->6.477783382147619e-12
+Bidder CQEDA8YU47: balance 30.4688807235433->30.468881127394535, funds 1.453864848277144e-05->8.460687402602013e-06
+Bidder WX88TD9FIW: balance 38.37503611289277->38.37503657435178, funds 1.0613561771558106e-05->3.6686037188464113e-06
+Bidder GPS6A2SINP: balance 28.503077272063823->28.50307729902008, funds 4.852129359422054e-07->7.952123433036232e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 9.282227009612224e-14->4.293031773801095e-14
+Bidder M13N95X6QQ: balance 28.503752317695728->28.50375232002657, funds 6.992536507628954e-08->3.484615195608866e-08
+Bidder IPI9AOYF26: balance 27.714976938396198->36.7149769383962, funds 217.89460496110925->82.44460496110923
+Bidder L7E1R8ZVM5: balance 30.71963542907906->30.71963776473771, funds 9.109071073316107e-05->5.593904804040602e-05
+Bidder 6YVYHRBMQS: balance 26.785148263855426->26.78580898799907, funds 0.010571592905550594->0.0006276945437035421
+Bidder DT9CYYKWXK: balance 28.524378700476795->28.524378706318462, funds 1.6356672132939935e-07->7.564964001380481e-08
+
+Asker EOORRCMUNF: balance 701.1036139535088->822.1724455447705, funds 8.044440637293139->0.0
+Cancelling trader
+EOORRCMUNF Balance:  822.1724455447705 Funds Remaining:  0.0
+
+Asker VZI1YK8XWW: balance 563.5544023500818->574.2074511280613, funds 3.9453693474919813->3.2375255748687577
+Asker KPMOKS5VZO: balance 356.44187667292255->360.9560188143441, funds 26.85337617792058->26.55343317849058
+Amount bidders paid: -135.810325305226, received: 9.023941880745912
+Amount askers paid: -9.052227409346365, received: 136.23602251066276
+KeyError updating EOORRCMUNF funds
 New orders:
-UPDATE @2018-11-13 19:24:48.572647: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 7, 'q_max': 115, 'funds': -183.93452668901946, 'order_id': 'U2M0LZBCLN'}
 
-Holding Batch: 16 @ 2018-11-13 19:24:48.938772
-Results of batch 16 @2018-11-13 19:24:48.939950:
-p*:1.3, u*:22.15833333333333
-best bid: 22.150000000000002, best ask:22.166666666666664
+Holding Batch: 16 @ 2018-11-15 00:37:41.321121
+Updating Bid u_max from  15 ->  3.740452338288378e-05 960BP4OK7M
+Updating Bid u_max from  8 ->  3.776791038188989e-06 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  0.006582692836851338 ZA6LCJMKS2
+Updating Bid u_max from  11 ->  3.1357845876644904e-07 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  2.2665793071778448e-11 YQ0KS1K76I
+Updating Bid u_max from  10 ->  2.1592604076290705e-13 T8TR6HGSFU
+Updating Bid u_max from  9 ->  2.350190292336589e-07 CQEDA8YU47
+Updating Bid u_max from  7 ->  1.5950444016530476e-07 WX88TD9FIW
+Updating Bid u_max from  9 ->  4.417843897329075e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.5332250859200033e-15 LHMC4MZU7G
+Updating Bid u_max from  6 ->  1.1615380113569517e-09 M13N95X6QQ
+Updating Bid u_max from  9 ->  4.849679792018312 IPI9AOYF26
+Updating Bid u_max from  10 ->  1.4343341973606165e-06 L7E1R8ZVM5
+Updating Bid u_max from  15 ->  3.923088446216859e-05 6YVYHRBMQS
+Updating Bid u_max from  7 ->  2.701771892717353e-09 DT9CYYKWXK
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 3.2375255748687577 VZI1YK8XWW 29
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Found crossing after 13 iterations
+Results of batch 16 @2018-11-15 00:37:41.323052:
+p*:9.64, u*:4.886326676674111
+best bid: 4.85634504779421, best ask:4.916308305554011
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.3}, 'B5YG687G7C': {'shares': 0, 'p*': 1.3}, 'MTT4CX2G9Z': {'shares': 6.8, 'p*': 1.3}, 'WCA373HH5Q': {'shares': 10.8, 'p*': 1.3}, 'ZS88NOK7SG': {'shares': 4.55, 'p*': 1.3}} 
-asks
- {'6WL99PL8Y9': {'shares': 1.9500000000000002, 'p*': 1.3}, '9Q3XH0V6H4': {'shares': 7.366666666666667, 'p*': 1.3}, 'U2M0LZBCLN': {'shares': 7, 'p*': 1.3}, 'JT8QA6V6QA': {'shares': 5.85, 'p*': 1.3}, '6WEGEYY05G': {'shares': 0, 'p*': 1.3}} 22.150000000000002 22.166666666666664
-Bid Before 
-MTT4CX2G9Z Balance:  115.73333333333333 Funds Remaining:  -204.37906666666672
-Bid After 
-MTT4CX2G9Z Balance:  122.53333333333333 Funds Remaining:  -213.21906666666672
-Bid Before 
-WCA373HH5Q Balance:  110.43916666666667 Funds Remaining:  -162.026925
-Bid After 
-WCA373HH5Q Balance:  121.23916666666666 Funds Remaining:  -176.066925
-Bid Before 
-ZS88NOK7SG Balance:  98.82202445549687 Funds Remaining:  -212.8368425894934
-Bid After 
-ZS88NOK7SG Balance:  103.37202445549687 Funds Remaining:  -218.75184258949338
-Ask Before 
-6WL99PL8Y9 Balance:  102.02197472687806 Funds Remaining:  -136.70822422195707
-Ask After 
-6WL99PL8Y9 Balance:  103.97197472687806 Funds Remaining:  -138.20822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  122.70631117583929 Funds Remaining:  -254.2215328284045
-Ask After 
-9Q3XH0V6H4 Balance:  130.07297784250596 Funds Remaining:  -259.88819949507115
-Ask Before 
-U2M0LZBCLN Balance:  71.97499999999998 Funds Remaining:  -183.93452668901946
-Ask After 
-U2M0LZBCLN Balance:  78.97499999999998 Funds Remaining:  -189.31914207363485
-Ask Before 
-JT8QA6V6QA Balance:  172.81647115807095 Funds Remaining:  -201.2628681003449
-Ask After 
-JT8QA6V6QA Balance:  178.66647115807095 Funds Remaining:  -205.7628681003449
+agg_demand: 4.85634504779421, paid_bids: 4.85634504779421, agg_supply: 4.916308305554011, paid_asks: 4.916308305554011, difference: 8.881784197001252e-16
+Bidder 960BP4OK7M: balance 27.02671916240831->27.02675656693169, funds 0.000486259178022723->0.0001256795726117233
+Bidder BQRR2XGE2Z: balance 32.99152796644513->32.99153174323617, funds 7.553585853169016e-05->3.91275929235483e-05
+Bidder ZA6LCJMKS2: balance 33.352441280109204->33.359023972946055, funds 0.13823661540080645->0.07477945645355956
+Bidder W0ISDHQ1T1: balance 32.872448180124785->32.872448493703246, funds 5.017258476047772e-06->1.994362133539203e-06
+Bidder YQ0KS1K76I: balance 29.656582976628048->29.656582976650714, funds 5.666450534523919e-10->3.4814680824044765e-10
+Bidder T8TR6HGSFU: balance 30.717970314338462->30.71797031433868, funds 6.477783382147619e-12->4.396256349193195e-12
+Bidder CQEDA8YU47: balance 30.468881127394535->30.468881362413565, funds 8.460687402602013e-06->6.195103960789542e-06
+Bidder WX88TD9FIW: balance 38.37503657435178->38.37503673385622, funds 3.6686037188464113e-06->2.1309809156528734e-06
+Bidder GPS6A2SINP: balance 28.50307729902008->28.503077303437927, funds 7.952123433036232e-08->3.693321916011003e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 4.293031773801095e-14->2.8150027909742117e-14
+Bidder M13N95X6QQ: balance 28.50375232002657->28.50375232118811, funds 3.484615195608866e-08->2.3648925526607647e-08
+Bidder IPI9AOYF26: balance 36.7149769383962->41.56465673041451, funds 82.44460496110923->35.6936917660527
+Bidder L7E1R8ZVM5: balance 30.71963776473771->30.719639199071906, funds 5.593904804040602e-05->4.2112066377849675e-05
+Bidder 6YVYHRBMQS: balance 26.78580898799907->26.78584821888353, funds 0.0006276945437035421->0.00024950881748823684
+Bidder DT9CYYKWXK: balance 28.524378706318462->28.524378709020233, funds 7.564964001380481e-08->4.9604558968009526e-08
+
+Asker 25RGEWHMPN: balance 171.26741549623227->178.55865365190334, funds 25.443416122478126->24.68706361670312
+Asker 18RZ3879CD: balance 0.0->40.1019739098696, funds 46->41.840044200220994
+Amount bidders paid: -46.81516626073618, received: 4.85634504779421
+Amount askers paid: -4.916308305554011, received: 47.39321206554067
 New orders:
-UPDATE @2018-11-13 19:24:49.574390: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 1, 'u_max': 6, 'q_max': 86, 'funds': -149.54151241824803, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:49.574547: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 2, 'u_max': 4, 'q_max': 117, 'funds': -205.7628681003449, 'order_id': 'JT8QA6V6QA'}
-UPDATE @2018-11-13 19:24:49.574657: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 3, 'u_max': 5, 'q_max': 82, 'funds': -218.75184258949338, 'order_id': 'ZS88NOK7SG'}
 
-Holding Batch: 17 @ 2018-11-13 19:24:49.938839
-Results of batch 17 @2018-11-13 19:24:49.940032:
-p*:1.3900000000000001, u*:19.6525
-best bid: 19.563333333333333, best ask:19.741666666666667
+Holding Batch: 17 @ 2018-11-15 00:37:42.321121
+Updating Bid u_max from  15 ->  9.667651995015642e-06 960BP4OK7M
+Updating Bid u_max from  12 ->  5.5896481467238335e-06 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  0.0035609248021100733 ZA6LCJMKS2
+Updating Bid u_max from  11 ->  2.2159554639819325e-07 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  1.3925866759271203e-11 YQ0KS1K76I
+Updating Bid u_max from  10 ->  1.4654182945916334e-13 T8TR6HGSFU
+Updating Bid u_max from  9 ->  1.72086173331328e-07 CQEDA8YU47
+Updating Bid u_max from  7 ->  9.265130387564499e-08 WX88TD9FIW
+Updating Bid u_max from  9 ->  2.051844368981463e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  6 ->  7.882972547878367e-10 M13N95X6QQ
+Updating Bid u_max from  9 ->  2.0996276923397517 IPI9AOYF26
+Updating Bid u_max from  10 ->  1.0797962969201718e-06 L7E1R8ZVM5
+Updating Bid u_max from  15 ->  1.559429134658271e-05 6YVYHRBMQS
+Updating Bid u_max from  7 ->  1.7715907590036406e-09 DT9CYYKWXK
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 3.2375255748687577 VZI1YK8XWW 29
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Uh oh did not find crossing within max_iterations! 9.54
+Error calculating crossing 
+Results of batch 17 @2018-11-15 00:37:42.323382:
+p*:0, u*:0
+best bid: 0, best ask:0
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.3900000000000001}, 'B5YG687G7C': {'shares': 0, 'p*': 1.3900000000000001}, 'MTT4CX2G9Z': {'shares': 6.4399999999999995, 'p*': 1.3900000000000001}, 'WCA373HH5Q': {'shares': 10.44, 'p*': 1.3900000000000001}, 'ZS88NOK7SG': {'shares': 2.683333333333333, 'p*': 1.3900000000000001}} 
-asks
- {'6WL99PL8Y9': {'shares': 2.085000000000001, 'p*': 1.3900000000000001}, '9Q3XH0V6H4': {'shares': 7.876666666666667, 'p*': 1.3900000000000001}, 'U2M0LZBCLN': {'shares': 7, 'p*': 1.3900000000000001}, 'JT8QA6V6QA': {'shares': 2.7800000000000002, 'p*': 1.3900000000000001}, '6WEGEYY05G': {'shares': 0, 'p*': 1.3900000000000001}} 19.563333333333333 19.741666666666667
-Bid Before 
-MTT4CX2G9Z Balance:  122.53333333333333 Funds Remaining:  -213.21906666666672
-Bid After 
-MTT4CX2G9Z Balance:  128.97333333333333 Funds Remaining:  -222.17066666666673
-Bid Before 
-WCA373HH5Q Balance:  121.23916666666666 Funds Remaining:  -176.066925
-Bid After 
-WCA373HH5Q Balance:  131.67916666666667 Funds Remaining:  -190.578525
-Bid Before 
-ZS88NOK7SG Balance:  103.37202445549687 Funds Remaining:  -218.75184258949338
-Bid After 
-ZS88NOK7SG Balance:  106.05535778883021 Funds Remaining:  -222.48167592282672
-Ask Before 
-6WL99PL8Y9 Balance:  103.97197472687806 Funds Remaining:  -138.20822422195707
-Ask After 
-6WL99PL8Y9 Balance:  106.05697472687805 Funds Remaining:  -139.70822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  130.07297784250596 Funds Remaining:  -259.88819949507115
-Ask After 
-9Q3XH0V6H4 Balance:  137.94964450917263 Funds Remaining:  -265.55486616173783
-Ask Before 
-U2M0LZBCLN Balance:  78.97499999999998 Funds Remaining:  -189.31914207363485
-Ask After 
-U2M0LZBCLN Balance:  85.97499999999998 Funds Remaining:  -194.35511329665644
-Ask Before 
-JT8QA6V6QA Balance:  178.66647115807095 Funds Remaining:  -205.7628681003449
-Ask After 
-JT8QA6V6QA Balance:  181.44647115807095 Funds Remaining:  -207.7628681003449
+agg_demand: 0, paid_bids: 11.103221039488476, agg_supply: 0, paid_asks: 0, difference: -11.103221039488476
+Bidder 960BP4OK7M: balance 27.02675656693169->27.026766234583686, funds 0.0001256795726117233->0.0001256795726117233
+Bidder BQRR2XGE2Z: balance 32.99153174323617->32.99153733288432, funds 3.91275929235483e-05->3.91275929235483e-05
+Bidder ZA6LCJMKS2: balance 33.359023972946055->33.362584897748164, funds 0.07477945645355956->0.07477945645355956
+Bidder W0ISDHQ1T1: balance 32.872448493703246->32.872448715298795, funds 1.994362133539203e-06->1.994362133539203e-06
+Bidder YQ0KS1K76I: balance 29.656582976650714->29.65658297666464, funds 3.4814680824044765e-10->3.4814680824044765e-10
+Bidder T8TR6HGSFU: balance 30.71797031433868->30.717970314338825, funds 4.396256349193195e-12->4.396256349193195e-12
+Bidder I9BY2KFEUK: balance 11.0->20.0, funds 679.0->679.0
+Bidder CQEDA8YU47: balance 30.468881362413565->30.46888153449974, funds 6.195103960789542e-06->6.195103960789542e-06
+Bidder WX88TD9FIW: balance 38.37503673385622->38.375036826507525, funds 2.1309809156528734e-06->2.1309809156528734e-06
+Bidder GPS6A2SINP: balance 28.503077303437927->28.50307730548977, funds 3.693321916011003e-08->3.693321916011003e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.8150027909742117e-14->2.8150027909742117e-14
+Bidder M13N95X6QQ: balance 28.50375232118811->28.503752321976407, funds 2.3648925526607647e-08->2.3648925526607647e-08
+Bidder IPI9AOYF26: balance 41.56465673041451->43.664284422754264, funds 35.6936917660527->35.6936917660527
+Bidder L7E1R8ZVM5: balance 30.719639199071906->30.719640278868205, funds 4.2112066377849675e-05->4.2112066377849675e-05
+Bidder 6YVYHRBMQS: balance 26.78584821888353->26.785863813174878, funds 0.00024950881748823684->0.00024950881748823684
+Bidder DT9CYYKWXK: balance 28.524378709020233->28.524378710791822, funds 4.9604558968009526e-08->4.9604558968009526e-08
+
+Amount bidders paid: 0.0, received: 11.103221039488476
+Amount askers paid: 0, received: 0
 New orders:
-UPDATE @2018-11-13 19:24:50.578185: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 1, 'p_high': 2, 'u_max': 8, 'q_max': 93, 'funds': -109.0645153465326, 'order_id': '6WEGEYY05G'}
-UPDATE @2018-11-13 19:24:50.578359: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.055293566589138025, 'u_max': 9, 'q_max': 82, 'funds': -265.55486616173783, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:50.578493: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.02370580065929212, 'u_max': 10, 'q_max': 104, 'funds': -194.35511329665644, 'order_id': 'U2M0LZBCLN'}
-UPDATE @2018-11-13 19:24:50.578604: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 1, 'u_max': 13, 'q_max': 88, 'funds': -149.54151241824803, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:50.578717: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 1.09140739016601, 'u_max': 5, 'q_max': 93, 'funds': -165.2133104274705, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:50.579274: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 1, 'u_max': 15, 'q_max': 109, 'funds': -207.7628681003449, 'order_id': 'JT8QA6V6QA'}
-UPDATE @2018-11-13 19:24:50.579416: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 2, 'u_max': 10, 'q_max': 91, 'funds': -222.48167592282672, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:50.579553: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.027802674556399995, 'u_max': 9, 'q_max': 99, 'funds': -207.7628681003449, 'order_id': 'JT8QA6V6QA'}
-UPDATE @2018-11-13 19:24:50.579673: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.009215281699030867, 'u_max': 4, 'q_max': 102, 'funds': -194.35511329665644, 'order_id': 'U2M0LZBCLN'}
 
-Holding Batch: 18 @ 2018-11-13 19:24:50.938829
-Results of batch 18 @2018-11-13 19:24:50.939872:
-p*:1.24, u*:25.73
-best bid: 25.68, best ask:25.78
+Holding Batch: 18 @ 2018-11-15 00:37:43.321405
+Updating Bid u_max from  15 ->  9.667651995015642e-06 960BP4OK7M
+Updating Bid u_max from  12 ->  5.5896481467238335e-06 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  0.0035609248021100733 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  1.3925866759271203e-11 YQ0KS1K76I
+Updating Bid u_max from  10 ->  1.4654182945916334e-13 T8TR6HGSFU
+Updating Bid u_max from  9 ->  1.72086173331328e-07 CQEDA8YU47
+Updating Bid u_max from  7 ->  9.265130387564499e-08 WX88TD9FIW
+Updating Bid u_max from  9 ->  2.051844368981463e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  10 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  9 ->  2.0996276923397517 IPI9AOYF26
+Updating Bid u_max from  10 ->  1.0797962969201718e-06 L7E1R8ZVM5
+Updating Bid u_max from  15 ->  1.559429134658271e-05 6YVYHRBMQS
+Updating Bid u_max from  7 ->  1.7715907590036406e-09 DT9CYYKWXK
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 3.2375255748687577 VZI1YK8XWW 29
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Found crossing after 12 iterations
+Updating Bid u_max from  1.005357780577297e-15 ->  1.005357780577297e-15 LHMC4MZU7G
+Updating Bid u_max from  0.0023648925526607648 ->  0.0023648925526607648 M13N95X6QQ
+Results of batch 18 @2018-11-15 00:37:43.323343:
+p*:0.03, u*:12.451542763124188
+best bid: 11.104707812964142, best ask:13.798377713284232
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.24}, 'B5YG687G7C': {'shares': 0, 'p*': 1.24}, 'MTT4CX2G9Z': {'shares': 7.04, 'p*': 1.24}, 'WCA373HH5Q': {'shares': 11.04, 'p*': 1.24}, 'ZS88NOK7SG': {'shares': 7.6, 'p*': 1.24}} 
-asks
- {'6WL99PL8Y9': {'shares': 1.8600000000000003, 'p*': 1.24}, '9Q3XH0V6H4': {'shares': 9, 'p*': 1.24}, 'U2M0LZBCLN': {'shares': 4, 'p*': 1.24}, 'JT8QA6V6QA': {'shares': 9, 'p*': 1.24}, '6WEGEYY05G': {'shares': 1.92, 'p*': 1.24}} 25.68 25.78
-Bid Before 
-MTT4CX2G9Z Balance:  128.97333333333333 Funds Remaining:  -222.17066666666673
-Bid After 
-MTT4CX2G9Z Balance:  136.01333333333332 Funds Remaining:  -230.90026666666674
-Bid Before 
-WCA373HH5Q Balance:  131.67916666666667 Funds Remaining:  -190.578525
-Bid After 
-WCA373HH5Q Balance:  142.71916666666667 Funds Remaining:  -204.268125
-Bid Before 
-ZS88NOK7SG Balance:  106.05535778883021 Funds Remaining:  -222.48167592282672
-Bid After 
-ZS88NOK7SG Balance:  113.6553577888302 Funds Remaining:  -231.90567592282673
-Ask Before 
-6WL99PL8Y9 Balance:  106.05697472687805 Funds Remaining:  -139.70822422195707
-Ask After 
-6WL99PL8Y9 Balance:  107.91697472687805 Funds Remaining:  -141.20822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  137.94964450917263 Funds Remaining:  -265.55486616173783
-Ask After 
-9Q3XH0V6H4 Balance:  146.94964450917263 Funds Remaining:  -272.81293067786686
-Ask Before 
-U2M0LZBCLN Balance:  85.97499999999998 Funds Remaining:  -194.35511329665644
-Ask After 
-U2M0LZBCLN Balance:  89.97499999999998 Funds Remaining:  -197.58091974826934
-Ask Before 
-JT8QA6V6QA Balance:  181.44647115807095 Funds Remaining:  -207.7628681003449
-Ask After 
-JT8QA6V6QA Balance:  190.44647115807095 Funds Remaining:  -215.0209326164739
-Ask Before 
-6WEGEYY05G Balance:  40.0 Funds Remaining:  -109.0645153465326
-Ask After 
-6WEGEYY05G Balance:  41.92 Funds Remaining:  -110.6129024433068
+agg_demand: 11.104707812964142, paid_bids: 11.104707812964142, agg_supply: 13.798377713284232, paid_asks: 13.798377713284232, difference: 1.7763568394002505e-15
+Bidder 960BP4OK7M: balance 27.026766234583686->27.02677590223568, funds 0.0001256795726117233->0.00012538954305187284
+Bidder BQRR2XGE2Z: balance 32.99153733288432->32.99154292253247, funds 3.91275929235483e-05->3.895990347914658e-05
+Bidder ZA6LCJMKS2: balance 33.362584897748164->33.36614582255027, funds 0.07477945645355956->0.07467262870949626
+Bidder YQ0KS1K76I: balance 29.65658297666464->29.656582976678568, funds 3.4814680824044765e-10->3.477290322376695e-10
+Bidder T8TR6HGSFU: balance 30.717970314338825->30.71797031433897, funds 4.396256349193195e-12->4.39186009430942e-12
+Bidder I9BY2KFEUK: balance 20.0->29.0, funds 679.0->678.73
+Bidder CQEDA8YU47: balance 30.46888153449974->30.468881706585915, funds 6.195103960789542e-06->6.1899413755896015e-06
+Bidder WX88TD9FIW: balance 38.375036826507525->38.37503691915883, funds 2.1309809156528734e-06->2.128201376536604e-06
+Bidder GPS6A2SINP: balance 28.50307730548977->28.503077307541616, funds 3.693321916011003e-08->3.687166382904059e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.8150027909742117e-14->2.8119867176324798e-14
+Bidder M13N95X6QQ: balance 28.503752321976407->28.505239317835915, funds 2.3648925526607647e-08->-4.458622685971969e-05
+Cancelling trader
+M13N95X6QQ Balance:  28.505239317835915 Funds Remaining:  -4.458622685971969e-05
+
+Bidder IPI9AOYF26: balance 43.664284422754264->45.763912115094016, funds 35.6936917660527->35.63070293528251
+Bidder L7E1R8ZVM5: balance 30.719640278868205->30.719641358664504, funds 4.2112066377849675e-05->4.207967248894207e-05
+Bidder 6YVYHRBMQS: balance 26.785863813174878->26.785879407466226, funds 0.00024950881748823684->0.00024904098874783937
+Bidder DT9CYYKWXK: balance 28.524378710791822->28.52437871256341, funds 4.9604558968009526e-08->4.955141124523942e-08
+
+Asker DWLM27I0AP: balance 216.6768770137963->216.9468770137963, funds 27.000047687682653->18.000047687682653
+Asker OT2KHB9PFA: balance 0.0->0.14395133139852695, funds 31->26.201622286715768
+Amount bidders paid: -0.3331412343889242, received: 11.104707812964142
+Amount askers paid: -13.798377713284232, received: 0.41395133139852697
+KeyError updating M13N95X6QQ funds
 New orders:
-UPDATE @2018-11-13 19:24:51.581003: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 1.0780635632702669, 'u_max': 12, 'q_max': 93, 'funds': -231.90567592282673, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:51.581163: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 2, 'u_max': 11, 'q_max': 101, 'funds': -230.90026666666674, 'order_id': 'MTT4CX2G9Z'}
-UPDATE @2018-11-13 19:24:51.581277: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 11, 'q_max': 94, 'funds': -231.90567592282673, 'order_id': 'ZS88NOK7SG'}
-UPDATE @2018-11-13 19:24:51.581382: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 1, 'p_high': 2, 'u_max': 11, 'q_max': 91, 'funds': -272.81293067786686, 'order_id': '9Q3XH0V6H4'}
 
-Holding Batch: 19 @ 2018-11-13 19:24:51.938963
-Results of batch 19 @2018-11-13 19:24:51.940072:
-p*:1.35, u*:21.5
-best bid: 21.325, best ask:21.675
+Holding Batch: 19 @ 2018-11-15 00:37:44.321226
+Updating Bid u_max from  15 ->  9.6453420460348e-06 960BP4OK7M
+Updating Bid u_max from  11 ->  3.895990347914658 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  0.003555837769100884 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  1.390915572584449e-11 YQ0KS1K76I
+Updating Bid u_max from  10 ->  4.391860094309419e-07 T8TR6HGSFU
+Updating Bid u_max from  9 ->  1.7194276822671996e-07 CQEDA8YU47
+Updating Bid u_max from  7 ->  9.25304544013939e-08 WX88TD9FIW
+Updating Bid u_max from  9 ->  2.0484246302663493e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.0959224691798717 IPI9AOYF26
+Updating Bid u_max from  10 ->  1.078965684597057e-06 L7E1R8ZVM5
+Updating Bid u_max from  9 ->  0.004955141124523941 DT9CYYKWXK
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 3.2375255748687577 VZI1YK8XWW 29
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Found crossing after 12 iterations
+Updating Bid u_max from  1.0042806119113815e-15 ->  1.0042806119113815e-15 LHMC4MZU7G
+Results of batch 19 @2018-11-15 00:37:44.322965:
+p*:0.04, u*:17.435366125719856
+best bid: 15.770348710625198, best ask:19.100383540814512
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.35}, 'B5YG687G7C': {'shares': 0, 'p*': 1.35}, 'MTT4CX2G9Z': {'shares': 7.149999999999999, 'p*': 1.35}, 'WCA373HH5Q': {'shares': 10.6, 'p*': 1.35}, 'ZS88NOK7SG': {'shares': 3.5749999999999993, 'p*': 1.35}} 
-asks
- {'6WL99PL8Y9': {'shares': 2.0249999999999995, 'p*': 1.35}, '9Q3XH0V6H4': {'shares': 3.8500000000000014, 'p*': 1.35}, 'U2M0LZBCLN': {'shares': 4, 'p*': 1.35}, 'JT8QA6V6QA': {'shares': 9, 'p*': 1.35}, '6WEGEYY05G': {'shares': 2.8000000000000007, 'p*': 1.35}} 21.325 21.675
-Bid Before 
-MTT4CX2G9Z Balance:  136.01333333333332 Funds Remaining:  -230.90026666666674
-Bid After 
-MTT4CX2G9Z Balance:  143.16333333333333 Funds Remaining:  -240.55276666666674
-Bid Before 
-WCA373HH5Q Balance:  142.71916666666667 Funds Remaining:  -204.268125
-Bid After 
-WCA373HH5Q Balance:  153.31916666666666 Funds Remaining:  -218.578125
-Bid Before 
-ZS88NOK7SG Balance:  113.6553577888302 Funds Remaining:  -231.90567592282673
-Bid After 
-ZS88NOK7SG Balance:  117.2303577888302 Funds Remaining:  -236.73192592282672
-Ask Before 
-6WL99PL8Y9 Balance:  107.91697472687805 Funds Remaining:  -141.20822422195707
-Ask After 
-6WL99PL8Y9 Balance:  109.94197472687806 Funds Remaining:  -142.70822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  146.94964450917263 Funds Remaining:  -272.81293067786686
-Ask After 
-9Q3XH0V6H4 Balance:  150.79964450917262 Funds Remaining:  -275.6647825297187
-Ask Before 
-U2M0LZBCLN Balance:  89.97499999999998 Funds Remaining:  -197.58091974826934
-Ask After 
-U2M0LZBCLN Balance:  93.97499999999998 Funds Remaining:  -200.5438827112323
-Ask Before 
-JT8QA6V6QA Balance:  190.44647115807095 Funds Remaining:  -215.0209326164739
-Ask After 
-JT8QA6V6QA Balance:  199.44647115807095 Funds Remaining:  -221.68759928314057
-Ask Before 
-6WEGEYY05G Balance:  41.92 Funds Remaining:  -110.6129024433068
-Ask After 
-6WEGEYY05G Balance:  44.72 Funds Remaining:  -112.68697651738087
+agg_demand: 15.770348710625198, paid_bids: 15.770348710625198, agg_supply: 19.100383540814512, paid_asks: 19.100383540814512, difference: 0.0
+Bidder 960BP4OK7M: balance 27.02677590223568->27.026785547577727, funds 0.00012538954305187284->0.00012500372937003144
+Bidder ZA6LCJMKS2: balance 33.36614582255027->33.36970166031937, funds 0.07467262870949626->0.07453039519873222
+Bidder YQ0KS1K76I: balance 29.656582976678568->29.656582976692476, funds 3.477290322376695e-10->3.4717266600863574e-10
+Bidder T8TR6HGSFU: balance 30.71797031433897->30.717970565307446, funds 4.39186009430942e-12->-1.0034347253133489e-08
+Cancelling trader
+T8TR6HGSFU Balance:  30.717970565307446 Funds Remaining:  -1.0034347253133489e-08
+
+Bidder I9BY2KFEUK: balance 29.0->38.0, funds 678.73->678.37
+Bidder CQEDA8YU47: balance 30.468881706585915->30.468881878528684, funds 6.1899413755896015e-06->6.183063664860533e-06
+Bidder WX88TD9FIW: balance 38.37503691915883->38.37503701168929, funds 2.128201376536604e-06->2.124500158360548e-06
+Bidder GPS6A2SINP: balance 28.503077307541616->28.50307730959004, funds 3.687166382904059e-08->3.678972684382993e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.8119867176324798e-14->2.8079695951848344e-14
+Bidder IPI9AOYF26: balance 45.763912115094016->47.859834584273884, funds 35.63070293528251->35.54686603651531
+Bidder L7E1R8ZVM5: balance 30.719641358664504->30.71964243763019, funds 4.207967248894207e-05->4.2036513861558185e-05
+Bidder 6YVYHRBMQS: balance 26.785879407466226->31.45394585117088, funds 0.00024904098874783937->-0.18647361675943835
+Cancelling trader
+6YVYHRBMQS Balance:  31.45394585117088 Funds Remaining:  -0.18647361675943835
+
+Bidder DT9CYYKWXK: balance 28.52437871256341->28.527171430723214, funds 4.955141124523942e-08->-0.0001116591749808502
+Cancelling trader
+DT9CYYKWXK Balance:  28.527171430723214 Funds Remaining:  -0.0001116591749808502
+
+
+Asker DWLM27I0AP: balance 216.9468770137963->217.3068770137963, funds 18.000047687682653->9.000047687682653
+Asker OT2KHB9PFA: balance 0.14395133139852695->0.3998861426746009, funds 26.201622286715768->19.80325200481392
+Asker 25RGEWHMPN: balance 178.55865365190334->178.70673418225985, funds 24.68706361670312->20.985050357790456
+Amount bidders paid: -0.6308139484250078, received: 15.770348710625198
+Amount askers paid: -19.100383540814512, received: 0.7640153416325804
+KeyError updating T8TR6HGSFU funds
+KeyError updating 6YVYHRBMQS funds
+KeyError updating DT9CYYKWXK funds
 New orders:
-UPDATE @2018-11-13 19:24:52.583478: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 2, 'u_max': 11, 'q_max': 107, 'funds': -275.6647825297187, 'order_id': '9Q3XH0V6H4'}
-UPDATE @2018-11-13 19:24:52.583812: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 3, 'u_max': 12, 'q_max': 78, 'funds': -149.54151241824803, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:52.583944: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 3, 'u_max': 12, 'q_max': 122, 'funds': -218.578125, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:52.584058: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 0, 'p_high': 2, 'u_max': 8, 'q_max': 98, 'funds': -236.73192592282672, 'order_id': 'ZS88NOK7SG'}
 
-Holding Batch: 20 @ 2018-11-13 19:24:52.938854
-Results of batch 20 @2018-11-13 19:24:52.939958:
-p*:1.53, u*:27.910000000000004
-best bid: 27.87, best ask:27.950000000000003
+Holding Batch: 20 @ 2018-11-15 00:37:45.321258
+Updating Bid u_max from  15 ->  9.615664093337732e-06 960BP4OK7M
+Updating Bid u_max from  11 ->  3.895990347914658 BQRR2XGE2Z
+Updating Bid u_max from  11 ->  0.0035490647480040357 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  10 ->  1.3886901085584996e-11 YQ0KS1K76I
+Updating Bid u_max from  6 ->  0.6183063664860532 CQEDA8YU47
+Updating Bid u_max from  7 ->  9.236953194196647e-08 WX88TD9FIW
+Updating Bid u_max from  9 ->  2.0438725780613416e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.0028459258353245e-15 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.0909908898003775 IPI9AOYF26
+Updating Bid u_max from  10 ->  1.0778590534094268e-06 L7E1R8ZVM5
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 3.2375255748687577 VZI1YK8XWW 29
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Found crossing after 13 iterations
+Results of batch 20 @2018-11-15 00:37:45.322772:
+p*:0.01, u*:15.827999334927604
+best bid: 14.243066870649272, best ask:17.412931799205936
 
 
-bids
- {'WJS6K7FJ7B': {'shares': 0, 'p*': 1.53}, 'B5YG687G7C': {'shares': 12, 'p*': 1.53}, 'MTT4CX2G9Z': {'shares': 5.17, 'p*': 1.53}, 'WCA373HH5Q': {'shares': 8.82, 'p*': 1.53}, 'ZS88NOK7SG': {'shares': 1.88, 'p*': 1.53}} 
-asks
- {'6WL99PL8Y9': {'shares': 2.295, 'p*': 1.53}, '9Q3XH0V6H4': {'shares': 8.415, 'p*': 1.53}, 'U2M0LZBCLN': {'shares': 4, 'p*': 1.53}, 'JT8QA6V6QA': {'shares': 9, 'p*': 1.53}, '6WEGEYY05G': {'shares': 4.24, 'p*': 1.53}} 27.87 27.950000000000003
-Bid Before 
-B5YG687G7C Balance:  76.9601886976512 Funds Remaining:  -149.54151241824803
-Bid After 
-B5YG687G7C Balance:  88.9601886976512 Funds Remaining:  -167.90151241824805
-Bid Before 
-MTT4CX2G9Z Balance:  143.16333333333333 Funds Remaining:  -240.55276666666674
-Bid After 
-MTT4CX2G9Z Balance:  148.33333333333331 Funds Remaining:  -248.46286666666674
-Bid Before 
-WCA373HH5Q Balance:  153.31916666666666 Funds Remaining:  -218.578125
-Bid After 
-WCA373HH5Q Balance:  162.13916666666665 Funds Remaining:  -232.072725
-Bid Before 
-ZS88NOK7SG Balance:  117.2303577888302 Funds Remaining:  -236.73192592282672
-Bid After 
-ZS88NOK7SG Balance:  119.1103577888302 Funds Remaining:  -239.6083259228267
-Ask Before 
-6WL99PL8Y9 Balance:  109.94197472687806 Funds Remaining:  -142.70822422195707
-Ask After 
-6WL99PL8Y9 Balance:  112.23697472687806 Funds Remaining:  -144.20822422195707
-Ask Before 
-9Q3XH0V6H4 Balance:  150.79964450917262 Funds Remaining:  -275.6647825297187
-Ask After 
-9Q3XH0V6H4 Balance:  159.21464450917262 Funds Remaining:  -281.1647825297187
-Ask Before 
-U2M0LZBCLN Balance:  93.97499999999998 Funds Remaining:  -200.5438827112323
-Ask After 
-U2M0LZBCLN Balance:  97.97499999999998 Funds Remaining:  -203.1582617961996
-Ask Before 
-JT8QA6V6QA Balance:  199.44647115807095 Funds Remaining:  -221.68759928314057
-Ask After 
-JT8QA6V6QA Balance:  208.44647115807095 Funds Remaining:  -227.56995222431703
-Ask Before 
-6WEGEYY05G Balance:  44.72 Funds Remaining:  -112.68697651738087
-Ask After 
-6WEGEYY05G Balance:  48.96 Funds Remaining:  -115.45821834744623
+agg_demand: 14.243066870649272, paid_bids: 14.243066870649272, agg_supply: 17.412931799205936, paid_asks: 17.412931799205936, difference: 0.0
+Bidder 960BP4OK7M: balance 27.026785547577727->27.02679516324182, funds 0.00012500372937003144->0.00012490757272909806
+Bidder BQRR2XGE2Z: balance 32.99154292253247->35.62215270802482, funds 3.895990347914658e-05->-0.026267137951444385
+Cancelling trader
+BQRR2XGE2Z Balance:  35.62215270802482 Funds Remaining:  -0.026267137951444385
+
+Bidder ZA6LCJMKS2: balance 33.36970166031937->33.37325072506738, funds 0.07453039519873222->0.07449490455125218
+Bidder YQ0KS1K76I: balance 29.656582976692476->29.656582976706364, funds 3.4717266600863574e-10->3.470337969977799e-10
+Bidder I9BY2KFEUK: balance 38.0->47.0, funds 678.37->678.28
+Bidder CQEDA8YU47: balance 30.468881878528684->30.98678822118678, funds 6.183063664860533e-06->-0.005172880362916109
+Cancelling trader
+CQEDA8YU47 Balance:  30.98678822118678 Funds Remaining:  -0.005172880362916109
+
+Bidder WX88TD9FIW: balance 38.37503701168929->38.37503710405882, funds 2.124500158360548e-06->2.1235764630411287e-06
+Bidder GPS6A2SINP: balance 28.50307730959004->28.503077311633913, funds 3.678972684382993e-08->3.6769288118049317e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.8079695951848344e-14->2.806966749258999e-14
+Bidder IPI9AOYF26: balance 47.859834584273884->49.950825474074264, funds 35.54686603651531->35.525956127617306
+Bidder L7E1R8ZVM5: balance 30.71964243763019->30.719643515489242, funds 4.2036513861558185e-05->4.202573527102409e-05
+
+Asker DEKQRE9TJ2: balance 133.57046794093606->133.63834912847727, funds 27.48003696007391->20.691918205952064
+Asker SML1Z0QCD5: balance 251.3039027741279->251.33652879555015, funds 23.127849892320878->19.865247750096017
+Asker DWLM27I0AP: balance 217.3068770137963->217.35526710692776, funds 9.000047687682653->4.16103837453927
+Asker OT2KHB9PFA: balance 0.3998861426746009->0.41587006843509083, funds 19.80325200481392->18.204859428764923
+Asker 25RGEWHMPN: balance 178.70673418225985->178.71598227239653, funds 20.985050357790456->20.060241344123604
+Amount bidders paid: -0.14243066870649274, received: 14.243066870649272
+Amount askers paid: -17.412931799205936, received: 0.1741293179920594
+KeyError updating BQRR2XGE2Z funds
+KeyError updating CQEDA8YU47 funds
 New orders:
-UPDATE @2018-11-13 19:24:53.589371: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 1, 'p_high': 1.0295646062017338, 'u_max': 4, 'q_max': 108, 'funds': -232.072725, 'order_id': 'WCA373HH5Q'}
-UPDATE @2018-11-13 19:24:53.589542: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 3, 'p_high': 3.097375191441838, 'u_max': 14, 'q_max': 103, 'funds': -165.2133104274705, 'order_id': 'WJS6K7FJ7B'}
-UPDATE @2018-11-13 19:24:53.589960: {'order_type': 'u', 'trader_type': 'bid', 'p_low': 2, 'p_high': 2.0253445682998157, 'u_max': 6, 'q_max': 99, 'funds': -167.90151241824805, 'order_id': 'B5YG687G7C'}
-UPDATE @2018-11-13 19:24:53.590117: {'order_type': 'u', 'trader_type': 'ask', 'p_low': 0, 'p_high': 0.062022471994733, 'u_max': 16, 'q_max': 78, 'funds': -115.45821834744623, 'order_id': '6WEGEYY05G'}
+
+Holding Batch: 21 @ 2018-11-15 00:37:46.321243
+Updating Bid u_max from  15 ->  9.608267434340286e-06 960BP4OK7M
+Updating Bid u_max from  11 ->  0.003547374717976429 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  12 ->  3.4703379699777983e-05 YQ0KS1K76I
+Updating Bid u_max from  7 ->  9.23293712933659e-08 WX88TD9FIW
+Updating Bid u_max from  9 ->  2.0427370939265767e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.0024877667040116e-15 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.089760895882844 IPI9AOYF26
+Updating Bid u_max from  10 ->  1.0775826793640332e-06 L7E1R8ZVM5
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  9 -> 4.16103837453927 DWLM27I0AP 0.018590249423325697
+Updating Ask u_max from  6 -> 3.2375255748687577 VZI1YK8XWW 0.04403233641238544
+Updating Ask u_max from  7 -> 2.865348961378667 QK2L67BIW7 38
+Found crossing after 13 iterations
+Results of batch 21 @2018-11-15 00:37:46.322578:
+p*:0.01, u*:10.778143642521714
+best bid: 2.3271006087712425, best ask:19.229186676272185
+
+
+agg_demand: 2.3271006087712425, paid_bids: 2.3271006087712425, agg_supply: 19.229186676272185, paid_asks: 19.229186676272185, difference: 0.0
+Bidder 960BP4OK7M: balance 27.02679516324182->27.026804771509255, funds 0.00012490757272909806->0.00012481149005475465
+Bidder ZA6LCJMKS2: balance 33.37325072506738->33.376798099785354, funds 0.07449490455125218->0.07445943080407241
+Bidder I9BY2KFEUK: balance 47.0->47.2337815579482, funds 678.28->678.2776621844205
+Bidder WX88TD9FIW: balance 38.37503710405882->38.37503719638819, funds 2.1235764630411287e-06->2.122653169328195e-06
+Bidder GPS6A2SINP: balance 28.503077311633913->28.50307731367665, funds 3.6769288118049317e-08->3.6748860747110054e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.806966749258999e-14->2.8059642614922952e-14
+Bidder IPI9AOYF26: balance 49.950825474074264->52.04058636995711, funds 35.525956127617306->35.50505851865848
+Bidder L7E1R8ZVM5: balance 30.719643515489242->30.719644593071923, funds 4.202573527102409e-05->4.201495944423045e-05
+
+Asker DEKQRE9TJ2: balance 133.63834912847727->133.7062303160185, funds 20.691918205952064->13.903799451830217
+Asker SML1Z0QCD5: balance 251.33652879555015->251.3691548169724, funds 19.865247750096017->16.602645607871157
+Asker UPF65ZKF6B: balance 128.20839002796635->128.22313012303317, funds 17.280037600125347->15.806028093442315
+Asker DWLM27I0AP: balance 217.35526710692776->217.37763966631303, funds 4.16103837453927->1.9237824360123223
+Asker OT2KHB9PFA: balance 0.41587006843509083->0.4273612407178108, funds 18.204859428764923->17.05574220049293
+Asker 7APUIYKR83: balance 286.18056406713697->286.2071498830424, funds 17.891700743083945->15.23311915253985
+Asker VZI1YK8XWW: balance 574.2074511280613->574.2147980530837, funds 3.2375255748687577->2.5028330726362005
+Asker 25RGEWHMPN: balance 178.71598227239653->178.7252303625332, funds 20.060241344123604->19.13543233045675
+Amount bidders paid: -0.023271006087712428, received: 2.3271006087712425
+Amount askers paid: -19.229186676272185, received: 0.19229186676272186
+New orders:
+
+Holding Batch: 22 @ 2018-11-15 00:37:47.321308
+Updating Bid u_max from  11 ->  0.003545685492724642 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  12 ->  3.4703379699777983e-05 YQ0KS1K76I
+Updating Bid u_max from  8 ->  0.2122653169328195 WX88TD9FIW
+Updating Bid u_max from  9 ->  2.0416022406159804e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.0021297354866284e-15 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.0885316254907194 IPI9AOYF26
+Updating Bid u_max from  5 ->  4.201495944423045 L7E1R8ZVM5
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 13.903799451830217 DEKQRE9TJ2 0.020613646616387635
+Updating Ask u_max from  9 -> 1.9237824360123223 DWLM27I0AP 0.018590249423325697
+Updating Ask u_max from  6 -> 2.5028330726362005 VZI1YK8XWW 0.04403233641238544
+Updating Ask u_max from  14 -> 2.865348961378667 QK2L67BIW7 0.08031515567957945
+Found crossing after 13 iterations
+Results of batch 22 @2018-11-15 00:37:47.322692:
+p*:0.01, u*:15.104422598781502
+best bid: 10.803031767843912, best ask:19.405813429719093
+
+
+agg_demand: 10.803031767843912, paid_bids: 10.803031767843912, agg_supply: 19.405813429719093, paid_asks: 19.405813429719093, difference: 0.0
+Bidder 960BP4OK7M: balance 27.026804771509255->31.566509597180055, funds 0.00012481149005475465->-0.04527223676665324
+Cancelling trader
+960BP4OK7M Balance:  31.566509597180055 Funds Remaining:  -0.04527223676665324
+
+Bidder ZA6LCJMKS2: balance 33.376798099785354->33.38034378527808, funds 0.07445943080407241->0.07442397394914517
+Bidder I9BY2KFEUK: balance 47.2337815579482->47.4675631158964, funds 678.2776621844205->678.275324368841
+Bidder WX88TD9FIW: balance 38.37503719638819->38.536256967987654, funds 2.122653169328195e-06->-0.0016100750628252885
+Cancelling trader
+WX88TD9FIW Balance:  38.536256967987654 Funds Remaining:  -0.0016100750628252885
+
+Bidder GPS6A2SINP: balance 28.50307731367665->28.50307731571825, funds 3.6748860747110054e-08->3.672844472470389e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.8059642614922952e-14->2.8049621317568087e-14
+Bidder IPI9AOYF26: balance 52.04058636995711->54.12911799544783, funds 35.50505851865848->35.484173202403575
+Bidder L7E1R8ZVM5: balance 30.719644593071923->34.49589289267232, funds 4.201495944423045e-05->-0.0377204680365598
+Cancelling trader
+L7E1R8ZVM5 Balance:  34.49589289267232 Funds Remaining:  -0.0377204680365598
+
+
+Asker DEKQRE9TJ2: balance 133.7062303160185->133.77364506017028, funds 13.903799451830217->7.162325036650379
+Asker SML1Z0QCD5: balance 251.3691548169724->251.40178083839467, funds 16.602645607871157->13.340043465646296
+Asker UPF65ZKF6B: balance 128.22313012303317->128.2378702181, funds 15.806028093442315->14.332018586759283
+Asker DWLM27I0AP: balance 217.37763966631303->217.38798322311783, funds 1.9237824360123223->0.8894267555317346
+Asker OT2KHB9PFA: balance 0.4273612407178108->0.43885241300053074, funds 17.05574220049293->15.906624972220934
+Asker 7APUIYKR83: balance 286.2071498830424->286.23373569894784, funds 15.23311915253985->12.574537561995754
+Asker VZI1YK8XWW: balance 574.2147980530837->574.2204777385418, funds 2.5028330726362005->1.9348645268186029
+Asker 25RGEWHMPN: balance 178.7252303625332->178.7344784526699, funds 19.13543233045675->18.2106233167899
+Asker QK2L67BIW7: balance 788.7598231151409->788.7633876230335, funds 2.865348961378667->2.508898172111947
+Asker KPMOKS5VZO: balance 360.9560188143441->360.9683832595199, funds 26.55343317849058->25.316988660907064
+Amount bidders paid: -0.1080303176784391, received: 10.803031767843912
+Amount askers paid: -19.405813429719093, received: 0.19405813429719093
+KeyError updating 960BP4OK7M funds
+KeyError updating WX88TD9FIW funds
+KeyError updating L7E1R8ZVM5 funds
+New orders:
+
+Holding Batch: 23 @ 2018-11-15 00:37:48.321279
+Updating Bid u_max from  11 ->  0.00354399707186545 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  12 ->  3.4703379699777983e-05 YQ0KS1K76I
+Updating Bid u_max from  9 ->  2.0404680177790953e-09 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.0017718321374916e-15 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.0873030781983997 IPI9AOYF26
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 7.162325036650379 DEKQRE9TJ2 0.020613646616387635
+Updating Ask u_max from  9 -> 0.8894267555317346 DWLM27I0AP 0.018590249423325697
+Updating Ask u_max from  6 -> 1.9348645268186029 VZI1YK8XWW 0.04403233641238544
+Updating Ask u_max from  9 -> 2.508898172111947 QK2L67BIW7 0.06904822661998015
+Found crossing after 13 iterations
+Results of batch 23 @2018-11-15 00:37:48.322391:
+p*:0.01, u*:9.84568542698115
+best bid: 2.324628635258933, best ask:17.36674221870337
+
+
+agg_demand: 2.324628635258933, paid_bids: 2.324628635258933, agg_supply: 17.36674221870337, paid_asks: 17.36674221870337, difference: 0.0
+Bidder ZA6LCJMKS2: balance 33.38034378527808->33.383887782349944, funds 0.07442397394914517->0.07438853397842651
+Bidder I9BY2KFEUK: balance 47.4675631158964->47.701344673844595, funds 678.275324368841->678.2729865532615
+Bidder GPS6A2SINP: balance 28.50307731571825->28.50307731775872, funds 3.672844472470389e-08->3.67080400445261e-08
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.8049621317568087e-14->2.8039603599246712e-14
+Bidder IPI9AOYF26: balance 54.12911799544783->56.21642107364623, funds 35.484173202403575->35.46330017162159
+
+Asker DEKQRE9TJ2: balance 133.77364506017028->133.80837271224485, funds 7.162325036650379->3.6895598291930307
+Asker SML1Z0QCD5: balance 251.40178083839467->251.43440685981693, funds 13.340043465646296->10.077441323421436
+Asker UPF65ZKF6B: balance 128.2378702181->128.25261031316683, funds 14.332018586759283->12.85800908007625
+Asker DWLM27I0AP: balance 217.38798322311783->217.39276538351046, funds 0.8894267555317346->0.4112107162676273
+Asker OT2KHB9PFA: balance 0.43885241300053074->0.4503435852832507, funds 15.906624972220934->14.757507743948938
+Asker 7APUIYKR83: balance 286.23373569894784->286.24566868307426, funds 12.574537561995754->11.381239149353314
+Asker CJOVMJ8E9C: balance 0.0->0.011946382558551934, funds 26->24.805361744144808
+Asker VZI1YK8XWW: balance 574.2204777385418->574.2248685315343, funds 1.9348645268186029->1.4957852275772376
+Asker 25RGEWHMPN: balance 178.7344784526699->178.74372654280657, funds 18.2106233167899->17.285814303123047
+Asker QK2L67BIW7: balance 788.7633876230335->788.767018059962, funds 2.508898172111947->2.145854479269688
+Asker KPMOKS5VZO: balance 360.9683832595199->360.9807477046957, funds 25.316988660907064->24.08054414332355
+Asker 18RZ3879CD: balance 40.1019739098696->40.1237610988993, funds 41.840044200220994->39.66132529725059
+Amount bidders paid: -0.02324628635258933, received: 2.324628635258933
+Amount askers paid: -17.36674221870337, received: 0.1736674221870337
+New orders:
+
+Holding Batch: 24 @ 2018-11-15 00:37:49.321651
+Updating Bid u_max from  11 ->  0.003542309455015808 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  12 ->  3.4703379699777983e-05 YQ0KS1K76I
+Updating Bid u_max from  5 ->  0.00367080400445261 GPS6A2SINP
+Updating Bid u_max from  10 ->  1.0014140566109337e-15 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.0860752535805327 IPI9AOYF26
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  10 -> 3.6895598291930307 DEKQRE9TJ2 0.045945185367230745
+Updating Ask u_max from  9 -> 0.4112107162676273 DWLM27I0AP 0.018590249423325697
+Updating Ask u_max from  6 -> 1.4957852275772376 VZI1YK8XWW 0.04403233641238544
+Updating Ask u_max from  9 -> 2.145854479269688 QK2L67BIW7 0.06904822661998015
+Found crossing after 13 iterations
+Results of batch 24 @2018-11-15 00:37:49.322755:
+p*:0.01, u*:10.222808483847563
+best bid: 2.3263879784457537, best ask:18.119228989249372
+
+
+agg_demand: 2.3263879784457537, paid_bids: 2.3263879784457537, agg_supply: 18.119228989249372, paid_asks: 18.119228989249372, difference: 0.0
+Bidder ZA6LCJMKS2: balance 33.383887782349944->33.38743009180496, funds 0.07438853397842651->0.07435311088387636
+Bidder I9BY2KFEUK: balance 47.701344673844595->47.93512623179279, funds 678.2729865532615->678.270648737682
+Bidder GPS6A2SINP: balance 28.50307731775872->28.506066175220724, funds 3.67080400445261e-08->-2.9851866580006483e-05
+Cancelling trader
+GPS6A2SINP Balance:  28.506066175220724 Funds Remaining:  -2.9851866580006483e-05
+
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.8039603599246712e-14->2.80295894586806e-14
+Bidder IPI9AOYF26: balance 56.21642107364623->58.30249632722676, funds 35.46330017162159->35.44243941908579
+
+Asker DEKQRE9TJ2: balance 133.80837271224485->133.81639677972143, funds 3.6895598291930307->2.8871530815339117
+Asker SML1Z0QCD5: balance 251.43440685981693->251.4670328812392, funds 10.077441323421436->6.814839181196575
+Asker UPF65ZKF6B: balance 128.25261031316683->128.26735040823365, funds 12.85800908007625->11.383999573393218
+Asker DWLM27I0AP: balance 217.39276538351046->217.3949763307168, funds 0.4112107162676273->0.19011599563613737
+Asker OT2KHB9PFA: balance 0.4503435852832507->0.5001561599163411, funds 14.757507743948938->9.776250280639896
+Asker 7APUIYKR83: balance 286.24566868307426->286.2576016672007, funds 11.381239149353314->10.187940736710875
+Asker CJOVMJ8E9C: balance 0.011946382558551934->0.023892765117103868, funds 24.805361744144808->23.610723488289615
+Asker VZI1YK8XWW: balance 574.2248685315343->574.228262920756, funds 1.4957852275772376->1.1563463054010739
+Asker 25RGEWHMPN: balance 178.74372654280657->178.75297463294325, funds 17.285814303123047->16.361005289456195
+Asker QK2L67BIW7: balance 788.767018059962->788.7701231638005, funds 2.145854479269688->1.8353440954224276
+Asker KPMOKS5VZO: balance 360.9807477046957->360.99311214987154, funds 24.08054414332355->22.844099625740036
+Asker 18RZ3879CD: balance 40.1237610988993->40.145548287929, funds 39.66132529725059->37.48260639428019
+Amount bidders paid: -0.023263879784457535, received: 2.3263879784457537
+Amount askers paid: -18.119228989249372, received: 0.1811922898924937
+KeyError updating GPS6A2SINP funds
+New orders:
+
+Holding Batch: 25 @ 2018-11-15 00:37:50.321371
+Updating Bid u_max from  11 ->  0.0035406226417928543 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  12 ->  3.4703379699777983e-05 YQ0KS1K76I
+Updating Bid u_max from  10 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.0848481512120163 IPI9AOYF26
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  10 -> 2.8871530815339117 DEKQRE9TJ2 0.045945185367230745
+Updating Ask u_max from  6 -> 0.19011599563613737 DWLM27I0AP 0.059192037365766524
+Updating Ask u_max from  11 -> 9.776250280639896 OT2KHB9PFA 0.022070694675878133
+Updating Ask u_max from  5 -> 1.1563463054010739 VZI1YK8XWW 0.04063569763675389
+Updating Ask u_max from  9 -> 1.8353440954224276 QK2L67BIW7 0.06904822661998015
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Found crossing after 13 iterations
+Updating Bid u_max from  1.0010564088613041e-15 ->  1.0010564088613041e-15 LHMC4MZU7G
+Results of batch 25 @2018-11-15 00:37:50.322540:
+p*:0.01, u*:9.711851492383508
+best bid: 2.3221703318020093, best ask:17.101532652965005
+
+
+agg_demand: 2.3221703318020093, paid_bids: 2.3221703318020093, agg_supply: 17.101532652965005, paid_asks: 17.101532652965005, difference: 0.0
+Bidder ZA6LCJMKS2: balance 33.38743009180496->33.39097071444675, funds 0.07435311088387636->0.07431770465745843
+Bidder I9BY2KFEUK: balance 47.93512623179279->48.16890778974099, funds 678.270648737682->678.2683109221025
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.65227521023915, funds 2.80295894586806e-14->2.801957889459199e-14
+Bidder IPI9AOYF26: balance 58.30249632722676->60.38734447843878, funds 35.44243941908579->35.42159093757367
+
+Asker DEKQRE9TJ2: balance 133.81639677972143->133.82267577022816, funds 2.8871530815339117->2.2592540308619715
+Asker SML1Z0QCD5: balance 251.4670328812392->251.49965890266145, funds 6.814839181196575->3.552237038971715
+Asker UPF65ZKF6B: balance 128.26735040823365->128.28209050330048, funds 11.383999573393218->9.909990066710186
+Asker DWLM27I0AP: balance 217.3949763307168->217.39529724883332, funds 0.19011599563613737->0.15802418398276522
+Asker OT2KHB9PFA: balance 0.5001561599163411->0.5444270868923544, funds 9.776250280639896->5.3491575830385685
+Asker 7APUIYKR83: balance 286.2576016672007->286.2695346513271, funds 10.187940736710875->8.994642324068435
+Asker CJOVMJ8E9C: balance 0.023892765117103868->0.035839147675655804, funds 23.610723488289615->22.416085232434423
+Asker VZI1YK8XWW: balance 574.228262920756->574.2311064164405, funds 1.1563463054010739->0.8719967369519214
+Asker 25RGEWHMPN: balance 178.75297463294325->178.76222272307993, funds 16.361005289456195->15.43619627578934
+Asker QK2L67BIW7: balance 788.7701231638005->788.7727789515301, funds 1.8353440954224276->1.5697653224595116
+Asker KPMOKS5VZO: balance 360.99311214987154->361.00547659504736, funds 22.844099625740036->21.60765510815652
+Asker 18RZ3879CD: balance 40.145548287929->40.167335476958705, funds 37.48260639428019->35.30388749130979
+Amount bidders paid: -0.023221703318020093, received: 2.3221703318020093
+Amount askers paid: -17.101532652965005, received: 0.17101532652965
+New orders:
+
+Holding Batch: 26 @ 2018-11-15 00:37:51.321453
+Updating Bid u_max from  11 ->  0.00353893663181391 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  12 ->  3.4703379699777983e-05 YQ0KS1K76I
+Updating Bid u_max from  13 ->  2.801957889459199e-09 LHMC4MZU7G
+Updating Bid u_max from  9 ->  2.083621770667998 IPI9AOYF26
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  10 -> 2.2592540308619715 DEKQRE9TJ2 0.045945185367230745
+Updating Ask u_max from  6 -> 3.552237038971715 SML1Z0QCD5 0.01838183860828499
+Updating Ask u_max from  6 -> 0.15802418398276522 DWLM27I0AP 0.059192037365766524
+Updating Ask u_max from  11 -> 5.3491575830385685 OT2KHB9PFA 0.022070694675878133
+Updating Ask u_max from  10 -> 8.994642324068435 7APUIYKR83 0.08372753363752614
+Updating Ask u_max from  5 -> 0.8719967369519214 VZI1YK8XWW 0.04063569763675389
+Updating Ask u_max from  9 -> 1.5697653224595116 QK2L67BIW7 0.06904822661998015
+Found crossing after 13 iterations
+Results of batch 26 @2018-11-15 00:37:51.322600:
+p*:0.01, u*:9.706478956804503
+best bid: 2.3209422664688613, best ask:17.092015647140144
+
+
+agg_demand: 2.3209422664688613, paid_bids: 2.3209422664688613, agg_supply: 17.092015647140144, paid_asks: 17.092015647140144, difference: 0.0
+Bidder ZA6LCJMKS2: balance 33.39097071444675->33.394509651078565, funds 0.07431770465745843->0.0742823152911403
+Bidder I9BY2KFEUK: balance 48.16890778974099->48.40268934768919, funds 678.2683109221025->678.265973106523
+Bidder LHMC4MZU7G: balance 34.65227521023915->34.652275211459994, funds 2.801957889459199e-14->-1.2180483803779715e-11
+Cancelling trader
+LHMC4MZU7G Balance:  34.652275211459994 Funds Remaining:  -1.2180483803779715e-11
+
+Bidder IPI9AOYF26: balance 60.38734447843878->62.47096624910677, funds 35.42159093757367->35.40075471986699
+
+Asker DEKQRE9TJ2: balance 133.82267577022816->133.82758920370793, funds 2.2592540308619715->1.7679106828842783
+Asker SML1Z0QCD5: balance 251.49965890266145->251.51897479628317, funds 3.552237038971715->1.6206476767984463
+Asker UPF65ZKF6B: balance 128.28209050330048->128.2968305983673, funds 9.909990066710186->8.435980560027154
+Asker DWLM27I0AP: balance 217.39529724883332->217.39556399558086, funds 0.15802418398276522->0.13134950922915506
+Asker OT2KHB9PFA: balance 0.5444270868923544->0.5686502970131971, funds 5.3491575830385685->2.9268365709542934
+Asker 7APUIYKR83: balance 286.2695346513271->286.2802679437347, funds 8.994642324068435->7.921313083308698
+Asker CJOVMJ8E9C: balance 0.035839147675655804->0.047785530234207736, funds 22.416085232434423->21.22144697657923
+Asker VZI1YK8XWW: balance 574.2311064164405->574.2332506866707, funds 0.8719967369519214->0.6575697139370928
+Asker 25RGEWHMPN: balance 178.76222272307993->178.77879000506096, funds 15.43619627578934->13.779468077687188
+Asker JKI2ZR1SVT: balance 0.0->0.0007992079920799267, funds 24->23.920079200792006
+Asker QK2L67BIW7: balance 788.7727789515301->788.7750504402892, funds 1.5697653224595116->1.3426164465520871
+Asker KPMOKS5VZO: balance 361.00547659504736->361.0178410402232, funds 21.60765510815652->20.371210590573007
+Asker 18RZ3879CD: balance 40.167335476958705->40.21796988528908, funds 35.30388749130979->30.24044665827236
+Amount bidders paid: -0.02320942266468861, received: 2.3209422664688613
+Amount askers paid: -17.092015647140144, received: 0.17092015647140144
+KeyError updating LHMC4MZU7G funds
+New orders:
+
+Holding Batch: 27 @ 2018-11-15 00:37:52.321506
+Updating Bid u_max from  11 ->  0.0035372514246964784 ZA6LCJMKS2
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  9 ->  3.4703379699777983e-05 YQ0KS1K76I
+Updating Bid u_max from  9 ->  2.0823961115238747 IPI9AOYF26
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  14 -> 1.7679106828842783 DEKQRE9TJ2 0.08892568655315006
+Updating Ask u_max from  6 -> 1.6206476767984463 SML1Z0QCD5 0.01838183860828499
+Updating Ask u_max from  6 -> 0.13134950922915506 DWLM27I0AP 0.059192037365766524
+Updating Ask u_max from  12 -> 2.9268365709542934 OT2KHB9PFA 0.06941930433154182
+Updating Ask u_max from  16 -> 7.921313083308698 7APUIYKR83 0.01445637688232361
+Updating Ask u_max from  5 -> 0.6575697139370928 VZI1YK8XWW 0.04063569763675389
+Updating Ask u_max from  9 -> 1.3426164465520871 QK2L67BIW7 0.06904822661998015
+Found crossing after 13 iterations
+Results of batch 27 @2018-11-15 00:37:52.322624:
+p*:0.01, u*:10.190988844526082
+best bid: 2.3197338042167606, best ask:18.062243884835404
+
+
+agg_demand: 2.3197338042167606, paid_bids: 2.3197338042167606, agg_supply: 18.062243884835404, paid_asks: 18.062243884835404, difference: 0.0
+Bidder ZA6LCJMKS2: balance 33.394509651078565->33.39804690250326, funds 0.0742823152911403->0.07424694277689332
+Bidder YQ0KS1K76I: balance 29.656582976706364->29.656601860026356, funds 3.470337969977799e-10->-1.8848616610839767e-07
+Cancelling trader
+YQ0KS1K76I Balance:  29.656601860026356 Funds Remaining:  -1.8848616610839767e-07
+
+Bidder I9BY2KFEUK: balance 48.40268934768919->48.63647090563739, funds 678.265973106523->678.2636352909435
+Bidder IPI9AOYF26: balance 62.47096624910677->64.55336236063064, funds 35.40075471986699->35.37993075875175
+
+Asker DEKQRE9TJ2: balance 133.82758920370793->133.82957551550584, funds 1.7679106828842783->1.5692795030928848
+Asker SML1Z0QCD5: balance 251.51897479628317->251.52778734392004, funds 1.6206476767984463->0.7393929131127207
+Asker UPF65ZKF6B: balance 128.2968305983673->128.31157069343413, funds 8.435980560027154->6.961971053344123
+Asker DWLM27I0AP: balance 217.39556399558086->217.39578571515247, funds 0.13134950922915506->0.10917755206773631
+Asker OT2KHB9PFA: balance 0.5686502970131971->0.5728628586611527, funds 2.9268365709542934->2.50558040615873
+Asker 7APUIYKR83: balance 286.2802679437347->286.33504563529493, funds 7.921313083308698->2.4435439272872266
+Asker CJOVMJ8E9C: balance 0.047785530234207736->0.05973191279275967, funds 21.22144697657923->20.026808720724038
+Asker VZI1YK8XWW: balance 574.2332506866707->574.2348676734116, funds 0.6575697139370928->0.4958710398375618
+Asker 25RGEWHMPN: balance 178.77879000506096->178.79535728704198, funds 13.779468077687188->12.122739879585035
+Asker JKI2ZR1SVT: balance 0.0007992079920799267->0.0015984159841598534, funds 23.920079200792006->23.840158401584013
+Asker QK2L67BIW7: balance 788.7750504402892->788.7769932390773, funds 1.3426164465520871->1.148336567741098
+Asker KPMOKS5VZO: balance 361.0178410402232->361.030205485399, funds 20.371210590573007->19.134766072989493
+Asker 18RZ3879CD: balance 40.21796988528908->40.268604293619454, funds 30.24044665827236->25.177005825234936
+Amount bidders paid: -0.023197338042167608, received: 2.3197338042167606
+Amount askers paid: -18.062243884835404, received: 0.18062243884835402
+KeyError updating YQ0KS1K76I funds
+New orders:
+
+Holding Batch: 28 @ 2018-11-15 00:37:53.321533
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  9 ->  2.081171173355295 IPI9AOYF26
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  7 -> 1.5692795030928848 DEKQRE9TJ2 0.08838053014763642
+Updating Ask u_max from  6 -> 0.7393929131127207 SML1Z0QCD5 0.01838183860828499
+Updating Ask u_max from  6 -> 0.10917755206773631 DWLM27I0AP 0.059192037365766524
+Updating Ask u_max from  12 -> 2.50558040615873 OT2KHB9PFA 0.06941930433154182
+Updating Ask u_max from  16 -> 2.4435439272872266 7APUIYKR83 0.01445637688232361
+Updating Ask u_max from  5 -> 0.4958710398375618 VZI1YK8XWW 0.04063569763675389
+Updating Ask u_max from  9 -> 1.148336567741098 QK2L67BIW7 0.06904822661998015
+Found crossing after 13 iterations
+Results of batch 28 @2018-11-15 00:37:53.322712:
+p*:0.01, u*:13.813428680223716
+best bid: 12.985176581337992, best ask:14.64168077910944
+
+
+agg_demand: 12.985176581337992, paid_bids: 12.985176581337992, agg_supply: 14.64168077910944, paid_asks: 14.64168077910944, difference: 0.0
+Bidder ZA6LCJMKS2: balance 33.39804690250326->44.06827075253776, funds 0.07424694277689332->-0.03245529572345167
+Cancelling trader
+ZA6LCJMKS2 Balance:  44.06827075253776 Funds Remaining:  -0.03245529572345167
+
+Bidder I9BY2KFEUK: balance 48.63647090563739->48.87025246358559, funds 678.2636352909435->678.261297475364
+Bidder IPI9AOYF26: balance 64.55336236063064->66.63453353398594, funds 35.37993075875175->35.3591190470182
+
+Asker DEKQRE9TJ2: balance 133.82957551550584->133.83134953476426, funds 1.5692795030928848->1.39187757725056
+Asker SML1Z0QCD5: balance 251.52778734392004->251.53180791875715, funds 0.7393929131127207->0.3373354294014803
+Asker UPF65ZKF6B: balance 128.31157069343413->128.32631078850096, funds 6.961971053344123->5.487961546661092
+Asker DWLM27I0AP: balance 217.39578571515247->217.39597000819032, funds 0.10917755206773631->0.09074824828395707
+Asker OT2KHB9PFA: balance 0.5728628586611527->0.5764691112376031, funds 2.50558040615873->2.1449551485136835
+Asker 7APUIYKR83: balance 286.33504563529493->286.3519433003859, funds 2.4435439272872266->0.7537774181863623
+Asker CJOVMJ8E9C: balance 0.05973191279275967->0.07167829535131161, funds 20.026808720724038->18.832170464868845
+Asker VZI1YK8XWW: balance 574.2348676734116->574.2360870375028, funds 0.4958710398375618->0.3739346307137071
+Asker 25RGEWHMPN: balance 178.79535728704198->178.81001264464894, funds 12.122739879585035->10.65720411888851
+Asker JKI2ZR1SVT: balance 0.0015984159841598534->0.00239762397623978, funds 23.840158401584013->23.76023760237602
+Asker QK2L67BIW7: balance 788.7769932390773->788.7786549101361, funds 1.148336567741098->0.9821694618726293
+Asker KPMOKS5VZO: balance 361.030205485399->361.0425699305748, funds 19.134766072989493->17.89832155540598
+Asker 18RZ3879CD: balance 40.268604293619454->40.33115177305953, funds 25.177005825234936->18.92225788122733
+Amount bidders paid: -0.12985176581337993, received: 12.985176581337992
+Amount askers paid: -14.64168077910944, received: 0.1464168077910944
+KeyError updating ZA6LCJMKS2 funds
+New orders:
+
+Holding Batch: 29 @ 2018-11-15 00:37:54.321493
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  9 ->  2.0799469557381554 IPI9AOYF26
+Updating Ask u_max from  8 -> 1.2742286232309568 RQ6ZV8WDKA 17
+Updating Ask u_max from  7 -> 1.39187757725056 DEKQRE9TJ2 0.08838053014763642
+Updating Ask u_max from  6 -> 0.3373354294014803 SML1Z0QCD5 0.01838183860828499
+Updating Ask u_max from  6 -> 5.487961546661092 UPF65ZKF6B 0.040674595260910634
+Updating Ask u_max from  17 -> 0.09074824828395707 DWLM27I0AP 0.09748157303155291
+Updating Ask u_max from  12 -> 2.1449551485136835 OT2KHB9PFA 0.06941930433154182
+Updating Ask u_max from  16 -> 0.7537774181863623 7APUIYKR83 0.01445637688232361
+Updating Ask u_max from  7 -> 0.3739346307137071 VZI1YK8XWW 0.060760723876858214
+Updating Ask u_max from  9 -> 0.9821694618726293 QK2L67BIW7 0.06904822661998015
+Found crossing after 13 iterations
+Results of batch 29 @2018-11-15 00:37:54.322525:
+p*:0.01, u*:7.517508785440953
+best bid: 2.3137285136863546, best ask:12.72128905719555
+
+
+agg_demand: 2.3137285136863546, paid_bids: 2.3137285136863546, agg_supply: 12.72128905719555, paid_asks: 12.72128905719555, difference: 0.0
+Bidder I9BY2KFEUK: balance 48.87025246358559->49.104034021533785, funds 678.261297475364->678.2589596597845
+Bidder IPI9AOYF26: balance 66.63453353398594->68.7144804897241, funds 35.3591190470182->35.338319577460815
+
+Asker DEKQRE9TJ2: balance 133.83134953476426->133.83292300693574, funds 1.39187757725056->1.2345303601013258
+Asker SML1Z0QCD5: balance 251.53180791875715->251.53364223758152, funds 0.3373354294014803->0.15390354696587819
+Asker UPF65ZKF6B: balance 128.32631078850096->128.33979296765443, funds 5.487961546661092->4.139743631312865
+Asker DWLM27I0AP: balance 217.39597000819032->217.39606301735927, funds 0.09074824828395707->0.08144733138931272
+Asker OT2KHB9PFA: balance 0.5764691112376031->0.579556320098147, funds 2.1449551485136835->1.8362342624593035
+Asker 7APUIYKR83: balance 286.3519433003859->286.35715584362015, funds 0.7537774181863623->0.232523094765266
+Asker CJOVMJ8E9C: balance 0.07167829535131161->0.08120583369795967, funds 18.832170464868845->17.87941663020404
+Asker VZI1YK8XWW: balance 574.2360870375028->574.2367019449018, funds 0.3739346307137071->0.3124438908107223
+Asker 25RGEWHMPN: balance 178.81001264464894->178.8246680022559, funds 10.65720411888851->9.191668358191984
+Asker JKI2ZR1SVT: balance 0.00239762397623978->0.0031968319683197068, funds 23.76023760237602->23.680316803168026
+Asker QK2L67BIW7: balance 788.7786549101361->788.7800761333343, funds 0.9821694618726293->0.8400471420436907
+Asker KPMOKS5VZO: balance 361.0425699305748->361.05493437575063, funds 17.89832155540598->16.661877037822464
+Asker 18RZ3879CD: balance 40.33115177305953->40.39369925249961, funds 18.92225788122733->12.667509937219727
+Amount bidders paid: -0.023137285136863545, received: 2.3137285136863546
+Amount askers paid: -12.72128905719555, received: 0.1272128905719555
+New orders:
+
+Holding Batch: 30 @ 2018-11-15 00:37:55.321540
+Updating Bid u_max from  12 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  9 ->  2.078723458248602 IPI9AOYF26
+Updating Ask u_max from  10 -> 1.2742286232309568 RQ6ZV8WDKA 0.04619731431768658
+Updating Ask u_max from  7 -> 1.2345303601013258 DEKQRE9TJ2 0.08838053014763642
+Updating Ask u_max from  6 -> 0.15390354696587819 SML1Z0QCD5 0.01838183860828499
+Updating Ask u_max from  6 -> 4.139743631312865 UPF65ZKF6B 0.040674595260910634
+Updating Ask u_max from  13 -> 0.08144733138931272 DWLM27I0AP 0.09340600751607364
+Updating Ask u_max from  12 -> 1.8362342624593035 OT2KHB9PFA 0.06941930433154182
+Updating Ask u_max from  16 -> 0.232523094765266 7APUIYKR83 0.01445637688232361
+Updating Ask u_max from  7 -> 0.3124438908107223 VZI1YK8XWW 0.060760723876858214
+Updating Ask u_max from  10 -> 0.8400471420436907 QK2L67BIW7 0.03495967699054679
+Found crossing after 13 iterations
+Results of batch 30 @2018-11-15 00:37:55.322528:
+p*:0.01, u*:8.982497039151287
+best bid: 2.078723458248602, best ask:15.886270620053974
+
+
+agg_demand: 2.078723458248602, paid_bids: 2.078723458248602, agg_supply: 15.886270620053974, paid_asks: 15.886270620053974, difference: -1.7763568394002505e-15
+Bidder IPI9AOYF26: balance 68.7144804897241->70.7932039479727, funds 35.338319577460815->35.31753234287833
+
+Asker RQ6ZV8WDKA: balance 918.9328303477874->918.9355864170966, funds 1.2742286232309568->0.9986216923208668
+Asker DEKQRE9TJ2: balance 133.83292300693574->133.83431860321392, funds 1.2345303601013258->1.094970732284132
+Asker SML1Z0QCD5: balance 251.53364223758152->251.53447911431823, funds 0.15390354696587819->0.07021587329473176
+Asker UPF65ZKF6B: balance 128.33979296765443->128.34996300343408, funds 4.139743631312865->3.1227400533485827
+Asker DWLM27I0AP: balance 217.39606301735927->217.39615013659082, funds 0.08144733138931272->0.07273540823307714
+Asker OT2KHB9PFA: balance 0.579556320098147->0.5821991905978059, funds 1.8362342624593035->1.571947212493405
+Asker 7APUIYKR83: balance 286.35715584362015->286.35876379399804, funds 0.232523094765266->0.07172805697642892
+Asker CJOVMJ8E9C: balance 0.08120583369795967->0.12045245908355015, funds 17.87941663020404->13.954754091644993
+Asker VZI1YK8XWW: balance 574.2367019449018->574.2372157354001, funds 0.3124438908107223->0.2610648409820154
+Asker 25RGEWHMPN: balance 178.8246680022559->178.83932335986285, funds 9.191668358191984->7.726132597495459
+Asker JKI2ZR1SVT: balance 0.0031968319683197068->0.003996039960399634, funds 23.680316803168026->23.600396003960032
+Asker QK2L67BIW7: balance 788.7800761333343->788.7824773203184, funds 0.8400471420436907->0.5999284436280697
+Asker KPMOKS5VZO: balance 361.05493437575063->361.0741369158313, funds 16.661877037822464->14.741623029757674
+Asker 18RZ3879CD: balance 40.39369925249961->40.456246731939686, funds 12.667509937219727->6.412761993212121
+Amount bidders paid: -0.02078723458248602, received: 2.078723458248602
+Amount askers paid: -15.886270620053974, received: 0.15886270620053974
+New orders:
+
+Holding Batch: 31 @ 2018-11-15 00:37:56.321540
+Updating Bid u_max from  6 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  9 ->  2.077500680463031 IPI9AOYF26
+Updating Ask u_max from  10 -> 0.9986216923208668 RQ6ZV8WDKA 0.04619731431768658
+Updating Ask u_max from  7 -> 1.094970732284132 DEKQRE9TJ2 0.08838053014763642
+Updating Ask u_max from  6 -> 0.07021587329473176 SML1Z0QCD5 0.01838183860828499
+Updating Ask u_max from  6 -> 3.1227400533485827 UPF65ZKF6B 0.040674595260910634
+Updating Ask u_max from  13 -> 0.07273540823307714 DWLM27I0AP 0.09340600751607364
+Updating Ask u_max from  12 -> 1.571947212493405 OT2KHB9PFA 0.06941930433154182
+Updating Ask u_max from  10 -> 0.07172805697642892 7APUIYKR83 0.03425858873453563
+Updating Ask u_max from  7 -> 0.2610648409820154 VZI1YK8XWW 0.060760723876858214
+Updating Ask u_max from  8 -> 7.726132597495459 25RGEWHMPN 0.054542957941617495
+Updating Ask u_max from  10 -> 0.5999284436280697 QK2L67BIW7 0.03495967699054679
+Updating Ask u_max from  10 -> 6.412761993212121 18RZ3879CD 0.015981866635442876
+Found crossing after 13 iterations
+Results of batch 31 @2018-11-15 00:37:56.322534:
+p*:0.01, u*:9.599008424870291
+best bid: 6.232311561199307, best ask:12.965705288541276
+
+
+agg_demand: 6.232311561199307, paid_bids: 6.232311561199307, agg_supply: 12.965705288541276, paid_asks: 12.965705288541276, difference: 0.0
+Bidder W0ISDHQ1T1: balance 32.872448715298795->33.01233734630188, funds 1.994362133539203e-06->-0.001396891947897282
+Cancelling trader
+W0ISDHQ1T1 Balance:  33.01233734630188 Funds Remaining:  -0.001396891947897282
+
+Bidder I9BY2KFEUK: balance 49.104034021533785->53.11895627126698, funds 678.2589596597845->678.2188104372872
+Bidder IPI9AOYF26: balance 70.7932039479727->72.87070462843573, funds 35.31753234287833->35.296757336073696
+
+Asker RQ6ZV8WDKA: balance 918.9355864170966->918.9377463674756, funds 0.9986216923208668->0.7826266544265496
+Asker DEKQRE9TJ2: balance 133.83431860321392->133.83555643188794, funds 1.094970732284132->0.9711878648820284
+Asker SML1Z0QCD5: balance 251.53447911431823->251.53486092508263, funds 0.07021587329473176->0.03203479685646823
+Asker UPF65ZKF6B: balance 128.34996300343408->128.35763458430998, funds 3.1227400533485827->2.355581965759302
+Asker DWLM27I0AP: balance 217.39615013659082->217.39622793721074, funds 0.07273540823307714->0.06495534624141881
+Asker OT2KHB9PFA: balance 0.5821991905978059->0.5844616758372196, funds 1.571947212493405->1.3456986885520288
+Asker 7APUIYKR83: balance 286.35876379399804->286.35897301817795, funds 0.07172805697642892->0.050805638982838554
+Asker CJOVMJ8E9C: balance 0.12045245908355015->0.15969908446914063, funds 13.954754091644993->10.030091553085946
+Asker VZI1YK8XWW: balance 574.2372157354001->574.2376450369121, funds 0.2610648409820154->0.21813468978419873
+Asker 25RGEWHMPN: balance 178.83932335986285->178.85347701437973, funds 7.726132597495459->6.310767145806368
+Asker JKI2ZR1SVT: balance 0.003996039960399634->0.00479524795247956, funds 23.600396003960032->23.52047520475204
+Asker QK2L67BIW7: balance 788.7824773203184->788.7841921530917, funds 0.5999284436280697->0.42844516630148716
+Asker KPMOKS5VZO: balance 361.0741369158313->361.0933394559119, funds 14.741623029757674->12.821369021692885
+Asker 18RZ3879CD: balance 40.456246731939686->40.49635694183214, funds 6.412761993212121->2.401741003966758
+Amount bidders paid: -0.062323115611993066, received: 6.232311561199307
+Amount askers paid: -12.965705288541276, received: 0.12965705288541274
+KeyError updating W0ISDHQ1T1 funds
+
+Holding Batch: 32 @ 2018-11-15 00:37:56.698034
+Updating Bid u_max from  6 ->  0.19943621335392028 W0ISDHQ1T1
+Updating Bid u_max from  9 ->  2.076278621958087 IPI9AOYF26
+Updating Ask u_max from  10 -> 0.7826266544265496 RQ6ZV8WDKA 0.04619731431768658
+Updating Ask u_max from  7 -> 0.9711878648820284 DEKQRE9TJ2 0.08838053014763642
+Updating Ask u_max from  6 -> 0.03203479685646823 SML1Z0QCD5 0.01838183860828499
+Updating Ask u_max from  6 -> 2.355581965759302 UPF65ZKF6B 0.040674595260910634
+Updating Ask u_max from  13 -> 0.06495534624141881 DWLM27I0AP 0.09340600751607364
+Updating Ask u_max from  12 -> 1.3456986885520288 OT2KHB9PFA 0.06941930433154182
+Updating Ask u_max from  10 -> 0.050805638982838554 7APUIYKR83 0.03425858873453563
+Updating Ask u_max from  11 -> 10.030091553085946 CJOVMJ8E9C 0.028009859585468075
+Updating Ask u_max from  7 -> 0.21813468978419873 VZI1YK8XWW 0.060760723876858214
+Updating Ask u_max from  8 -> 6.310767145806368 25RGEWHMPN 0.054542957941617495
+Updating Ask u_max from  10 -> 0.42844516630148716 QK2L67BIW7 0.03495967699054679
+Updating Ask u_max from  14 -> 12.821369021692885 KPMOKS5VZO 0.07284411434768953
+Updating Ask u_max from  10 -> 2.401741003966758 18RZ3879CD 0.015981866635442876
+Found crossing after 13 iterations
+Results of batch 32 @2018-11-15 00:37:56.699003:
+p*:0.01, u*:7.777745386456434
+best bid: 6.2310895026943625, best ask:9.324401270218505
+
+
+agg_demand: 6.2310895026943625, paid_bids: 6.2310895026943625, agg_supply: 9.324401270218505, paid_asks: 9.324401270218505, difference: 0.0
+New orders:
+
+Holding Batch: 33 @ 2018-11-15 00:37:57.321552
+Updating Bid u_max from  9 ->  2.076278621958087 IPI9AOYF26
+Updating Ask u_max from  10 -> 0.7826266544265496 RQ6ZV8WDKA 0.04619731431768658
+Updating Ask u_max from  7 -> 0.9711878648820284 DEKQRE9TJ2 0.08838053014763642
+Updating Ask u_max from  12 -> 0.03203479685646823 SML1Z0QCD5 0.07902009925719711
+Updating Ask u_max from  6 -> 2.355581965759302 UPF65ZKF6B 0.040674595260910634
+Updating Ask u_max from  13 -> 0.06495534624141881 DWLM27I0AP 0.09340600751607364
+Updating Ask u_max from  12 -> 1.3456986885520288 OT2KHB9PFA 0.06941930433154182
+Updating Ask u_max from  10 -> 0.050805638982838554 7APUIYKR83 0.03425858873453563
+Updating Ask u_max from  11 -> 10.030091553085946 CJOVMJ8E9C 0.028009859585468075
+Updating Ask u_max from  5 -> 0.21813468978419873 VZI1YK8XWW 0.03477230425447765
+Updating Ask u_max from  8 -> 6.310767145806368 25RGEWHMPN 0.054542957941617495
+Updating Ask u_max from  10 -> 0.42844516630148716 QK2L67BIW7 0.03495967699054679
+Updating Ask u_max from  14 -> 12.821369021692885 KPMOKS5VZO 0.07284411434768953
+Updating Ask u_max from  10 -> 2.401741003966758 18RZ3879CD 0.015981866635442876
+Found crossing after 13 iterations
+Results of batch 33 @2018-11-15 00:37:57.322512:
+p*:0.01, u*:7.714525066847209
+best bid: 6.091200871691281, best ask:9.337849262003136
+
+
+agg_demand: 6.091200871691281, paid_bids: 6.091200871691281, agg_supply: 9.337849262003136, paid_asks: 9.337849262003136, difference: 0.0
+Bidder I9BY2KFEUK: balance 53.11895627126698->57.13387852100018, funds 678.2188104372872->678.1786612147898
+Bidder IPI9AOYF26: balance 72.87070462843573->74.94698325039381, funds 35.296757336073696->35.27599454985412
+
+Asker RQ6ZV8WDKA: balance 918.9377463674756->918.9394391353694, funds 0.7826266544265496->0.6133498650478846
+Asker DEKQRE9TJ2: balance 133.83555643188794->133.83665432807052, funds 0.9711878648820284->0.8613982466239675
+Asker SML1Z0QCD5: balance 251.53486092508263->251.53490142972996, funds 0.03203479685646823->0.02798433212341746
+Asker UPF65ZKF6B: balance 128.35763458430998->128.36342150132882, funds 2.355581965759302->1.7768902638759163
+Asker DWLM27I0AP: balance 217.39622793721074->217.39629741597395, funds 0.06495534624141881->0.05800746992197233
+Asker OT2KHB9PFA: balance 0.5844616758372196->0.5863985242220443, funds 1.3456986885520288->1.1520138500695662
+Asker 7APUIYKR83: balance 286.35897301817795->286.35912121357876, funds 0.050805638982838554->0.035986098902731405
+Asker CJOVMJ8E9C: balance 0.15969908446914063->0.19548519772069878, funds 10.030091553085946->6.451480227930132
+Asker VZI1YK8XWW: balance 574.2376450369121->574.2382719129486, funds 0.21813468978419873->0.15544708613768696
+Asker 25RGEWHMPN: balance 178.85347701437973->178.86503783304175, funds 6.310767145806368->5.1546852796053715
+Asker JKI2ZR1SVT: balance 0.00479524795247956->0.005594455944559487, funds 23.52047520475204->23.440554405544045
+Asker QK2L67BIW7: balance 788.7841921530917->788.7854168188339, funds 0.42844516630148716->0.30597859207507705
+Asker KPMOKS5VZO: balance 361.0933394559119->361.1109253739496, funds 12.821369021692885->11.062777217922635
+Asker 18RZ3879CD: balance 40.49635694183214->40.51137922643874, funds 2.401741003966758->0.8995125433067739
+Amount bidders paid: -0.06091200871691281, received: 6.091200871691281
+Amount askers paid: -9.337849262003136, received: 0.09337849262003138
+New orders:

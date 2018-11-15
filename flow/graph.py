@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt, mpld3
 from matplotlib.animation import FuncAnimation
 from matplotlib.animation import TimedAnimation
+from payer import Payer
 import numpy as np
 import math
 import time
@@ -15,8 +16,7 @@ class Graph():
 	def add_titles(self):
 		plt.title(f'Total of batch {self.exchange.batch_num}')
 		plt.xlabel(f'(Price {self.exchange.book.base_currency}/{self.exchange.book.desired_currency})')
-		# plt.ylabel(f'(Quantity Traded ({self.exchange.book.base_currency}/batch)')
-		plt.ylabel(f'Volume')
+		plt.ylabel(f'(Volume ({self.exchange.book.desired_currency}/batch)')
 
 	def graph_aggregates(self):
 		zoom = 5
@@ -27,11 +27,11 @@ class Graph():
 		p_array = []
 		max_price = self.exchange.max_price
 		min_price = self.exchange.min_price
-		for x in range(math.floor(min_price), math.floor(max_price)):
-			dem, sup = self.exchange.calc_aggs(x)
+		for price in range(math.floor(min_price), math.ceil(max_price)):
+			dem, sup = self.get_aggs(price)
 			dem_array.append(dem)
 			sup_array.append(sup)
-			p_array.append(x)
+			p_array.append(price)
 
 		self.ax.plot(p_array, dem_array, 'b')
 		self.ax.plot(p_array, sup_array, 'r')
@@ -86,6 +86,17 @@ class Graph():
 
 	def close(self):
 		plt.close()
+
+	def get_aggs(self, p):
+		agg_demand = 0
+		agg_supply = 0
+		for o_id, bid in self.exchange.bids.items():
+			agg_demand += Payer.calc_demand(bid['p_low'], bid['p_high'], bid['u_max'], p)
+
+		for o_id, ask in self.exchange.asks.items():
+			agg_supply += Payer.calc_supply(ask['p_low'], ask['p_high'], ask['u_max'], p)
+		
+		return agg_demand, agg_supply
 
 
 

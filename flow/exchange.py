@@ -56,34 +56,32 @@ class Exchange(OrderBook):
 	def calc_agg_demand(self, p_i):
 		agg_demand = 0
 		for o_id, bid in self.bids.items():
-			# Demand schedules add their u_max if p_i < p_low
-			if p_i < bid['p_low']:
-				agg_demand += bid['u_max']
+			# Constrain trader's u_max to be within their funds budget
+			if bid['funds'] < bid['u_max'] * bid['p_low']:
+				print('Updating Bid u_max from ', bid['u_max'], '-> ', bid['funds'] / bid['p_low'], o_id)
+				bid['u_max'] = bid['funds'] / bid['p_low']
+			# else:
+			# 	print('Not Updating Bid ', bid['u_max'], bid['funds'], bid['p_low'], o_id)
 
-			# The price index is within their [p_low, p_high]
-			elif p_i >= bid['p_low'] and p_i <= bid['p_high']: 
-				# print('cur agg', agg_demand, 'to add: ', bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low'])))
-				agg_demand += bid['u_max'] * ((bid['p_high'] - p_i) / (bid['p_high'] - bid['p_low']))
+			agg_demand += Payer.calc_demand(bid['p_low'], bid['p_high'], bid['u_max'], p_i)
 
 		return agg_demand
 
 	def calc_agg_supply(self, p_i):
 		agg_supply = 0
 		for o_id, ask in self.asks.items():
-			# The price index is within their [p_low, p_high]
-			if p_i >= ask['p_low'] and p_i <= ask['p_high']:
-				# print('cur agg', agg_supply, 'to add: ', ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max'])
-				agg_supply += ask['u_max'] + ((p_i - ask['p_high']) / (ask['p_high'] - ask['p_low'])) * ask['u_max']
+			# Constrain trader's u_max to be within their funds budget
+			if ask['funds'] < ask['u_max']:
+				print('Updating Ask u_max from ', ask['u_max'], '->', ask['funds'], o_id, ask['p_high'])
+				ask['u_max'] = float(ask['funds'])
 
-			# Supply schedules add their u_max if pi > p_high
-			elif p_i > ask['p_high']:
-				agg_supply += ask['u_max']
+			agg_supply += Payer.calc_supply(ask['p_low'], ask['p_high'], ask['u_max'], p_i)
 
 		return agg_supply
 
 	def calc_crossing(self):
 		self.clearing_price = 0
-		self.clearing_price = 0
+		self.clearing_rate = 0
 		self.best_bid = 0
 		self.best_ask = 0
 		try:
@@ -122,8 +120,8 @@ class Exchange(OrderBook):
 			iterations += 1
 			if iterations > max_iterations:
 				print(f'Uh oh did not find crossing within max_iterations! {L}')
-				return L
-				# return -1
+				# return L
+				return -1
 		# If there isn't an exact crossing, return leftmost index after cross
 		print(f'Found crossing after {iterations} iterations')
 		return L 
