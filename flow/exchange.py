@@ -79,29 +79,18 @@ class Exchange(OrderBook):
 
 		return agg_supply
 
-	def calc_crossing(self):
-		self.clearing_price = 0
-		self.clearing_rate = 0
-		self.best_bid = 0
-		self.best_ask = 0
-		try:
-			self.clearing_price = self.binary_search_cross(self.min_price, 
-														   self.max_price, 
-														   Exchange._min_tick_size,
-														   self.bids,
-														   self.asks)
-			if self.clearing_price < 0:
-				self.clearing_price = 0
-				self.clearing_rate = 0
-				raise NoCrossFound
-			self.best_bid, self.best_ask = self.calc_aggs(self.bids, self.asks, self.clearing_price)
-			self.clearing_rate = (self.best_bid + self.best_ask) / 2
-			
+	def calc_crossing(self, min_p, max_p, tick_size, bids, asks, debug=True):
+		clearing_rate, best_bid, best_ask = 0, 0, 0
+		clearing_price = self.binary_search_cross(min_p, max_p, 
+												  tick_size, bids, 
+												  asks, debug)
+		if clearing_price > 0:
+			best_bid, best_ask = self.calc_aggs(bids, asks, clearing_price)
+			clearing_rate = (best_bid + best_ask) / 2
 
-		except Exception as e:
-			print('Error calculating crossing', e)
+		return clearing_price, clearing_rate, best_bid, best_ask
 
-	def binary_search_cross(self, min_p, max_p, tick_size, bids, asks):
+	def binary_search_cross(self, min_p, max_p, tick_size, bids, asks, debug=True):
 		L = min_p
 		R = max_p
 		iterations = 0
@@ -125,10 +114,10 @@ class Exchange(OrderBook):
 			iterations += 1
 			if iterations > max_iterations:
 				print(f'Uh oh did not find crossing within max_iterations! {L}')
-				print(f'L:{L}, R:{R}, index: {index}, dem:{dem}, sup:{sup}')
-				print(bids, asks)
+				if debug:
+					self.debug_cross(min_p, max_p, tick_size, bids, asks)
 				# return L
-				return -1
+				return 0
 		# If there isn't an exact crossing, return leftmost index after cross
 		print(f'Found crossing after {iterations} iterations')
 		return L 
@@ -146,7 +135,9 @@ class Exchange(OrderBook):
 		# self.print_books()
 
 		# Find the average aggregate schedules and then find p*
-		self.calc_crossing()
+		self.clearing_price, self.clearing_rate, self.best_bid, self.best_ask = self.calc_crossing(self.min_price, self.max_price, 
+							Exchange._min_tick_size, 
+							self.bids, self.asks)
 		
 		# Save the results of the batch
 		self.print_results()
@@ -223,10 +214,12 @@ class Exchange(OrderBook):
 		pickle.dump(data, file)
 		file.close()
 
-	def debug_cross(self):
-		# Failed to calculate cross, so save inputs to retest
-		# Save self.min_price, self.max_price
-		pass
+	def debug_cross(self, min_p, max_p, tick_size, bids, asks):
+		print('Writing to file')
+		data = {'min_p': min_p, 'max_p': max_p, 
+				'tick_size': tick_size, 'bids': bids,
+				'asks': asks}
+		self.write_to_file('cross_fail', data)
 
 	def _get_balance(self):
 		return self.balance

@@ -31,7 +31,7 @@ class Graph():
 		cp = self.exchange.clearing_price
 		for price in range(math.floor(min_price), math.ceil(max_price)):
 		# for price in range(math.floor((cp - 1) / self.exchange._min_tick_size), math.ceil((cp + 1) / self.exchange._min_tick_size)):
-			dem, sup = self.get_aggs(price)
+			dem, sup = self.get_aggs(self.exchange.bids, self.exchange.asks, price)
 			dem_array.append(dem)
 			sup_array.append(sup)
 			p_array.append(price)
@@ -88,13 +88,13 @@ class Graph():
 	def close(self):
 		plt.close()
 
-	def get_aggs(self, p):
+	def get_aggs(self, bids, asks, p):
 		agg_demand = 0
 		agg_supply = 0
-		for o_id, bid in self.exchange.bids.items():
+		for o_id, bid in bids.items():
 			agg_demand += Payer.calc_demand(bid['p_low'], bid['p_high'], bid['u_max'], p)
 
-		for o_id, ask in self.exchange.asks.items():
+		for o_id, ask in asks.items():
 			agg_supply += Payer.calc_supply(ask['p_low'], ask['p_high'], ask['u_max'], p)
 		
 		return agg_demand, agg_supply
