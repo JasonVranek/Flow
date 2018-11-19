@@ -32,8 +32,6 @@ class Exchange(OrderBook):
 		self.balance = balance
 		self.clearing_price = 0
 		self.clearing_rate = 0
-		self.total_aggregate_demand = []
-		self.total_aggregate_supply = []
 		self.batch_num = 0
 		self.bids = {}
 		self.asks = {}
@@ -41,8 +39,6 @@ class Exchange(OrderBook):
 		self.max_price = 0
 		self.best_bid = 0
 		self.best_ask = 0
-		self.bid_history = []
-		self.ask_history = []
 
 	def add_book(self, book):
 		self.book = book
@@ -60,8 +56,6 @@ class Exchange(OrderBook):
 			if bid['funds'] < bid['u_max'] * bid['p_low']:
 				# print('Updating Bid u_max from ', bid['u_max'], '-> ', bid['funds'] / bid['p_low'], o_id)
 				bid['u_max'] = bid['funds'] / bid['p_low']
-			# else:
-			# 	print('Not Updating Bid ', bid['u_max'], bid['funds'], bid['p_low'], o_id)
 
 			agg_demand += Payer.calc_demand(bid['p_low'], bid['p_high'], bid['u_max'], p_i)
 
@@ -95,8 +89,6 @@ class Exchange(OrderBook):
 		R = max_p
 		iterations = 0
 		max_iterations = math.ceil(math.log2((R - L) / tick_size))
-		# max_iterations = 1000
-		# print(f'max_iterations: {max_iterations}, p_low: {L}, p_high: {R}')
 		while L < R:
 			# Finds a midpoint with the correct price tick precision
 			index = math.floor(((L + R) / 2) / tick_size) * tick_size
@@ -110,17 +102,20 @@ class Exchange(OrderBook):
 				R = index
 			else:
 				print(f'Found cross at {L}!')
-				return L
-			iterations += 1
+				return self.nice_precision(L)
+
 			if iterations > max_iterations:
-				print(f'Uh oh did not find crossing within max_iterations! {L}')
+				print(f'Uh oh did not find crossing within max_iterations! {self.nice_precision(L)}, ({L})')
 				if debug:
 					self.debug_cross(min_p, max_p, tick_size, bids, asks)
-				# return L
-				return 0
+				return self.nice_precision(L)
+				# return 0`
+
+			iterations += 1
+
 		# If there isn't an exact crossing, return leftmost index after cross
 		print(f'Found crossing after {iterations} iterations')
-		return L 
+		return self.nice_precision(L) 
 
 	# @prof
 	def hold_batch(self):
@@ -135,9 +130,12 @@ class Exchange(OrderBook):
 		# self.print_books()
 
 		# Find the average aggregate schedules and then find p*
-		self.clearing_price, self.clearing_rate, self.best_bid, self.best_ask = self.calc_crossing(self.min_price, self.max_price, 
+		
+		results = self.calc_crossing(self.min_price, self.max_price, 
 							Exchange._min_tick_size, 
 							self.bids, self.asks)
+
+		self.clearing_price, self.clearing_rate, self.best_bid, self.best_ask = results
 		
 		# Save the results of the batch
 		self.print_results()
@@ -174,7 +172,7 @@ class Exchange(OrderBook):
 		return bids, asks
 
 	def nice_precision(self, num):
-		return math.floor(num / Exchange._min_tick_size) * Exchange._min_tick_size
+		return round(num / Exchange._min_tick_size) * Exchange._min_tick_size
 
 	def print_books(self):
 		print(f'Book for batch {self.batch_num} @{str(datetime.datetime.now())}:')
