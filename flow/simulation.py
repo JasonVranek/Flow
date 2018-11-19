@@ -108,7 +108,14 @@ class Simulation(object):
 			sum_to_bidders += contents['shares'] 
 			sum_from_bidders -= contents['shares']   * contents['p*'] 
 
-			print(f'Bidder {o_id}: balance {b_before}->{trader.balance}, funds {f_before}->{trader.funds}')
+			# Update the funds in the book
+			try:
+				self.book.bids[o_id]['funds'] = trader.funds
+			except KeyError:
+				print(f'Tried to decrease funds but bidder {o_id} is missing')
+				pass
+
+			# print(f'Bidder {o_id}: balance {b_before}->{trader.balance}, funds {f_before}->{trader.funds}')
 			if trader.funds <= 0:
 				print('Cancelling trader')
 				trader.describe()
@@ -128,19 +135,24 @@ class Simulation(object):
 			trader.balance += contents['shares'] * contents['p*'] 
 			trader.funds -= contents['shares']  
 			sum_to_askers += contents['shares'] * contents['p*'] 
-			sum_from_askers -= contents['shares']  
+			sum_from_askers -= contents['shares']
 
-			print(f'Asker {o_id}: balance {b_before}->{trader.balance}, funds {f_before}->{trader.funds}')
+			# Update the funds in the book
+			try:
+				self.book.asks[o_id]['funds'] = trader.funds  
+			except KeyError:
+				print(f'Tried to decrease funds but asker {o_id} is missing')
+				pass
+
+			# print(f'Asker {o_id}: balance {b_before}->{trader.balance}, funds {f_before}->{trader.funds}')
 			if trader.funds <= 0:
 				print('Cancelling trader')
 				trader.describe()
 				self.cancel_trader(trader)
 				print()
 
-		print(f'Amount bidders paid: {sum_from_bidders}, received: {sum_to_bidders}')
-		print(f'Amount askers paid: {sum_from_askers}, received: {sum_to_askers}')
-
-		self.update_funds_in_book()
+		# print(f'Amount bidders paid: {sum_from_bidders}, received: {sum_to_bidders}')
+		# print(f'Amount askers paid: {sum_from_askers}, received: {sum_to_askers}')
 
 	def update_funds_in_book(self):
 		for o_id, order in self.book.bids.items():
@@ -179,39 +191,33 @@ class Simulation(object):
 		while True:
 			print('New orders:')
 			# Cancel from current traders
-			# try:
-			# 	num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.001)
-			# 	# print(f'Cancelling {num_traders} orders!')
-			# 	for x in range(0, num_traders):
-			# 		trader_id = np.random.choice(list(self.traders))
-			# 		self.cancel_trader(self.traders[trader_id])
-			# except ValueError:
-			# 	print('Tried to cancel but not enough traders in book')
-			# 	pass
+			# self.send_rand_cancels(beta=.001)
 
 			# Updates for current traders
-			try:
-				num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.005)
-				# print(f'Updating {num_traders} orders!')
-				for x in range(0, num_traders):
-					trader_id = np.random.choice(list(self.traders))
-					self.update_trader(self.traders[trader_id])
-			except ValueError:
-				print('Tried to update but failed')
-				pass
+			self.send_rand_updates(beta=.005)
 
 			# Send in new traders
 			if self.first_time:
 				self.first_time = False
-				# num_traders = rd.num_arrivals(self.exchange._batch_time, beta=.01)
-				num_traders = math.ceil(np.random.uniform(20, 50))
-				print(f'Sending {num_traders} new orders!')
-				traders = []
-				traders = self.setup_rand_traders(num_traders)
-				self.submit_traders_orders(traders)
+				self.send_rand_traders(beta=.01)
 
 			# Sleep after sending til batch is over
 			time.sleep(self.exchange._batch_time)
+
+	def send_rand_traders(self, beta=.01):
+		# num_traders = rd.num_arrivals(self.exchange._batch_time, beta)
+		num_traders = math.ceil(np.random.uniform(20, 50))
+		print(f'Sending {num_traders} new orders!')
+		traders = []
+		traders = self.setup_rand_traders(num_traders)
+		self.submit_traders_orders(traders)
+
+	def setup_rand_traders(self, n):
+		traders = []
+		for x in range(0, n):
+			traders.append(self.setup_rand_trader())
+
+		return traders
 
 	def setup_rand_trader(self):
 		name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
@@ -227,11 +233,33 @@ class Simulation(object):
 		self.traders[name] = trader
 		return trader
 
+	def send_rand_cancels(self, beta=.001):
+		# Cancel from current traders
+		try:
+			num_traders = rd.num_arrivals(self.exchange._batch_time, beta)
+			# print(f'Cancelling {num_traders} orders!')
+			for x in range(0, num_traders):
+				trader_id = np.random.choice(list(self.traders))
+				self.cancel_trader(self.traders[trader_id])
+		except ValueError:
+			print('Tried to cancel but not enough traders in book')
+
 	def cancel_trader(self, trader):
 		trader.cancel_order()
 		# print(f'CANCEL @{str(datetime.datetime.now())}: {trader.current_order}')
 		self.exchange.get_order(trader.current_order)
 		self.traders.pop(trader.account)
+
+	def send_rand_updates(self, beta=.005):
+		# Updates for current traders
+		try:
+			num_traders = rd.num_arrivals(self.exchange._batch_time, beta)
+			# print(f'Updating {num_traders} orders!')
+			for x in range(0, num_traders):
+				trader_id = np.random.choice(list(self.traders))
+				self.update_trader(self.traders[trader_id])
+		except ValueError:
+			print('Tried to update but failed')
 
 	def update_trader(self, trader):
 		# Update centered around current p*
@@ -243,13 +271,6 @@ class Simulation(object):
 		trader.update_order(*update)
 		# print(f'UPDATE @{str(datetime.datetime.now())}: {trader.current_order}')
 		self.exchange.get_order(trader.current_order)
-
-	def setup_rand_traders(self, n):
-		traders = []
-		for x in range(0, n):
-			traders.append(self.setup_rand_trader())
-
-		return traders
 
 	def submit_traders_orders(self, traders):
 		for trader in traders:

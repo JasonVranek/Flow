@@ -50,15 +50,15 @@ class Exchange(OrderBook):
 	def get_order(self, order):
 		self.book.receive_message(order)
 
-	def calc_aggs(self, p_i):
-		return self.calc_agg_demand(p_i), self.calc_agg_supply(p_i)
+	def calc_aggs(self, bids, asks, p_i):
+		return self.calc_agg_demand(bids, p_i), self.calc_agg_supply(asks, p_i)
 
-	def calc_agg_demand(self, p_i):
+	def calc_agg_demand(self, bids, p_i):
 		agg_demand = 0
-		for o_id, bid in self.bids.items():
+		for o_id, bid in bids.items():
 			# Constrain trader's u_max to be within their funds budget
 			if bid['funds'] < bid['u_max'] * bid['p_low']:
-				print('Updating Bid u_max from ', bid['u_max'], '-> ', bid['funds'] / bid['p_low'], o_id)
+				# print('Updating Bid u_max from ', bid['u_max'], '-> ', bid['funds'] / bid['p_low'], o_id)
 				bid['u_max'] = bid['funds'] / bid['p_low']
 			# else:
 			# 	print('Not Updating Bid ', bid['u_max'], bid['funds'], bid['p_low'], o_id)
@@ -67,12 +67,12 @@ class Exchange(OrderBook):
 
 		return agg_demand
 
-	def calc_agg_supply(self, p_i):
+	def calc_agg_supply(self, asks, p_i):
 		agg_supply = 0
-		for o_id, ask in self.asks.items():
+		for o_id, ask in asks.items():
 			# Constrain trader's u_max to be within their funds budget
 			if ask['funds'] < ask['u_max']:
-				print('Updating Ask u_max from ', ask['u_max'], '->', ask['funds'], o_id, ask['p_high'])
+				# print('Updating Ask u_max from ', ask['u_max'], '->', ask['funds'], o_id, ask['p_high'])
 				ask['u_max'] = float(ask['funds'])
 
 			agg_supply += Payer.calc_supply(ask['p_low'], ask['p_high'], ask['u_max'], p_i)
@@ -85,32 +85,37 @@ class Exchange(OrderBook):
 		self.best_bid = 0
 		self.best_ask = 0
 		try:
-			self.clearing_price = self.binary_search_cross()
+			self.clearing_price = self.binary_search_cross(self.min_price, 
+														   self.max_price, 
+														   Exchange._min_tick_size,
+														   self.bids,
+														   self.asks)
 			if self.clearing_price < 0:
 				self.clearing_price = 0
+				self.clearing_rate = 0
 				raise NoCrossFound
-			self.best_bid, self.best_ask = self.calc_aggs(self.clearing_price)
+			self.best_bid, self.best_ask = self.calc_aggs(self.bids, self.asks, self.clearing_price)
 			self.clearing_rate = (self.best_bid + self.best_ask) / 2
 			
 
 		except Exception as e:
 			print('Error calculating crossing', e)
 
-	def binary_search_cross(self):
-		L = self.min_price 
-		R = self.max_price 
+	def binary_search_cross(self, min_p, max_p, tick_size, bids, asks):
+		L = min_p
+		R = max_p
 		iterations = 0
-		max_iterations = math.ceil(math.log2((R - L) / Exchange._min_tick_size))
+		max_iterations = math.ceil(math.log2((R - L) / tick_size))
 		# max_iterations = 1000
 		# print(f'max_iterations: {max_iterations}, p_low: {L}, p_high: {R}')
 		while L < R:
 			# Finds a midpoint with the correct price tick precision
-			index = math.floor(((L + R) / 2) / Exchange._min_tick_size) * Exchange._min_tick_size
+			index = math.floor(((L + R) / 2) / tick_size) * tick_size
 			# print(index)
-			dem, sup = self.calc_aggs(index)
+			dem, sup = self.calc_aggs(bids, asks, index)
 			if dem > sup:
 				# We are left of the crossing
-				L = index + Exchange._min_tick_size 
+				L = index + tick_size 
 			elif dem < sup:
 				# We are right of the crossing
 				R = index
@@ -120,6 +125,8 @@ class Exchange(OrderBook):
 			iterations += 1
 			if iterations > max_iterations:
 				print(f'Uh oh did not find crossing within max_iterations! {L}')
+				print(f'L:{L}, R:{R}, index: {index}, dem:{dem}, sup:{sup}')
+				print(bids, asks)
 				# return L
 				return -1
 		# If there isn't an exact crossing, return leftmost index after cross
@@ -129,9 +136,7 @@ class Exchange(OrderBook):
 	# @prof
 	def hold_batch(self):
 		# Create deep copy (snapshot) of book's bids and asks at this time
-		# self.bids = deepcopy(self.book.bids)
-		# self.asks = deepcopy(self.book.asks)
-		self.snapshot_books()
+		self.bids, self.asks = self.snapshot_books(self.book)
 
 		# Record the min and max prices from the books
 		self.min_price = self.book.min_price
@@ -157,23 +162,25 @@ class Exchange(OrderBook):
 
 		return b_shares, a_shares
 
-	def snapshot_books(self):
+	def snapshot_books(self, order_book):
 		# By making a list of the keys, it saves the keys at the current moment
 		# and if the dict changes size during the batch we'll be fine
-		self.bids = {}
-		self.asks = {}
-		for key in list(self.book.bids):
+		bids = {}
+		asks = {}
+		for key in list(order_book.bids):
 			try:
-				self.bids[key] = deepcopy(self.book.bids[key])
+				bids[key] = deepcopy(order_book.bids[key])
 
 			except KeyError:
 				print(f'Tried to copy {key} but could not find it!')
 
-		for key in list(self.book.asks):
+		for key in list(order_book.asks):
 			try:
-				self.asks[key] = deepcopy(self.book.asks[key])
+				asks[key] = deepcopy(order_book.asks[key])
 			except KeyError:
 				print(f'Tried to copy {key} but could not find it!')
+
+		return bids, asks
 
 	def nice_precision(self, num):
 		return math.floor(num / Exchange._min_tick_size) * Exchange._min_tick_size
@@ -215,6 +222,11 @@ class Exchange(OrderBook):
 		file = open(file_name, 'wb')
 		pickle.dump(data, file)
 		file.close()
+
+	def debug_cross(self):
+		# Failed to calculate cross, so save inputs to retest
+		# Save self.min_price, self.max_price
+		pass
 
 	def _get_balance(self):
 		return self.balance
