@@ -40,3 +40,4 @@ class Payer():
 			return u_max * ((p_high - p) / (p_high - p_low))
 		else: 
 			return 0
+

@@ -83,7 +83,89 @@ class Simulation(object):
 		self.write_html()
 
 		# Pay the traders based on the clearing price
-		self.pay_traders(bid_shares_owed, ask_shares_owed)
+		# self.pay_traders(bid_shares_owed, ask_shares_owed)
+		self.exchange_funds(bid_shares_owed, ask_shares_owed, self.exchange.clearing_price)
+
+	def exchange_funds(self, bid_shares, ask_shares, p):
+		# Get list of trader id's so we can easily pop
+		bidders = list(bid_shares)
+		askers = list(ask_shares)
+
+		for bid_id in bidders:
+			# Get the trader's owed shares from dictionary
+			bidder_shares_owed = bid_shares[bid_id]['shares']
+			# print()
+			# print(f'Bidder {bid_id} is owed {bidder_shares_owed} shares')
+
+			if bidder_shares_owed == 0:
+				continue
+
+			# Get the trader from the dictionary of all traders
+			bidder = self.traders[bid_id]
+
+			for ask_id in askers:
+				ask_shares_owed = ask_shares[ask_id]['shares']
+				# print(f'Asker {ask_id} is owed {ask_shares_owed}')
+
+				if ask_shares_owed == 0:
+					# askers.remove(ask_id)
+					continue
+				elif ask_shares_owed >= bidder_shares_owed:
+					# print(f'Buying {bidder_shares_owed} from asker {ask_id}')
+					# Get the asker to update their funds
+					asker = self.traders[ask_id]
+					bidder.balance += bidder_shares_owed
+					bidder.funds -= bidder_shares_owed * p
+					asker.balance += bidder_shares_owed * p
+					asker.funds -= bidder_shares_owed
+
+					ask_shares[ask_id]['shares'] -= bidder_shares_owed
+					bidder_shares_owed = 0
+					bid_shares[bid_id]['shares'] = 0
+					# Update the funds in the orderbook
+					self.book.bids[bid_id]['funds'] = bidder.funds
+					self.book.asks[ask_id]['funds'] = asker.funds  
+					break
+				elif ask_shares_owed < bidder_shares_owed:
+					# print(f'Buying {ask_shares_owed} from asker {ask_id}')
+					asker = self.traders[ask_id]
+					bidder.balance += ask_shares_owed
+					bidder.funds -= ask_shares_owed * p
+					asker.balance += ask_shares_owed * p 
+					asker.funds -= ask_shares_owed
+					ask_shares[ask_id]['shares'] = 0
+					bidder_shares_owed -= ask_shares_owed
+					bid_shares[bid_id]['shares'] -= ask_shares_owed
+
+					# askers.remove(ask_id)
+					self.book.bids[bid_id]['funds'] = bidder.funds
+					self.book.asks[ask_id]['funds'] = asker.funds  
+
+		sum_excess = 0
+		# print('\nBids\n')
+		for bid_id in list(bid_shares):
+			shares = bid_shares[bid_id]['shares']
+			if shares != 0:
+				print(f'Exchange is covering {shares} to bidder')
+				self.book.bids[bid_id]['funds'] -= shares * p
+				bidder = self.traders[bid_id]
+				bidder.balance += shares
+
+			# print(f'{bid_id} is owed {shares}')
+
+		# print('\nAsks\n')
+		for ask_id in list(ask_shares):
+			shares = ask_shares[ask_id]['shares']
+			if shares != 0:
+				print(f'Exchange is covering {shares} to asker')
+				self.book.asks[ask_id]['funds'] -= shares
+				asker = self.traders[ask_id]
+				asker.balance += shares * p
+
+			# print(f'{ask_id} is owed {shares}')
+
+						
+
 
 	def pay_traders(self, b_shares, a_shares):
 		sum_to_askers = 0
@@ -97,29 +179,29 @@ class Simulation(object):
 			if contents['shares'] == 0:
 				continue
 			# Get the trader from the dictionary of all traders
-			trader = self.traders[o_id]
+			bidder = self.traders[o_id]
 
 			# A bidder adds shares to balance and subtracts shares*clearing_price from funds
-			f_before = trader.funds
-			b_before = trader.balance
-			trader.balance += contents['shares']
-			trader.funds -= contents['shares']   * contents['p*'] 
+			f_before = bidder.funds
+			b_before = bidder.balance
+			bidder.balance += contents['shares']
+			bidder.funds -= contents['shares']   * contents['p*'] 
 
 			sum_to_bidders += contents['shares'] 
 			sum_from_bidders -= contents['shares']   * contents['p*'] 
 
 			# Update the funds in the book
 			try:
-				self.book.bids[o_id]['funds'] = trader.funds
+				self.book.bids[o_id]['funds'] = bidder.funds
 			except KeyError:
 				print(f'Tried to decrease funds but bidder {o_id} is missing')
 				pass
 
-			# print(f'Bidder {o_id}: balance {b_before}->{trader.balance}, funds {f_before}->{trader.funds}')
-			if trader.funds <= 0:
-				print('Cancelling trader')
-				trader.describe()
-				self.cancel_trader(trader)
+			# print(f'Bidder {o_id}: balance {b_before}->{bidder.balance}, funds {f_before}->{bidder.funds}')
+			if bidder.funds <= 0:
+				print('Cancelling bidder')
+				bidder.describe()
+				self.cancel_trader(bidder)
 				print()
 		print()
 		for o_id in a_shares:
@@ -127,32 +209,32 @@ class Simulation(object):
 			if contents['shares'] == 0:
 				continue
 			# Get the trader from the dictionary of all traders
-			trader = self.traders[o_id]
+			asker = self.traders[o_id]
 
 			# An asker adds shares to balance and subtracts shares/clearing_price from funds
-			f_before = trader.funds
-			b_before = trader.balance
-			trader.balance += contents['shares'] * contents['p*'] 
-			trader.funds -= contents['shares']  
+			f_before = asker.funds
+			b_before = asker.balance
+			asker.balance += contents['shares'] * contents['p*'] 
+			asker.funds -= contents['shares']  
 			sum_to_askers += contents['shares'] * contents['p*'] 
 			sum_from_askers -= contents['shares']
 
 			# Update the funds in the book
 			try:
-				self.book.asks[o_id]['funds'] = trader.funds  
+				self.book.asks[o_id]['funds'] = asker.funds  
 			except KeyError:
 				print(f'Tried to decrease funds but asker {o_id} is missing')
 				pass
 
-			# print(f'Asker {o_id}: balance {b_before}->{trader.balance}, funds {f_before}->{trader.funds}')
-			if trader.funds <= 0:
-				print('Cancelling trader')
-				trader.describe()
-				self.cancel_trader(trader)
+			# print(f'Asker {o_id}: balance {b_before}->{asker.balance}, funds {f_before}->{asker.funds}')
+			if asker.funds <= 0:
+				print('Cancelling asker')
+				asker.describe()
+				self.cancel_trader(asker)
 				print()
 
-		# print(f'Amount bidders paid: {sum_from_bidders}, received: {sum_to_bidders}')
-		# print(f'Amount askers paid: {sum_from_askers}, received: {sum_to_askers}')
+		print(f'Amount bidders paid: {sum_from_bidders}, received: {sum_to_bidders}')
+		print(f'Amount askers paid: {sum_from_askers}, received: {sum_to_askers}')
 
 	def update_funds_in_book(self):
 		for o_id, order in self.book.bids.items():
@@ -170,6 +252,8 @@ class Simulation(object):
 			except KeyError:
 				print(f'KeyError updating {o_id} funds')
 				continue
+
+
 
 	def write_html(self):
 		# Write html to a file for flask to display
