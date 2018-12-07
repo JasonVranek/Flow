@@ -79,6 +79,7 @@ class Trader(object):
 		new_order['q_max'] = self.current_order.get('q_max')
 		new_order['order_id'] = self.account
 		self.current_order = new_order
+		return True
 
 	def update_order(self, p_high, p_low, u_max, q_max):
 		new_order = {}

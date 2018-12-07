@@ -89,10 +89,12 @@ class Exchange(OrderBook):
 		R = max_p
 		iterations = 0
 		max_iterations = math.ceil(math.log2((R - L) / tick_size))
+		max_iterations = 100
 		while L < R:
 			# Finds a midpoint with the correct price tick precision
-			index = math.floor(((L + R) / 2) / tick_size) * tick_size
-			# print(index)
+			# index = math.floor(((L + R) / 2.0) / tick_size) * tick_size
+			index = (L + R) / 2.0
+			# print(index) 
 			dem, sup = self.calc_aggs(bids, asks, index)
 			if dem > sup:
 				# We are left of the crossing
@@ -101,8 +103,8 @@ class Exchange(OrderBook):
 				# We are right of the crossing
 				R = index
 			else:
-				print(f'Found cross at {L}!')
-				return self.nice_precision(L)
+				print(f'Found cross at {index}!')
+				return self.nice_precision(index)
 
 			if iterations > max_iterations:
 				print(f'Uh oh did not find crossing within max_iterations! {self.nice_precision(L)}, ({L})')
@@ -127,7 +129,7 @@ class Exchange(OrderBook):
 		self.max_price = self.book.max_price
 
 		# Save the state of the books before
-		# self.print_books()
+		self.print_books()
 
 		# Find the average aggregate schedules and then find p*
 		

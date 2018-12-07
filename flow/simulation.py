@@ -101,7 +101,11 @@ class Simulation(object):
 				continue
 
 			# Get the trader from the dictionary of all traders
-			bidder = self.traders[bid_id]
+			bidder = self.get_bidder(bid_id)
+			if bidder == -1:
+				print('lalalal didnt find bidder')
+				continue
+			
 
 			for ask_id in askers:
 				ask_shares_owed = ask_shares[ask_id]['shares']
@@ -113,7 +117,9 @@ class Simulation(object):
 				elif ask_shares_owed >= bidder_shares_owed:
 					# print(f'Buying {bidder_shares_owed} from asker {ask_id}')
 					# Get the asker to update their funds
-					asker = self.traders[ask_id]
+					asker = self.get_asker(ask_id)
+					if not asker:
+						continue
 					bidder.balance += bidder_shares_owed
 					bidder.funds -= bidder_shares_owed * p
 					asker.balance += bidder_shares_owed * p
@@ -125,10 +131,18 @@ class Simulation(object):
 					# Update the funds in the orderbook
 					self.book.bids[bid_id]['funds'] = bidder.funds
 					self.book.asks[ask_id]['funds'] = asker.funds  
+
+					# Cancel traders if they run out of funds
+					if bidder.funds <= 0:
+						self.cancel_trader(bidder)
+					if asker.funds <= 0:
+						self.cancel_trader(asker)
 					break
 				elif ask_shares_owed < bidder_shares_owed:
 					# print(f'Buying {ask_shares_owed} from asker {ask_id}')
-					asker = self.traders[ask_id]
+					asker = self.get_asker(ask_id)
+					if not asker:
+						continue
 					bidder.balance += ask_shares_owed
 					bidder.funds -= ask_shares_owed * p
 					asker.balance += ask_shares_owed * p 
@@ -140,6 +154,11 @@ class Simulation(object):
 					# askers.remove(ask_id)
 					self.book.bids[bid_id]['funds'] = bidder.funds
 					self.book.asks[ask_id]['funds'] = asker.funds  
+
+					if bidder.funds <= 0:
+						self.cancel_trader(bidder)
+					if asker.funds <= 0:
+						self.cancel_trader(asker)
 
 		sum_excess = 0
 		# print('\nBids\n')
@@ -164,97 +183,22 @@ class Simulation(object):
 
 			# print(f'{ask_id} is owed {shares}')
 
-						
+	def get_asker(self, asker_id):
+		try:
+			asker = self.traders[asker_id]
+			return asker
+		except KeyError:
+			print('Error can not find asker to exchange with')
+			return -1
 
-
-	def pay_traders(self, b_shares, a_shares):
-		sum_to_askers = 0
-		sum_from_askers = 0
-		sum_to_bidders = 0
-		sum_from_bidders = 0
-		# Iterate over the payout dictionary and update each trader's balance and funds
-		for o_id in b_shares:
-			# Get the trader's owed shares from dictionary
-			contents = b_shares[o_id]
-			if contents['shares'] == 0:
-				continue
-			# Get the trader from the dictionary of all traders
-			bidder = self.traders[o_id]
-
-			# A bidder adds shares to balance and subtracts shares*clearing_price from funds
-			f_before = bidder.funds
-			b_before = bidder.balance
-			bidder.balance += contents['shares']
-			bidder.funds -= contents['shares']   * contents['p*'] 
-
-			sum_to_bidders += contents['shares'] 
-			sum_from_bidders -= contents['shares']   * contents['p*'] 
-
-			# Update the funds in the book
-			try:
-				self.book.bids[o_id]['funds'] = bidder.funds
-			except KeyError:
-				print(f'Tried to decrease funds but bidder {o_id} is missing')
-				pass
-
-			# print(f'Bidder {o_id}: balance {b_before}->{bidder.balance}, funds {f_before}->{bidder.funds}')
-			if bidder.funds <= 0:
-				print('Cancelling bidder')
-				bidder.describe()
-				self.cancel_trader(bidder)
-				print()
-		print()
-		for o_id in a_shares:
-			contents = a_shares[o_id]
-			if contents['shares'] == 0:
-				continue
-			# Get the trader from the dictionary of all traders
-			asker = self.traders[o_id]
-
-			# An asker adds shares to balance and subtracts shares/clearing_price from funds
-			f_before = asker.funds
-			b_before = asker.balance
-			asker.balance += contents['shares'] * contents['p*'] 
-			asker.funds -= contents['shares']  
-			sum_to_askers += contents['shares'] * contents['p*'] 
-			sum_from_askers -= contents['shares']
-
-			# Update the funds in the book
-			try:
-				self.book.asks[o_id]['funds'] = asker.funds  
-			except KeyError:
-				print(f'Tried to decrease funds but asker {o_id} is missing')
-				pass
-
-			# print(f'Asker {o_id}: balance {b_before}->{asker.balance}, funds {f_before}->{asker.funds}')
-			if asker.funds <= 0:
-				print('Cancelling asker')
-				asker.describe()
-				self.cancel_trader(asker)
-				print()
-
-		print(f'Amount bidders paid: {sum_from_bidders}, received: {sum_to_bidders}')
-		print(f'Amount askers paid: {sum_from_askers}, received: {sum_to_askers}')
-
-	def update_funds_in_book(self):
-		for o_id, order in self.book.bids.items():
-			try:
-				trader = self.traders[o_id]
-				order['funds'] = trader.funds
-			except KeyError:
-				print(f'KeyError updating {o_id} funds')
-				continue
-
-		for o_id, order in self.book.asks.items():
-			try:
-				trader = self.traders[o_id]
-				order['funds'] = trader.funds
-			except KeyError:
-				print(f'KeyError updating {o_id} funds')
-				continue
-
-
-
+	def get_bidder(self, bidder_id):
+		try:
+			bidder = self.traders[bidder_id]
+			return bidder
+		except KeyError:
+			print('Error can not find bidder to exchange with')
+			return -1
+			
 	def write_html(self):
 		# Write html to a file for flask to display
 		with open('../html/market.html', 'w') as file:
@@ -275,22 +219,22 @@ class Simulation(object):
 		while True:
 			print('New orders:')
 			# Cancel from current traders
-			# self.send_rand_cancels(beta=.001)
+			self.send_rand_cancels(beta=.001)
 
 			# Updates for current traders
 			self.send_rand_updates(beta=.005)
 
 			# Send in new traders
 			if self.first_time:
-				self.first_time = False
+				# self.first_time = False
 				self.send_rand_traders(beta=.01)
 
 			# Sleep after sending til batch is over
 			time.sleep(self.exchange._batch_time)
 
 	def send_rand_traders(self, beta=.01):
-		# num_traders = rd.num_arrivals(self.exchange._batch_time, beta)
-		num_traders = math.ceil(np.random.uniform(20, 50))
+		num_traders = rd.num_arrivals(self.exchange._batch_time, beta)
+		# num_traders = math.ceil(np.random.uniform(20, 50))
 		print(f'Sending {num_traders} new orders!')
 		traders = []
 		traders = self.setup_rand_traders(num_traders)
@@ -329,10 +273,13 @@ class Simulation(object):
 			print('Tried to cancel but not enough traders in book')
 
 	def cancel_trader(self, trader):
-		trader.cancel_order()
-		# print(f'CANCEL @{str(datetime.datetime.now())}: {trader.current_order}')
-		self.exchange.get_order(trader.current_order)
-		self.traders.pop(trader.account)
+		try:
+			trader.cancel_order()
+			# print(f'CANCEL @{str(datetime.datetime.now())}: {trader.current_order}')
+			self.exchange.get_order(trader.current_order)
+			self.traders.pop(trader.account)
+		except KeyError:
+			print(f'Tried to cancel but could not find {trader}')
 
 	def send_rand_updates(self, beta=.005):
 		# Updates for current traders

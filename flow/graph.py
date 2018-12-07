@@ -43,6 +43,10 @@ class Graph():
 			# plot vertical clearing price line
 			ax.plot([cp, cp], [0, cr], 'g')
 
+
+		text_str = 'p*=%f  u*=%f'%(cp, cr)
+		plt.text(.75, .5, text_str, transform=plt.gcf().transFigure)
+		plt.subplots_adjust(right=0.7)
 		plt.show()
 
 
